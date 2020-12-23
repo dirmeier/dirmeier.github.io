@@ -4,7 +4,6 @@
 
 My personal web page
 
-
 ## About
 
 This repository hosts my personal webpage with some case studies, notebooks,
@@ -27,13 +26,15 @@ conda install -y nodejs
 
 ## Installation
 
-Running the following on the command line install all dependencies, and builds
-the distributable
+Running the following on the command line install all dependencies, builds
+the distributable and starts an express server that listens to port 4000
 
 ```bash
 npm install
 npm run build
+npm run start
 ```
+
 
 ## Author
 

@@ -1,0 +1,57 @@
+[
+  {
+    "date" : "October 2019",
+    "title": "Mixed model reference implementations",
+    "description": "Concise reference implementations to fit (generalized) linear mixed models in Python",
+    "links": [
+      {
+        "name": "link",
+        "link": "https://dirmeier.github.io/mixed-models/index.html"
+      }
+    ]
+  },
+  {
+    "date" : "September 2019",
+    "title": "Structure learning for Bayesian networks",
+    "description": "A Python notebook on structure MCMC to learn the structure of a Bayesian network using PyMC3",
+    "links": [
+      {
+        "name": "link",
+        "link": "https://dirmeier.github.io/structure-learning-with-pymc/index.html"
+      }
+    ]
+  },
+  {
+    "date" : "June 2019",
+    "title": "Truncated stick breaking in Greta",
+    "description": "An example implementation on Dirichlet process mixtures using trunctated stick breaking in the probabilistic programming language Greta",
+    "links": [
+      {
+        "name": "link",
+        "link": "https://dirmeier.github.io/etudes/truncated_stick_breaking_in_greta.html"
+      }
+    ]
+  },
+  {
+    "date" : "June 2019",
+    "title": "Simulation-based calibration",
+    "description": "An example notebook for simulation-based calibration for validation of Bayesian inferences",
+    "links": [
+      {
+        "name": "link",
+        "link": "https://dirmeier.github.io/etudes/simulation_based_calibration.html"
+      }
+    ]
+  },
+  {
+    "date" : "January 2019",
+    "title": "Dirichlet process mixture models",
+    "description": "Stan models on infinite Bayesian mixtures using the Dirichlet process",
+    "links": [
+      {
+        "name": "link",
+        "link": "https://dirmeier.github.io/etudes/dirichlet_process_mixture_models.html"
+      }
+    ]
+  }
+]

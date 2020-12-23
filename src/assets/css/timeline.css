@@ -1,0 +1,38 @@
+ol li {
+  list-style-type: none;
+}
+
+.timeline {
+  border-left: 3px solid #dddddd;
+  padding-bottom: 3em;
+  position: relative;
+}
+
+.tl-node {
+  padding-left: 3em;
+  margin-bottom: 3em;
+  position: relative;
+}
+
+.tl-node a {
+  display: block;
+}
+
+.tl-node:before, .timeline:before {
+  content: "";
+  position: absolute;
+  left: -1.0em;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: #fff;
+  border: 3px solid #dddddd;
+}
+
+.tl-node:before {
+  top: 0;
+}
+
+.timeline:before {
+  bottom: 0;
+}

@@ -1,0 +1,40 @@
+# webpage
+
+[![Project Status](http://www.repostatus.org/badges/latest/concept.svg)](http://www.repostatus.org/#concept)
+
+My personal web page
+
+
+## About
+
+This repository hosts my personal webpage with some case studies, notebooks,
+and things that keep my mind busy.
+
+## Dependencies
+
+Download [Minicoda](https://docs.conda.io/en/latest/miniconda.html) first and install everything like this
+
+```bash
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+conda create -n web python=3.7
+echo "source ~/miniconda3/bin/activate  web" >> ~/.bashrc
+
+source ~/miniconda3/bin/activate web
+conda install -y nodejs
+```
+
+## Installation
+
+Running the following on the command line install all dependencies, and builds
+the distributable
+
+```bash
+npm install
+npm run build
+```
+
+## Author
+
+Simon Dirmeier <a href="mailto:simon.dirmeier @ web.de">simon.dirmeier @ web.de</a>

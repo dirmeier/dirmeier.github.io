@@ -1,0 +1,35 @@
+[
+  {
+    "date" : "October 2020",
+    "title": "Normalizing flows for density estimation with TensorFlow Probability",
+    "description": "Using TensorFlow Probability's Bijector API one can easily implement custom normalizing flows. This notebook shows how it can be done using MAFs as an example",
+    "links": [
+      {
+        "name": "link",
+        "link": "https://dirmeier.github.io/etudes/normalizing_flows.html"
+      }
+    ]
+  },
+  {
+    "date" : "June 2020",
+    "title": "Causal structure learning with VAEs",
+    "description": "Learning cause-effect mechanisms among a set of random variables is not only of great epistemological interest but also a fascinating statistical problem. In this notebook we implement a graph variational autoencoder to learn the DAG of a structural equations model and compare it to greedy equivalent search",
+    "links": [
+      {
+        "name": "link",
+        "link": "https://dirmeier.github.io/etudes/causal_structure_learning.html"
+      }
+    ]
+  },
+  {
+    "date" : "May 2020",
+    "title": "On sequential regression models",
+    "description": "Sequential models are a special type of ordinal regression models, but additionally assume that categories can only be reached sequentially. This case study shows the difference to conventional ordinal models",
+    "links": [
+      {
+        "name": "link",
+        "link": "https://dirmeier.github.io/rstansequential/index.html"
+      }
+    ]
+  }
+]

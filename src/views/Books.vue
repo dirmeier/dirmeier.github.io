@@ -1,26 +1,17 @@
 <template>
   <section class="section" style="margin-top: 1%" id="home">
-    <abt />
-    <blog />
-    <pubs />
-    <contact />
+    <books />
     <bot />
   </section>
 </template>
 
 <script>
-import abt from "../components/About.vue";
-import blog from "../components/Not-a-blog.vue";
-import pubs from "../components/Publications.vue";
-import contact from "../components/Contact.vue";
+import books from "../components/Books.vue";
 import bot from "../components/Bottom.vue";
 
 export default {
   components: {
-    abt,
-    blog,
-    contact,
-    pubs,
+    books,
     bot
   },
   data: () => ({
@@ -31,7 +22,7 @@ export default {
     title: {
       immediate: true,
       handler() {
-        document.title = "Home";
+        document.title = "Books";
       }
     }
   }

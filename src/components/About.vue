@@ -45,19 +45,19 @@
 
     <div class="columns">
       <div class="column is-8">
-          I am an ml/data scientist working at
-          <a href="https://www.artificialy.ch/">Artificialy SA</a> in Lugano,
-          Ticino, in Switzerland. My scientific interests lie broadly in
-          probabilistic machine learning, (nonparametric) Bayesian statistics,
-          causal inference, probabilistic programming (in particular
-          <a href="https://mc-stan.org/">Stan</a> and
-          <a href="https://www.tensorflow.org/probability/">TFP</a>) and
-          high-performance computing. Before conducting my doctoral studies on
-          <i>statistical modelling of genetic interventions</i> at
-          <a href="https://ethz.ch/en.html">ETH</a>, I've studied bioinformatics
-          and computer science at TU and LMU Munich. In my free time I play the
-          guitar, like reading philosophy and work on extending my Jazz
-          collection!
+        I am an ml/data scientist working at
+        <a href="https://www.artificialy.ch/">Artificialy SA</a> in Lugano,
+        Ticino, in Switzerland. My scientific interests lie broadly in
+        probabilistic machine learning, (nonparametric) Bayesian statistics,
+        causal inference, probabilistic programming (in particular
+        <a href="https://mc-stan.org/">Stan</a> and
+        <a href="https://www.tensorflow.org/probability/">TFP</a>) and
+        high-performance computing. Before conducting my doctoral studies on
+        <i>statistical modelling of genetic interventions</i> at
+        <a href="https://ethz.ch/en.html">ETH</a>, I've studied bioinformatics
+        and computer science at TU and LMU Munich. In my free time I play the
+        guitar, like reading philosophy and work on extending my Jazz
+        collection!
       </div>
     </div>
   </div>

@@ -1,18 +1,16 @@
 <template>
   <div>
     <navv />
-    <home />
+    <router-view />
   </div>
 </template>
 
 <script>
 import navv from "./views/Navbar.vue";
-import home from "./views/Home.vue";
 
 export default {
   components: {
-    navv,
-    home
+    navv
   }
 };
 </script>

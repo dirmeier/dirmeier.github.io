@@ -1,3041 +1,21 @@
 [
     {
-        "title": "",
-        "author": "Das Gilgamesh-epos",
-        "publisher": "Beck"
-    },
-    {
-        "title": "Adams, Douglas",
-        "author": "Dirk Gently's Holistic Detective Agency",
-        "publisher": "Pocket Books"
-    },
-    {
-        "title": "Adams, Douglas",
-        "author": "Life, the Universe and Everything",
-        "publisher": "Ballentine"
-    },
-    {
-        "title": "Adams, Douglas",
-        "author": "The Hitchhiker’s Guide to the Galaxy",
-        "publisher": "Ballantine"
-    },
-    {
-        "title": "Adams, Douglas",
-        "author": "The Long Dark Tea Time of the Soul",
-        "publisher": "Pocket books"
-    },
-    {
-        "title": "Adorno, Theodor",
-        "author": "Minima Moralia",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Adorno, Theodor",
-        "author": "Philosophie der neuen Musik",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Aischylos",
-        "author": "Der gefesselte Prometheus und die Schutzsuchenden",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Aischylos",
-        "author": "Die Orestie",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Aischylos",
-        "author": "Die Perser und Sieben gegen Theben",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Alain-Fournier, Henri",
-        "author": "Der große Meaulnes",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Albee, Edward",
-        "author": "Who's afraid of Virginia Woolf",
-        "publisher": "Signet"
-    },
-    {
-        "title": "Andersch, Alfred",
-        "author": "Der Vater eines Mörders",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Andersch, Alfred",
-        "author": "Die Kirschen der Freiheit",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Andersch, Alfred",
-        "author": "Sansibar",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Aristophanes",
-        "author": "Das Frauenfest",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Aristoteles",
-        "author": "Metaphysik",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Aristotleles",
-        "author": "Nikomachische Ethik",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Assländer, Michael",
-        "author": "Adam Smith zur Einführung",
-        "publisher": "Junius"
-    },
-    {
-        "title": "Aurel, Marc",
-        "author": "Selbstbetrachtungen",
-        "publisher": "Insel"
-    },
-    {
-        "title": "Badiou, Alain",
-        "author": "Lob der Liebe Passagene",
-        "publisher": "Verlag"
-    },
-    {
-        "title": "Badiou, Alain",
-        "author": "The Communist Hypothesis",
-        "publisher": "Verso"
-    },
-    {
-        "date": "2018-10-26",
-        "title": "Badiou, Alain",
-        "author": "The True Life",
-        "publisher": "Polity Press"
-    },
-    {
-        "title": "Badiou, Alain",
-        "author": "Wider den Globalen Kapitalismus",
-        "publisher": "Ullstein"
-    },
-    {
-        "title": "Ball, Hugo",
-        "author": "Hermann Hesse",
-        "publisher": "Tredition Classics"
-    },
-    {
-        "title": "Bambarem, Sergio",
-        "author": "Der Traum des Leuchtturmwärters",
-        "publisher": "Piper"
-    },
-    {
-        "title": "Baudelaire, Charles",
-        "author": "Die Blumen des Bösen",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Beckett, Samuel",
-        "author": "The End",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Beckett, Samuel",
-        "author": "Waiting for Godot",
-        "publisher": "Grove Press"
-    },
-    {
-        "title": "Bernhard, Thomas",
-        "author": "Amras",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Bernhard, Thomas",
-        "author": "Auslöschung",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Bernhard, Thomas",
-        "author": "Wittgensteins Neffe",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Bichsel, Peter",
-        "author": "Eigentlich möchte Frau Blum den Milchmann kennenlernen",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Boethius",
-        "author": "Trost der Philosophie",
-        "publisher": "Reclam"
-    },
-    {
-        "title": "Bowie, Andrew",
-        "author": "German Philosophy",
-        "publisher": "Polity Press"
-    },
-    {
-        "title": "Brecht, Berthold",
-        "author": "Die Maßnahme",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Brecht, Berthold",
-        "author": "Mutter Courage",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Brecht, Bertold",
-        "author": "Das Leben des Galilei",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Brecht, Bertold",
-        "author": "Der gute Mensch von Sezuan",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Brecht, Bertold",
-        "author": "Der kaukasische Kreidekreis",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Brecht, Bertold",
-        "author": "Die Dreigroschenoper",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Brecht, Bertold",
-        "author": "Liebesgedichte",
-        "publisher": "Insel"
-    },
-    {
-        "title": "Brecht, Bertold",
-        "author": "Musik",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Bronte, Charlotte",
-        "author": "Jane Eyre",
-        "publisher": "Insel"
-    },
-    {
-        "title": "Bronte, Emily",
-        "author": "Sturmhöhe",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Brueckner, Christine",
-        "author": "Wenn du Geredet Haettest, Desdemona",
-        "publisher": "Hoffmann und Campe"
-    },
-    {
-        "title": "Bucay, Jorge",
-        "author": "Komm, ich erzähl dir eine Geschichte",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Buechner, Georg",
-        "author": "Woyzeck",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Bukowski, Charles",
-        "author": "Das Leben und Sterben im Uncle Sam Hotel",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Bukowski, Charles",
-        "author": "Das Liebesleben der Hyäne",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Bukowski, Charles",
-        "author": "Der Mann mit der Ledertasche",
-        "publisher": "Kiwi"
-    },
-    {
-        "title": "Bulfinch, Thomas",
-        "author": "Mythology",
-        "publisher": "Barnes and Noble"
-    },
-    {
-        "title": "Burton, Richard",
-        "author": "Tausendundeine Nacht",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Bächli, Andreas",
-        "author": "Grundbegriffe der antiken Philosophie",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Böll, Heinrich",
-        "author": "Ansichten eines Clowns",
-        "publisher": "Freizeitbibliothek"
-    },
-    {
-        "title": "Böll, Heinrich",
-        "author": "Billard um halb Zehn",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Böll, Heinrich",
-        "author": "Die verlorene Ehre der Katharine Blum",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Böll, Heinrich",
-        "author": "Doktor Murkes Gesammeltes Schweigen",
-        "publisher": "Kiepenheuer & Witsch"
-    },
-    {
-        "title": "Büchner, Georg",
-        "author": "Dantons Tod",
-        "publisher": "Anaconda"
-    },
-    {
-        "title": "Camus, Albert",
-        "author": "Der Fall",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Camus, Albert",
-        "author": "Der Fremde",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Camus, Albert",
-        "author": "Der Mensch in der Revolte",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Camus, Albert",
-        "author": "Der Mythos des Sisyphos",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Camus, Albert",
-        "author": "Der glückliche Tod",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Camus, Albert",
-        "author": "Die Pest",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Camus, Albert",
-        "author": "Fragen der Zeit",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Camus, Albert",
-        "author": "Sämtliche Dramen",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Camus, Albert",
-        "author": "Verteidigung der Freiheit",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Capote, Truman",
-        "author": "Frühstück bei Tiffany",
-        "publisher": "Goldmann"
-    },
-    {
-        "title": "Capote, Truman",
-        "author": "In Cold Blood",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Capote, Truman",
-        "author": "Sommerdiebe",
-        "publisher": "Goldmann"
-    },
-    {
-        "title": "Carnap, Rudolf",
-        "author": "Der logische Aufbau der Welt",
-        "publisher": "Meiner"
-    },
-    {
-        "title": "Cave, Nick",
-        "author": "The Death of Bunny Monroe",
-        "publisher": "Canongate"
-    },
-    {
-        "title": "Cazotte, Jacques",
-        "author": "Der Verliebte Teufel",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Celikates, Robin und Gosepath, Stefa",
-        "author": " Politische Philosophie",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Cervantes",
-        "author": "Don Quixote von la Mancha",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Chatwin, Bruce",
-        "author": "Traumpfade",
-        "publisher": "Carl Hanser"
-    },
-    {
-        "title": "Chatwin, Bruce",
-        "author": "Traumpfade",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Checkov, Anton ",
-        "author": "Die Möwe",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Chomsky, Noam",
-        "author": "Der gescheiterte Staat",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Chomsky, Noam",
-        "author": "On Anarchy",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Chomsky, Noam",
-        "author": "Profit over People, War against People",
-        "publisher": "Piper"
-    },
-    {
-        "title": "Christie, Agatha",
-        "author": "After the Funeral",
-        "publisher": "Berkeley"
-    },
-    {
-        "title": "Christie, Agatha",
-        "author": "Death on the Nile",
-        "publisher": "Berkeley"
-    },
-    {
-        "title": "Christie, Agatha",
-        "author": "Der Täter lässt bitten",
-        "publisher": "Loewe"
-    },
-    {
-        "title": "Christie, Agatha",
-        "author": "Villa Nachtigall",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Collins, Wilkie",
-        "author": "Der Monddiamant",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Dalai Lama",
-        "author": "Der Wille zum Frieden",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Dante",
-        "author": "Die göttliche Komödie",
-        "publisher": "Fisher"
-    },
-    {
-        "title": "Dante",
-        "author": "Die göttliche Komödie",
-        "publisher": "Nikol"
-    },
-    {
-        "title": "Dawkins, Richard",
-        "author": "The God Delusion",
-        "publisher": "Black Swan"
-    },
-    {
-        "title": "Delangey, Shelagh",
-        "author": "A Taste of Honey",
-        "publisher": "Cover"
-    },
-    {
-        "title": "Descartes, Rene",
-        "author": "Discours de la Methode",
-        "publisher": "Meiner"
-    },
-    {
-        "title": "Dickens, Charles",
-        "author": "David Copperfield",
-        "publisher": "Das literarische Vermächtnis"
-    },
-    {
-        "title": "Dickens, Charles",
-        "author": "Great Expectations",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Diverse",
-        "author": "Philosophische Meistersteucke",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Doeblin, Alexander",
-        "author": "Berlin Alexanderplatz",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Doeblin, Alfred",
-        "author": "Wadzeks Kampf mit der Dampfmaschine",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Dos Passos, John",
-        "author": "Manhattan Transfer",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Dosojewski, Fjodor",
-        "author": "Der Idiot",
-        "publisher": "Möllmann"
-    },
-    {
-        "title": "Dostojewski, Fjodor",
-        "author": "Böse Geister",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Dostojewski, Fjodor",
-        "author": "Der Spieler",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Dostojewski, Fjodor",
-        "author": "Die Sanfte",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Doyle, Arthur Conan",
-        "author": "Das Zeichen der Vier",
-        "publisher": "Insel"
-    },
-    {
-        "title": "Doyle, Arthur Conan",
-        "author": "Holmes, Sherlock: Complete Stories",
-        "publisher": "Bantam"
-    },
-    {
-        "title": "Dumas, Alexandre",
-        "author": "Der Graf von Monte Christo",
-        "publisher": "Arena"
-    },
-    {
-        "title": "Dumas, Alexandre",
-        "author": "Die Kameliendame",
-        "publisher": "Kaiser"
-    },
-    {
-        "title": "Dunthorne, Joe",
-        "author": "Ich, Oliver Tate",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Dürrenmatt, Friedrich",
-        "author": "Der Richter und sein Henker",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Dürrenmatt, Friedrich",
-        "author": "Die Physiker",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Dürrenmatt, Friedrich",
-        "author": "Die Stücke",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Dürrenmatt, Friedrich",
-        "author": "Dureinanderthal",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Eco, Umberto",
-        "author": "Baudolino",
-        "publisher": "RM"
-    },
-    {
-        "title": "Eco, Umberto",
-        "author": "Das Foucaultsche Pendel",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Eco, Umberto",
-        "author": "Der Name der Rose",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Eichener, Volker and Baumgart, Ralf",
-        "author": "Norbert Elias zur Einführung",
-        "publisher": "Junius"
-    },
-    {
-        "title": "Elias, Norbert",
-        "author": "Die Gesellschaft der Individuen",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Emerson, Ralf Waldo",
-        "author": "Selected Essays",
-        "publisher": "Bentam"
-    },
-    {
-        "title": "Emerson, Ralph Waldo",
-        "author": "Essays and Lectures",
-        "publisher": "Library of America"
-    },
-    {
-        "title": "Emerson, Ralph Waldo",
-        "author": "Nature",
-        "publisher": "Amazon"
-    },
-    {
-        "title": "Emerson, Ralph Waldo",
-        "author": "Self Reliance",
-        "publisher": "Amazon"
-    },
-    {
-        "title": "Erös, Reinhard",
-        "author": "Tee mit dem Teufel",
-        "publisher": "Hoffmann und Campe"
-    },
-    {
-        "title": "Eschenbach, Andreas",
-        "author": "Eine Billion Dollar",
-        "publisher": "Bastei-Luebbe"
-    },
-    {
-        "title": "Euripides",
-        "author": "Die Bakchen",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Euripides",
-        "author": "Hekabe",
-        "publisher": "Reclam"
-    },
-    {
-        "title": "Euripides",
-        "author": "Iphigenie bei den Taurern",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Euripides",
-        "author": "Medea",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Exupery, Antoine",
-        "author": "Der Kleine Prinz",
-        "publisher": "Galimart"
-    },
-    {
-        "title": "Faulkner, William",
-        "author": "Die Unbesiegten",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Faulkner, William",
-        "author": "The Sound and the Fury",
-        "publisher": "Everyman’s Library"
-    },
-    {
-        "title": "Fellmann, Ferdinand",
-        "author": "Die Angst des Ethiklehrers vor der Klasse",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Fetscher, Iring",
-        "author": "Marx",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Fetscher, Iring",
-        "author": "Rousseaus politische Philosopohie",
-        "publisher": "Suhrkmap"
-    },
-    {
-        "title": "Feyerabend, Paul",
-        "author": "Erkenntnis für freie Menschen",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Feyerabend, Paul",
-        "author": "Wissenschaft als Kunst",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Fielding, Henry",
-        "author": "The History of Tom Jones",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Fitzgerald, Francis Scott",
-        "author": "Der Seltsame Fall des Benjamin Button",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Fitzgerald, Francis Scott",
-        "author": "Der große Gatsby",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Fitzgerald, Francis Scott",
-        "author": "The Great Gatsby",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Flaubert, Gustave",
-        "author": "Salammbo",
-        "publisher": "Inselverlag"
-    },
-    {
-        "title": "Flynn, Thomas",
-        "author": "Existentialism",
-        "publisher": "Oxford"
-    },
-    {
-        "title": "Fontane, Theodor",
-        "author": "Effi Briest",
-        "publisher": "Klett"
-    },
-    {
-        "title": "Foucault, Michael",
-        "author": "Der Wille zum Wissen",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Foucault, Michel",
-        "author": "Wahnsinn und Gesellschaftee",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Francis Bacon",
-        "author": "New Organon",
-        "publisher": "Meiner"
-    },
-    {
-        "title": "Frank,Anne",
-        "author": "Tagebuch ",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Frankfurt, Harry G.",
-        "author": "On Bullshit",
-        "publisher": "Princeton University Press"
-    },
-    {
-        "title": "Frankfurt, Harry G.",
-        "author": "On Inequality",
-        "publisher": "Princeton University Press"
-    },
-    {
-        "title": "Frankfurt, Harry G.",
-        "author": "On Truth",
-        "publisher": "Knopf"
-    },
-    {
-        "title": "Frankl, Viktor",
-        "author": "Man's search for meaning",
-        "publisher": "Beacon"
-    },
-    {
-        "title": "Freely, John",
-        "author": "Aristoteles in Oxford",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Freely, John",
-        "author": "Platon in Bagdag",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Friedriksson, Marianne",
-        "author": "Simon",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Frisch, Max",
-        "author": "Andorra",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Frisch, Max",
-        "author": "Homo Faber",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Frisch, Max",
-        "author": "Mein Name sei Gantenbein",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Frisch, Max",
-        "author": "Stiller",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Gaarder, Jostein",
-        "author": "Sofies Welt",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Gaardner, Jostein",
-        "author": "Hallo, ist da jemand?",
-        "publisher": "Hanser"
-    },
-    {
-        "title": "Gadamer, Hans-Georg",
-        "author": "Der Anfang des Wissens",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Gerlach, Stefan",
-        "author": "Immanuel  Kant",
-        "publisher": "UTB"
-    },
-    {
-        "title": "Gladwell, Malcolm",
-        "author": "What the Dog Saw",
-        "publisher": "Backbay books"
-    },
-    {
-        "title": "Goethe, Johann Wolfgang",
-        "author": "Die Leiden des jungen Werthers",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Goethe, Johann Wolfgang",
-        "author": "Faust I",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Goethe, Johann Wolfgang",
-        "author": "Faust II",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Golding, William",
-        "author": "Lord of the Flies",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Goleman, Daniel",
-        "author": "Emotionale Intelligenz",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Grassi, Ernesto",
-        "author": "Der Utopische Staat",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Guerrier, Simon and Kukula, Marek",
-        "author": "The Scientific Secrets of Doctor Who",
-        "publisher": "BBC Books"
-    },
-    {
-        "title": "Haeckel, Ernst ",
-        "author": "Natuerliche Schoepfungsgeschichte",
-        "publisher": "de Gruyter"
-    },
-    {
-        "title": "Handke, Peter",
-        "author": "Die Angst des Tormanns beim Elfmeter",
-        "publisher": "SZ"
-    },
-    {
-        "title": "Harel, David",
-        "author": "Computers",
-        "publisher": "Oxford"
-    },
-    {
-        "title": "Hauptmann, Gerhard",
-        "author": "Bahnwärter Thiel",
-        "publisher": "Cornelsen"
-    },
-    {
-        "title": "Hawking, Stephen",
-        "author": "Die Kürzeste Geschichte der Zeit",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Hawthorne, Nathaniel",
-        "author": "Das grosse Steingesicht",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Hegel, Georg Wilhelm Friedrich",
-        "author": "Phänomenologie des Geistes",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Heidegger, Martin",
-        "author": "Sein und Zeit",
-        "publisher": "Max Niemeyer Verlag"
-    },
-    {
-        "date": "2018-05-06",
-        "title": "Heine, Heinrich",
-        "author": "Die Harzreise",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Heisenberg, Werner",
-        "author": "Die Einheit des Naturwissenschaftlichen Weltbilds",
-        "publisher": "Lesung"
-    },
-    {
-        "title": "Heisenberg, Werner",
-        "author": "Quantentheorie und Philosophie",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Hemingway, Earnest",
-        "author": "A Farewell to Arms",
-        "publisher": "Arrow"
-    },
-    {
-        "title": "Hemingway, Ernest",
-        "author": "Der alte Mann und das Meer",
-        "publisher": "Buechergilde"
-    },
-    {
-        "title": "Hemingway, Ernest",
-        "author": "The snows of Kilimanjaro",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Hemingway, Ernest ",
-        "author": "Die Hauptstadt der Welt ",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Herman, Melville",
-        "author": "Der Schreiber Bartleby",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Hesiod",
-        "author": "Theogonie",
-        "publisher": "Academia"
-    },
-    {
-        "title": "Hesse, Hermann",
-        "author": "Das Glasperlenspiel",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Hesse, Hermann",
-        "author": "Demian",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Hesse, Hermann",
-        "author": "Jedem Anfang Wohnt ein Zauber Inne ",
-        "publisher": "Inselverlag"
-    },
-    {
-        "title": "Hesse, Hermann",
-        "author": "Kinderseele",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Hesse, Hermann",
-        "author": "Knulp",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Hesse, Hermann",
-        "author": "Musik des Einsamen",
-        "publisher": "Anaconda"
-    },
-    {
-        "title": "Hesse, Hermann",
-        "author": "Narziss und Goldmund",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Hesse, Hermann",
-        "author": "Peter Camenzind",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Hesse, Hermann",
-        "author": "Rosshalde",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Hesse, Hermann",
-        "author": "Siddhartha",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Hesse, Hermann",
-        "author": "Steppenwolf",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Hesse, Hermann",
-        "author": "Unterm Rad ",
-        "publisher": "Sueddeutsche"
-    },
-    {
-        "title": "Hesser, Hermann",
-        "author": "Gertrud",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Highsmith, Patricia",
-        "author": "Der talentierte Mr. Ripley",
-        "publisher": "SZ"
-    },
-    {
-        "title": "Hobbes, Thomas",
-        "author": "Der Leviathan",
-        "publisher": "Anaconda"
-    },
-    {
-        "title": "Hobbes, Thomas",
-        "author": "Leviathan",
-        "publisher": "Philosophische Bibliothek"
-    },
-    {
-        "title": "Homer",
-        "author": "Illias und Odyssee",
-        "publisher": "Insel"
-    },
-    {
-        "title": "Horkheimer, Max",
-        "author": "Traditionelle und Kritische Theorie",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Horkheimer, Max and Adorno, Theodor",
-        "author": "Dialektik der Aufklärung",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Hornby, Nick",
-        "author": "A Long Way Down",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Hornby, Nick",
-        "author": "A long way down",
-        "publisher": "Knaur"
-    },
-    {
-        "title": "Hornby, Nick",
-        "author": "Feverpitch",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Hornby, Nick",
-        "author": "High Fidelity",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Hornby, Nick",
-        "author": "How to be Good",
-        "publisher": "Penguing"
-    },
-    {
-        "title": "Hornby, Nick",
-        "author": "Juliett, Naked",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Hornby, Nick",
-        "author": "Mein Leben als Leser",
-        "publisher": "KiWi"
-    },
-    {
-        "title": "Houellebecq, Michel",
-        "author": "Ausweitung der Kampfzone",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Houellebecq, Michel",
-        "author": "Elementarteilchen",
-        "publisher": "Dumont"
-    },
-    {
-        "title": "Houellebecq, Michel",
-        "author": "Karte und Gebiet",
-        "publisher": "Dumont"
-    },
-    {
-        "title": "Houellebecq, Michel",
-        "author": "Plattform",
-        "publisher": "Dumont"
-    },
-    {
-        "title": "Houellebecq, Michel",
-        "author": "Unterwerfung",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Houellebecq, Michel ",
-        "author": "Die Möglichkeit einer Insel ",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Huizing, Klaas",
-        "author": "Der Buchtrinker",
-        "publisher": "btb"
-    },
-    {
-        "title": "Hume, David",
-        "author": "Eine Untersuchung über den Menschlichen Verstand",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Hume, David",
-        "author": "Eine Untersuchung über den menschlichen Verstand",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Hume, David",
-        "author": "Eine Untersuchung über die Prinzipien der Moral",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Huxley, Aldous",
-        "author": "Eiland",
-        "publisher": "Piper"
-    },
-    {
-        "title": "Huxley, Aldous",
-        "author": "Point Counter Point",
-        "publisher": "Vintage"
-    },
-    {
-        "title": "Huxley, Aldous",
-        "author": "Schöne Neue Welt",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Huxley, Aldous",
-        "author": "Schöne Neue Welt",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Huxley, Aldous",
-        "author": "The Doors of Perception",
-        "publisher": "Harper"
-    },
-    {
-        "title": "Hölderlin, Friedrich",
-        "author": "Gesammelte Werke",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Hölderlin, Friedrich",
-        "author": "Hyperion",
-        "publisher": "Tredition"
-    },
-    {
-        "title": "Ibsen, Henrick",
-        "author": "A Doll's House",
-        "publisher": "Digireads"
-    },
-    {
-        "title": "Ibsen, Henrik",
-        "author": "Die Wildente",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Ibsen, Henrik",
-        "author": "Gespenster",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Ibsen, Henrik",
-        "author": "John Gabriel Borkman",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Ibsen, Henrik",
-        "author": "Nora",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Ibsen, Henrik",
-        "author": "Peer Gynt",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Ibsen, Henrik",
-        "author": "Stützen der Gesellschaft",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Ibsen, Henrik",
-        "author": "Volksfeind",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Ionesco, Eugene",
-        "author": "Die Nashörner",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Ionesco, Eugene",
-        "author": "Die kahle Sängerin",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Jahnn, Hans Henny",
-        "author": "Medea",
-        "publisher": "reclam"
-    },
-    {
-        "title": "James, Henry",
-        "author": "The Bostonians",
-        "publisher": "Everyman’s Library"
-    },
-    {
-        "title": "Jaspers, Karl",
-        "author": "Die maßgebenden Menschen",
-        "publisher": "Piper"
-    },
-    {
-        "title": "Johnson, Uwe",
-        "author": "Mutmaßungen über Jakob",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Joyce, James",
-        "author": "Das Porträt des Künstlers als Junger Mann",
-        "publisher": "SZ"
-    },
-    {
-        "title": "Joyce, James",
-        "author": "Dubliners",
-        "publisher": "Bantam"
-    },
-    {
-        "title": "Joyce, James",
-        "author": "Finnegans Wake",
-        "publisher": " Penguin"
-    },
-    {
-        "title": "Joyce, James",
-        "author": "The Portrait of the Artist as a Young Man",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Joyce, James",
-        "author": "Ulysses",
-        "publisher": " Everyman’s Library"
-    },
-    {
-        "title": "Joyce, James",
-        "author": "Ulysseus",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Joyce, James",
-        "author": "Ulysseus",
-        "publisher": "Wordsworth"
-    },
-    {
-        "title": "Kafka, Franz",
-        "author": "Das Schloss",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Kafka, Franz",
-        "author": "Das Urteil",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Kafka, Franz",
-        "author": "Das Urteil und die Verwandlung",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Kafka, Franz",
-        "author": "Der Geier",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Kafka, Franz",
-        "author": "Der Prozess",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Kafka, Franz",
-        "author": "Der Verschollene",
-        "publisher": "Aufbau"
-    },
-    {
-        "title": "Kafka, Franz",
-        "author": "Die Verwandung",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Kafka,Franz",
-        "author": "Der Prozess",
-        "publisher": "Hamburger Lesehefte"
-    },
-    {
-        "title": "Kaminer, Wladimir",
-        "author": "Karaoke",
-        "publisher": "Goldmann"
-    },
-    {
-        "title": "Kant, Immanuel",
-        "author": "Denken wagen",
-        "publisher": " Reclam"
-    },
-    {
-        "title": "Kant, Immanuel",
-        "author": "Grundlegung zur Metaphysik der Sitten",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Kant, Immanuel",
-        "author": "Kritik der Praktischen Vernunft",
-        "publisher": "Philosophische Bibliothek"
-    },
-    {
-        "title": "Kant, Immanuel",
-        "author": "Kritik der Reinen Vernunft I",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Kant, Immanuel",
-        "author": "Kritik der Reinen Vernunft II",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Kant, Immanuel",
-        "author": "Kritik der Urteilskraft",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Kant, Immanuel",
-        "author": "Prolegomena zu einer Jeden Künftigen Metaphysik",
-        "publisher": "Meiner"
-    },
-    {
-        "title": "Kara, Yade",
-        "author": "Cafe Cyrus",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Kehlmann, Daniel",
-        "author": "Die Vermessung der Welt",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Kehlmann, Daniel",
-        "author": "Ich und Kaminski",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Kellner, Manuel",
-        "author": "Trotzkismus",
-        "publisher": "Schmetterling"
-    },
-    {
-        "title": "Kerouac, Jack",
-        "author": "Unterwegs",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Keuth, Herbert",
-        "author": "Poppers Logik der Forschung",
-        "publisher": "Akademie Verlag"
-    },
-    {
-        "title": "Kierkegaard, Sören",
-        "author": "Der Krankheit zum Tode",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Kierkegaard, Sören",
-        "author": "Entweder - Oder",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Kipling, Rudyard",
-        "author": "Das Haus der Wünsche",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Koeppen, Wolfang",
-        "author": "Jakob Littners Aufzeichnungen aus einem Erdloch",
-        "publisher": "Buechergilde"
-    },
-    {
-        "title": "Koeppen, Wolfang",
-        "author": "Jakob Littners Aufzeihnungen aus einem Erdloch",
-        "publisher": "Juedischer Verlag"
-    },
-    {
-        "title": "Koeppen, Wolfgang",
-        "author": "Das Treibhaus",
-        "publisher": "SZ"
-    },
-    {
-        "title": "Kratzmann, Ernst ",
-        "author": "Faust",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Kuhn, Thomas",
-        "author": "Die Entstehung des Neuen",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Kuhn, Thomas S.",
-        "author": "Die Struktur wissenschaftlicher Revolutionen",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Kundera, Milan",
-        "author": "Der Scherz",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Kundera, Milan",
-        "author": "Die unerträgliche Leichtigkeit des Seins",
-        "publisher": "SZ"
-    },
-    {
-        "title": "Kundera, Milan",
-        "author": "Die unerträgliche Leichtigkeit des Seins ",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Lappert, Rolf",
-        "author": "Nach Hause Schwimmen",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Lenz, Siegfried",
-        "author": "Deutschstunde",
-        "publisher": "SZ"
-    },
-    {
-        "title": "Leopardi, Giacomo",
-        "author": "Moral Fables",
-        "publisher": "Alma Classics"
-    },
-    {
-        "title": "Lessing, Gotthold Ephraim",
-        "author": "Nathan der Weise",
-        "publisher": "reclam"
-    },
-    {
-        "title": "London, Jack",
-        "author": "Call of the Wild, White Fang and Other Stories",
-        "publisher": "Oxford World's Classics"
-    },
-    {
-        "title": "London, Jack",
-        "author": "Die Konzentrischen Tode",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "London,Jack",
-        "author": "Wolfsblut",
-        "publisher": "Arena"
-    },
-    {
-        "title": "Lord Dusany",
-        "author": "Das Land des Yann",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Lovecraft, H.P.",
-        "author": "At the Mointains of Madness",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Machen, Arthur",
-        "author": "Die Leuchtende Pyramide",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Machiavelli, Nicolo",
-        "author": "Der Fürst",
-        "publisher": "Inselverlag"
-    },
-    {
-        "title": "Malouf, David",
-        "author": "Die tapfersten der Söhne",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Mandelstam, Ossip",
-        "author": "Im Luftgrab",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Mann, Thomas",
-        "author": "Doktor Faustus",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Mann, Thomas",
-        "author": "Zauberberg",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Mansfeld, Jaap",
-        "author": "Die Vorsokratiker II",
-        "publisher": "Reclam"
-    },
-    {
-        "title": "Marai, Sandor",
-        "author": "Die Glut",
-        "publisher": "Piper"
-    },
-    {
-        "title": "Marai, Sandor",
-        "author": "Die Nacht vor der Scheidung",
-        "publisher": "Buechergilde"
-    },
-    {
-        "date": "2018-03-02",
-        "title": "Marcuse, Herbert",
-        "author": "Counterrevolution and Revolt",
-        "publisher": "Beacon Press"
-    },
-    {
-        "title": "Marcuse, Herbert",
-        "author": "Kultur und Gesellschaft",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "date": "2018-03-02",
-        "title": "Marcuse, Herbert",
-        "author": "One-dimensional Man",
-        "publisher": "Beacon Press"
-    },
-    {
-        "title": "Marlowe, Christopher",
-        "author": "Dr. Faustus",
-        "publisher": "Digireads"
-    },
-    {
-        "title": "Martel, Yann",
-        "author": "Schiffbruch mit Tiger",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Marx, Karl",
-        "author": "Das Kapital",
-        "publisher": "Anaconda"
-    },
-    {
-        "title": "Marx, Karl und Engels, Friedrich",
-        "author": "Manifest der Kommunistischen Partei",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Marx, Karl und Engels, Friedrich",
-        "author": "Marx Engels Werke 23 - Das Kapital I",
-        "publisher": "Dietz"
-    },
-    {
-        "title": "Marx, Karl und Engels, Friedrich",
-        "author": "Marx Engels Werke 4",
-        "publisher": "Dietz"
-    },
-    {
-        "title": "Melville, Herman",
-        "author": "Moby Dick",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Menasse, Robert",
-        "author": "Die Hauptstadt",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Menasse, Robert",
-        "author": "Die Vertreibung aus der Hölle",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Menasse, Robert",
-        "author": "Don Juan de la Manche",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Menasse, Robert",
-        "author": "Selige Zeiten, Brüchige Welt",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Meyer, Conrad Ferdinand",
-        "author": "Die Versuchung des Pescara",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Meyrink, Gustav",
-        "author": "Der Kardinal Napellus",
-        "publisher": "Buechergilde"
-    },
-    {
-        "title": "Mill, John Stuart",
-        "author": "Betrachtungen über die Repräsentativregierung",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Mill, John Stuart",
-        "author": "Über die Freiheit",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Miller, Arthur",
-        "author": "Death of a Salesman",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Miller, David",
-        "author": "Karl Popper Lesebuch",
-        "publisher": "UTB"
-    },
-    {
-        "title": "Milton, John",
-        "author": "Paradise Lost",
-        "publisher": "Signet"
-    },
-    {
-        "title": "Moliere",
-        "author": "Der Geizige",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Moliere",
-        "author": "Der Menschenfeind",
-        "publisher": "Insel"
-    },
-    {
-        "title": "Moliere",
-        "author": "Der eingebildete Kranke",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Morgenstern, Christian",
-        "author": "Alle Galgenieder",
-        "publisher": "Buechergilde"
-    },
-    {
-        "title": "Morgenstern, Susi",
-        "author": "Die Farben des Lebens",
-        "publisher": "Bertelsmann"
-    },
-    {
-        "title": "Musil, Robert",
-        "author": "Der Mann ohne Eigenschaften",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Musil, Robert",
-        "author": "Die Verwirrungen des Zöglings Törless",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Müller, Hertha",
-        "author": "Heute wäre ich mir lieber nicht begegnet",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Nabokov, Wladimir",
-        "author": "Lolita",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Nagel, Thomas",
-        "author": "Das letzte Wort",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Nagel, Thomas",
-        "author": "Die Grenzen der Objektivität",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Nagel, Thomas",
-        "author": "Was Bedeutet das alles?",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Nietzsche, Friedrich",
-        "author": "Also sprach Zarathustra",
-        "publisher": "Anaconda"
-    },
-    {
-        "title": "Nietzsche, Friedrich",
-        "author": "Also sprach Zarathustra",
-        "publisher": "Atlas"
-    },
-    {
-        "title": "Nietzsche, Friedrich",
-        "author": "Ecce Homo",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Nietzsche, Friedrich",
-        "author": "Kritische Studienausgabe I",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Nietzsche, Friedrich",
-        "author": "Kritische Studienausgabe II",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Nietzsche, Friedrich",
-        "author": "Kritische Studienausgabe III",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Nietzsche, Friedrich",
-        "author": "Kritische Studienausgabe IV",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Nietzsche, Friedrich",
-        "author": "Kritische Studienausgabe V",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Nietzsche, Friedrich",
-        "author": "Kritische Studienausgabe VI",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Nietzsche, Friedrich",
-        "author": "Morgenröthe",
-        "publisher": "Meiner"
-    },
-    {
-        "title": "Noble, Denis",
-        "author": "The Music of Life",
-        "publisher": "Oxford"
-    },
-    {
-        "title": "Nossack, Hans Erich",
-        "author": "Spirale",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Nossack, Hans Erich",
-        "author": "Spätestens im November",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Orwell, George",
-        "author": "1984",
-        "publisher": "Signet"
-    },
-    {
-        "title": "Orwell, George",
-        "author": "Animal Farm",
-        "publisher": "Longman"
-    },
-    {
-        "title": "Osborne, John",
-        "author": "Look back in Anger",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "O’Brien, Flann",
-        "author": "Fuer Boshafte",
-        "publisher": "Insel"
-    },
-    {
-        "title": "O’Brien, Flann",
-        "author": "Irischer Lebenslauf",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "O’Brien, Flann",
-        "author": "The Complete Novels",
-        "publisher": "Everyman’s Library"
-    },
-    {
-        "title": "Pascal, Blaise",
-        "author": "Gedanken",
-        "publisher": "Anaconda"
-    },
-    {
-        "title": "Pascal, Blaise",
-        "author": "Human Happiness",
-        "publisher": "Penguin books"
-    },
-    {
-        "title": "Pasternak, Boris",
-        "author": "Doctor Zhivago",
-        "publisher": "Everyman’s Library"
-    },
-    {
-        "title": "Paul Feyerabend",
-        "author": "Wider den Methodenzwang",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Pearl, Judea and Mackenzie, Dana",
-        "author": "The Book of Why",
-        "publisher": "Basic Books"
-    },
-    {
-        "title": "Pindar",
-        "author": "Oden",
-        "publisher": "Reclam"
-    },
-    {
-        "title": "Plath, Sylvia",
-        "author": "Sonntag bei den Mintons",
-        "publisher": "Frankfurter"
-    },
-    {
-        "title": "Platon",
-        "author": "Apologie des Sokrates",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Platon",
-        "author": "Der Staat",
-        "publisher": "Anaconda"
-    },
-    {
-        "title": "Platon",
-        "author": "Phaidon",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Platon",
-        "author": "Symposion",
-        "publisher": "Estias"
-    },
-    {
-        "title": "Platon",
-        "author": "Symposion",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Platon",
-        "author": "Sämtliche Werke - Band 1",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Platon",
-        "author": "Sämtliche Werke - Band 2",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Platon",
-        "author": "Theaetet",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Plechanow, Georgi",
-        "author": "Anarchismus und Sozialismus",
-        "publisher": "BMV"
-    },
-    {
-        "title": "Plenzdorf, Ulrich",
-        "author": "Die neuen Leiden des jungen W.",
-        "publisher": "Suhrkamp"
-    },
-    {
+        "date": "2020-12-15",
         "title": "Popper, Karl",
-        "author": "Logik der Forschung",
-        "publisher": "Mohr Siebeck"
-    },
-    {
-        "title": "Popper, Karl",
-        "author": "The Open Society and its Enemies, Volumne One",
-        "publisher": "Routledge Classics"
-    },
-    {
-        "title": "Popper, Karl",
-        "author": "The Open Society and its Enemies, Volumne Two",
-        "publisher": "Routledge Classics"
-    },
-    {
-        "title": "Prantl, Heribert",
-        "author": "Die Kraft der Hoffnung",
-        "publisher": "SZ"
-    },
-    {
-        "title": "Prideaux, Sue",
-        "author": "I am Dynamite!",
-        "publisher": "Tum Duggan Books"
-    },
-    {
-        "title": "Proust, Marcel",
-        "author": "Auf der Suche nach der Verlorenen Zeit - In Swanns Welt",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Puerto, Carlos",
-        "author": "Der Blick",
-        "publisher": "Arena"
-    },
-    {
-        "title": "Pyle, Howard",
-        "author": "Robin Hood",
-        "publisher": "LeseRiese"
-    },
-    {
-        "title": "Pynchon, Thomas",
-        "author": "Gravity’s Rainbow",
-        "publisher": "Vintage"
-    },
-    {
-        "title": "Pynchon, Thomas",
-        "author": "Inherent Vice",
-        "publisher": "Vintage"
-    },
-    {
-        "title": "Pynchon, Thomas",
-        "author": "Natuerliche Maengel",
-        "publisher": "Buechergilde"
-    },
-    {
-        "title": "Pynchon, Thomas",
-        "author": "The Crying of Lot 49",
-        "publisher": "Vintage"
-    },
-    {
-        "title": "Pynchon, Thomas",
-        "author": "V",
-        "publisher": "Vintage"
-    },
-    {
-        "title": "Rand, Ayn",
-        "author": "Atlas Shrugged",
-        "publisher": "Signet"
-    },
-    {
-        "title": "Rand, Ayn",
-        "author": "The Fountainhead",
-        "publisher": "Signet"
-    },
-    {
-        "title": "Rapp, Christof",
-        "author": "Aristoteles zur Einführung",
-        "publisher": "Junius"
-    },
-    {
-        "date": "2018-11-23",
-        "title": "Rasmussen, Dennis",
-        "author": "Infidel and the Professor",
-        "publisher": "Princeton University Press"
-    },
-    {
-        "title": "Rauprich, Nina",
-        "author": "Wenzel",
-        "publisher": "Ellermann"
-    },
-    {
-        "title": "Rawls, John",
-        "author": "Eine Theorie der Gerechtigkeit",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Rawls, John",
-        "author": "Geschichte der politischen Philosophie",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Regener, Sven",
-        "author": "Herr Lehmann",
-        "publisher": "Goldmann"
-    },
-    {
-        "title": "Regener, Sven",
-        "author": "Neue Vahr Süd",
-        "publisher": "Goldmann"
-    },
-    {
-        "title": "Remarque, Erich Maria",
-        "author": "Im Westen nichts Neues",
-        "publisher": "Kiwi"
-    },
-    {
-        "title": "Rilke, Rainer Maria",
-        "author": "Die Aufzeichnungen des Malte Laurids Brigge",
-        "publisher": "Insel"
-    },
-    {
-        "title": "Rimbaut, Arthur",
-        "author": "Das Trunkene Schiff",
-        "publisher": "Inselverlag"
-    },
-    {
-        "title": "Rousseau, Jean-Jacques",
-        "author": "Abhandlung über den Ursprung und die Grundlagen der Ungleichheit unter den Menschen",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Rousseau, Jean-Jacques",
-        "author": "Emil oder Über die Erziehung",
-        "publisher": "UTB"
-    },
-    {
-        "title": "Rousseau, Jean-Jacques",
-        "author": "Träumereien eines einsamen Spaziergängers",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Rousseau, Jean-Jacques",
-        "author": "Vom Gesellschaftsvertrag",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Rowling, Joanne K.",
-        "author": "Harry Potter and the Deathly Hallows",
-        "publisher": "Bloomsbury"
-    },
-    {
-        "title": "Rowling, Joanne K.",
-        "author": "Harry Potter and the Goblet of Fire",
-        "publisher": "Bloomsbury"
-    },
-    {
-        "title": "Rowling, Joanne K.",
-        "author": "Harry Potter und der Feuerkelch",
-        "publisher": "Carlsen"
-    },
-    {
-        "title": "Rowling, Joanne K.",
-        "author": "Harry Potter und der Gefangene von Askaban",
-        "publisher": "Carlsen"
-    },
-    {
-        "title": "Rowling, Joanne K.",
-        "author": "Harry Potter und die Kammer des Schreckens",
-        "publisher": "Carlsen"
-    },
-    {
-        "title": "Rowling, Joanne K.",
-        "author": "The Casual Vacancy",
-        "publisher": "LB"
-    },
-    {
-        "title": "Russel, Bertrand",
-        "author": "Philosophie des Abendlands",
-        "publisher": "Anaconda"
-    },
-    {
-        "title": "Russel, Willy",
-        "author": "Educating Rita",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Safranski, Ruediger",
-        "author": "Wieviel Wahrheit braucht der Mensch?",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Sagan, Carl",
-        "author": "Cosmos",
-        "publisher": "Ballantine"
-    },
-    {
-        "title": "Saki",
-        "author": "Die Verschwiegenheit der Lady Anne",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Salinger, Jerome David",
-        "author": "The Catcher in the Rye",
-        "publisher": "Back bay"
-    },
-    {
-        "title": "Salinger, Jerome David",
-        "author": "The Catcher in the Rye",
-        "publisher": "LB"
-    },
-    {
-        "title": "Sandel, Michael",
-        "author": "Justice",
-        "publisher": "FSG"
-    },
-    {
-        "title": "Sandel, Michael",
-        "author": "Moral und Politik",
-        "publisher": "Ullstein"
-    },
-    {
-        "title": "Sarasin, Philipp",
-        "author": "Michel Foucault zur Einführung",
-        "publisher": "Junius"
-    },
-    {
-        "title": "Sartre, Jean-Paul",
-        "author": "Bariona und Die Fliegen",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Sartre, Jean-Paul",
-        "author": "Das Sein und das Nichts",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Sartre, Jean-Paul",
-        "author": "Das Spiel ist aus",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Sartre, Jean-Paul",
-        "author": "Der Aufschub",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Sartre, Jean-Paul",
-        "author": "Der Ekel",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Sartre, Jean-Paul",
-        "author": "Der Existentialismus ist ein Humanismus",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Sartre, Jean-Paul",
-        "author": "Der Pfahl im Fleische",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Sartre, Jean-Paul",
-        "author": "Der Teufel und der liebe Gott",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Sartre, Jean-Paul",
-        "author": "Die Eingeschlossenen von Altona",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Sartre, Jean-Paul",
-        "author": "Die Kindheit eines Chefs",
-        "publisher": "Buechergilde"
-    },
-    {
-        "title": "Sartre, Jean-Paul",
-        "author": "Die Schmutzigen Hände",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Sartre, Jean-Paul",
-        "author": "Die Transzendenz des Ego",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Sartre, Jean-Paul",
-        "author": "Geschlossene Gesellschaft",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Sartre, Jean-Paul",
-        "author": "Zeit der Reife",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Schami, Rafik",
-        "author": "Die Sehnsucht der Schwalbe",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Schenkel, Maria",
-        "author": "Tannöd",
-        "publisher": "Natutilus"
-    },
-    {
-        "title": "Schiller, Friedrich",
-        "author": "Die Räuber",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Schiller, Friedrich",
-        "author": "Dramen I",
-        "publisher": "Insel"
-    },
-    {
-        "title": "Schiller, Friedrich",
-        "author": "Dramen II",
-        "publisher": "Insel"
-    },
-    {
-        "title": "Schiller, Friedrich",
-        "author": "Kabale und Liebe",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Schiller, Friedrich",
-        "author": "Wallenstein",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Schlink, Bernhard",
-        "author": "Der Vorleser",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Schlink, Bernhard",
-        "author": "Die Heimkehr",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Schmitt, Arno",
-        "author": "Kosmas",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Schmitt, Eric-Emanuelle",
-        "author": "Adolf H.",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Schneider, Helge",
-        "author": "Aprikose, Banane Erdbeer",
-        "publisher": "Kiwi"
-    },
-    {
-        "title": "Schneider, Helge",
-        "author": "Bonbon aus Wurst",
-        "publisher": "Kiwi"
-    },
-    {
-        "title": "Schneider, Peter",
-        "author": "Skylla",
-        "publisher": "Rowohlt"
-    },
-    {
-        "title": "Schneider, Robert",
-        "author": "Schlafes Bruder",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Schwaabe, Christian",
-        "author": "Politische Theorie 1",
-        "publisher": "UTB"
-    },
-    {
-        "title": "Schwaabe, Christian",
-        "author": "Politische Theorie 2",
-        "publisher": "UTB"
-    },
-    {
-        "title": "Schwab, Gustav",
-        "author": "Sagen des klassischen Altertums",
-        "publisher": "Anaconda"
-    },
-    {
-        "title": "Schwandt, Michael",
-        "author": "Kritische Theorie",
-        "publisher": "Schmetterling"
-    },
-    {
-        "title": "Schweitzer, Albert",
-        "author": "Kultur und Ethik",
-        "publisher": "Beck"
-    },
-    {
-        "title": "Schäfer, Rainer",
-        "author": "Hegel - Einführung",
-        "publisher": "UTB"
-    },
-    {
-        "title": "Sepulveda, Luis",
-        "author": "Der Alte, der Liebesromane Las",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Shakespeare, William",
-        "author": "A Midsummer Night's Dream",
-        "publisher": "Oxford"
-    },
-    {
-        "title": "Shakespeare, William",
-        "author": "Cymbeline",
-        "publisher": "Amazon Printing"
-    },
-    {
-        "title": "Shakespeare, William",
-        "author": "Cymbeline",
-        "publisher": "Ars vivendi"
-    },
-    {
-        "title": "Shakespeare, William",
-        "author": "Hamlet",
-        "publisher": "Ars vivendi"
-    },
-    {
-        "title": "Shakespeare, William",
-        "author": "Hamlet",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Shakespeare, William",
-        "author": "Hamlet",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Shakespeare, William",
-        "author": "Henry V",
-        "publisher": "Simon and Schuster"
-    },
-    {
-        "title": "Shakespeare, William",
-        "author": "Macbeth",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Shakespeare, William",
-        "author": "Much Ado about Nothing",
-        "publisher": "Spark Notes"
-    },
-    {
-        "title": "Shakespeare, William",
-        "author": "Othello",
-        "publisher": "Dover"
-    },
-    {
-        "title": "Shakespeare, William",
-        "author": "Pericles",
-        "publisher": "Arden"
-    },
-    {
-        "title": "Shakespeare, William",
-        "author": "Romeo and Juliett",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Shakespeare, William",
-        "author": "The Complete Shakespeare",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Singer, Peter",
-        "author": "Marx",
-        "publisher": "Oxford"
-    },
-    {
-        "title": "Sophokles",
-        "author": "Antigone",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Sophokles",
-        "author": "Koenig Ödipus",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Spierling, Volker",
-        "author": "Arthur Schopenhauer zur Einführung",
-        "publisher": "Junius"
-    },
-    {
-        "title": "Spinoza, Baruch",
-        "author": "Politischer Traktat",
-        "publisher": "Meiner"
-    },
-    {
-        "title": "Steinbeck, John",
-        "author": "Die Straße der Ölsardinen",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Steinbeck, John",
-        "author": "East of Eden",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Steinbeck, John",
-        "author": "East of Eden",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Steinbeck, John",
-        "author": "The Grapes of Wrath",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Steinbeck, John",
-        "author": "The Vigilante",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Stendhal",
-        "author": "Rot und Schwarz",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Stevenson, Robert Louis",
-        "author": "Die Schatzinsel",
-        "publisher": "Buechergilde"
-    },
-    {
-        "title": "Strindberg, August",
-        "author": "Totentanz",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Strindberg, August",
-        "author": "Fräulein Julie",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Strindberg, August",
-        "author": "Ein Traumspiel",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Styron, William",
-        "author": "Sophie's Choice",
-        "publisher": "Vintage"
-    },
-    {
-        "title": "Suhr, Martin",
-        "author": "Jean-Paul Sartre zur Einführung",
-        "publisher": "Junius"
-    },
-    {
-        "title": "Swift, Jonathan",
-        "author": "Gullivers Reisen",
-        "publisher": "Arena"
-    },
-    {
-        "title": "Sword, Helen",
-        "author": "Stylish Academic Writing",
-        "publisher": "Marvard"
-    },
-    {
-        "title": "Süskind, Patrick",
-        "author": "Das Parfum",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Taleb, Nicholas",
-        "author": "Black Swan ",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Tanner, Michael",
-        "author": "Nietzsche",
-        "publisher": "Oxford"
-    },
-    {
-        "title": "Butler, Christoph",
-        "author": "Postmodernism",
-        "publisher": "Oxford"
-    },
-    {
-        "title": "von Eichendorff, Joseph",
-        "author": "Aus dem Leben eines Taugenichts",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Xenophon",
-        "author": "Anabasis",
-        "publisher": "Reclam"
-    },
-    {
-        "title": "Thomas, Dylan",
-        "author": "A Child's Christmas in Wales",
-        "publisher": "Orion"
-    },
-    {
-        "title": "Thomas, Dylan",
-        "author": "Portrait of the Artist as a Young Dog",
-        "publisher": "Phoenix"
-    },
-    {
-        "title": "Thomas, Dylan",
-        "author": "Rebeccas Töchter",
-        "publisher": "Heyne"
-    },
-    {
-        "title": "Thompson, Hunter",
-        "author": "Hell's Angels",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Thompson, Hunter",
-        "author": "Rum Diary",
-        "publisher": "Bloomsbury"
-    },
-    {
-        "title": "Thoreau, Henry David",
-        "author": "Essays and Poems",
-        "publisher": "Library of America"
-    },
-    {
-        "title": "Thoreau, Henry David",
-        "author": "Major Works",
-        "publisher": "Library of America"
-    },
-    {
-        "title": "Thoreau, Henry David",
-        "author": "Walden",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Thoreau, Henry David",
-        "author": "Über die Pflicht zum Ungehorsam gegen den Staat",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Tindall, William",
-        "author": "York A Reader’s Guide to Finnegans Wake",
-        "publisher": "Irish Studies"
-    },
-    {
-        "title": "Tolkien, J.R.R",
-        "author": "Der Hobbit",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Tolkien, J.R.R ",
-        "author": "Der Herr der Ringe",
-        "publisher": "Klett"
-    },
-    {
-        "title": "Tolkien, J.R.R ",
-        "author": "The Hobbit",
-        "publisher": "Harper Collins"
-    },
-    {
-        "title": "Tolkien, J.R.R.",
-        "author": "Das Silmarillion",
-        "publisher": "Klett-Cotta"
-    },
-    {
-        "title": "Tolkien, J.R.R.",
-        "author": "Lord of the Rings",
-        "publisher": "Harper Collins"
-    },
-    {
-        "title": "Tolstoi, Leo",
-        "author": "Herr und Knecht",
-        "publisher": "dtv"
-    },
-    {
-        "title": "Tolstoi, Leo",
-        "author": "Krieg und Frieden",
-        "publisher": "atb"
-    },
-    {
-        "title": "Cox, Gary",
-        "author": "How to be an Existentialist",
-        "publisher": "Bloomsbury"
-    },
-    {
-        "title": "Kaag, John",
-        "author": "American Philosophy",
-        "publisher": "FSG"
-    },
-    {
-        "title": "Twain, Mark",
-        "author": "A Tramp Abroad, Following the Equator and Other Travels",
-        "publisher": "Library of America"
-    },
-    {
-        "title": "Twain, Mark",
-        "author": "Ein Yankee an König Artus Hof",
-        "publisher": "atb"
-    },
-    {
-        "title": "Vergil",
-        "author": "Aeneis",
-        "publisher": "Holzinger"
-    },
-    {
-        "title": "Verne, Jules",
-        "author": "Reise um die Erde in 80 Tagen",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Verne, Jules",
-        "author": "Zwei Jahre Ferien",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Voltaire",
-        "author": "Candid",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Voltaire",
-        "author": "Mikromegas",
-        "publisher": "Buechergilde"
-    },
-    {
-        "title": "Vonnegut, Kurt",
-        "author": "Slaughterhouse Five",
-        "publisher": "Dill"
-    },
-    {
-        "title": "Wallace, Lewis",
-        "author": "Ben Hur",
-        "publisher": "Kaiser"
-    },
-    {
-        "title": "Walser, Martin",
-        "author": "Das Leben wortwörtlich",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Wedekind, Frank",
-        "author": "Lulu und Frühlingserwachen",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Weinkauf, Wolfgang",
-        "author": "Die Philosophie der Stoa",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Wells, Herbert George",
-        "author": "Die Tür in der Mauer",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Werfel, Franz",
-        "author": "Der Abituriententag",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Wilde, Oscar",
-        "author": "Das Bildnis des Dorian Gray",
-        "publisher": "Inselverlag"
-    },
-    {
-        "title": "Wilde, Oscar",
-        "author": "Lord Arthur Savilles Verbrechen",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Wilde, Oscar",
-        "author": "The Importance of Being Earnest",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Wilde, Oscar",
-        "author": "The Picture of Dorian Gray",
-        "publisher": "TOR"
-    },
-    {
-        "title": "Williams, John",
-        "author": "Augustus",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Wisnewski, Gerhard",
-        "author": "Drahtzieher der Macht",
-        "publisher": "Knaur"
-    },
-    {
-        "title": "Wittgenstein, Ludwig",
-        "author": "Tractatus Logico-Philosophicus",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Wittgenstein, Ludwig",
-        "author": "Werksausgabe, Band 1",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Wolfe, Thomas",
-        "author": "Look homeward angel",
-        "publisher": "Scribner"
-    },
-    {
-        "title": "Wolfe, Tom",
-        "author": "Back to Blood",
-        "publisher": "LB"
-    },
-    {
-        "title": "Wolfe, Tom",
-        "author": "The Bonfire of the Vanities",
-        "publisher": "Vintage"
-    },
-    {
-        "title": "Yeats, William Butler",
-        "author": "The Collected Poems",
-        "publisher": "Wordsworth"
-    },
-    {
-        "title": "Ziliak, Stephen and McCloskey, Deirdre",
-        "author": "The Cult of Statistical Significance",
-        "publisher": "University of Michigan Press"
-    },
-    {
-        "title": "Zimmerling, Dieter",
-        "author": "Stoertebeker",
-        "publisher": "Bechtermuenz"
-    },
-    {
-        "date": "2018-10-26",
-        "title": "Zizek, Slavoj",
-        "author": "Like a Thief in Broad Daylight",
-        "publisher": "Allen Lane"
-    },
-    {
-        "title": "Zuckmayer, Carl",
-        "author": "Der Hauptmann von Köpenick",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "Zweig, Stefan",
-        "author": "Baumeister der Welt",
-        "publisher": "Fischer"
-    },
-    {
-        "title": "de Balzac, Honore",
-        "author": "Cousin Pons",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "de L’Isle-Adam, Villiers",
-        "author": "Der Tischgast der letzten Feste",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "van den Brink, Hans .M.",
-        "author": "Ueber das Wasser",
-        "publisher": "Buechergilde"
-    },
-    {
-        "title": "von Ditfurt, Hoimar",
-        "author": "So lass uns denn Apfelbaeume Pflanzen",
-        "publisher": "Rasch und Röhring"
-    },
-    {
-        "title": "von Hofmannsthal, Hugo",
-        "author": "Der Brief des Lord Chantos",
-        "publisher": "reclam"
-    },
-    {
-        "title": "von Hofmannsthal, Hugo",
-        "author": "Jedermann",
-        "publisher": "reclam"
-    },
-    {
-        "title": "von Horvath, Ödön",
-        "author": "Ein Kind unserer Zeit",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "von Horvath, Ödön",
-        "author": "Glaube Liebe Hoffnung",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "von Horvath, Ödön",
-        "author": "Jugend ohne Gott",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "von Sacher-Masoch, Leopold",
-        "author": "Venus in Furs",
-        "publisher": "Echo"
-    },
-    {
-        "title": "Nozick, Robert",
-        "author": "Anarchy, State and Utopia",
-        "publisher": "Basic Books"
-    },
-    {
-        "title": "Borges, Jorge Luis",
-        "author": "25. August 1983",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Galland, Antoine",
-        "author": "Tausendundeine Nacht",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Hinton, Charles Howard",
-        "author": "Wissenschaftliche Erzählungen",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Poe, Edgar Allan",
-        "author": "Der entwendete Brief",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "De Alarcon, Pedro",
-        "author": "Der Freund des Todes",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Bloy, Leon",
-        "author": "Unliebsame Geschichten",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Lugones, Leopoldo",
-        "author": "Die Salzsäule",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Stevenson, Robert Louis",
-        "author": "Die Insel der Stimmen",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Papini, Giovanni",
-        "author": "Der Spiegel auf der Flucht",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Sung-ling, P`U",
-        "author": "Gast Tiger",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Beckford, William",
-        "author": "Vathek",
-        "publisher": "Büchergilde"
-    },
-    {
-        "title": "Sophokles",
-        "author": "Ödipus auf Kolonos",
-        "publisher": "Insel"
-    },
-    {
-        "title": "Shakespeare, William",
-        "author": "Richard II",
-        "publisher": "Tredition Classics"
-    },
-    {
-        "title": "Shakespeare, William",
-        "author": "Richard III",
-        "publisher": "Tredition Classics"
-    },
-    {
-        "title": "Sandel, Michael",
-        "author": "What Money can't buy",
-        "publisher": "Penguin"
-    },
-    {
-        "title": "Claudel, Paul",
-        "author": "The Hostage",
-        "publisher": "Cornell University Library"
-    },
-    {
-        "title": "Badiou, Alain",
-        "author": "Ethics: An Essay on the Understanding of Evil",
-        "publisher": "Radical Thinkers"
-    },
-    {
-        "title": "Honneth, Axel",
-        "author": "Die Idee des Sozialismus",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Giridharadas, Anand",
-        "author": "Winners take all",
-        "publisher": "Knopf"
-    },
-    {
-        "title": "Hume, David",
-        "author": "Morals, Politics and Society",
-        "publisher": "Yale University Press"
-    },
-    {
-        "title": "Wilde, Oscar",
-        "author": "Der Sozialismus und die Seele des Menschen",
-        "publisher": "Diogenes"
-    },
-    {
-        "title": "Zehnpfennig, Barbara",
-        "author": "Platon",
-        "publisher": "Junius"
-    },
-    {
-        "title": "Böke, Henning",
-        "author": "Maoismus",
-        "publisher": "Schmetterling"
-    },
-    {
-        "title": "Heinrich, Michael",
-        "author": "Kritik der politischen Ökonomie",
-        "publisher": "Schmetterling"
-    },
-    {
-        "title": "Platon",
-        "author": "Sämtliche Werke - Band 3",
-        "publisher": "rororo"
-    },
-    {
-        "title": "Bernhard, Thomas",
-        "author": "Holzfällen",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "title": "Zizek, Slavoj",
-        "author": "The Relevance of the Communist Manifesto",
-        "publisher": "Polity Press"
-    },
-    {
-        "title": "Gamm, Gerhard",
-        "author": "Der Deutsche Idealismus",
-        "publisher": "reclam"
-    },
-    {
-        "title": "Adorno, Theodor",
-        "author": "Erziehung zur Mündigkeit",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "date": "2019-03-05",
-        "title": "Wilde, Oscar",
-        "author": "Intentions",
-        "publisher": "Tredition Classics"
-    },
-    {
-        "date": "2019-03-05",
-        "title": "Wilde, Oscar",
-        "author": "Ballad of Reading Gaol",
-        "publisher": "Tredition Classics"
-    },
-    {
-        "date": "2019-03-22",
-        "title": "Mann, Michael",
-        "author": "The Madhouse Effect",
-        "publisher": "Columbia"
-    },
-    {
-        "date": "2019-04-04",
-        "title": "Foucault, Michel",
-        "author": "Überwachen und Strafe",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "date": "2019-04-19",
-        "title": "Carlisle, Clare",
-        "author": "Philosopher of the Heart",
-        "publisher": "allen lane"
-    },
-    {
-        "date": "2019-05-05",
-        "title": "Lüdemann, Susanne",
-        "author": "Jacques Derrida zur Einführung",
-        "publisher": "Junius"
-    },
-    {
-        "date": "2019-05-05",
-        "title": "Bertram, Georg W.",
-        "author": "Hegels Phänomenologie des Geistes",
-        "publisher": "reclam"
-    },
-    {
-        "date": "2019-05-29",
-        "title": "Picketty, Thomas",
-        "author": "Das Kapital im 21. Jahrhundert",
-        "publisher": "Beck"
-    },
-    {
-        "date": "2019-05-29",
-        "title": "Picketty, Thomas",
-        "author": "Okonomie der Ungleichheit",
-        "publisher": "Beck"
-    },
-    {
-        "date": "2019-08-07",
-        "title": "Adorno, Theodor",
-        "author": "Aspekte des neues Rechtsradikalismus",
-        "publisher": "Suhrkamp"
-    },
-    {
-        "date": "2019-11-04",
-        "title": "Hume, David",
-        "author": "An Enquiry concerning Human Understanding",
-        "publisher": "Oxford World's Classics"
-    },
-    {
-        "date": "2019-11-04",
-        "title": "Aristoteles",
-        "author": "Posterior Analytics",
-        "publisher": "Loeb Classical Library"
-    },
-    {
-        "date": "2019-11-11",
-        "title": "Carnap, Rudolph",
-        "author": "The Unity of Science",
+        "author": "After the Open Society",
         "publisher": "Routledge"
     },
     {
-        "date": "2019-11-11",
-        "title": "Feyerabend, Paul",
-        "author": "Against Method",
-        "publisher": "Verso"
+        "date": "2020-12-15",
+        "title": "Popper, Karl",
+        "author": "Conjectures and Refutations",
+        "publisher": "Routledge"
     },
     {
-        "date": "2020-01-11",
-        "title": "Marcuse, Herbert",
-        "author": "Eros and Civilization",
-        "publisher": "Beacon Press"
-    },
-    {
-        "date": "2020-07-30",
-        "title": "Bergstrom, Carl and West Jevin",
-        "author": "Calling Bullshit",
-        "publisher": "allen lane"
-    },
-    {
-        "date": "2020-07-30",
-        "title": "Jones, Gareth",
-        "author": "Karl Marx",
-        "publisher": "Penguin"
-    },
-    {
-        "date": "2020-07-30",
-        "title": "Keucheyan, Razmig",
-        "author": "The Left Hemisphere",
-        "publisher": "Verso"
-    },
-    {
-        "date": "2020-09-01",
-        "title": "Eco, Umberto",
-        "author": "Il Cimitero Di Praga",
-        "publisher": "Bompiani"
-    },
-    {
-        "date": "2020-09-01",
-        "title": "Klein, Matthew and Pettis, Michael",
-        "author": "Trade Wars are Class Wars",
-        "publisher": "Yale University Press"
-    },
-    {
-        "date": "2020-08-30",
-        "title": "Smith, Adam",
-        "author": "The Wealth of Nations",
-        "publisher": "Everyman’s Library"
-    },
-    {
-        "date": "2020-08-30",
-        "title": "Thompson, Elizabeth",
-        "author": "How the West Stole Democracy from the Arabs",
-        "publisher": "Ingram"
+        "date": "2020-11-19",
+        "title": "Popper, Karl and Miller, David",
+        "author": "Selections",
+        "publisher": "Princeton University Press"
     },
     {
         "date": "2020-10-12",
@@ -3062,21 +42,3615 @@
         "publisher": "Cambridge"
     },
     {
-        "date": "2020-11-19",
-        "title": "Popper, Karl and Miller, David",
-        "author": "Selections",
+        "date": "2020-09-01",
+        "title": "Eco, Umberto",
+        "author": "Il Cimitero Di Praga",
+        "publisher": "Bompiani"
+    },
+    {
+        "date": "2020-09-01",
+        "title": "Klein, Matthew and Pettis, Michael",
+        "author": "Trade Wars are Class Wars",
+        "publisher": "Yale University Press"
+    },
+    {
+        "date": "2020-08-30",
+        "title": "Smith, Adam",
+        "author": "The Wealth of Nations",
+        "publisher": "Everyman’s Library"
+    },
+    {
+        "date": "2020-08-30",
+        "title": "Thompson, Elizabeth",
+        "author": "How the West Stole Democracy from the Arabs",
+        "publisher": "Ingram"
+    },
+    {
+        "date": "2020-07-30",
+        "title": "Bergstrom, Carl and West Jevin",
+        "author": "Calling Bullshit",
+        "publisher": "allen lane"
+    },
+    {
+        "date": "2020-07-30",
+        "title": "Jones, Gareth",
+        "author": "Karl Marx",
+        "publisher": "Penguin"
+    },
+    {
+        "date": "2020-07-30",
+        "title": "Keucheyan, Razmig",
+        "author": "The Left Hemisphere",
+        "publisher": "Verso"
+    },
+    {
+        "date": "2020-01-11",
+        "title": "Marcuse, Herbert",
+        "author": "Eros and Civilization",
+        "publisher": "Beacon Press"
+    },
+    {
+        "date": "2019-11-11",
+        "title": "Carnap, Rudolph",
+        "author": "The Unity of Science",
+        "publisher": "Routledge"
+    },
+    {
+        "date": "2019-11-11",
+        "title": "Feyerabend, Paul",
+        "author": "Against Method",
+        "publisher": "Verso"
+    },
+    {
+        "date": "2019-11-04",
+        "title": "Hume, David",
+        "author": "An Enquiry concerning Human Understanding",
+        "publisher": "Oxford World's Classics"
+    },
+    {
+        "date": "2019-11-04",
+        "title": "Aristoteles",
+        "author": "Posterior Analytics",
+        "publisher": "Loeb Classical Library"
+    },
+    {
+        "date": "2019-08-07",
+        "title": "Adorno, Theodor",
+        "author": "Aspekte des neues Rechtsradikalismus",
+        "publisher": "Suhrkamp"
+    },
+    {
+        "date": "2019-05-29",
+        "title": "Picketty, Thomas",
+        "author": "Das Kapital im 21. Jahrhundert",
+        "publisher": "Beck"
+    },
+    {
+        "date": "2019-05-29",
+        "title": "Picketty, Thomas",
+        "author": "Okonomie der Ungleichheit",
+        "publisher": "Beck"
+    },
+    {
+        "date": "2019-05-05",
+        "title": "Lüdemann, Susanne",
+        "author": "Jacques Derrida zur Einführung",
+        "publisher": "Junius"
+    },
+    {
+        "date": "2019-05-05",
+        "title": "Bertram, Georg W.",
+        "author": "Hegels Phänomenologie des Geistes",
+        "publisher": "reclam"
+    },
+    {
+        "date": "2019-04-19",
+        "title": "Carlisle, Clare",
+        "author": "Philosopher of the Heart",
+        "publisher": "allen lane"
+    },
+    {
+        "date": "2019-04-04",
+        "title": "Foucault, Michel",
+        "author": "Überwachen und Strafe",
+        "publisher": "Suhrkamp"
+    },
+    {
+        "date": "2019-03-22",
+        "title": "Mann, Michael",
+        "author": "The Madhouse Effect",
+        "publisher": "Columbia"
+    },
+    {
+        "date": "2019-03-05",
+        "title": "Wilde, Oscar",
+        "author": "Intentions",
+        "publisher": "Tredition Classics"
+    },
+    {
+        "date": "2019-03-05",
+        "title": "Wilde, Oscar",
+        "author": "Ballad of Reading Gaol",
+        "publisher": "Tredition Classics"
+    },
+    {
+        "date": "2018-11-23",
+        "title": "Rasmussen, Dennis",
+        "author": "Infidel and the Professor",
         "publisher": "Princeton University Press"
     },
     {
-        "date": "2020-12-15",
-        "title": "Popper, Karl",
-        "author": "After the Open Society",
-        "publisher": "Routledge"
+        "date": "2018-10-26",
+        "title": "Badiou, Alain",
+        "author": "The True Life",
+        "publisher": "Polity Press"
     },
     {
-        "date": "2020-12-15",
+        "date": "2018-10-26",
+        "title": "Zizek, Slavoj",
+        "author": "Like a Thief in Broad Daylight",
+        "publisher": "Allen Lane"
+    },
+    {
+        "date": "2018-05-06",
+        "title": "Heine, Heinrich",
+        "author": "Die Harzreise",
+        "publisher": "reclam"
+    },
+    {
+        "date": "2018-03-02",
+        "title": "Marcuse, Herbert",
+        "author": "Counterrevolution and Revolt",
+        "publisher": "Beacon Press"
+    },
+    {
+        "date": "2018-03-02",
+        "title": "Marcuse, Herbert",
+        "author": "One-dimensional Man",
+        "publisher": "Beacon Press"
+    },
+    {
+        "title": "",
+        "author": "Das Gilgamesh-epos",
+        "publisher": "Beck",
+        "date": "<NA>"
+    },
+    {
+        "title": "Adams, Douglas",
+        "author": "Dirk Gently's Holistic Detective Agency",
+        "publisher": "Pocket Books",
+        "date": "<NA>"
+    },
+    {
+        "title": "Adams, Douglas",
+        "author": "Life, the Universe and Everything",
+        "publisher": "Ballentine",
+        "date": "<NA>"
+    },
+    {
+        "title": "Adams, Douglas",
+        "author": "The Hitchhiker’s Guide to the Galaxy",
+        "publisher": "Ballantine",
+        "date": "<NA>"
+    },
+    {
+        "title": "Adams, Douglas",
+        "author": "The Long Dark Tea Time of the Soul",
+        "publisher": "Pocket books",
+        "date": "<NA>"
+    },
+    {
+        "title": "Adorno, Theodor",
+        "author": "Minima Moralia",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Adorno, Theodor",
+        "author": "Philosophie der neuen Musik",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Aischylos",
+        "author": "Der gefesselte Prometheus und die Schutzsuchenden",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Aischylos",
+        "author": "Die Orestie",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Aischylos",
+        "author": "Die Perser und Sieben gegen Theben",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Alain-Fournier, Henri",
+        "author": "Der große Meaulnes",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Albee, Edward",
+        "author": "Who's afraid of Virginia Woolf",
+        "publisher": "Signet",
+        "date": "<NA>"
+    },
+    {
+        "title": "Andersch, Alfred",
+        "author": "Der Vater eines Mörders",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Andersch, Alfred",
+        "author": "Die Kirschen der Freiheit",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Andersch, Alfred",
+        "author": "Sansibar",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Aristophanes",
+        "author": "Das Frauenfest",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Aristoteles",
+        "author": "Metaphysik",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Aristotleles",
+        "author": "Nikomachische Ethik",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Assländer, Michael",
+        "author": "Adam Smith zur Einführung",
+        "publisher": "Junius",
+        "date": "<NA>"
+    },
+    {
+        "title": "Aurel, Marc",
+        "author": "Selbstbetrachtungen",
+        "publisher": "Insel",
+        "date": "<NA>"
+    },
+    {
+        "title": "Badiou, Alain",
+        "author": "Lob der Liebe Passagene",
+        "publisher": "Verlag",
+        "date": "<NA>"
+    },
+    {
+        "title": "Badiou, Alain",
+        "author": "The Communist Hypothesis",
+        "publisher": "Verso",
+        "date": "<NA>"
+    },
+    {
+        "title": "Badiou, Alain",
+        "author": "Wider den Globalen Kapitalismus",
+        "publisher": "Ullstein",
+        "date": "<NA>"
+    },
+    {
+        "title": "Ball, Hugo",
+        "author": "Hermann Hesse",
+        "publisher": "Tredition Classics",
+        "date": "<NA>"
+    },
+    {
+        "title": "Bambarem, Sergio",
+        "author": "Der Traum des Leuchtturmwärters",
+        "publisher": "Piper",
+        "date": "<NA>"
+    },
+    {
+        "title": "Baudelaire, Charles",
+        "author": "Die Blumen des Bösen",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Beckett, Samuel",
+        "author": "The End",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Beckett, Samuel",
+        "author": "Waiting for Godot",
+        "publisher": "Grove Press",
+        "date": "<NA>"
+    },
+    {
+        "title": "Bernhard, Thomas",
+        "author": "Amras",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Bernhard, Thomas",
+        "author": "Auslöschung",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Bernhard, Thomas",
+        "author": "Wittgensteins Neffe",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Bichsel, Peter",
+        "author": "Eigentlich möchte Frau Blum den Milchmann kennenlernen",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Boethius",
+        "author": "Trost der Philosophie",
+        "publisher": "Reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Bowie, Andrew",
+        "author": "German Philosophy",
+        "publisher": "Polity Press",
+        "date": "<NA>"
+    },
+    {
+        "title": "Brecht, Berthold",
+        "author": "Die Maßnahme",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Brecht, Berthold",
+        "author": "Mutter Courage",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Brecht, Bertold",
+        "author": "Das Leben des Galilei",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Brecht, Bertold",
+        "author": "Der gute Mensch von Sezuan",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Brecht, Bertold",
+        "author": "Der kaukasische Kreidekreis",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Brecht, Bertold",
+        "author": "Die Dreigroschenoper",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Brecht, Bertold",
+        "author": "Liebesgedichte",
+        "publisher": "Insel",
+        "date": "<NA>"
+    },
+    {
+        "title": "Brecht, Bertold",
+        "author": "Musik",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Bronte, Charlotte",
+        "author": "Jane Eyre",
+        "publisher": "Insel",
+        "date": "<NA>"
+    },
+    {
+        "title": "Bronte, Emily",
+        "author": "Sturmhöhe",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Brueckner, Christine",
+        "author": "Wenn du Geredet Haettest, Desdemona",
+        "publisher": "Hoffmann und Campe",
+        "date": "<NA>"
+    },
+    {
+        "title": "Bucay, Jorge",
+        "author": "Komm, ich erzähl dir eine Geschichte",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Buechner, Georg",
+        "author": "Woyzeck",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Bukowski, Charles",
+        "author": "Das Leben und Sterben im Uncle Sam Hotel",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Bukowski, Charles",
+        "author": "Das Liebesleben der Hyäne",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Bukowski, Charles",
+        "author": "Der Mann mit der Ledertasche",
+        "publisher": "Kiwi",
+        "date": "<NA>"
+    },
+    {
+        "title": "Bulfinch, Thomas",
+        "author": "Mythology",
+        "publisher": "Barnes and Noble",
+        "date": "<NA>"
+    },
+    {
+        "title": "Burton, Richard",
+        "author": "Tausendundeine Nacht",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Bächli, Andreas",
+        "author": "Grundbegriffe der antiken Philosophie",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Böll, Heinrich",
+        "author": "Ansichten eines Clowns",
+        "publisher": "Freizeitbibliothek",
+        "date": "<NA>"
+    },
+    {
+        "title": "Böll, Heinrich",
+        "author": "Billard um halb Zehn",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Böll, Heinrich",
+        "author": "Die verlorene Ehre der Katharine Blum",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Böll, Heinrich",
+        "author": "Doktor Murkes Gesammeltes Schweigen",
+        "publisher": "Kiepenheuer & Witsch",
+        "date": "<NA>"
+    },
+    {
+        "title": "Büchner, Georg",
+        "author": "Dantons Tod",
+        "publisher": "Anaconda",
+        "date": "<NA>"
+    },
+    {
+        "title": "Camus, Albert",
+        "author": "Der Fall",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Camus, Albert",
+        "author": "Der Fremde",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Camus, Albert",
+        "author": "Der Mensch in der Revolte",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Camus, Albert",
+        "author": "Der Mythos des Sisyphos",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Camus, Albert",
+        "author": "Der glückliche Tod",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Camus, Albert",
+        "author": "Die Pest",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Camus, Albert",
+        "author": "Fragen der Zeit",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Camus, Albert",
+        "author": "Sämtliche Dramen",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Camus, Albert",
+        "author": "Verteidigung der Freiheit",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Capote, Truman",
+        "author": "Frühstück bei Tiffany",
+        "publisher": "Goldmann",
+        "date": "<NA>"
+    },
+    {
+        "title": "Capote, Truman",
+        "author": "In Cold Blood",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Capote, Truman",
+        "author": "Sommerdiebe",
+        "publisher": "Goldmann",
+        "date": "<NA>"
+    },
+    {
+        "title": "Carnap, Rudolf",
+        "author": "Der logische Aufbau der Welt",
+        "publisher": "Meiner",
+        "date": "<NA>"
+    },
+    {
+        "title": "Cave, Nick",
+        "author": "The Death of Bunny Monroe",
+        "publisher": "Canongate",
+        "date": "<NA>"
+    },
+    {
+        "title": "Cazotte, Jacques",
+        "author": "Der Verliebte Teufel",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Celikates, Robin und Gosepath, Stefa",
+        "author": " Politische Philosophie",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Cervantes",
+        "author": "Don Quixote von la Mancha",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Chatwin, Bruce",
+        "author": "Traumpfade",
+        "publisher": "Carl Hanser",
+        "date": "<NA>"
+    },
+    {
+        "title": "Chatwin, Bruce",
+        "author": "Traumpfade",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Checkov, Anton ",
+        "author": "Die Möwe",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Chomsky, Noam",
+        "author": "Der gescheiterte Staat",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Chomsky, Noam",
+        "author": "On Anarchy",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Chomsky, Noam",
+        "author": "Profit over People, War against People",
+        "publisher": "Piper",
+        "date": "<NA>"
+    },
+    {
+        "title": "Christie, Agatha",
+        "author": "After the Funeral",
+        "publisher": "Berkeley",
+        "date": "<NA>"
+    },
+    {
+        "title": "Christie, Agatha",
+        "author": "Death on the Nile",
+        "publisher": "Berkeley",
+        "date": "<NA>"
+    },
+    {
+        "title": "Christie, Agatha",
+        "author": "Der Täter lässt bitten",
+        "publisher": "Loewe",
+        "date": "<NA>"
+    },
+    {
+        "title": "Christie, Agatha",
+        "author": "Villa Nachtigall",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Collins, Wilkie",
+        "author": "Der Monddiamant",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dalai Lama",
+        "author": "Der Wille zum Frieden",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dante",
+        "author": "Die göttliche Komödie",
+        "publisher": "Fisher",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dante",
+        "author": "Die göttliche Komödie",
+        "publisher": "Nikol",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dawkins, Richard",
+        "author": "The God Delusion",
+        "publisher": "Black Swan",
+        "date": "<NA>"
+    },
+    {
+        "title": "Delangey, Shelagh",
+        "author": "A Taste of Honey",
+        "publisher": "Cover",
+        "date": "<NA>"
+    },
+    {
+        "title": "Descartes, Rene",
+        "author": "Discours de la Methode",
+        "publisher": "Meiner",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dickens, Charles",
+        "author": "David Copperfield",
+        "publisher": "Das literarische Vermächtnis",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dickens, Charles",
+        "author": "Great Expectations",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Diverse",
+        "author": "Philosophische Meistersteucke",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Doeblin, Alexander",
+        "author": "Berlin Alexanderplatz",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Doeblin, Alfred",
+        "author": "Wadzeks Kampf mit der Dampfmaschine",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dos Passos, John",
+        "author": "Manhattan Transfer",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dosojewski, Fjodor",
+        "author": "Der Idiot",
+        "publisher": "Möllmann",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dostojewski, Fjodor",
+        "author": "Böse Geister",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dostojewski, Fjodor",
+        "author": "Der Spieler",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dostojewski, Fjodor",
+        "author": "Die Sanfte",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Doyle, Arthur Conan",
+        "author": "Das Zeichen der Vier",
+        "publisher": "Insel",
+        "date": "<NA>"
+    },
+    {
+        "title": "Doyle, Arthur Conan",
+        "author": "Holmes, Sherlock: Complete Stories",
+        "publisher": "Bantam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dumas, Alexandre",
+        "author": "Der Graf von Monte Christo",
+        "publisher": "Arena",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dumas, Alexandre",
+        "author": "Die Kameliendame",
+        "publisher": "Kaiser",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dunthorne, Joe",
+        "author": "Ich, Oliver Tate",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dürrenmatt, Friedrich",
+        "author": "Der Richter und sein Henker",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dürrenmatt, Friedrich",
+        "author": "Die Physiker",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dürrenmatt, Friedrich",
+        "author": "Die Stücke",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Dürrenmatt, Friedrich",
+        "author": "Dureinanderthal",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Eco, Umberto",
+        "author": "Baudolino",
+        "publisher": "RM",
+        "date": "<NA>"
+    },
+    {
+        "title": "Eco, Umberto",
+        "author": "Das Foucaultsche Pendel",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Eco, Umberto",
+        "author": "Der Name der Rose",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Eichener, Volker and Baumgart, Ralf",
+        "author": "Norbert Elias zur Einführung",
+        "publisher": "Junius",
+        "date": "<NA>"
+    },
+    {
+        "title": "Elias, Norbert",
+        "author": "Die Gesellschaft der Individuen",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Emerson, Ralf Waldo",
+        "author": "Selected Essays",
+        "publisher": "Bentam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Emerson, Ralph Waldo",
+        "author": "Essays and Lectures",
+        "publisher": "Library of America",
+        "date": "<NA>"
+    },
+    {
+        "title": "Emerson, Ralph Waldo",
+        "author": "Nature",
+        "publisher": "Amazon",
+        "date": "<NA>"
+    },
+    {
+        "title": "Emerson, Ralph Waldo",
+        "author": "Self Reliance",
+        "publisher": "Amazon",
+        "date": "<NA>"
+    },
+    {
+        "title": "Erös, Reinhard",
+        "author": "Tee mit dem Teufel",
+        "publisher": "Hoffmann und Campe",
+        "date": "<NA>"
+    },
+    {
+        "title": "Eschenbach, Andreas",
+        "author": "Eine Billion Dollar",
+        "publisher": "Bastei-Luebbe",
+        "date": "<NA>"
+    },
+    {
+        "title": "Euripides",
+        "author": "Die Bakchen",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Euripides",
+        "author": "Hekabe",
+        "publisher": "Reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Euripides",
+        "author": "Iphigenie bei den Taurern",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Euripides",
+        "author": "Medea",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Exupery, Antoine",
+        "author": "Der Kleine Prinz",
+        "publisher": "Galimart",
+        "date": "<NA>"
+    },
+    {
+        "title": "Faulkner, William",
+        "author": "Die Unbesiegten",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Faulkner, William",
+        "author": "The Sound and the Fury",
+        "publisher": "Everyman’s Library",
+        "date": "<NA>"
+    },
+    {
+        "title": "Fellmann, Ferdinand",
+        "author": "Die Angst des Ethiklehrers vor der Klasse",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Fetscher, Iring",
+        "author": "Marx",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Fetscher, Iring",
+        "author": "Rousseaus politische Philosopohie",
+        "publisher": "Suhrkmap",
+        "date": "<NA>"
+    },
+    {
+        "title": "Feyerabend, Paul",
+        "author": "Erkenntnis für freie Menschen",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Feyerabend, Paul",
+        "author": "Wissenschaft als Kunst",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Fielding, Henry",
+        "author": "The History of Tom Jones",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Fitzgerald, Francis Scott",
+        "author": "Der Seltsame Fall des Benjamin Button",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Fitzgerald, Francis Scott",
+        "author": "Der große Gatsby",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Fitzgerald, Francis Scott",
+        "author": "The Great Gatsby",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Flaubert, Gustave",
+        "author": "Salammbo",
+        "publisher": "Inselverlag",
+        "date": "<NA>"
+    },
+    {
+        "title": "Flynn, Thomas",
+        "author": "Existentialism",
+        "publisher": "Oxford",
+        "date": "<NA>"
+    },
+    {
+        "title": "Fontane, Theodor",
+        "author": "Effi Briest",
+        "publisher": "Klett",
+        "date": "<NA>"
+    },
+    {
+        "title": "Foucault, Michael",
+        "author": "Der Wille zum Wissen",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Foucault, Michel",
+        "author": "Wahnsinn und Gesellschaftee",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Francis Bacon",
+        "author": "New Organon",
+        "publisher": "Meiner",
+        "date": "<NA>"
+    },
+    {
+        "title": "Frank,Anne",
+        "author": "Tagebuch ",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Frankfurt, Harry G.",
+        "author": "On Bullshit",
+        "publisher": "Princeton University Press",
+        "date": "<NA>"
+    },
+    {
+        "title": "Frankfurt, Harry G.",
+        "author": "On Inequality",
+        "publisher": "Princeton University Press",
+        "date": "<NA>"
+    },
+    {
+        "title": "Frankfurt, Harry G.",
+        "author": "On Truth",
+        "publisher": "Knopf",
+        "date": "<NA>"
+    },
+    {
+        "title": "Frankl, Viktor",
+        "author": "Man's search for meaning",
+        "publisher": "Beacon",
+        "date": "<NA>"
+    },
+    {
+        "title": "Freely, John",
+        "author": "Aristoteles in Oxford",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Freely, John",
+        "author": "Platon in Bagdag",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Friedriksson, Marianne",
+        "author": "Simon",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Frisch, Max",
+        "author": "Andorra",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Frisch, Max",
+        "author": "Homo Faber",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Frisch, Max",
+        "author": "Mein Name sei Gantenbein",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Frisch, Max",
+        "author": "Stiller",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Gaarder, Jostein",
+        "author": "Sofies Welt",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Gaardner, Jostein",
+        "author": "Hallo, ist da jemand?",
+        "publisher": "Hanser",
+        "date": "<NA>"
+    },
+    {
+        "title": "Gadamer, Hans-Georg",
+        "author": "Der Anfang des Wissens",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Gerlach, Stefan",
+        "author": "Immanuel  Kant",
+        "publisher": "UTB",
+        "date": "<NA>"
+    },
+    {
+        "title": "Gladwell, Malcolm",
+        "author": "What the Dog Saw",
+        "publisher": "Backbay books",
+        "date": "<NA>"
+    },
+    {
+        "title": "Goethe, Johann Wolfgang",
+        "author": "Die Leiden des jungen Werthers",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Goethe, Johann Wolfgang",
+        "author": "Faust I",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Goethe, Johann Wolfgang",
+        "author": "Faust II",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Golding, William",
+        "author": "Lord of the Flies",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Goleman, Daniel",
+        "author": "Emotionale Intelligenz",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Grassi, Ernesto",
+        "author": "Der Utopische Staat",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Guerrier, Simon and Kukula, Marek",
+        "author": "The Scientific Secrets of Doctor Who",
+        "publisher": "BBC Books",
+        "date": "<NA>"
+    },
+    {
+        "title": "Haeckel, Ernst ",
+        "author": "Natuerliche Schoepfungsgeschichte",
+        "publisher": "de Gruyter",
+        "date": "<NA>"
+    },
+    {
+        "title": "Handke, Peter",
+        "author": "Die Angst des Tormanns beim Elfmeter",
+        "publisher": "SZ",
+        "date": "<NA>"
+    },
+    {
+        "title": "Harel, David",
+        "author": "Computers",
+        "publisher": "Oxford",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hauptmann, Gerhard",
+        "author": "Bahnwärter Thiel",
+        "publisher": "Cornelsen",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hawking, Stephen",
+        "author": "Die Kürzeste Geschichte der Zeit",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hawthorne, Nathaniel",
+        "author": "Das grosse Steingesicht",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hegel, Georg Wilhelm Friedrich",
+        "author": "Phänomenologie des Geistes",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Heidegger, Martin",
+        "author": "Sein und Zeit",
+        "publisher": "Max Niemeyer Verlag",
+        "date": "<NA>"
+    },
+    {
+        "title": "Heisenberg, Werner",
+        "author": "Die Einheit des Naturwissenschaftlichen Weltbilds",
+        "publisher": "Lesung",
+        "date": "<NA>"
+    },
+    {
+        "title": "Heisenberg, Werner",
+        "author": "Quantentheorie und Philosophie",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hemingway, Earnest",
+        "author": "A Farewell to Arms",
+        "publisher": "Arrow",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hemingway, Ernest",
+        "author": "Der alte Mann und das Meer",
+        "publisher": "Buechergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hemingway, Ernest",
+        "author": "The snows of Kilimanjaro",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hemingway, Ernest ",
+        "author": "Die Hauptstadt der Welt ",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Herman, Melville",
+        "author": "Der Schreiber Bartleby",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hesiod",
+        "author": "Theogonie",
+        "publisher": "Academia",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hesse, Hermann",
+        "author": "Das Glasperlenspiel",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hesse, Hermann",
+        "author": "Demian",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hesse, Hermann",
+        "author": "Jedem Anfang Wohnt ein Zauber Inne ",
+        "publisher": "Inselverlag",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hesse, Hermann",
+        "author": "Kinderseele",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hesse, Hermann",
+        "author": "Knulp",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hesse, Hermann",
+        "author": "Musik des Einsamen",
+        "publisher": "Anaconda",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hesse, Hermann",
+        "author": "Narziss und Goldmund",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hesse, Hermann",
+        "author": "Peter Camenzind",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hesse, Hermann",
+        "author": "Rosshalde",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hesse, Hermann",
+        "author": "Siddhartha",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hesse, Hermann",
+        "author": "Steppenwolf",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hesse, Hermann",
+        "author": "Unterm Rad ",
+        "publisher": "Sueddeutsche",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hesser, Hermann",
+        "author": "Gertrud",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Highsmith, Patricia",
+        "author": "Der talentierte Mr. Ripley",
+        "publisher": "SZ",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hobbes, Thomas",
+        "author": "Der Leviathan",
+        "publisher": "Anaconda",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hobbes, Thomas",
+        "author": "Leviathan",
+        "publisher": "Philosophische Bibliothek",
+        "date": "<NA>"
+    },
+    {
+        "title": "Homer",
+        "author": "Illias und Odyssee",
+        "publisher": "Insel",
+        "date": "<NA>"
+    },
+    {
+        "title": "Horkheimer, Max",
+        "author": "Traditionelle und Kritische Theorie",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Horkheimer, Max and Adorno, Theodor",
+        "author": "Dialektik der Aufklärung",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hornby, Nick",
+        "author": "A Long Way Down",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hornby, Nick",
+        "author": "A long way down",
+        "publisher": "Knaur",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hornby, Nick",
+        "author": "Feverpitch",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hornby, Nick",
+        "author": "High Fidelity",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hornby, Nick",
+        "author": "How to be Good",
+        "publisher": "Penguing",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hornby, Nick",
+        "author": "Juliett, Naked",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hornby, Nick",
+        "author": "Mein Leben als Leser",
+        "publisher": "KiWi",
+        "date": "<NA>"
+    },
+    {
+        "title": "Houellebecq, Michel",
+        "author": "Ausweitung der Kampfzone",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Houellebecq, Michel",
+        "author": "Elementarteilchen",
+        "publisher": "Dumont",
+        "date": "<NA>"
+    },
+    {
+        "title": "Houellebecq, Michel",
+        "author": "Karte und Gebiet",
+        "publisher": "Dumont",
+        "date": "<NA>"
+    },
+    {
+        "title": "Houellebecq, Michel",
+        "author": "Plattform",
+        "publisher": "Dumont",
+        "date": "<NA>"
+    },
+    {
+        "title": "Houellebecq, Michel",
+        "author": "Unterwerfung",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Houellebecq, Michel ",
+        "author": "Die Möglichkeit einer Insel ",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Huizing, Klaas",
+        "author": "Der Buchtrinker",
+        "publisher": "btb",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hume, David",
+        "author": "Eine Untersuchung über den Menschlichen Verstand",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hume, David",
+        "author": "Eine Untersuchung über den menschlichen Verstand",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hume, David",
+        "author": "Eine Untersuchung über die Prinzipien der Moral",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Huxley, Aldous",
+        "author": "Eiland",
+        "publisher": "Piper",
+        "date": "<NA>"
+    },
+    {
+        "title": "Huxley, Aldous",
+        "author": "Point Counter Point",
+        "publisher": "Vintage",
+        "date": "<NA>"
+    },
+    {
+        "title": "Huxley, Aldous",
+        "author": "Schöne Neue Welt",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Huxley, Aldous",
+        "author": "Schöne Neue Welt",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Huxley, Aldous",
+        "author": "The Doors of Perception",
+        "publisher": "Harper",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hölderlin, Friedrich",
+        "author": "Gesammelte Werke",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hölderlin, Friedrich",
+        "author": "Hyperion",
+        "publisher": "Tredition",
+        "date": "<NA>"
+    },
+    {
+        "title": "Ibsen, Henrick",
+        "author": "A Doll's House",
+        "publisher": "Digireads",
+        "date": "<NA>"
+    },
+    {
+        "title": "Ibsen, Henrik",
+        "author": "Die Wildente",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Ibsen, Henrik",
+        "author": "Gespenster",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Ibsen, Henrik",
+        "author": "John Gabriel Borkman",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Ibsen, Henrik",
+        "author": "Nora",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Ibsen, Henrik",
+        "author": "Peer Gynt",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Ibsen, Henrik",
+        "author": "Stützen der Gesellschaft",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Ibsen, Henrik",
+        "author": "Volksfeind",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Ionesco, Eugene",
+        "author": "Die Nashörner",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Ionesco, Eugene",
+        "author": "Die kahle Sängerin",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Jahnn, Hans Henny",
+        "author": "Medea",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "James, Henry",
+        "author": "The Bostonians",
+        "publisher": "Everyman’s Library",
+        "date": "<NA>"
+    },
+    {
+        "title": "Jaspers, Karl",
+        "author": "Die maßgebenden Menschen",
+        "publisher": "Piper",
+        "date": "<NA>"
+    },
+    {
+        "title": "Johnson, Uwe",
+        "author": "Mutmaßungen über Jakob",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Joyce, James",
+        "author": "Das Porträt des Künstlers als Junger Mann",
+        "publisher": "SZ",
+        "date": "<NA>"
+    },
+    {
+        "title": "Joyce, James",
+        "author": "Dubliners",
+        "publisher": "Bantam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Joyce, James",
+        "author": "Finnegans Wake",
+        "publisher": " Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Joyce, James",
+        "author": "The Portrait of the Artist as a Young Man",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Joyce, James",
+        "author": "Ulysses",
+        "publisher": " Everyman’s Library",
+        "date": "<NA>"
+    },
+    {
+        "title": "Joyce, James",
+        "author": "Ulysseus",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Joyce, James",
+        "author": "Ulysseus",
+        "publisher": "Wordsworth",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kafka, Franz",
+        "author": "Das Schloss",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kafka, Franz",
+        "author": "Das Urteil",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kafka, Franz",
+        "author": "Das Urteil und die Verwandlung",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kafka, Franz",
+        "author": "Der Geier",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kafka, Franz",
+        "author": "Der Prozess",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kafka, Franz",
+        "author": "Der Verschollene",
+        "publisher": "Aufbau",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kafka, Franz",
+        "author": "Die Verwandung",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kafka,Franz",
+        "author": "Der Prozess",
+        "publisher": "Hamburger Lesehefte",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kaminer, Wladimir",
+        "author": "Karaoke",
+        "publisher": "Goldmann",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kant, Immanuel",
+        "author": "Denken wagen",
+        "publisher": " Reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kant, Immanuel",
+        "author": "Grundlegung zur Metaphysik der Sitten",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kant, Immanuel",
+        "author": "Kritik der Praktischen Vernunft",
+        "publisher": "Philosophische Bibliothek",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kant, Immanuel",
+        "author": "Kritik der Reinen Vernunft I",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kant, Immanuel",
+        "author": "Kritik der Reinen Vernunft II",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kant, Immanuel",
+        "author": "Kritik der Urteilskraft",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kant, Immanuel",
+        "author": "Prolegomena zu einer Jeden Künftigen Metaphysik",
+        "publisher": "Meiner",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kara, Yade",
+        "author": "Cafe Cyrus",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kehlmann, Daniel",
+        "author": "Die Vermessung der Welt",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kehlmann, Daniel",
+        "author": "Ich und Kaminski",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kellner, Manuel",
+        "author": "Trotzkismus",
+        "publisher": "Schmetterling",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kerouac, Jack",
+        "author": "Unterwegs",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Keuth, Herbert",
+        "author": "Poppers Logik der Forschung",
+        "publisher": "Akademie Verlag",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kierkegaard, Sören",
+        "author": "Der Krankheit zum Tode",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kierkegaard, Sören",
+        "author": "Entweder - Oder",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kipling, Rudyard",
+        "author": "Das Haus der Wünsche",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Koeppen, Wolfang",
+        "author": "Jakob Littners Aufzeichnungen aus einem Erdloch",
+        "publisher": "Buechergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Koeppen, Wolfang",
+        "author": "Jakob Littners Aufzeihnungen aus einem Erdloch",
+        "publisher": "Juedischer Verlag",
+        "date": "<NA>"
+    },
+    {
+        "title": "Koeppen, Wolfgang",
+        "author": "Das Treibhaus",
+        "publisher": "SZ",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kratzmann, Ernst ",
+        "author": "Faust",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kuhn, Thomas",
+        "author": "Die Entstehung des Neuen",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kuhn, Thomas S.",
+        "author": "Die Struktur wissenschaftlicher Revolutionen",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kundera, Milan",
+        "author": "Der Scherz",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kundera, Milan",
+        "author": "Die unerträgliche Leichtigkeit des Seins",
+        "publisher": "SZ",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kundera, Milan",
+        "author": "Die unerträgliche Leichtigkeit des Seins ",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Lappert, Rolf",
+        "author": "Nach Hause Schwimmen",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Lenz, Siegfried",
+        "author": "Deutschstunde",
+        "publisher": "SZ",
+        "date": "<NA>"
+    },
+    {
+        "title": "Leopardi, Giacomo",
+        "author": "Moral Fables",
+        "publisher": "Alma Classics",
+        "date": "<NA>"
+    },
+    {
+        "title": "Lessing, Gotthold Ephraim",
+        "author": "Nathan der Weise",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "London, Jack",
+        "author": "Call of the Wild, White Fang and Other Stories",
+        "publisher": "Oxford World's Classics",
+        "date": "<NA>"
+    },
+    {
+        "title": "London, Jack",
+        "author": "Die Konzentrischen Tode",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "London,Jack",
+        "author": "Wolfsblut",
+        "publisher": "Arena",
+        "date": "<NA>"
+    },
+    {
+        "title": "Lord Dusany",
+        "author": "Das Land des Yann",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Lovecraft, H.P.",
+        "author": "At the Mointains of Madness",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Machen, Arthur",
+        "author": "Die Leuchtende Pyramide",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Machiavelli, Nicolo",
+        "author": "Der Fürst",
+        "publisher": "Inselverlag",
+        "date": "<NA>"
+    },
+    {
+        "title": "Malouf, David",
+        "author": "Die tapfersten der Söhne",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Mandelstam, Ossip",
+        "author": "Im Luftgrab",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Mann, Thomas",
+        "author": "Doktor Faustus",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Mann, Thomas",
+        "author": "Zauberberg",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Mansfeld, Jaap",
+        "author": "Die Vorsokratiker II",
+        "publisher": "Reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Marai, Sandor",
+        "author": "Die Glut",
+        "publisher": "Piper",
+        "date": "<NA>"
+    },
+    {
+        "title": "Marai, Sandor",
+        "author": "Die Nacht vor der Scheidung",
+        "publisher": "Buechergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Marcuse, Herbert",
+        "author": "Kultur und Gesellschaft",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Marlowe, Christopher",
+        "author": "Dr. Faustus",
+        "publisher": "Digireads",
+        "date": "<NA>"
+    },
+    {
+        "title": "Martel, Yann",
+        "author": "Schiffbruch mit Tiger",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Marx, Karl",
+        "author": "Das Kapital",
+        "publisher": "Anaconda",
+        "date": "<NA>"
+    },
+    {
+        "title": "Marx, Karl und Engels, Friedrich",
+        "author": "Manifest der Kommunistischen Partei",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Marx, Karl und Engels, Friedrich",
+        "author": "Marx Engels Werke 23 - Das Kapital I",
+        "publisher": "Dietz",
+        "date": "<NA>"
+    },
+    {
+        "title": "Marx, Karl und Engels, Friedrich",
+        "author": "Marx Engels Werke 4",
+        "publisher": "Dietz",
+        "date": "<NA>"
+    },
+    {
+        "title": "Melville, Herman",
+        "author": "Moby Dick",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Menasse, Robert",
+        "author": "Die Hauptstadt",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Menasse, Robert",
+        "author": "Die Vertreibung aus der Hölle",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Menasse, Robert",
+        "author": "Don Juan de la Manche",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Menasse, Robert",
+        "author": "Selige Zeiten, Brüchige Welt",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Meyer, Conrad Ferdinand",
+        "author": "Die Versuchung des Pescara",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Meyrink, Gustav",
+        "author": "Der Kardinal Napellus",
+        "publisher": "Buechergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Mill, John Stuart",
+        "author": "Betrachtungen über die Repräsentativregierung",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Mill, John Stuart",
+        "author": "Über die Freiheit",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Miller, Arthur",
+        "author": "Death of a Salesman",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Miller, David",
+        "author": "Karl Popper Lesebuch",
+        "publisher": "UTB",
+        "date": "<NA>"
+    },
+    {
+        "title": "Milton, John",
+        "author": "Paradise Lost",
+        "publisher": "Signet",
+        "date": "<NA>"
+    },
+    {
+        "title": "Moliere",
+        "author": "Der Geizige",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Moliere",
+        "author": "Der Menschenfeind",
+        "publisher": "Insel",
+        "date": "<NA>"
+    },
+    {
+        "title": "Moliere",
+        "author": "Der eingebildete Kranke",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Morgenstern, Christian",
+        "author": "Alle Galgenieder",
+        "publisher": "Buechergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Morgenstern, Susi",
+        "author": "Die Farben des Lebens",
+        "publisher": "Bertelsmann",
+        "date": "<NA>"
+    },
+    {
+        "title": "Musil, Robert",
+        "author": "Der Mann ohne Eigenschaften",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Musil, Robert",
+        "author": "Die Verwirrungen des Zöglings Törless",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Müller, Hertha",
+        "author": "Heute wäre ich mir lieber nicht begegnet",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nabokov, Wladimir",
+        "author": "Lolita",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nagel, Thomas",
+        "author": "Das letzte Wort",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nagel, Thomas",
+        "author": "Die Grenzen der Objektivität",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nagel, Thomas",
+        "author": "Was Bedeutet das alles?",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nietzsche, Friedrich",
+        "author": "Also sprach Zarathustra",
+        "publisher": "Anaconda",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nietzsche, Friedrich",
+        "author": "Also sprach Zarathustra",
+        "publisher": "Atlas",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nietzsche, Friedrich",
+        "author": "Ecce Homo",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nietzsche, Friedrich",
+        "author": "Kritische Studienausgabe I",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nietzsche, Friedrich",
+        "author": "Kritische Studienausgabe II",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nietzsche, Friedrich",
+        "author": "Kritische Studienausgabe III",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nietzsche, Friedrich",
+        "author": "Kritische Studienausgabe IV",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nietzsche, Friedrich",
+        "author": "Kritische Studienausgabe V",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nietzsche, Friedrich",
+        "author": "Kritische Studienausgabe VI",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nietzsche, Friedrich",
+        "author": "Morgenröthe",
+        "publisher": "Meiner",
+        "date": "<NA>"
+    },
+    {
+        "title": "Noble, Denis",
+        "author": "The Music of Life",
+        "publisher": "Oxford",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nossack, Hans Erich",
+        "author": "Spirale",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nossack, Hans Erich",
+        "author": "Spätestens im November",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Orwell, George",
+        "author": "1984",
+        "publisher": "Signet",
+        "date": "<NA>"
+    },
+    {
+        "title": "Orwell, George",
+        "author": "Animal Farm",
+        "publisher": "Longman",
+        "date": "<NA>"
+    },
+    {
+        "title": "Osborne, John",
+        "author": "Look back in Anger",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "O’Brien, Flann",
+        "author": "Fuer Boshafte",
+        "publisher": "Insel",
+        "date": "<NA>"
+    },
+    {
+        "title": "O’Brien, Flann",
+        "author": "Irischer Lebenslauf",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "O’Brien, Flann",
+        "author": "The Complete Novels",
+        "publisher": "Everyman’s Library",
+        "date": "<NA>"
+    },
+    {
+        "title": "Pascal, Blaise",
+        "author": "Gedanken",
+        "publisher": "Anaconda",
+        "date": "<NA>"
+    },
+    {
+        "title": "Pascal, Blaise",
+        "author": "Human Happiness",
+        "publisher": "Penguin books",
+        "date": "<NA>"
+    },
+    {
+        "title": "Pasternak, Boris",
+        "author": "Doctor Zhivago",
+        "publisher": "Everyman’s Library",
+        "date": "<NA>"
+    },
+    {
+        "title": "Paul Feyerabend",
+        "author": "Wider den Methodenzwang",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Pearl, Judea and Mackenzie, Dana",
+        "author": "The Book of Why",
+        "publisher": "Basic Books",
+        "date": "<NA>"
+    },
+    {
+        "title": "Pindar",
+        "author": "Oden",
+        "publisher": "Reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Plath, Sylvia",
+        "author": "Sonntag bei den Mintons",
+        "publisher": "Frankfurter",
+        "date": "<NA>"
+    },
+    {
+        "title": "Platon",
+        "author": "Apologie des Sokrates",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Platon",
+        "author": "Der Staat",
+        "publisher": "Anaconda",
+        "date": "<NA>"
+    },
+    {
+        "title": "Platon",
+        "author": "Phaidon",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Platon",
+        "author": "Symposion",
+        "publisher": "Estias",
+        "date": "<NA>"
+    },
+    {
+        "title": "Platon",
+        "author": "Symposion",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Platon",
+        "author": "Sämtliche Werke - Band 1",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Platon",
+        "author": "Sämtliche Werke - Band 2",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Platon",
+        "author": "Theaetet",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Plechanow, Georgi",
+        "author": "Anarchismus und Sozialismus",
+        "publisher": "BMV",
+        "date": "<NA>"
+    },
+    {
+        "title": "Plenzdorf, Ulrich",
+        "author": "Die neuen Leiden des jungen W.",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
         "title": "Popper, Karl",
-        "author": "Conjectures and Refutations",
-        "publisher": "Routledge"
+        "author": "Logik der Forschung",
+        "publisher": "Mohr Siebeck",
+        "date": "<NA>"
+    },
+    {
+        "title": "Popper, Karl",
+        "author": "The Open Society and its Enemies, Volumne One",
+        "publisher": "Routledge Classics",
+        "date": "<NA>"
+    },
+    {
+        "title": "Popper, Karl",
+        "author": "The Open Society and its Enemies, Volumne Two",
+        "publisher": "Routledge Classics",
+        "date": "<NA>"
+    },
+    {
+        "title": "Prantl, Heribert",
+        "author": "Die Kraft der Hoffnung",
+        "publisher": "SZ",
+        "date": "<NA>"
+    },
+    {
+        "title": "Prideaux, Sue",
+        "author": "I am Dynamite!",
+        "publisher": "Tum Duggan Books",
+        "date": "<NA>"
+    },
+    {
+        "title": "Proust, Marcel",
+        "author": "Auf der Suche nach der Verlorenen Zeit - In Swanns Welt",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Puerto, Carlos",
+        "author": "Der Blick",
+        "publisher": "Arena",
+        "date": "<NA>"
+    },
+    {
+        "title": "Pyle, Howard",
+        "author": "Robin Hood",
+        "publisher": "LeseRiese",
+        "date": "<NA>"
+    },
+    {
+        "title": "Pynchon, Thomas",
+        "author": "Gravity’s Rainbow",
+        "publisher": "Vintage",
+        "date": "<NA>"
+    },
+    {
+        "title": "Pynchon, Thomas",
+        "author": "Inherent Vice",
+        "publisher": "Vintage",
+        "date": "<NA>"
+    },
+    {
+        "title": "Pynchon, Thomas",
+        "author": "Natuerliche Maengel",
+        "publisher": "Buechergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Pynchon, Thomas",
+        "author": "The Crying of Lot 49",
+        "publisher": "Vintage",
+        "date": "<NA>"
+    },
+    {
+        "title": "Pynchon, Thomas",
+        "author": "V",
+        "publisher": "Vintage",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rand, Ayn",
+        "author": "Atlas Shrugged",
+        "publisher": "Signet",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rand, Ayn",
+        "author": "The Fountainhead",
+        "publisher": "Signet",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rapp, Christof",
+        "author": "Aristoteles zur Einführung",
+        "publisher": "Junius",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rauprich, Nina",
+        "author": "Wenzel",
+        "publisher": "Ellermann",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rawls, John",
+        "author": "Eine Theorie der Gerechtigkeit",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rawls, John",
+        "author": "Geschichte der politischen Philosophie",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Regener, Sven",
+        "author": "Herr Lehmann",
+        "publisher": "Goldmann",
+        "date": "<NA>"
+    },
+    {
+        "title": "Regener, Sven",
+        "author": "Neue Vahr Süd",
+        "publisher": "Goldmann",
+        "date": "<NA>"
+    },
+    {
+        "title": "Remarque, Erich Maria",
+        "author": "Im Westen nichts Neues",
+        "publisher": "Kiwi",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rilke, Rainer Maria",
+        "author": "Die Aufzeichnungen des Malte Laurids Brigge",
+        "publisher": "Insel",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rimbaut, Arthur",
+        "author": "Das Trunkene Schiff",
+        "publisher": "Inselverlag",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rousseau, Jean-Jacques",
+        "author": "Abhandlung über den Ursprung und die Grundlagen der Ungleichheit unter den Menschen",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rousseau, Jean-Jacques",
+        "author": "Emil oder Über die Erziehung",
+        "publisher": "UTB",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rousseau, Jean-Jacques",
+        "author": "Träumereien eines einsamen Spaziergängers",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rousseau, Jean-Jacques",
+        "author": "Vom Gesellschaftsvertrag",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rowling, Joanne K.",
+        "author": "Harry Potter and the Deathly Hallows",
+        "publisher": "Bloomsbury",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rowling, Joanne K.",
+        "author": "Harry Potter and the Goblet of Fire",
+        "publisher": "Bloomsbury",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rowling, Joanne K.",
+        "author": "Harry Potter und der Feuerkelch",
+        "publisher": "Carlsen",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rowling, Joanne K.",
+        "author": "Harry Potter und der Gefangene von Askaban",
+        "publisher": "Carlsen",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rowling, Joanne K.",
+        "author": "Harry Potter und die Kammer des Schreckens",
+        "publisher": "Carlsen",
+        "date": "<NA>"
+    },
+    {
+        "title": "Rowling, Joanne K.",
+        "author": "The Casual Vacancy",
+        "publisher": "LB",
+        "date": "<NA>"
+    },
+    {
+        "title": "Russel, Bertrand",
+        "author": "Philosophie des Abendlands",
+        "publisher": "Anaconda",
+        "date": "<NA>"
+    },
+    {
+        "title": "Russel, Willy",
+        "author": "Educating Rita",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Safranski, Ruediger",
+        "author": "Wieviel Wahrheit braucht der Mensch?",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sagan, Carl",
+        "author": "Cosmos",
+        "publisher": "Ballantine",
+        "date": "<NA>"
+    },
+    {
+        "title": "Saki",
+        "author": "Die Verschwiegenheit der Lady Anne",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Salinger, Jerome David",
+        "author": "The Catcher in the Rye",
+        "publisher": "Back bay",
+        "date": "<NA>"
+    },
+    {
+        "title": "Salinger, Jerome David",
+        "author": "The Catcher in the Rye",
+        "publisher": "LB",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sandel, Michael",
+        "author": "Justice",
+        "publisher": "FSG",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sandel, Michael",
+        "author": "Moral und Politik",
+        "publisher": "Ullstein",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sarasin, Philipp",
+        "author": "Michel Foucault zur Einführung",
+        "publisher": "Junius",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sartre, Jean-Paul",
+        "author": "Bariona und Die Fliegen",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sartre, Jean-Paul",
+        "author": "Das Sein und das Nichts",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sartre, Jean-Paul",
+        "author": "Das Spiel ist aus",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sartre, Jean-Paul",
+        "author": "Der Aufschub",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sartre, Jean-Paul",
+        "author": "Der Ekel",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sartre, Jean-Paul",
+        "author": "Der Existentialismus ist ein Humanismus",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sartre, Jean-Paul",
+        "author": "Der Pfahl im Fleische",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sartre, Jean-Paul",
+        "author": "Der Teufel und der liebe Gott",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sartre, Jean-Paul",
+        "author": "Die Eingeschlossenen von Altona",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sartre, Jean-Paul",
+        "author": "Die Kindheit eines Chefs",
+        "publisher": "Buechergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sartre, Jean-Paul",
+        "author": "Die Schmutzigen Hände",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sartre, Jean-Paul",
+        "author": "Die Transzendenz des Ego",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sartre, Jean-Paul",
+        "author": "Geschlossene Gesellschaft",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sartre, Jean-Paul",
+        "author": "Zeit der Reife",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schami, Rafik",
+        "author": "Die Sehnsucht der Schwalbe",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schenkel, Maria",
+        "author": "Tannöd",
+        "publisher": "Natutilus",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schiller, Friedrich",
+        "author": "Die Räuber",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schiller, Friedrich",
+        "author": "Dramen I",
+        "publisher": "Insel",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schiller, Friedrich",
+        "author": "Dramen II",
+        "publisher": "Insel",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schiller, Friedrich",
+        "author": "Kabale und Liebe",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schiller, Friedrich",
+        "author": "Wallenstein",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schlink, Bernhard",
+        "author": "Der Vorleser",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schlink, Bernhard",
+        "author": "Die Heimkehr",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schmitt, Arno",
+        "author": "Kosmas",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schmitt, Eric-Emanuelle",
+        "author": "Adolf H.",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schneider, Helge",
+        "author": "Aprikose, Banane Erdbeer",
+        "publisher": "Kiwi",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schneider, Helge",
+        "author": "Bonbon aus Wurst",
+        "publisher": "Kiwi",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schneider, Peter",
+        "author": "Skylla",
+        "publisher": "Rowohlt",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schneider, Robert",
+        "author": "Schlafes Bruder",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schwaabe, Christian",
+        "author": "Politische Theorie 1",
+        "publisher": "UTB",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schwaabe, Christian",
+        "author": "Politische Theorie 2",
+        "publisher": "UTB",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schwab, Gustav",
+        "author": "Sagen des klassischen Altertums",
+        "publisher": "Anaconda",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schwandt, Michael",
+        "author": "Kritische Theorie",
+        "publisher": "Schmetterling",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schweitzer, Albert",
+        "author": "Kultur und Ethik",
+        "publisher": "Beck",
+        "date": "<NA>"
+    },
+    {
+        "title": "Schäfer, Rainer",
+        "author": "Hegel - Einführung",
+        "publisher": "UTB",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sepulveda, Luis",
+        "author": "Der Alte, der Liebesromane Las",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Shakespeare, William",
+        "author": "A Midsummer Night's Dream",
+        "publisher": "Oxford",
+        "date": "<NA>"
+    },
+    {
+        "title": "Shakespeare, William",
+        "author": "Cymbeline",
+        "publisher": "Amazon Printing",
+        "date": "<NA>"
+    },
+    {
+        "title": "Shakespeare, William",
+        "author": "Cymbeline",
+        "publisher": "Ars vivendi",
+        "date": "<NA>"
+    },
+    {
+        "title": "Shakespeare, William",
+        "author": "Hamlet",
+        "publisher": "Ars vivendi",
+        "date": "<NA>"
+    },
+    {
+        "title": "Shakespeare, William",
+        "author": "Hamlet",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Shakespeare, William",
+        "author": "Hamlet",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Shakespeare, William",
+        "author": "Henry V",
+        "publisher": "Simon and Schuster",
+        "date": "<NA>"
+    },
+    {
+        "title": "Shakespeare, William",
+        "author": "Macbeth",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Shakespeare, William",
+        "author": "Much Ado about Nothing",
+        "publisher": "Spark Notes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Shakespeare, William",
+        "author": "Othello",
+        "publisher": "Dover",
+        "date": "<NA>"
+    },
+    {
+        "title": "Shakespeare, William",
+        "author": "Pericles",
+        "publisher": "Arden",
+        "date": "<NA>"
+    },
+    {
+        "title": "Shakespeare, William",
+        "author": "Romeo and Juliett",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Shakespeare, William",
+        "author": "The Complete Shakespeare",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Singer, Peter",
+        "author": "Marx",
+        "publisher": "Oxford",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sophokles",
+        "author": "Antigone",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sophokles",
+        "author": "Koenig Ödipus",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Spierling, Volker",
+        "author": "Arthur Schopenhauer zur Einführung",
+        "publisher": "Junius",
+        "date": "<NA>"
+    },
+    {
+        "title": "Spinoza, Baruch",
+        "author": "Politischer Traktat",
+        "publisher": "Meiner",
+        "date": "<NA>"
+    },
+    {
+        "title": "Steinbeck, John",
+        "author": "Die Straße der Ölsardinen",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Steinbeck, John",
+        "author": "East of Eden",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Steinbeck, John",
+        "author": "East of Eden",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Steinbeck, John",
+        "author": "The Grapes of Wrath",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Steinbeck, John",
+        "author": "The Vigilante",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Stendhal",
+        "author": "Rot und Schwarz",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Stevenson, Robert Louis",
+        "author": "Die Schatzinsel",
+        "publisher": "Buechergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Strindberg, August",
+        "author": "Totentanz",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Strindberg, August",
+        "author": "Fräulein Julie",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Strindberg, August",
+        "author": "Ein Traumspiel",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Styron, William",
+        "author": "Sophie's Choice",
+        "publisher": "Vintage",
+        "date": "<NA>"
+    },
+    {
+        "title": "Suhr, Martin",
+        "author": "Jean-Paul Sartre zur Einführung",
+        "publisher": "Junius",
+        "date": "<NA>"
+    },
+    {
+        "title": "Swift, Jonathan",
+        "author": "Gullivers Reisen",
+        "publisher": "Arena",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sword, Helen",
+        "author": "Stylish Academic Writing",
+        "publisher": "Marvard",
+        "date": "<NA>"
+    },
+    {
+        "title": "Süskind, Patrick",
+        "author": "Das Parfum",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Taleb, Nicholas",
+        "author": "Black Swan ",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Tanner, Michael",
+        "author": "Nietzsche",
+        "publisher": "Oxford",
+        "date": "<NA>"
+    },
+    {
+        "title": "Butler, Christoph",
+        "author": "Postmodernism",
+        "publisher": "Oxford",
+        "date": "<NA>"
+    },
+    {
+        "title": "von Eichendorff, Joseph",
+        "author": "Aus dem Leben eines Taugenichts",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Xenophon",
+        "author": "Anabasis",
+        "publisher": "Reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Thomas, Dylan",
+        "author": "A Child's Christmas in Wales",
+        "publisher": "Orion",
+        "date": "<NA>"
+    },
+    {
+        "title": "Thomas, Dylan",
+        "author": "Portrait of the Artist as a Young Dog",
+        "publisher": "Phoenix",
+        "date": "<NA>"
+    },
+    {
+        "title": "Thomas, Dylan",
+        "author": "Rebeccas Töchter",
+        "publisher": "Heyne",
+        "date": "<NA>"
+    },
+    {
+        "title": "Thompson, Hunter",
+        "author": "Hell's Angels",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Thompson, Hunter",
+        "author": "Rum Diary",
+        "publisher": "Bloomsbury",
+        "date": "<NA>"
+    },
+    {
+        "title": "Thoreau, Henry David",
+        "author": "Essays and Poems",
+        "publisher": "Library of America",
+        "date": "<NA>"
+    },
+    {
+        "title": "Thoreau, Henry David",
+        "author": "Major Works",
+        "publisher": "Library of America",
+        "date": "<NA>"
+    },
+    {
+        "title": "Thoreau, Henry David",
+        "author": "Walden",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Thoreau, Henry David",
+        "author": "Über die Pflicht zum Ungehorsam gegen den Staat",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Tindall, William",
+        "author": "York A Reader’s Guide to Finnegans Wake",
+        "publisher": "Irish Studies",
+        "date": "<NA>"
+    },
+    {
+        "title": "Tolkien, J.R.R",
+        "author": "Der Hobbit",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Tolkien, J.R.R ",
+        "author": "Der Herr der Ringe",
+        "publisher": "Klett",
+        "date": "<NA>"
+    },
+    {
+        "title": "Tolkien, J.R.R ",
+        "author": "The Hobbit",
+        "publisher": "Harper Collins",
+        "date": "<NA>"
+    },
+    {
+        "title": "Tolkien, J.R.R.",
+        "author": "Das Silmarillion",
+        "publisher": "Klett-Cotta",
+        "date": "<NA>"
+    },
+    {
+        "title": "Tolkien, J.R.R.",
+        "author": "Lord of the Rings",
+        "publisher": "Harper Collins",
+        "date": "<NA>"
+    },
+    {
+        "title": "Tolstoi, Leo",
+        "author": "Herr und Knecht",
+        "publisher": "dtv",
+        "date": "<NA>"
+    },
+    {
+        "title": "Tolstoi, Leo",
+        "author": "Krieg und Frieden",
+        "publisher": "atb",
+        "date": "<NA>"
+    },
+    {
+        "title": "Cox, Gary",
+        "author": "How to be an Existentialist",
+        "publisher": "Bloomsbury",
+        "date": "<NA>"
+    },
+    {
+        "title": "Kaag, John",
+        "author": "American Philosophy",
+        "publisher": "FSG",
+        "date": "<NA>"
+    },
+    {
+        "title": "Twain, Mark",
+        "author": "A Tramp Abroad, Following the Equator and Other Travels",
+        "publisher": "Library of America",
+        "date": "<NA>"
+    },
+    {
+        "title": "Twain, Mark",
+        "author": "Ein Yankee an König Artus Hof",
+        "publisher": "atb",
+        "date": "<NA>"
+    },
+    {
+        "title": "Vergil",
+        "author": "Aeneis",
+        "publisher": "Holzinger",
+        "date": "<NA>"
+    },
+    {
+        "title": "Verne, Jules",
+        "author": "Reise um die Erde in 80 Tagen",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Verne, Jules",
+        "author": "Zwei Jahre Ferien",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Voltaire",
+        "author": "Candid",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Voltaire",
+        "author": "Mikromegas",
+        "publisher": "Buechergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Vonnegut, Kurt",
+        "author": "Slaughterhouse Five",
+        "publisher": "Dill",
+        "date": "<NA>"
+    },
+    {
+        "title": "Wallace, Lewis",
+        "author": "Ben Hur",
+        "publisher": "Kaiser",
+        "date": "<NA>"
+    },
+    {
+        "title": "Walser, Martin",
+        "author": "Das Leben wortwörtlich",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Wedekind, Frank",
+        "author": "Lulu und Frühlingserwachen",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Weinkauf, Wolfgang",
+        "author": "Die Philosophie der Stoa",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Wells, Herbert George",
+        "author": "Die Tür in der Mauer",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Werfel, Franz",
+        "author": "Der Abituriententag",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Wilde, Oscar",
+        "author": "Das Bildnis des Dorian Gray",
+        "publisher": "Inselverlag",
+        "date": "<NA>"
+    },
+    {
+        "title": "Wilde, Oscar",
+        "author": "Lord Arthur Savilles Verbrechen",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Wilde, Oscar",
+        "author": "The Importance of Being Earnest",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Wilde, Oscar",
+        "author": "The Picture of Dorian Gray",
+        "publisher": "TOR",
+        "date": "<NA>"
+    },
+    {
+        "title": "Williams, John",
+        "author": "Augustus",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Wisnewski, Gerhard",
+        "author": "Drahtzieher der Macht",
+        "publisher": "Knaur",
+        "date": "<NA>"
+    },
+    {
+        "title": "Wittgenstein, Ludwig",
+        "author": "Tractatus Logico-Philosophicus",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Wittgenstein, Ludwig",
+        "author": "Werksausgabe, Band 1",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Wolfe, Thomas",
+        "author": "Look homeward angel",
+        "publisher": "Scribner",
+        "date": "<NA>"
+    },
+    {
+        "title": "Wolfe, Tom",
+        "author": "Back to Blood",
+        "publisher": "LB",
+        "date": "<NA>"
+    },
+    {
+        "title": "Wolfe, Tom",
+        "author": "The Bonfire of the Vanities",
+        "publisher": "Vintage",
+        "date": "<NA>"
+    },
+    {
+        "title": "Yeats, William Butler",
+        "author": "The Collected Poems",
+        "publisher": "Wordsworth",
+        "date": "<NA>"
+    },
+    {
+        "title": "Ziliak, Stephen and McCloskey, Deirdre",
+        "author": "The Cult of Statistical Significance",
+        "publisher": "University of Michigan Press",
+        "date": "<NA>"
+    },
+    {
+        "title": "Zimmerling, Dieter",
+        "author": "Stoertebeker",
+        "publisher": "Bechtermuenz",
+        "date": "<NA>"
+    },
+    {
+        "title": "Zuckmayer, Carl",
+        "author": "Der Hauptmann von Köpenick",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "Zweig, Stefan",
+        "author": "Baumeister der Welt",
+        "publisher": "Fischer",
+        "date": "<NA>"
+    },
+    {
+        "title": "de Balzac, Honore",
+        "author": "Cousin Pons",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "de L’Isle-Adam, Villiers",
+        "author": "Der Tischgast der letzten Feste",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "van den Brink, Hans .M.",
+        "author": "Ueber das Wasser",
+        "publisher": "Buechergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "von Ditfurt, Hoimar",
+        "author": "So lass uns denn Apfelbaeume Pflanzen",
+        "publisher": "Rasch und Röhring",
+        "date": "<NA>"
+    },
+    {
+        "title": "von Hofmannsthal, Hugo",
+        "author": "Der Brief des Lord Chantos",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "von Hofmannsthal, Hugo",
+        "author": "Jedermann",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "von Horvath, Ödön",
+        "author": "Ein Kind unserer Zeit",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "von Horvath, Ödön",
+        "author": "Glaube Liebe Hoffnung",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "von Horvath, Ödön",
+        "author": "Jugend ohne Gott",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "von Sacher-Masoch, Leopold",
+        "author": "Venus in Furs",
+        "publisher": "Echo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Nozick, Robert",
+        "author": "Anarchy, State and Utopia",
+        "publisher": "Basic Books",
+        "date": "<NA>"
+    },
+    {
+        "title": "Borges, Jorge Luis",
+        "author": "25. August 1983",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Galland, Antoine",
+        "author": "Tausendundeine Nacht",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hinton, Charles Howard",
+        "author": "Wissenschaftliche Erzählungen",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Poe, Edgar Allan",
+        "author": "Der entwendete Brief",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "De Alarcon, Pedro",
+        "author": "Der Freund des Todes",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Bloy, Leon",
+        "author": "Unliebsame Geschichten",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Lugones, Leopoldo",
+        "author": "Die Salzsäule",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Stevenson, Robert Louis",
+        "author": "Die Insel der Stimmen",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Papini, Giovanni",
+        "author": "Der Spiegel auf der Flucht",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sung-ling, P`U",
+        "author": "Gast Tiger",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Beckford, William",
+        "author": "Vathek",
+        "publisher": "Büchergilde",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sophokles",
+        "author": "Ödipus auf Kolonos",
+        "publisher": "Insel",
+        "date": "<NA>"
+    },
+    {
+        "title": "Shakespeare, William",
+        "author": "Richard II",
+        "publisher": "Tredition Classics",
+        "date": "<NA>"
+    },
+    {
+        "title": "Shakespeare, William",
+        "author": "Richard III",
+        "publisher": "Tredition Classics",
+        "date": "<NA>"
+    },
+    {
+        "title": "Sandel, Michael",
+        "author": "What Money can't buy",
+        "publisher": "Penguin",
+        "date": "<NA>"
+    },
+    {
+        "title": "Claudel, Paul",
+        "author": "The Hostage",
+        "publisher": "Cornell University Library",
+        "date": "<NA>"
+    },
+    {
+        "title": "Badiou, Alain",
+        "author": "Ethics: An Essay on the Understanding of Evil",
+        "publisher": "Radical Thinkers",
+        "date": "<NA>"
+    },
+    {
+        "title": "Honneth, Axel",
+        "author": "Die Idee des Sozialismus",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Giridharadas, Anand",
+        "author": "Winners take all",
+        "publisher": "Knopf",
+        "date": "<NA>"
+    },
+    {
+        "title": "Hume, David",
+        "author": "Morals, Politics and Society",
+        "publisher": "Yale University Press",
+        "date": "<NA>"
+    },
+    {
+        "title": "Wilde, Oscar",
+        "author": "Der Sozialismus und die Seele des Menschen",
+        "publisher": "Diogenes",
+        "date": "<NA>"
+    },
+    {
+        "title": "Zehnpfennig, Barbara",
+        "author": "Platon",
+        "publisher": "Junius",
+        "date": "<NA>"
+    },
+    {
+        "title": "Böke, Henning",
+        "author": "Maoismus",
+        "publisher": "Schmetterling",
+        "date": "<NA>"
+    },
+    {
+        "title": "Heinrich, Michael",
+        "author": "Kritik der politischen Ökonomie",
+        "publisher": "Schmetterling",
+        "date": "<NA>"
+    },
+    {
+        "title": "Platon",
+        "author": "Sämtliche Werke - Band 3",
+        "publisher": "rororo",
+        "date": "<NA>"
+    },
+    {
+        "title": "Bernhard, Thomas",
+        "author": "Holzfällen",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
+    },
+    {
+        "title": "Zizek, Slavoj",
+        "author": "The Relevance of the Communist Manifesto",
+        "publisher": "Polity Press",
+        "date": "<NA>"
+    },
+    {
+        "title": "Gamm, Gerhard",
+        "author": "Der Deutsche Idealismus",
+        "publisher": "reclam",
+        "date": "<NA>"
+    },
+    {
+        "title": "Adorno, Theodor",
+        "author": "Erziehung zur Mündigkeit",
+        "publisher": "Suhrkamp",
+        "date": "<NA>"
     }
 ]

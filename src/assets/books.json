@@ -1,5 +1,17 @@
 [
     {
+        "date": "2021-01-01",
+        "author": "Dostojewskij, Fjodor",
+        "title": "Ein grüner Junge",
+        "publisher": "Fischer"
+    },
+    {
+        "date": "2021-01-01",
+        "author": "Beckett, Samuel",
+        "title": "Krapp's Last Tape",
+        "publisher": "Faber"
+    },
+    {
         "date": "2020-12-15",
         "author": "Popper, Karl",
         "title": "After the Open Society",

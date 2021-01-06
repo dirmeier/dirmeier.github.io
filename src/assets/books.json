@@ -1,18 +1,84 @@
 [
   {
-        "date": "2021-01-05",
-        "author": "Popper, Karl",
-        "title": "The Poverty of Historicism",
-        "publisher": "Routledge"
+      "date": "2020-12-30",
+      "author": "Berlin, Isaiah",
+      "title": "Karl Marx",
+      "publisher": "Princeton"
+  },
+  {
+      "date": "2020-12-30",
+      "author": "Stegmaier, Werner",
+      "title": "Friedrich Nietzsche zur Einführung",
+      "publisher": "Junius"
+  },
+  {
+        "date": "2020-12-23",
+        "author": "Misak, Cheryl",
+        "title": "Frank Ramsey",
+        "publisher": "Oxford"
+    },
+  {
+        "date": "2020-12-23",
+        "author": "Euripides",
+        "title": "Euripides, Volumne III",
+        "publisher": "Loeb"
+    },
+  {
+        "date": "2020-12-23",
+        "author": "Knowlson, James",
+        "title": "Damned to Fame",
+        "publisher": "Bloomsbury"
     },
     {
-        "date": "2021-01-01",
+          "date": "2020-12-23",
+          "author": "Beckett, Samuel",
+          "title": "Watt",
+          "publisher": "Faber"
+      },
+  {
+        "date": "2020-12-23",
+        "author": "Beckett, Samuel",
+        "title": "Company / III Seen III Said / Worstward Ho / Stirrings Still",
+        "publisher": "Faber"
+    },
+    {
+          "date": "2020-12-23",
+          "author": "Sophocles",
+          "title": "Sophocles, Volumne I",
+          "publisher": "Loeb"
+      },
+  {
+        "date": "2020-12-23",
+        "author": "Sophocles",
+        "title": "Sophocles, Volumne II",
+        "publisher": "Loeb"
+    },
+  {
+        "date": "2020-12-23",
+        "author": "Camus, Albert",
+        "title": "Lyrical and Critical Essays",
+        "publisher": "Vintage"
+    },
+    {
+          "date": "2020-12-23",
+          "author": "Edmonds, David",
+          "title": "The Murder of Professor Schlick",
+          "publisher": "Princeton"
+      },
+    {
+          "date": "2020-12-23",
+          "author": "Popper, Karl",
+          "title": "The Poverty of Historicism",
+          "publisher": "Routledge"
+      },
+    {
+        "date": "2020-12-23",
         "author": "Dostojewskij, Fjodor",
         "title": "Ein grüner Junge",
         "publisher": "Fischer"
     },
     {
-        "date": "2021-01-01",
+        "date": "2020-12-23",
         "author": "Beckett, Samuel",
         "title": "Krapp's Last Tape",
         "publisher": "Faber"

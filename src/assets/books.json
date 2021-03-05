@@ -1,8 +1,50 @@
 [
   {
+    "date": "2021-01-26",
+    "author": "Kierkegaard, Sören",
+    "title": "The Lily of the Field the Bird of the Air",
+    "publisher": "Princeton"
+  },
+  {
+    "date": "2021-01-26",
+    "author": "Thomas, Dylan",
+    "title": "Under Milk Wood",
+    "publisher": "New Directions"
+  },
+  {
+    "date": "2021-01-26",
+    "author": "Gramsci, Antonio",
+    "title": "Selections from the Prison Notebooks",
+    "publisher": "Lawrence & Wishart"
+  },
+  {
+    "date": "2021-01-26",
+    "author": "Harper, Lee",
+    "title": "To Kill a Mockingbird",
+    "publisher": "Büchergilde"
+  },
+  {
+    "date": "2021-01-26",
+    "author": "Schopenhauer, Arthur",
+    "title": "Sämtliche Werke: Band V/1",
+    "publisher": "Suhrkamp"
+  },
+  {
+    "date": "2021-01-26",
+    "author": "Schopenhauer, Arthur",
+    "title": "Sämtliche Werke: Band V/2",
+    "publisher": "Suhrkamp"
+  },
+  {
     "date": "2021-01-15",
     "author": "Dostojewski, Fjodor",
     "title": "Aufzeichnungen aus einem toten Haus",
+    "publisher": "Büchergilde"
+  },
+  {
+    "date": "2021-01-26",
+    "author": "Harper, Lee",
+    "title": "To Kill a Mockingbird",
     "publisher": "Büchergilde"
   },
   {
@@ -22,6 +64,12 @@
     "author": "Safranski, Rüdiger",
     "title": "Hölderlin: Komm! Ins offene, Freund!",
     "publisher": "Büchergilde"
+  },
+  {
+    "date": "2021-01-26",
+    "author": "Safranski, Rüdiger",
+    "title": "Schopenhauer",
+    "publisher": "Fischer"
   },
   {
     "date": "2021-01-15",
@@ -3711,7 +3759,7 @@
     "author": "Hume, David",
     "title": "Morals, Politics and Society",
     "publisher": "Yale University Press",
-    "date": "<NA>"
+    "date": "2019-01-19"
   },
   {
     "author": "Wilde, Oscar",

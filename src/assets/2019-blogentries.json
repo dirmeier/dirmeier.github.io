@@ -23,17 +23,6 @@
   },
   {
     "date" : "June 2019",
-    "title": "Truncated stick breaking in Greta",
-    "description": "An example implementation on Dirichlet process mixtures using trunctated stick breaking in the probabilistic programming language Greta",
-    "links": [
-      {
-        "name": "link",
-        "link": "https://dirmeier.github.io/etudes/truncated_stick_breaking_in_greta.html"
-      }
-    ]
-  },
-  {
-    "date" : "June 2019",
     "title": "Simulation-based calibration",
     "description": "An example notebook for simulation-based calibration for validation of Bayesian inferences",
     "links": [

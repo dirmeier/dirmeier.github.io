@@ -3,6 +3,7 @@
     "date" : "March 2021",
     "title": "The basics of Bayesian optimization",
     "description": "Bayesian optimization provides a unified framework to optimization of costly-to-evaluate objective functions. In this notebooks, we demonstrate the basics of BO using Stan",
+    "language": "R",
     "links": [
       {
         "name": "link",

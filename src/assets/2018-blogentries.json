@@ -14,6 +14,7 @@
     "date" : "October 2018",
     "title": "Gaussian Processes",
     "description": "Bayesian non-parametrics such as Gaussian Processes are a wonderful approach to machine learning. If you are also an enthusiast make sure to check out my Python notebooks on regression and classification",
+      "language": "Python",
     "links": [
       {
         "name": "regression",

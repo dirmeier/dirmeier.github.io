@@ -15,7 +15,9 @@
           <div class="columns" v-for="(entry, i) in item.posts" :key="i">
             <div class="column is-3">{{ entry.date }}</div>
             <div class="column is-9">
-              <h6>{{ entry.title }}</h6>
+              <h6>{{ entry.title }}
+              <img v-if="entry.language" :src="getLogo(entry.language)" width="20" height="20" >
+              </h6>
               {{ entry.description }}
               (<span v-for="(link, j) of entry.links" :key="link.name">
                 <a :href="link.link" style="display: inline">{{ link.name }}</a>
@@ -42,7 +44,10 @@ export default {
       { date: "2020", posts: blog_2020 },
       { date: "2019", posts: blog_2019 },
       { date: "2018", posts: blog_2018 }
-    ]
+    ],
+    getLogo(language) {
+         return require('../assets/logos/' + language + '_logo.svg');
+    }
   }),
   methods: {}
 };

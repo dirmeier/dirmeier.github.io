@@ -1,5 +1,17 @@
 [
   {
+    "date" : "May 2021",
+    "title": "Hierarchical, coregionalized GPs",
+    "description": "Hierarchical and coregionalized GPs are two approaches to modelling marginally correlated data. In this notebook we implement two GP models and compare their predictive performance as well as MCMC diagnostics on an US election data set",
+    "language": "Python",
+    "links": [
+      {
+        "name": "link",
+        "link": "https://dirmeier.github.io/etudes/gp_coregionalization.html"
+      }
+    ]
+  },
+  {
     "date" : "March 2021",
     "title": "The basics of Bayesian optimization",
     "description": "Bayesian optimization provides a unified framework to optimization of costly-to-evaluate objective functions. In this notebooks, we demonstrate the basics of BO using Stan",

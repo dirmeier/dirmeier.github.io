@@ -1,6 +1,30 @@
 [
   {
     "date": "2021-02-30",
+    "author": "Twain, Mark",
+    "title": "The Adventures of Huckleberry Finn",
+    "publisher": "Oxford"
+  },
+  {
+    "date": "2021-02-30",
+    "author": "Bronte, Emily",
+    "title": "Wuthering Heights",
+    "publisher": "Oxford"
+  },
+  {
+    "date": "2021-02-30",
+    "author": "Woolf, Virginia",
+    "title": "Mrs. Dalloway",
+    "publisher": "Oxford"
+  },
+  {
+    "date": "2021-02-30",
+    "author": "Eliot, George",
+    "title": "Middlemarch",
+    "publisher": "Oxford"
+  },
+  {
+    "date": "2021-02-30",
     "author": "Roberts, William Clare",
     "title": "Marx's Inferno",
     "publisher": "Princeton"

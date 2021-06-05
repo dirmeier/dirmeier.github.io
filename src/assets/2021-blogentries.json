@@ -1,8 +1,20 @@
 [
   {
+    "date" : "June 2021",
+    "title": "Variational, multivariate LSTMs",
+    "description": "LSTMs provide an intriguing approach to timeseries forecasting since they naturally model their temporal dependencies. In this notebook we test implementing a variational, multivariate LSTM using Haiku and Numpyro to predict US election outcomes",
+    "language": "Python",
+    "links": [
+      {
+        "name": "link",
+        "link": "https://dirmeier.github.io/etudes/variational_lstms.html"
+      }
+    ]
+  },
+  {
     "date" : "May 2021",
     "title": "Hierarchical, coregionalized GPs",
-    "description": "Hierarchical and coregionalized GPs are two approaches to modelling marginally correlated data. In this notebook we implement two GP models and compare their predictive performance as well as MCMC diagnostics on an US election data set",
+    "description": "Hierarchical and coregionalized GPs are two approaches to modelling marginally correlated data. In this notebook we implement two GP models using Numpyro and compare their predictive performance as well as MCMC diagnostics on an US election data set",
     "language": "Python",
     "links": [
       {
@@ -14,7 +26,7 @@
   {
     "date" : "March 2021",
     "title": "The basics of Bayesian optimization",
-    "description": "Bayesian optimization provides a unified framework to optimization of costly-to-evaluate objective functions. In this notebooks, we demonstrate the basics of BO using Stan",
+    "description": "Bayesian optimization provides a unified framework to optimization of costly-to-evaluate objective functions. In this notebooks we demonstrate the basics of BO using Stan",
     "language": "R",
     "links": [
       {

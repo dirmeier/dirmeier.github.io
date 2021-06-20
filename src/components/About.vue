@@ -48,7 +48,7 @@
         I am an ml/data scientist working at
         <a href="https://www.artificialy.ch/">Artificialy SA</a> in Lugano,
         Ticino, in Switzerland. My scientific interests lie broadly in
-        probabilistic machine learning, (nonparametric) Bayesian statistics,
+        probabilistic machine learning and deep learning, (nonparametric) Bayesian statistics,
         causal inference, probabilistic programming (in particular
         <a href="https://mc-stan.org/">Stan</a> and
         <a href="https://www.tensorflow.org/probability/">TFP</a>) and

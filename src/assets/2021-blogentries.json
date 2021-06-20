@@ -1,5 +1,17 @@
 [
   {
+    "date" : "July 2021",
+    "title": "Hilbert-space approximate copula processes",
+    "description": "In this notebook we explore the application of Hilbert-space methods for the approximation of Gaussian copula processes to model stochastic volatility. The notebook uses Stan for probabilistic inference",
+    "language": "R",
+    "links": [
+      {
+        "name": "link",
+        "link": "https://dirmeier.github.io/etudes/low_rank_copula_processes.html"
+      }
+    ]
+  },
+  {
     "date" : "June 2021",
     "title": "Variational, multivariate LSTMs",
     "description": "LSTMs provide an intriguing approach to timeseries forecasting since they naturally model their temporal dependencies. In this notebook we test implementing a variational, multivariate LSTM using Haiku and Numpyro to predict US election outcomes",

@@ -5,9 +5,10 @@
         <h3>Case studies and notebooks</h3>
         <p>
           Below you can find a collection of case studies and notebooks on
-          machine learning, causal inference, and philosophy of science. The
-          technical ones are mainly using the probabilistic programming
-          languages Stan, TensorFlow Probability and PyMC3.
+          probabilistic machine learning, causal inference and Bayesian statistics. The choice of topics
+          is fairly random, but usually is related to an interesting paper I've read, a tool a discovered, or a problem I had.
+          The notebooks mainly use Stan (from R) and TensorFlow Probability (from R and Python) for probabilistic inference,
+          but I recently started to work more with Jax, Haiku and NumPyro.
         </p>
 
         <div v-for="item in items" :key="item.date">

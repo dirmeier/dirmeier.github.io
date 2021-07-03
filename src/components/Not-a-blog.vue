@@ -6,7 +6,7 @@
         <p>
           Below you can find a collection of case studies and notebooks on
           probabilistic machine learning, causal inference and Bayesian statistics. The choice of topics
-          is fairly random, but usually is related to an interesting paper I've read, a tool a discovered, or a problem I had.
+          is fairly random, but usually is related to an interesting paper I have read, a tool I discovered, or a problem I needed to solve.
           The notebooks mainly use Stan (from R) and TensorFlow Probability (from R and Python) for probabilistic inference,
           but I recently started to work more with Jax, Haiku and NumPyro.
         </p>

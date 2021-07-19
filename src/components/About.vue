@@ -1,18 +1,19 @@
 <template>
   <div class="container">
     <div class="columns">
-      <div class="column is-8">
+      <div class="column  is-offset-2 is-8" style="margin-top: 1%">
         <img
           class="pull-left"
           src="../assets/_fig/favicon.jpeg"
           style="border-radius: 50%; margin-right: 20px;"
-          width="125"
+          width="160"
         />
         <div style="margin-top: 5%">
           <h2>Simon Dirmeier</h2>
           <div>
-            ML/data scientist
-            <div style="font-size: 0.7em; margin-top: 0%">
+            Machine learning and data scientist <br>
+            simon.dirmeier at mail ch
+            <div style="font-size: 0.7em; margin-top: 1%">
               <a
                 href="mailto:simon.dirmeier @ web.de"
                 style="color: black; margin-right: 1%; font-size: 0.9em"
@@ -44,8 +45,8 @@
     </div>
 
     <div class="columns">
-      <div class="column is-8">
-        <p>Ciao a tutti! I am Simon, an ML/data scientist from Munich, Germany, currently working at
+      <div class="column  is-offset-2 is-8">
+        <p>I am an ML/data scientist from Munich, Germany, currently working at
         <a href="https://www.artificialy.ch/">Artificialy SA</a> in Lugano in Switzerland.
         I am fortunate enough that my current job allows me to
         work on some of my main scientific interests which lie broadly in

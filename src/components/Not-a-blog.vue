@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="columns">
-      <div class="column is-8">
+      <div class="column  is-offset-2 is-8">
         <h3>Case studies and notebooks</h3>
         <p>
           Below you can find a collection of case studies and notebooks on

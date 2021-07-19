@@ -4,9 +4,9 @@
       <div class="column  is-offset-2 is-8" style="margin-top: 1%">
         <img
           class="pull-left"
-          src="../assets/_fig/favicon.jpeg"
+          src="../assets/_fig/rhein.jpg"
           style="border-radius: 50%; margin-right: 20px;"
-          width="160"
+          width="170"
         />
         <div style="margin-top: 5%">
           <h2>Simon Dirmeier</h2>

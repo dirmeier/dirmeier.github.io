@@ -59,12 +59,11 @@
         for which I developed and applied probabilistic (graphical) models for the analysis of genetic interventional data.
         </p>
         <p>
-         In my free time I play the
-        guitar, like reading philosophy, work on extending my Jazz collection, and enjoy contributing to machine learning and stats related open-source software.
-        </p>
-        <p>
         I am enthusiastic about probabilistic programming in general, and the languages <a href="https://mc-stan.org/">Stan</a> and <a href="https://www.tensorflow.org/probability/">Tensorflow Probability</a> in particular.
         I gladly help out with questions/problems/issues related to statistical modelling and building Stan and TFP programs, so please feel free to reach out!
+        </p>
+        <p>
+         In my free time I play the guitar, like reading philosophy, work on extending my Jazz collection, and enjoy contributing to machine learning and stats related open-source software.
         </p>
       </div>
     </div>

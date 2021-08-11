@@ -52,10 +52,7 @@
         work on some of my main scientific interests which lie broadly in
         probabilistic machine and deep learning, (nonparametric) Bayesian statistics,
         causal inference, probabilistic programming and
-        high-performance computing.
-        </p>
-        <p>
-        I have studied bioinformatics and computer science at TU and LMU Munich, before I've moved to Switzerland to conduct my doctoral studies on
+        high-performance computing. I have studied bioinformatics and computer science at TU and LMU Munich, before I've moved to Switzerland to conduct my doctoral studies on
         <i>statistical modelling of genetic interventions</i> at <a href="https://ethz.ch/en.html">ETH</a>,
         for which I developed and applied probabilistic (graphical) models for the analysis of genetic interventional data.
         </p>

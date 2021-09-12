@@ -48,11 +48,9 @@
       <div class="column  is-offset-2 is-8">
         <p>I am an ML/data scientist from Munich, Germany, currently working at
         <a href="https://www.artificialy.ch/">Artificialy SA</a> in Lugano in Switzerland.
-        I am fortunate enough that my current job allows me to
-        work on some of my main scientific interests which lie broadly in
-        probabilistic machine and deep learning, (nonparametric) Bayesian statistics,
-        causal inference, probabilistic programming and
-        high-performance computing. I have studied bioinformatics and computer science at TU and LMU Munich, before I've moved to Switzerland to conduct my doctoral studies on
+        My current job allows me to work on some of my main scientific interests which lie broadly in
+        probabilistic machine learning, Bayesian statistics, causal inference and probabilistic programming.
+        I have studied bioinformatics and computer science at TU and LMU Munich, before I've moved to Switzerland to conduct my doctoral studies on
         <i>statistical modelling of genetic interventions</i> at <a href="https://ethz.ch/en.html">ETH</a>,
         for which I developed and applied probabilistic (graphical) models for the analysis of genetic interventional data.
         </p>

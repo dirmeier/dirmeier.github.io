@@ -4,14 +4,14 @@
       <div class="column  is-offset-2 is-8" style="margin-top: 1%">
         <img
           class="pull-left"
-          src="../assets/_fig/rhein.jpg"
+          src="../assets/_fig/profile.jpg"
           style="border-radius: 50%; margin-right: 20px;"
-          width="170"
+          width="150"
         />
         <div style="margin-top: 5%">
           <h2>Simon Dirmeier</h2>
           <div>
-            Machine learning and data scientist <br>
+            Machine learning scientist<br>
             simon.dirmeier at mail ch
             <div style="font-size: 0.7em; margin-top: 1%">
               <a

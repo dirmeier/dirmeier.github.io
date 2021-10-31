@@ -1,12 +1,12 @@
 <template>
-  <section class="section" style="margin-top: 20%" id="home">
+  <section class="section" style="margin-top: 1%" id="home">
     <div class="container">
       <div class="columns">
         <div class="column is-5">
-          <heads />
+          <h1>Consulting</h1>
         </div>
         <div class="column is-5" style="margin-top: 2%;">
-          <intro />
+          <consulting />
         </div>
       </div>
     </div>
@@ -14,13 +14,11 @@
 </template>
 
 <script>
-import heads from "../components/Head.vue";
-import intro from "../components/Introduction.vue";
+import consulting from "../components/Consulting.vue";
 
 export default {
   components: {
-    heads,
-    intro
+    consulting
   },
   data: () => ({
     error: "",

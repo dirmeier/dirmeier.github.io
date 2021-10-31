@@ -1,15 +1,9 @@
 <template>
-      <div>
-        <p>
-          Hello, welcome to my website. I am a computer scientist who went freelance
-          to have more time for developing open-source software and
-          doing some research on machine learning methods.
-          <br>
-          My expertise and scientific interests lie broadly in probabilistic machine/deep learning,
-          (nonparametric) Bayesian statistics, causal inference and probabilistic programming.
-          
-
-
-        </p>
-    </div>
+  <div style="margin-top 3%;">
+    Hello and welcome. I am Simon, a freelance machine learning scientist from Munich. Currently,
+    I spend most of my time developing open-source software and doing
+    research, in particular on probabilistic machine/deep learning, causal inference and probabilistic programming.
+    Along the same lines, I also write <a href="/case-studies">case studies</a> and
+    occasionally offer <a href="/consulting">statistical consulting</a>.
+  </div>
 </template>

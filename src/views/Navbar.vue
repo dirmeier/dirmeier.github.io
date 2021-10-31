@@ -22,8 +22,9 @@
 
       <div id="navlist" class="navbar-menu" style="margin-right: 50px">
         <div class="navbar-end">
-          <a class="navbar-item is-tab" href="/#home">Home</a>
-          <a class="navbar-item is-tab" href="/#contact">Contact</a>
+          <a class="navbar-item is-tab" href="/">Home</a>
+          <a class="navbar-item is-tab" href="/consulting">Consulting</a>
+          <a class="navbar-item is-tab" href="/case-studies">Case studies</a>
         </div>
       </div>
     </div>

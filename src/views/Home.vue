@@ -1,27 +1,26 @@
 <template>
   <section class="section" style="margin-top: 1%" id="home">
-    <abt />
-    <blog />
-    <pubs />
-    <contact />
-    <bot />
+    <div class="container" >
+      <div class="columns">
+        <div class="column is-5">
+          <heads />
+        </div>
+        <div class="column is-5" style="margin-top: 1%">
+          <intro />
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
-import abt from "../components/About.vue";
-import blog from "../components/Not-a-blog.vue";
-import pubs from "../components/Publications.vue";
-import contact from "../components/Contact.vue";
-import bot from "../components/Bottom.vue";
+import heads from "../components/Head.vue";
+import intro from "../components/Introduction.vue";
 
 export default {
   components: {
-    abt,
-    blog,
-    contact,
-    pubs,
-    bot
+    heads,
+    intro
   },
   data: () => ({
     error: "",

@@ -11,7 +11,7 @@
         <div style="margin-top: 5%">
           <h2>Simon Dirmeier, DSc</h2>
           <div>
-            Machine learning scientist<br>
+            Machine learning scientist<br />
             simon.dirmeier at mail ch
             <div style="font-size: 0.7em; margin-top: 1%">
               <a
@@ -47,19 +47,33 @@
     <div class="columns">
       <div class="column  is-offset-2 is-8">
         <p>
-        I am a machine learning scientist with a background in computer science and applied statistics. My expertise and scientific interests lie broadly in probabilistic machine learning,
-        Bayesian statistics, causal inference and probabilistic programming. I have studied bioinformatics and computer science at TU and LMU Munich, before I've moved to Switzerland to conduct my doctoral studies on
-        <i>statistical modelling of genetic interventions</i> at <a href="https://ethz.ch/en.html">ETH</a>,
-        for which I developed and applied probabilistic (graphical) models for the analysis of genetic interventional data.
+          I am a machine learning scientist with a background in computer
+          science and applied statistics. My expertise and scientific interests
+          lie broadly in probabilistic machine learning, Bayesian statistics,
+          causal inference and probabilistic programming. I have studied
+          bioinformatics and computer science at TU and LMU Munich, before I've
+          moved to Switzerland to conduct my doctoral studies on
+          <i>statistical modelling of genetic interventions</i> at
+          <a href="https://ethz.ch/en.html">ETH</a>, for which I developed and
+          applied probabilistic (graphical) models for the analysis of genetic
+          interventional data.
         </p>
         <p>
-        I am enthusiastic about probabilistic programming in general, and the languages <a href="https://mc-stan.org/">Stan</a>, <a href="https://www.tensorflow.org/probability/">Tensorflow Probability</a> and
-        <a href="https://num.pyro.ai/en/stable/">NumPyro</a>
-         in particular.
-        I gladly help out with questions/problems/issues related to statistical modelling and building Stan, TFP or NumPyro programs, so please feel free to reach out!
+          I am enthusiastic about probabilistic programming in general, and the
+          languages <a href="https://mc-stan.org/">Stan</a>,
+          <a href="https://www.tensorflow.org/probability/"
+            >Tensorflow Probability</a
+          >
+          and
+          <a href="https://num.pyro.ai/en/stable/">NumPyro</a>
+          in particular. I gladly help out with questions/problems/issues
+          related to statistical modelling and building Stan, TFP or NumPyro
+          programs, so please feel free to reach out!
         </p>
         <p>
-         In my free time I play the guitar, like reading philosophy, work on extending my Jazz collection, and enjoy contributing to machine learning and stats related open-source software.
+          In my free time I play the guitar, like reading philosophy, work on
+          extending my Jazz collection, and enjoy contributing to machine
+          learning and stats related open-source software.
         </p>
       </div>
     </div>

@@ -1,10 +1,12 @@
 <template>
   <div>
     <p>
-      Below you can find a collection of case studies and notebooks on topics I work on or am interested in.
-      Topics revolve generally around probabilistic modelling, ranging from probabilistic machine and deep learning, over Bayesian statistics,
-      to causal inference. The case studies mainly use the probabilistic programming languages
-      Stan, TensorFlow Probability and NumPyro, depending on the problem.
+      Below you can find a collection of case studies and notebooks on topics I
+      work on or am interested in. Topics revolve generally around probabilistic
+      modelling, ranging from probabilistic machine and deep learning, over
+      Bayesian statistics, to causal inference. The case studies mainly use the
+      probabilistic programming languages Stan, TensorFlow Probability and
+      NumPyro, depending on the problem.
     </p>
 
     <div v-for="item in items" :key="item.date">

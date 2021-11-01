@@ -1,57 +1,30 @@
 <template>
-  <div>
+<div>
+    <h2>About</h2>
     <p>
-    My expertise and scientific interests lie broadly in probabilistic machine learning, Bayesian statistics, causal inference and probabilistic programming.
-    I have studied bioinformatics and computer science at TU and LMU Munich, before I've moved to Switzerland to conduct my doctoral studies on statistical modelling of genetic interventions at ETH, for which I developed and applied probabilistic (graphical) models for the analysis of genetic interventional data.
+    I am a freelance machine learning scientist with a background in computer
+    science and applied statistic. My professional and scientific interests revolve a
+    <i>probabilistic (Bayesian) machine learning</i> (PML), i.e., a family of methods and models that uses probability theory
+    to describe and manipulate uncertainty and that epistemologically interprets probability as degree of belief
+    (in comparison to the historically more prevalent interpretation as frequency).
 
-    I am enthusiastic about probabilistic programming in general, and the languages Stan and Tensorflow Probability in particular. I gladly help out with questions/problems/issues related to statistical modelling and building Stan and TFP programs, so please feel free to reach out!
-    I am available for statistical consulting on probabilistic modelling and causal inference,
-    including
-    <ul>
-        <li>development of Bayesian models in Stan or Tensorflow Probability</li>,
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    To find an overview of topics that I have expertise with, please have a look at
-    my
-
-      Hello, welcome to my website. I am Simon, a computer scientist who went
-      freelance to have more time for developing open-source software and doing
-      some research on machine learning methods.
-      <br />
-      My expertise and scientific interests lie broadly in probabilistic machine
-      and deep learning, (nonparametric) Bayesian statistics and causal
-      inference. <br />
-
-
-      I am a machine learning scientist with a background in computer
-      science and applied statistics. My expertise and scientific interests
-      lie broadly in probabilistic machine learning, Bayesian statistics,
-      causal inference and probabilistic programming. I have studied
-      bioinformatics and computer science at TU and LMU Munich, before I've
-      moved to Switzerland to conduct my doctoral studies on
-      <i>statistical modelling of genetic interventions</i> at
-      <a href="https://ethz.ch/en.html">ETH</a>, for which I developed and
-      applied probabilistic (graphical) models for the analysis of genetic
-      interventional data.
+    PML is both theoretically and practically appealing because a) Bayesian decision theory offers a clear description
+    to reason under uncertainty and draw (scientific) conclusions and b)
+    it inherently entails exciting computational inferential problems. The latter has in recent years
+    brought my attention to <i>probabilistic programming</i> which uses computer programs to represent probabilistic models
+    and automatically infers quantities of interest (usually posterior distributions).
+    </p>
+  <p>
+    My doctoral studies focused on development of machine learning and statistical methods for the analysis
+    of genetic interventional data (ETHZ, Switzerland). Before moving to Switzerland,
+    I have studied bioinformatics and computer science with a focus on graph theory, machine learning and software engineering
+    (TU/LMU Munich, Germany).
     </p>
     <p>
       I am enthusiastic about probabilistic programming in general, and the
-      languages <a href="https://mc-stan.org/">Stan</a>,
-      <a href="https://www.tensorflow.org/probability/"
-        >Tensorflow Probability</a
-      >
-      and
-      <a href="https://num.pyro.ai/en/stable/">NumPyro</a>
-      in particular. I gladly help out with questions/problems/issues
-      related to statistical modelling and building Stan, TFP or NumPyro
-      programs, so please feel free to reach out!
-    </p>
-    <p>
-      In my free time I play the guitar, like reading philosophy, work on
-      extending my Jazz collection, and enjoy contributing to machine
-      learning and stats related open-source software.
+      languages <a href="https://mc-stan.org/">Stan</a> and
+      <a href="https://num.pyro.ai/en/latest/index.html">NumPyro</a>
+      in particular.
     </p>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <section class="section" style="margin-top: 1%" id="home">
+  <section class="section" style="margin-top: 1%">
     <div class="container">
       <div class="columns">
         <div class="column is-offset-1 is-3">
@@ -7,6 +7,7 @@
         </div>
         <div class="column is-6" style="margin-top: 2%;">
           <consulting />
+          <bottom />
         </div>
       </div>
     </div>
@@ -15,10 +16,12 @@
 
 <script>
 import consulting from "../components/Consulting.vue";
+import bottom from "../components/Bottom.vue";
 
 export default {
   components: {
-    consulting
+    consulting,
+    bottom
   },
   watch: {
     title: {

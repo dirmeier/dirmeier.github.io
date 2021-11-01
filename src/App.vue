@@ -2,6 +2,7 @@
   <div>
     <navv />
     <router-view />
+    <bottom />
   </div>
 </template>
 

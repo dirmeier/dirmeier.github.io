@@ -33,7 +33,7 @@ font-weight: 300;
 
 h1 {
   font-size: 2.5rem;
-  line-height: 1.1;  
+  line-height: 1.1;
 }
 
 h2 {
@@ -129,4 +129,9 @@ a.navbar-item.is-tab:hover {
 .navbar-item.is-tab:focus, .navbar-item.is-tab:hover {
   background-color: transparent;
   border-bottom-color: #1e5262;
+}
+
+.column.is-35 {
+  flex: none;
+  width: 30%;
 }

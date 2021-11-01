@@ -19,7 +19,7 @@ import studies from "../components/Studies.vue";
 export default {
   components: {
     studies
-  },  
+  },
   watch: {
     title: {
       immediate: true,

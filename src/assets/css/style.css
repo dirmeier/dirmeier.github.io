@@ -72,9 +72,15 @@ a, a:hover, .fa:hover {
   color: #1e5262;
 }
 
+ul {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 ul, li {
-  text-align: justify;
-  margin-bottom: 1rem;
+  list-style: disc;
+  padding-left: 5px;
+  margin-left: 5px;
 }
 
 p {

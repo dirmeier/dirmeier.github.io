@@ -2,11 +2,12 @@
   <section class="section" style="margin-top: 1%" id="home">
     <div class="container">
       <div class="columns">
-        <div class="column is-5">
-          <h1>Consulting</h1>
+        <div class="column is-offset-1 is-3">
+          <h1>About</h1>
         </div>
-        <div class="column is-5" style="margin-top: 2%;">
-          <consulting />
+        <div class="column is-6" style="margin-top: 2%;">
+          <about />
+          <publications />
         </div>
       </div>
     </div>
@@ -14,21 +15,19 @@
 </template>
 
 <script>
-import consulting from "../components/Consulting.vue";
+import about from "../components/About.vue";
+import publications from "../components/Research.vue";
 
 export default {
   components: {
-    consulting
+    about,
+    publications
   },
-  data: () => ({
-    error: "",
-    messages: []
-  }),
   watch: {
     title: {
       immediate: true,
       handler() {
-        document.title = "Home";
+        document.title = "About";
       }
     }
   }

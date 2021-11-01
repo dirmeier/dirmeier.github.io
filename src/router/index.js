@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Books from "../views/Books.vue";
 import Consulting from "../views/Consulting.vue";
 import Studies from "../views/Studies.vue";
+import About from "../views/About.vue";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/books",
     name: "Books",
     component: Books
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: About
   }
 ];
 

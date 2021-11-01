@@ -1,5 +1,5 @@
 <template>
-  <div class="columns">
+  <div class="columns" style='max-width: 600px'>
     <div class="column is-5">
       <img
         src="../assets/_fig/profile.jpg"

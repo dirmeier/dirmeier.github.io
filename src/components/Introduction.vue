@@ -11,12 +11,3 @@
     </p>
   </div>
 </template>
-
-<script>
-export default {
-  data: () => ({
-    button_is_pressed: false
-  }),
-  methods: {}
-};
-</script>

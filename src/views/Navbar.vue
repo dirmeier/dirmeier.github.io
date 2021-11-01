@@ -24,8 +24,7 @@
         <div class="navbar-end">
           <a class="navbar-item is-tab" href="/">Home</a>
           <a class="navbar-item is-tab" href="/consulting">Consulting</a>
-          <a class="navbar-item is-tab" href="/case-studies">Case studies</a>
-          <a class="navbar-item is-tab" href="/about">About</a>
+          <a class="navbar-item is-tab" href="/case-studies">Case studies</a>          
         </div>
       </div>
     </div>

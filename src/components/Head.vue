@@ -7,7 +7,7 @@
         width="150"
       />
     </div>
-    <div class="column is-7" style="margin-top: 10px">
+    <div class="column is-8" style="margin-top: 10px">
       <h2>Simon Dirmeier, DSc</h2>
       <div>
         Machine learning & applied statistics<br />

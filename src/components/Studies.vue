@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>Case studies</h2>
     <p>
       Below you can find a collection of case studies and notebooks on topics I
       work on or am interested in. Topics revolve generally around probabilistic

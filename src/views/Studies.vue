@@ -1,11 +1,8 @@
 <template>
-  <section class="section" style="margin-top: 1%" id="home">
+  <section class="section">
     <div class="container">
       <div class="columns">
-        <div class="column is-offset-1 is-3">
-          <h1>Case studies</h1>
-        </div>
-        <div class="column is-6" style="margin-top: 2%;">
+        <div class="column is-offset-4 is-6">
           <studies />
         </div>
       </div>

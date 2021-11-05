@@ -2,18 +2,17 @@
   <div id='consulting'>
   <h2>Consulting</h2>
     <p>
-    I am occasionally available for statistical consulting on probabilistic modeling, causal inference and implementation of
-    (deep) probabilistic models using programming languages, particularly
+    I am occasionally available for statistical consulting on probabilistic modeling and causal inference,
+     and research software development. In particular consulting on
     <ul>
       <li>statistical/causal data analysis, e.g., of biomedical, financial, or astrophysical data sets</li>
-      <li>implementation of (deep) probabilistic models using the frameworks Stan or Tensorflow Probability (in R or Python) </li>
-      <li>debugging and optimization of probabilistic models</li>
-      <li>development of dashboards to visualize results of a data analysis</li>
-      <li>assistance with questions about Bayesian model validation, model selection, etc.</li>
+      <li>development of web dashboards for visualization</li>
+      <li>implementation of bespoke probabilistic models using PPLs (*)</li>
+      <li>Bayesian workflow, model validation, model selection, etc.</li>
+      <li>implementation of computational pipelines (e.g., of analysis workflows for reproducible research)</li>
     </ul>
-  </p>
-  <p>
-    To find an overview of topics that I have expertise with, please have a look at
+      (*) via Stan, NumPyro or TensorFlow Probability (in R or Python) <br>
+    To find a sketch of topics that I have expertise with, please have a look at
     my <a href="/case-studies">case studies</a>.
   </p>
   </div>

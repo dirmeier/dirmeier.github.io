@@ -1,30 +1,46 @@
 <template>
-<div>
+  <div>
     <h2>About</h2>
     <p>
-    I am a freelance machine learning scientist with a background in computer
-    science and applied statistic. My professional and scientific interests revolve a
-    <i>probabilistic (Bayesian) machine learning</i> (PML), i.e., a family of methods and models that uses probability theory
-    to describe and manipulate uncertainty and that epistemologically interprets probability as degree of belief
-    (in comparison to the historically more prevalent interpretation as frequency).
-
-    PML is both theoretically and practically appealing because a) Bayesian decision theory offers a clear description
-    to reason under uncertainty and draw (scientific) conclusions and b)
-    it inherently entails exciting computational inferential problems. The latter has in recent years
-    brought my attention to <i>probabilistic programming</i> which uses computer programs to represent probabilistic models
-    and automatically infers quantities of interest (usually posterior distributions).
-    </p>
-  <p>
-    My doctoral studies focused on development of machine learning and statistical methods for the analysis
-    of genetic interventional data (ETHZ, Switzerland). Before moving to Switzerland,
-    I have studied bioinformatics and computer science with a focus on graph theory, machine learning and software engineering
-    (TU/LMU Munich, Germany).
+      I am a freelance machine learning (ML) scientist based in Zurich,
+      Switzerland. My expertise and scientific interests lie broadly in
+      probabilistic machine learning, causal inference, Bayesian statistics, and
+      probabilistic programming.
     </p>
     <p>
-      I am enthusiastic about probabilistic programming in general, and the
-      languages <a href="https://mc-stan.org/">Stan</a> and
-      <a href="https://num.pyro.ai/en/latest/index.html">NumPyro</a>
-      in particular.
+      I've conducted my doctoral studies at
+      <a href="https://ethz.ch/en.html">ETHZ</a> in Switzerland, where I
+      developed statistical methods for the analysis of genetic interventional
+      data. Before that, I have studied bioinformatics and computer science at
+      <a href="https://www.tum.de/en/">TU</a>/<a
+        href="https://www.lmu.de/en/index.html"
+        >LMU</a
+      >
+      in Munich, Germany (and seven semesters philosophy at LMU).
+    </p>
+    <p>
+      As a computer scientist turned applied statistician, I am particularly
+      enthusiastic about probabilistic programming which, as a discipline, lies
+      at the interface of both fields. Probabilistic programming languages
+      (PPLs) use computer programs to represent probabilistic models and are
+      designed such that inference of quantities of interest (usually posterior
+      distributions) can be automatized. In that line of research, I frequently contribute to
+      modern PPLs, e.g., the frameworks
+      <a href="https://mc-stan.org/">Stan</a> or
+      <a href="https://num.pyro.ai/en/latest/index.html">NumPyro</a> to learn
+      more about the computational and mathematical nuances. As a former
+      researcher in computational biology and wannabe-philosopher, I am keen on
+      causal inference (CI) and its relationship to metaphysics, epistemology,
+      and scientific discovery (CI concerns itself with the discovery and inference cause-and-effect
+      relationships).
+    </p>
+    <p>
+      I interact with computers mainly via Python, R and C++, but recently also
+      have begun developing in Clojure and Julia. For ML, my tech stack of choice consists of Stan, Jax, NumPyro and TensorFlow (Probability). I am
+      an advocate of open science, reproducible research and principled coding practices, and employ tools
+      such as Docker and computational pipelines, like Snakemake, for robust data analysis.
+      Other than that, I have (limited) experience with high-performance and cloud computing, e.g., via
+       OpenMP, GPGPU (CUDA) and Azure/Google Cloud.
     </p>
   </div>
 </template>

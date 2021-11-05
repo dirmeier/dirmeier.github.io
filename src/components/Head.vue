@@ -10,7 +10,7 @@
     <div class="column is-8" style="margin-top: 10px">
       <h2>Simon Dirmeier, DSc</h2>
       <div>
-        Machine learning & applied statistics<br />
+        Freelance ML & RSE <br />
         contact @ simon-dirmeier . com
         <div style="font-size: 0.7em; margin-top: 1%">
           <a

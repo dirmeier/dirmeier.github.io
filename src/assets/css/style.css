@@ -7,7 +7,6 @@ html {
 
 body {
   font-family: "Lato", sans-serif;
-
   color: black;
   line-height: 1.6;
   font-size: 0.9rem;
@@ -19,14 +18,14 @@ body {
 text {
   font-family: "Lato", sans-serif;
 
-  letter-spacing: .2rem;
+  letter-spacing: 1.2rem;
   text-decoration: none;
   color: #222;
 }
 
 h1, h2, h3 {
   font-family: "Lato", sans-serif;
-font-weight: 300;
+  font-weight: 300;
   margin-top: 5%;
   color: #333333;
 }
@@ -39,6 +38,7 @@ h1 {
 h2 {
   font-size: 2rem;
   line-height: 1.1;
+  margin-bottom: 2%;
 }
 
 h3 {

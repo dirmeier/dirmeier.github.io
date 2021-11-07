@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>
-      Hello and welcome. I am Simon, a freelance machine learning scientist.
+      Hello and welcome. I am Simon, a freelance machine learning scientist with a Bayesian faible.
       Currently, I spend most of my time developing open-source software and
       doing research, in particular on probabilistic machine learning, causal
       inference and probabilistic programming. Along the same lines, I also

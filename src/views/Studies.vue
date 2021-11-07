@@ -4,6 +4,7 @@
       <div class="columns">
         <div class="column is-offset-4 is-6">
           <studies />
+          <bottom />
         </div>
       </div>
     </div>
@@ -12,10 +13,12 @@
 
 <script>
 import studies from "../components/Studies.vue";
+import bottom from "../components/Bottom.vue";
 
 export default {
   components: {
-    studies
+    studies,
+    bottom
   },
   watch: {
     title: {

@@ -2,8 +2,8 @@
   <div id='consulting'>
   <h2>Consulting</h2>
     <p>
-    I am occasionally available for statistical consulting on probabilistic modeling and causal inference,
-     and research software development. In particular consulting on
+    I am occasionally available for statistical consulting on probabilistic modeling, causal inference,
+     and research software development. In particular, I offer consulting on
     <ul>
       <li>statistical/causal data analysis, e.g., of biomedical, financial, or astrophysical data sets</li>
       <li>development of web dashboards for visualization</li>

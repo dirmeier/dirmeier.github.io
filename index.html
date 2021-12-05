@@ -1,1 +1,19 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content=#3273DC><meta name=author content="Simon Dirmeier"><link rel=icon href=/ ><title>Home</title><link href=/css/app.d2c82e95.css rel=preload as=style><link href=/js/app.26833b1f.js rel=preload as=script><link href=/js/chunk-vendors.e452d5d1.js rel=preload as=script><link href=/css/app.d2c82e95.css rel=stylesheet></head><body><div><noscript><strong>Sorry but Home doesn't work properly without JavaScript enabled.</strong></noscript><div id=app></div></div><script src=https://use.fontawesome.com/e5ea3ae996.js></script><script src=/js/chunk-vendors.e452d5d1.js></script><script src=/js/app.26833b1f.js></script></body></html>
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content=#3273DC><meta name=author content="Simon Dirmeier"><link rel=icon href=/ ><title>Home</title><script>// MIT License
+// https://github.com/rafgraph/spa-github-pages
+// This script checks to see if a redirect is present in the query string,
+// converts it back into the correct url and adds it to the
+// browser's history using window.history.replaceState(...),
+// which won't cause the browser to attempt to load the new url.
+// When the single page app is loaded further down in this file,
+// the correct url will be waiting in the browser's history for
+// the single page app to route accordingly.
+(function(l) {
+    if (l.search[1] === '/' ) {
+    var decoded = l.search.slice(1).split('&').map(function(s) {
+        return s.replace(/~and~/g, '&')
+    }).join('?');
+    window.history.replaceState(null, null,
+        l.pathname.slice(0, -1) + decoded + l.hash
+    );
+    }
+}(window.location))</script><link href=/css/app.d2c82e95.css rel=preload as=style><link href=/js/app.29d09cb0.js rel=preload as=script><link href=/js/chunk-vendors.e452d5d1.js rel=preload as=script><link href=/css/app.d2c82e95.css rel=stylesheet></head><body><div><noscript><strong>Sorry but Home doesn't work properly without JavaScript enabled.</strong></noscript><div id=app></div></div><script src=https://use.fontawesome.com/e5ea3ae996.js></script><script src=/js/chunk-vendors.e452d5d1.js></script><script src=/js/app.29d09cb0.js></script></body></html>

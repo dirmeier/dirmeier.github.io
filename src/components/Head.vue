@@ -11,7 +11,7 @@
       <h2>Simon Dirmeier, DSc</h2>
       <div>
         Freelance ML & RSE <br />
-        contact @ simon-dirmeier . com
+        simon.dirmeier @ protonmail com
         <div style="font-size: 0.7em; margin-top: 1%">
           <a
             href="mailto:simon.dirmeier @ protonmail com"

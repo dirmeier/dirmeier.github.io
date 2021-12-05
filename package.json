@@ -7,7 +7,9 @@
     "build": "vue-cli-service build",
     "lint": "npx eslint 'src/**/*.{vue,js}'",
     "lint:f": "npx eslint 'src/**/*.{vue,js}' --fix",
-    "start": "forever start app.js"
+    "start": "forever start app.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -19,6 +21,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "forever": "^3.0.4",
+    "gh-pages": "^3.2.3",
     "joi": "^17.3.0",
     "lodash": "^4.17.20",
     "morgan": "^1.10.0",

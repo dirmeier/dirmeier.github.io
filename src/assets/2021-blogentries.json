@@ -1,16 +1,4 @@
-[
-  {
-    "date" : "September 2021",
-    "title": "Tensor-product splines for causal inference",
-    "description": "Smoothing splines are seemingly receiving increasingly less attention in nonparametric Bayesian modelling in favour of Gaussian processes. In this case study we show that they can however still provide a competitive alternative to GPs and demonstrate their utility in a causal inference problem. The notebook uses Stan for probabilistic inference",
-    "language": "Python",
-    "links": [
-      {
-        "name": "link",
-        "link": "https://dirmeier.github.io/etudes/causal_inference_using_tensor_product_smoothing_splines.html"
-      }
-    ]
-  },
+[  
   {
     "date" : "August 2021",
     "title": "Stick-breaking constructions and variational inference",

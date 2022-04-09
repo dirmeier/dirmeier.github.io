@@ -2,8 +2,9 @@
   <div>
     <h2>About</h2>
     <p>
-      I am a freelance machine learning (ML) scientist based in Zurich,
-      Switzerland. My expertise and scientific interests lie broadly in
+      I am a machine learning (ML) scientist based in Zurich,
+      Switzerland. I currently work as a senior data scientist at the <a href="https://datascience.ch/">Swiss Data Science Center</a>
+      in the academic cell. My expertise and scientific interests lie broadly in
       probabilistic machine learning, causal inference, Bayesian statistics, and
       probabilistic programming.
     </p>

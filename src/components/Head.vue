@@ -10,7 +10,7 @@
     <div class="column is-8" style="margin-top: 10px">
       <h2>Simon Dirmeier, DSc</h2>
       <div>
-        Freelance ML & RSE <br />
+        Senior Data Scientist @ SDSC<br />
         simon.dirmeier @ protonmail com
         <div style="font-size: 0.7em; margin-top: 1%">
           <a

@@ -26,12 +26,6 @@
             <i class="fa fa-github fa-2x" />
           </a>
           <a
-            href="https://twitter.com/feyerabendian"
-            style="color: black; margin-right: 1%"
-          >
-            <i class="fa fa-twitter fa-2x" />
-          </a>
-          <a
             href="https://linkedin.com/in/simon-dirmeier"
             style="color: black; margin-right: 1%"
           >

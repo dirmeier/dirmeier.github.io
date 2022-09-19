@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import blog_2022 from "../assets/2022-blogentries.json";
 import blog_2021 from "../assets/2021-blogentries.json";
 import blog_2020 from "../assets/2020-blogentries.json";
 import blog_2019 from "../assets/2019-blogentries.json";
@@ -44,6 +45,7 @@ export default {
   data: () => ({
     error: "",
     items: [
+      { date: "2022", posts: blog_2022 },
       { date: "2021", posts: blog_2021 },
       { date: "2020", posts: blog_2020 },
       { date: "2019", posts: blog_2019 },

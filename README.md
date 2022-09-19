@@ -1,4 +1,4 @@
-ﬁ# webpage
+# Webpage
 
 [![Project Status](http://www.repostatus.org/badges/latest/concept.svg)](http://www.repostatus.org/#concept)
 
@@ -17,7 +17,7 @@ Download [Minicoda](https://docs.conda.io/en/latest/miniconda.html) first and in
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
-conda create -n web python=3.7
+conda create -n web python=3.9
 echo "source ~/miniconda3/bin/activate  web" >> ~/.bashrc
 
 source ~/miniconda3/bin/activate web
@@ -35,7 +35,6 @@ npm run build
 npm run start
 ```
 
-
 ## Author
 
-Simon Dirmeier <a href="mailto:simon.dirmeier @ web.de">simon.dirmeier @ web.de</a>
+Simon Dirmeier <a href="mailto:sfyrbnd @ pm me">sfyrbnd @ pm me</a>

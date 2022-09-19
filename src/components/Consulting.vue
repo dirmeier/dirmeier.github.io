@@ -18,7 +18,7 @@
           for reproducible research)
         </li>
       </ul>
-      (*) via Stan, NumPyro or TensorFlow Probability (in R or Python) <br />
+      (*) via, e.g, Stan, NumPyro or TensorFlow Probability (in Python, Julia, C++ or R) <br />
       To find a sketch of topics that I have expertise with, please have a look
       at my <a href="/case-studies">case studies</a>.
     </div>

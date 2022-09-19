@@ -20,16 +20,16 @@
             <i class="fa fa-envelope fa-2x" />
           </a>
           <a
+              href="https://linkedin.com/in/simon-dirmeier"
+              style="color: black; margin-right: 1%"
+          >
+            <i class="fa fa-linkedin fa-2x" />
+          </a>
+          <a
             href="https://github.com/dirmeier"
             style="color: black; margin-right: 1%;"
           >
             <i class="fa fa-github fa-2x" />
-          </a>
-          <a
-            href="https://linkedin.com/in/simon-dirmeier"
-            style="color: black; margin-right: 1%"
-          >
-            <i class="fa fa-linkedin fa-2x" />
           </a>
         </div>
       </div>

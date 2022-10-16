@@ -1,0 +1,50 @@
+[
+	{
+		"date": "October 2019",
+		"title": "Mixed model reference implementations",
+		"description": "Concise reference implementations to fit (generalized) linear mixed models in Python",
+		"language": "Python",
+		"links": [
+			{
+				"name": "link",
+				"link": "https://dirmeier.github.io/mixed-models/index.html"
+			}
+		]
+	},
+	{
+		"date": "September 2019",
+		"title": "Structure learning for Bayesian networks",
+		"description": "A Python notebook on structure MCMC to learn the structure of a Bayesian network using PyMC3",
+		"language": "Python",
+		"links": [
+			{
+				"name": "link",
+				"link": "https://dirmeier.github.io/structure-learning-with-pymc/index.html"
+			}
+		]
+	},
+	{
+		"date": "June 2019",
+		"title": "Simulation-based calibration",
+		"description": "An example notebook for simulation-based calibration for validation of Bayesian inferences",
+		"language": "R",
+		"links": [
+			{
+				"name": "link",
+				"link": "https://dirmeier.github.io/etudes/simulation_based_calibration.html"
+			}
+		]
+	},
+	{
+		"date": "January 2019",
+		"title": "Dirichlet process mixture models",
+		"description": "Stan models on infinite Bayesian mixtures using the Dirichlet process",
+		"language": "R",
+		"links": [
+			{
+				"name": "link",
+				"link": "https://dirmeier.github.io/etudes/dirichlet_process_mixture_models.html"
+			}
+		]
+	}
+]

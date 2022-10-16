@@ -1,0 +1,29 @@
+[
+	{
+		"date": "October 2018",
+		"title": "Philosophy of Science",
+		"description": "Some references on philosophy of science that are in my opinion worth reading",
+		"links": [
+			{
+				"name": "link",
+				"link": "https://dirmeier.github.io/on-philosophy-of-science/index.html"
+			}
+		]
+	},
+	{
+		"date": "October 2018",
+		"title": "Gaussian Processes",
+		"description": "Bayesian non-parametrics such as Gaussian Processes are a wonderful approach to machine learning. If you are also an enthusiast make sure to check out my Python notebooks on regression and classification",
+		"language": "R",
+		"links": [
+			{
+				"name": "regression",
+				"link": "https://dirmeier.github.io/etudes/gaussian_process_regression.html"
+			},
+			{
+				"name": "classification",
+				"link": "https://dirmeier.github.io/etudes/gaussian_process_classification.html"
+			}
+		]
+	}
+]

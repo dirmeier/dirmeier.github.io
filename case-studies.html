@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="author" content="Simon Dirmeier">
+		<meta name="viewport" content="width=device-width" />
+
+        <script type="text/javascript">
+            // MIT License
+            // https://github.com/rafgraph/spa-github-pages
+            // This script checks to see if a redirect is present in the query string,
+            // converts it back into the correct url and adds it to the
+            // browser's history using window.history.replaceState(...),
+            // which won't cause the browser to attempt to load the new url.
+            // When the single page app is loaded further down in this file,
+            // the correct url will be waiting in the browser's history for
+            // the single page app to route accordingly.
+            (function(l) {
+                if (l.search[1] === '/' ) {
+                    var decoded = l.search.slice(1).split('&').map(function(s) {
+                        return s.replace(/~and~/g, '&')
+                    }).join('?');
+                    window.history.replaceState(null, null,
+                        l.pathname.slice(0, -1) + decoded + l.hash
+                    );
+                }
+            }(window.location))
+        </script>
+
+        <meta http-equiv="content-security-policy" content="">
+		<link href="./_app/immutable/assets/_layout-29d41d8a.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/start-6f9a155f.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-21de0154.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-16726e75.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-28feeae3.js">
+		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.js-7b9cbfbc.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-8d2a742b.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/case-studies/_page.svelte-c6a74cdd.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_navbar-8c0527b3.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_bottom-031b3214.js"><title>About</title><!-- HEAD_svelte-1ine71f_START --><!-- HEAD_svelte-1ine71f_END -->
+	</head>
+	<body>
+		<div>
+
+
+
+
+<div><div><nav class="navbar has-shadow is-fixed-top" role="navigation" aria-label="main navigation"><div class="container"><div class="navbar-brand"><a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navlist" onclick="document.querySelector('#navlist').classList.toggle('is-active');"><span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span></a></div>
+
+			<div id="navlist" class="navbar-menu" style="margin-right: 50px"><div class="navbar-end"><a class="navbar-item is-tab" href="/">Home</a>
+					<a class="navbar-item is-tab" href="/case-studies">Case studies</a>
+					<a class="navbar-item is-tab" href="/about">About</a></div></div></div></nav></div>
+	<div><section class="section"><div class="container"><div class="columns"><div class="column is-offset-4 is-6"><div><h2>Case studies</h2>
+	<p>Below you can find a collection of case studies and notebooks on topics I work on or am
+		interested in. Topics revolve generally around probabilistic modelling, ranging from
+		probabilistic machine and deep learning, to Bayesian statistics, to causal inference. The case
+		studies mainly use the probabilistic programming languages Stan, TensorFlow Probability and
+		NumPyro.
+	</p>
+
+	<div><h4>2022</h4></div>
+		<div class="columns"><div class="column is-3">June 2022</div>
+				<div class="column is-9"><h6>Diffusion models I
+						<img src="/logos/Python_logo.svg" width="20" height="20"></h6>
+					In this case study we cover the basics of diffusion probabilistic models. The notebook uses Distrax and Haiku for probabilistic inference
+					(<span><a href="https://dirmeier.github.io/etudes/diffusion_models.html" style="display: inline">link</a>
+							
+						</span>)</div>
+			</div><div class="columns"><div class="column is-3">January 2022</div>
+				<div class="column is-9"><h6>Normalizing flows for variational inference
+						<img src="/logos/Python_logo.svg" width="20" height="20"></h6>
+					This case study implements an inverse autoregressive flow for variational inference of parameters. The notebook uses Distrax and Haiku for probabilistic inference
+					(<span><a href="https://dirmeier.github.io/etudes/normalizing_flows_for_vi.html" style="display: inline">link</a>
+							
+						</span>)</div>
+			</div><div><h4>2021</h4></div>
+		<div class="columns"><div class="column is-3">September 2021</div>
+				<div class="column is-9"><h6>Causal inference using tensor-product smoothing splines
+						<img src="/logos/Python_logo.svg" width="20" height="20"></h6>
+					The case study reproduces and improves upon a probabilistic model for causal inference with structured latent confounders. It uses BlackJAX, NumPyro and Stan for probabilistic inference
+					(<span><a href="https://dirmeier.github.io/etudes/causal_inference_using_tensor_product_smoothing_splines.html" style="display: inline">link</a>
+							
+						</span>)</div>
+			</div><div class="columns"><div class="column is-3">August 2021</div>
+				<div class="column is-9"><h6>Stick-breaking constructions and variational inference
+						<img src="/logos/Python_logo.svg" width="20" height="20"></h6>
+					Here we implement common stick-breaking constructions for mean-field variational inference in nonparametric mixture and factor models. The notebook uses NumPyro and TFP for probabilistic inference
+					(<span><a href="https://dirmeier.github.io/etudes/stick_breaking_constructions.html" style="display: inline">link</a>
+							
+						</span>)</div>
+			</div><div class="columns"><div class="column is-3">July 2021</div>
+				<div class="column is-9"><h6>Hilbert-space approximate copula processes
+						<img src="/logos/R_logo.svg" width="20" height="20"></h6>
+					In this notebook we explore the application of Hilbert-space methods for the approximation of Gaussian copula processes to model stochastic volatility. The notebook uses Stan for probabilistic inference
+					(<span><a href="https://dirmeier.github.io/etudes/low_rank_copula_processes.html" style="display: inline">link</a>
+							
+						</span>)</div>
+			</div><div class="columns"><div class="column is-3">June 2021</div>
+				<div class="column is-9"><h6>Variational, multivariate LSTMs
+						<img src="/logos/Python_logo.svg" width="20" height="20"></h6>
+					LSTMs provide an intriguing approach to timeseries forecasting since they naturally model their temporal dependencies. In this notebook we test implementing a variational, multivariate LSTM using Haiku and Numpyro to predict US election outcomes
+					(<span><a href="https://dirmeier.github.io/etudes/variational_lstms.html" style="display: inline">link</a>
+							
+						</span>)</div>
+			</div><div class="columns"><div class="column is-3">May 2021</div>
+				<div class="column is-9"><h6>Hierarchical, coregionalized GPs
+						<img src="/logos/Python_logo.svg" width="20" height="20"></h6>
+					Hierarchical and coregionalized GPs are two approaches to modelling marginally correlated data. In this notebook we implement two GP models using Numpyro and compare their predictive performance as well as MCMC diagnostics on an US election data set
+					(<span><a href="https://dirmeier.github.io/etudes/gp_coregionalization.html" style="display: inline">link</a>
+							
+						</span>)</div>
+			</div><div class="columns"><div class="column is-3">March 2021</div>
+				<div class="column is-9"><h6>The basics of Bayesian optimization
+						<img src="/logos/R_logo.svg" width="20" height="20"></h6>
+					Bayesian optimization provides a unified framework to optimization of costly-to-evaluate objective functions. In this notebooks we demonstrate the basics of BO using Stan
+					(<span><a href="https://dirmeier.github.io/etudes/bayesian_optimization.html" style="display: inline">link</a>
+							
+						</span>)</div>
+			</div><div><h4>2020</h4></div>
+		<div class="columns"><div class="column is-3">October 2020</div>
+				<div class="column is-9"><h6>Normalizing flows for density estimation
+						<img src="/logos/Python_logo.svg" width="20" height="20"></h6>
+					Using TensorFlow Probability's Bijector API one can easily implement custom normalizing flows. This notebook shows how it can be done using MAFs as an example
+					(<span><a href="https://dirmeier.github.io/etudes/normalizing_flows.html" style="display: inline">link</a>
+							
+						</span>)</div>
+			</div><div class="columns"><div class="column is-3">June 2020</div>
+				<div class="column is-9"><h6>Causal structure learning with VAEs
+						<img src="/logos/R_logo.svg" width="20" height="20"></h6>
+					Learning cause-effect mechanisms among a set of random variables is not only of great epistemological interest but also a fascinating statistical problem. In this notebook we implement a graph variational autoencoder to learn the DAG of a structural equations model and compare it to greedy equivalent search
+					(<span><a href="https://dirmeier.github.io/etudes/causal_structure_learning.html" style="display: inline">link</a>
+							
+						</span>)</div>
+			</div><div class="columns"><div class="column is-3">May 2020</div>
+				<div class="column is-9"><h6>On sequential regression models
+						<img src="/logos/R_logo.svg" width="20" height="20"></h6>
+					Sequential models are a special type of ordinal regression models, but additionally assume that categories can only be reached sequentially. This case study shows the difference to conventional ordinal models
+					(<span><a href="https://dirmeier.github.io/rstansequential/index.html" style="display: inline">link</a>
+							
+						</span>)</div>
+			</div><div><h4>2019</h4></div>
+		<div class="columns"><div class="column is-3">October 2019</div>
+				<div class="column is-9"><h6>Mixed model reference implementations
+						<img src="/logos/Python_logo.svg" width="20" height="20"></h6>
+					Concise reference implementations to fit (generalized) linear mixed models in Python
+					(<span><a href="https://dirmeier.github.io/mixed-models/index.html" style="display: inline">link</a>
+							
+						</span>)</div>
+			</div><div class="columns"><div class="column is-3">September 2019</div>
+				<div class="column is-9"><h6>Structure learning for Bayesian networks
+						<img src="/logos/Python_logo.svg" width="20" height="20"></h6>
+					A Python notebook on structure MCMC to learn the structure of a Bayesian network using PyMC3
+					(<span><a href="https://dirmeier.github.io/structure-learning-with-pymc/index.html" style="display: inline">link</a>
+							
+						</span>)</div>
+			</div><div class="columns"><div class="column is-3">June 2019</div>
+				<div class="column is-9"><h6>Simulation-based calibration
+						<img src="/logos/R_logo.svg" width="20" height="20"></h6>
+					An example notebook for simulation-based calibration for validation of Bayesian inferences
+					(<span><a href="https://dirmeier.github.io/etudes/simulation_based_calibration.html" style="display: inline">link</a>
+							
+						</span>)</div>
+			</div><div class="columns"><div class="column is-3">January 2019</div>
+				<div class="column is-9"><h6>Dirichlet process mixture models
+						<img src="/logos/R_logo.svg" width="20" height="20"></h6>
+					Stan models on infinite Bayesian mixtures using the Dirichlet process
+					(<span><a href="https://dirmeier.github.io/etudes/dirichlet_process_mixture_models.html" style="display: inline">link</a>
+							
+						</span>)</div>
+			</div><div><h4>2018</h4></div>
+		<div class="columns"><div class="column is-3">October 2018</div>
+				<div class="column is-9"><h6>Philosophy of Science
+						</h6>
+					Some references on philosophy of science that are in my opinion worth reading
+					(<span><a href="https://dirmeier.github.io/on-philosophy-of-science/index.html" style="display: inline">link</a>
+							
+						</span>)</div>
+			</div><div class="columns"><div class="column is-3">October 2018</div>
+				<div class="column is-9"><h6>Gaussian Processes
+						<img src="/logos/R_logo.svg" width="20" height="20"></h6>
+					Bayesian non-parametrics such as Gaussian Processes are a wonderful approach to machine learning. If you are also an enthusiast make sure to check out my Python notebooks on regression and classification
+					(<span><a href="https://dirmeier.github.io/etudes/gaussian_process_regression.html" style="display: inline">regression</a>
+							<span>, </span>
+						</span>)(<span><a href="https://dirmeier.github.io/etudes/gaussian_process_classification.html" style="display: inline">classification</a>
+							
+						</span>)</div>
+			</div></div>
+						<div class="container"><footer style="margin-top: 15%; float: right"><p style="font-size: 0.75em;">© 2017-2021 Simon Dirmeier (
+			<a href="mailto:simon.dirmeier @ protonmail com">simon.dirmeier @ protonmail com</a>)
+		</p></footer></div></div></div></div></section></div></div>
+
+
+		<script type="module" data-sveltekit-hydrate="1nsg61b">
+			import { start } from "./_app/immutable/start-6f9a155f.js";
+
+			start({
+				env: {},
+				hydrate: {
+					status: 200,
+					error: null,
+					node_ids: [0, 4],
+					params: {},
+					routeId: "case-studies",
+					data: (function(a){return [a,a]}(null)),
+					form: null
+				},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="1nsg61b"]').parentNode,
+				trailing_slash: "never"
+			});
+		</script>
+	</div>
+	</body>
+</html>

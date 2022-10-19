@@ -8,10 +8,10 @@ const app = express();
 app.use(morgan('tiny'));
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/build'));
+app.use(express.static(__dirname + '/dist'));
 
 app.get('*', (req, res) => {
-	res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+	res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
 });
 
 const port = process.env.PORT || 4000;

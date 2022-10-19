@@ -3,6 +3,12 @@
 node_modules/
 dist/
 
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
 
 # local env files
 .env.local
@@ -21,5 +27,3 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-
-package-lock.json

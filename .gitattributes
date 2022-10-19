@@ -1,1 +1,2 @@
 *.vue linguist-language=JavaScript
+*.svelte linguist-language=JavaScript

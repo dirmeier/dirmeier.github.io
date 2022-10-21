@@ -2,17 +2,15 @@
 	<h2>About</h2>
 	<p>
 		I am a machine learning scientist based in Zurich, Switzerland. I currently work as a senior
-		data scientist at the
-		<a href="https://datascience.ch/">Swiss Data Science Center</a>
+		data scientist at the <a href="https://datascience.ch/">Swiss Data Science Center</a>
 		in the academic cell. My expertise and scientific interests lie broadly in probabilistic machine
-		learning, causal inference, Bayesian statistics, and probabilistic programming.
+		learning, causal inference, Bayesian statistics, scientific computing, and probabilistic programming.
 	</p>
 	<p>
 		I've conducted my doctoral studies at
 		<a href="https://ethz.ch/en.html">ETHZ</a> in Switzerland, where I developed statistical methods
 		for the analysis of genetic interventional data. Before that, I have studied computer science
-		and bioinformatics at
-		<a href="https://www.tum.de/en/">TU</a>/<a href="https://www.lmu.de/en/index.html">LMU</a>
+		and bioinformatics at <a href="https://www.tum.de/en/">TU</a>/<a href="https://www.lmu.de/en/index.html">LMU</a>
 		in Munich, Germany (and seven semesters of philosophy at LMU).
 	</p>
 	<p>
@@ -32,7 +30,7 @@
 	</p>
 	<p>
 		I interact with computers mainly via Python, JavaScript and C++, but recently also have begun
-		developing software in Clojure and Julia. For ML, my tech stack consists of Stan, NumPyro and
+		developing software in Clojure and Julia. For ML, my tech stack consists of Stan, NumPyro, and
 		Deepmind's <a href="https://www.deepmind.com/blog/using-jax-to-accelerate-our-research"
 			>JAX ecosystem</a
 		> (e.g., JAX, Haiku, Distrax, Optax, ...). I am an advocate of open science, reproducible research

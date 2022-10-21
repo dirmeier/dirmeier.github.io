@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>About</title>
+	<title>Case studies</title>
 </svelte:head>
 
 <div>

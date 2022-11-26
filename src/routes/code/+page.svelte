@@ -1,7 +1,7 @@
 <script>
 	import Navv from '../_navbar.svelte';
-	import Page from './_page.svelte';
 	import Bottom from '../_bottom.svelte';
+	import Page from './_page.svelte';
 </script>
 
 <svelte:head>

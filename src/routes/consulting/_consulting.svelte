@@ -1,37 +1,33 @@
 <script>
-    import logo from '$lib/profile.jpg';
     import Fa from "svelte-fa/src/fa.svelte"
-    import {faEnvelope, faHand} from "@fortawesome/free-solid-svg-icons"
-    import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons"
+    import {faEnvelope} from "@fortawesome/free-solid-svg-icons"
 </script>
+
 
 <div>
     <div class="columns">
-        <div class="column is-3">
-            <img src={logo} width="150"/>
-        </div>
-        <div class="column is-8">
-            <div>
-                <h6>Hello!</h6>
-                <p>
-                    I am Simon. Currently, I am working as a senior data scientist at the
-                    <a href="https://datascience.ch/">Swiss Data Science Center</a> in the academic cell.
-                </p>
-                <p>
-                    In my spare tme, I enjoy spending developing <a href="/code">open-source software</a> and writing
-                    <a href="/case-studies">case studies</a>. I also occasionally offer
-                    <a href="/consulting">ML/statistical consulting</a>.
-                </p>
-                <p>
-                    I've conducted my doctoral studies at
-                    <a href="https://ethz.ch/en.html">ETHZ</a> in Switzerland, where I developed probabilistic methods
-                    for the analysis of genetic interventional data. Before that, I have studied computer science
-                    and bioinformatics at <a href="https://www.tum.de/en/">TU</a>/<a
-                        href="https://www.lmu.de/en/index.html">LMU</a>
-                    in Munich, Germany (and seven semesters of philosophy at LMU).
-                </p>
-            </div>
-            <div>
+        <div class="column is-10">
+            <div id="consulting">
+                <div>
+                    I am occasionally available for statistical consulting on probabilistic modeling, causal
+                    inference, and research software development. In particular, I offer consulting on
+                    <ul>
+                        <li>
+                            statistical/causal data analysis, e.g., of biomedical, financial, or
+                            astrophysical data sets
+                        </li>
+                        <li>development of web dashboards for visualization</li>
+                        <li>implementation of bespoke probabilistic models using PPLs (*)</li>
+                        <li>Bayesian workflow, model validation, model selection, etc.</li>
+                        <li>
+                            implementation of computational pipelines (e.g., of analysis workflows for
+                            reproducible research)
+                        </li>
+                    </ul>
+                    (*) via, e.g, Stan, NumPyro or TensorFlow Probability (in Python, Julia, C++ or R)<br/>
+                    To find a sketch of topics that I have expertise with, please have a look at my
+                    <a href="/case-studies">case studies</a>.
+                </div>
                 <p>
                     As a computer scientist turned applied statistician, I am particularly enthusiastic about
                     probabilistic programming which, as a discipline, lies at the interface of both fields.
@@ -57,17 +53,13 @@
                     Snakemake, for robust data analysis. Other than that, I have some experience with high-performance
                     and cloud computing, e.g., via OpenMP, GPGPU (CUDA) and Azure/Google Cloud.
                 </p>
-            </div>
-            <div>
-                <p>You can reach me here: </p>
-                <a href="mailto:simon.dirmeier @ protonmail com" style="color: black; margin-right: 1%;">
-                    <Fa icon={faEnvelope} size="1.25x"/>
-                </a>
-                <a href="https://linkedin.com/in/simon-dirmeier" style="color: black; margin-left: 10px; margin-right: 10px">
-                    <Fa icon={faLinkedin} size="1.25x"/>
-                </a>
+                <div>
+                    <p>You can reach me here: </p>
+                    <a href="mailto:simon.dirmeier @ protonmail com" style="color: black; margin-right: 1%;">
+                        <Fa icon={faEnvelope} size="1.25x"/>
+                    </a>
+                </div>
             </div>
         </div>
-
     </div>
 </div>

@@ -1,12 +1,11 @@
 <script>
 	import Navv from '../_navbar.svelte';
-	import About from './_about.svelte';
-	import Consulting from './_consulting.svelte';
 	import Bottom from '../_bottom.svelte';
+	import About from './_about.svelte';
 </script>
 
 <svelte:head>
-	<title>About</title>
+	<title>about</title>
 </svelte:head>
 
 <div>
@@ -15,9 +14,8 @@
 		<section class="section">
 			<div class="container">
 				<div class="columns">
-					<div class="column is-offset-4 is-6">
+					<div class="column is-offset-3 is-6">
 						<About />
-						<Consulting />
 						<Bottom />
 					</div>
 				</div>

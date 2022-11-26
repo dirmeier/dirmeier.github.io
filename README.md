@@ -31,8 +31,8 @@ the distributable and starts an express server that listens to port 4000
 
 ```bash
 npm install
+npm run preview
 npm run build
-npm run start
 ```
 
 ## Author

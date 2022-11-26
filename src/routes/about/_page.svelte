@@ -18,9 +18,8 @@
 					<a href="https://datascience.ch/">Swiss Data Science Center</a> in the academic cell.
 				</p>
 				<p>
-					In my spare time, I enjoy spending developing <a href="/code">open-source software</a> and
-					writing
-					<a href="/case-studies">case studies</a>. I also occasionally offer
+					In my spare time, I enjoy developing <a href="/code">open-source software</a> and
+					writing <a href="/case-studies">case studies</a>. I also occasionally offer
 					<a href="/consulting">ML/statistical consulting</a>.
 				</p>
 				<p>

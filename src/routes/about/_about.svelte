@@ -18,7 +18,7 @@
                     <a href="https://datascience.ch/">Swiss Data Science Center</a> in the academic cell.
                 </p>
                 <p>
-                    In my spare tme, I enjoy spending developing <a href="/code">open-source software</a> and writing
+                    In my spare time, I enjoy spending developing <a href="/code">open-source software</a> and writing
                     <a href="/case-studies">case studies</a>. I also occasionally offer
                     <a href="/consulting">ML/statistical consulting</a>.
                 </p>
@@ -47,15 +47,14 @@
                     formalizes how (and if) cause-and-effect relationships can be established (CI concerns itself
                     with the discovery and inference of cause-and-effect relationships).
                 </p>
-                <p>
-                    I interact with computers mainly via Python, JavaScript and C++, but recently also have begun
-                    developing software in Clojure and Julia. For ML, my tech stack consists of Stan, NumPyro, and
+                <p>I interact with computers mainly via Python, JavaScript and C++, but recently also have begun
+                    developing software in Clojure and Julia. For ML, my tech stack currently consists of Stan, NumPyro, and
                     Deepmind's <a href="https://www.deepmind.com/blog/using-jax-to-accelerate-our-research"
                 >JAX ecosystem</a
                 > (e.g., JAX, Haiku, Distrax, Optax, ...). I am an advocate of open science, reproducible research
                     and principled coding practices, and employ tools such as Docker and computational pipelines, like
                     Snakemake, for robust data analysis. Other than that, I have some experience with high-performance
-                    and cloud computing, e.g., via OpenMP, GPGPU (CUDA) and Azure/Google Cloud.
+                    and cloud computing, e.g., via OpenMP, AVX, GPGPU (CUDA) and Azure/Google Cloud.
                 </p>
             </div>
             <div>

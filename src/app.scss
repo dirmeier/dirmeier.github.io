@@ -1,5 +1,5 @@
 /* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */ /* Import only what you need from Bulma */
-@import url('https://fonts.googleapis.com/css?family=Inconsolata|Merriweather|Lato:wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Merriweather|Raleway|Lato:wght@1,300&display=swap');
 
 @import 'bulma/sass/utilities/_all';
 @import 'bulma/sass/base/_all';
@@ -12,9 +12,8 @@
 
 body {
 	font-family: 'Lato', sans-serif;
-	color: black;
 	line-height: 1.6;
-	font-size: 0.9rem;
+	font-size: 0.875rem;
 	color: #333333;
 	text-align: justify;
 }
@@ -32,8 +31,8 @@ h2,
 h3 {
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
-	margin-top: 5%;
-	color: #333333;
+	margin-top: 3%;
+	color: black;
 }
 
 h1 {
@@ -44,7 +43,7 @@ h1 {
 h2 {
 	font-size: 2rem;
 	line-height: 1.1;
-	margin-bottom: 2%;
+	margin-bottom: 3%;
 }
 
 h3 {
@@ -55,19 +54,29 @@ h3 {
 }
 
 h4 {
+	font-family: 'Arial', sans-serif;
 	font-size: 1.35rem;
 	margin-top: 3%;
 	margin-bottom: 3%;
 	line-height: 1.1;
 }
 
-h6 {
+h5 {
 	font-family: 'Lato', sans-serif;
 	line-height: 1.6;
 	letter-spacing: 0;
 	margin-bottom: 0;
 	font-weight: 300;
-	font-size: 1.05rem;
+	font-size: .95rem;
+}
+
+h6 {
+	font-family: 'Lato', sans-serif;
+	line-height: 1.6;
+	letter-spacing: 0.36em;
+	font-style: normal;
+	font-weight: 500;
+
 }
 
 a {
@@ -108,36 +117,43 @@ p {
 	max-width: 1400px;
 }
 
-.navbar-item {
-	text-transform: uppercase;
+.column.is-35 {
+	flex: none;
+	width: 30%;
+}
+
+.navbar-item, .navbar-brand {
+	text-transform: lowercase;
 	font-size: 11px;
-	font-weight: 300;
+	font-weight: 100;
 	letter-spacing: 0.2rem;
 	text-decoration: none;
 	color: #222;
 }
 
-.navbar,
-.navbar-spacer {
-	font-family: 'Inconsolata', serif;
+ .navbar-brand  {
+	font-family: 'arial', sans-serif;
+	 color: black;
 }
 
-.navbar-menu {
-	/*border-bottom: solid darkslategray;
-  border-width: 0px 1px 1px 1px;*/
+.navbar-brand > .navbar-item,
+.navbar-brand .navbar-link {
+	display: inline-block;
 }
 
-.navbar-item:hover {
-	color: #1e5262;
+.navbar-brand {
+	text-align: center;
+	display: block;
+	width: 100%;
 }
 
-a.navbar-item.is-tab:hover {
+.navbar-item:hover, a.navbar-item.is-tab:hover {
 	color: #1e5262;
 }
 
 .navbar-item.is-tab {
 	border-bottom: 1px solid transparent;
-	min-height: 3.25rem;
+	min-height: 1rem;
 	padding-bottom: calc(0.5rem - 1px);
 }
 
@@ -145,9 +161,4 @@ a.navbar-item.is-tab:hover {
 .navbar-item.is-tab:hover {
 	background-color: transparent;
 	border-bottom-color: #1e5262;
-}
-
-.column.is-35 {
-	flex: none;
-	width: 30%;
 }

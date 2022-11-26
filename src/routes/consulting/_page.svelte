@@ -1,11 +1,12 @@
 <div>
 	<div class="columns" style="margin-top: 3%;">
 		<div class="column is-11">
-			I am occasionally available for consulting on probabilistic modeling, causal
-			inference, and research software development. In particular, I offer consulting on
+			I am occasionally available for consulting on probabilistic modeling, causal inference, and
+			research software development. In particular, I offer consulting on
 			<ul>
 				<li>
-					statistical/causal data analysis, e.g., of biomedical, financial, or astrophysical data sets
+					statistical/causal data analysis, e.g., of biomedical, financial, or astrophysical data
+					sets
 				</li>
 				<li>development of web dashboards for visualization</li>
 				<li>implementation of bespoke probabilistic models using PPLs (*)</li>

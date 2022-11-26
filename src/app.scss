@@ -66,7 +66,7 @@ h5 {
 	letter-spacing: 0;
 	margin-bottom: 0;
 	font-weight: 300;
-	font-size: .95rem;
+	font-size: 0.95rem;
 }
 
 h6 {
@@ -75,7 +75,6 @@ h6 {
 	letter-spacing: 0.36em;
 	font-style: normal;
 	font-weight: 500;
-
 }
 
 a {
@@ -121,7 +120,8 @@ p {
 	width: 30%;
 }
 
-.navbar-item, .navbar-brand {
+.navbar-item,
+.navbar-brand {
 	text-transform: lowercase;
 	font-size: 11px;
 	font-weight: 100;
@@ -130,9 +130,9 @@ p {
 	color: #222;
 }
 
- .navbar-brand  {
+.navbar-brand {
 	font-family: 'arial', sans-serif;
-	 color: black;
+	color: black;
 }
 
 .navbar-brand > .navbar-item,
@@ -146,7 +146,8 @@ p {
 	width: 100%;
 }
 
-.navbar-item:hover, a.navbar-item.is-tab:hover {
+.navbar-item:hover,
+a.navbar-item.is-tab:hover {
 	color: #1e5262;
 }
 

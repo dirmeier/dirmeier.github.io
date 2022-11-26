@@ -1,7 +1,7 @@
 <script>
 	import Navv from '../_navbar.svelte';
-	import Studies from './_case_studies.svelte';
 	import Bottom from '../_bottom.svelte';
+	import Page from './_page.svelte';
 </script>
 
 <svelte:head>
@@ -15,7 +15,7 @@
 			<div class="container">
 				<div class="columns">
 					<div class="column is-offset-4 is-6">
-						<Studies />
+						<Page />
 						<Bottom />
 					</div>
 				</div>

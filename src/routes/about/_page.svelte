@@ -1,18 +1,18 @@
 <script>
     import logo from '$lib/profile.jpg';
     import Fa from "svelte-fa/src/fa.svelte"
-    import {faEnvelope, faHand} from "@fortawesome/free-solid-svg-icons"
-    import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons"
+    import {faEnvelope} from "@fortawesome/free-solid-svg-icons"
+    import {faLinkedin} from "@fortawesome/free-brands-svg-icons"
 </script>
 
 <div>
     <div class="columns">
-        <div class="column is-3">
+        <div class="column is-3" style="margin-top: 3%;">
             <img src={logo} width="150"/>
         </div>
-        <div class="column is-8">
+        <div class="column is-8" style="margin-top: 3%;">
             <div>
-                <h6>Hello!</h6>
+                <h6 >Hello!</h6>
                 <p>
                     I am Simon. Currently, I am working as a senior data scientist at the
                     <a href="https://datascience.ch/">Swiss Data Science Center</a> in the academic cell.

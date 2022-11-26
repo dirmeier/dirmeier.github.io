@@ -5,7 +5,6 @@
 				<a class="navbar-item is-tab" href="/">research</a>
 				<a class="navbar-item is-tab" href="/case-studies">case studies</a>
 				<a class="navbar-item is-tab" href="/code">code</a>
-				<a class="navbar-item is-tab" href="/consulting">consulting</a>
 				<a class="navbar-item is-tab" href="/about">about</a>
 			</div>
 		</div>

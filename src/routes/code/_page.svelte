@@ -1,15 +1,18 @@
 <script>
 	import logo from '$lib/profile.jpg';
 	import Fa from 'svelte-fa/src/fa.svelte';
+	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+	import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 	function getLogo(language) {
 		return '/logos/' + language + '_logo.svg';
 	}
 </script>
 
+
 <div>
 	<div class="columns">
-		<div class="column is-9">
+		<div class="column is-12">
 			<div>
 				<h3 style="font-size: 1.35em; margin-bottom: 5%">a selection of packages I developed</h3>
 				<ul style="list-style: none;">
@@ -91,7 +94,6 @@
 							where Socrates, a true champion of the open society, has been murdered by one of his enemies.
 						</p>
 					</li>
-
 					<li style="padding-bottom: 0; list-style: none">
 						<p>
 							<img src={getLogo('Python')} width="15" height="15" />
@@ -101,11 +103,22 @@
 							scaling to tera byte sized data sets.
 						</p>
 					</li>
+					<li style="padding-bottom: 0; list-style: none; margin-top: 10px">
+						<p>
+							<b>You can find more on my <a href="https://github.com/dirmeier">GitHub</a> profile </b>
+							<a
+									href="https://github.com/dirmeier"
+									style="color: black;"
+							>
+								<Fa icon={faGithub} size="1.3x" />
+							</a>
+						</p>
+					</li>
 				</ul>
 			</div>
 			<div>
 				<h3 style="font-size: 1.35em; margin-top: 10%; margin-bottom: 5%">
-					a selection of packages I like contribute code to and/or co-develop
+					a selection of packages I like to contribute code to and/or co-develop
 				</h3>
 				<ul>
 					<li style="padding-bottom: 0; list-style: none">

@@ -1,4 +1,5 @@
 <script>
+	import blog_2023 from './2023-blogentries.json';
 	import blog_2022 from './2022-blogentries.json';
 	import blog_2021 from './2021-blogentries.json';
 	import blog_2020 from './2020-blogentries.json';
@@ -6,6 +7,7 @@
 	import blog_2018 from './2018-blogentries.json';
 
 	let items = [
+		{ date: '2023', posts: blog_2023 },
 		{ date: '2022', posts: blog_2022 },
 		{ date: '2021', posts: blog_2021 },
 		{ date: '2020', posts: blog_2020 },

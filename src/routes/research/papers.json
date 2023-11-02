@@ -1,0 +1,50 @@
+[
+	{
+		"title": "Diffusion models for probabilistic programming",
+		"authors": "<u>Simon Dirmeier</u> and Fernando Perez-Cruz",
+		"journal": "NeurIPS Workshop on Diffusion models",
+		"year": "2023",
+		"doi": "10.48550/arXiv.2311.00474",
+		"link": "https://doi.org/10.48550/arXiv.2311.00474"
+	},
+	{
+		"title": "Uncertainty quantification and out-of-distribution detection using surjective normalizing flows",
+		"authors": "<u>Simon Dirmeier</u>, Ye Hong, Yanan Xin and Fernando Perez-Cruz",
+		"journal": "arXiv preprint",
+		"year": "2023",
+		"doi": "10.48550/arXiv.2311.00377",
+		"link": "https://doi.org/10.48550/arXiv.2311.00377"
+	},
+	{
+		"title": "Simulation-based inference using surjective sequential neural likelihood estimation",
+		"authors": "<u>Simon Dirmeier</u> and Fernando Perez-Cruz",
+		"journal": "arXiv preprint",
+		"year": "2023",
+		"doi": "10.48550/arXiv.2308.01054",
+		"link": "https://doi.org/10.48550/arXiv.2308.01054"
+	},
+	{
+		"title": "Structured hierarchical models for probabilistic inference from perturbation screening data",
+		"authors": "<u>Simon Dirmeier</u> and Niko Beerenwinkel",
+		"journal": "Annals of Applied Statistics",
+		"year": "2022",
+		"doi": "10.1214/21-AOAS1580",
+		"link": "https://doi.org/10.1214/21-AOAS1580"
+	},
+	{
+		"title": "Host factor prioritization for pan-viral genetic perturbation screens using random intercept models and network propagation",
+		"authors": "<u>Simon Dirmeier</u> et al",
+		"journal": "PLOS Computational Biology",
+		"year": "2020",
+		"doi": "10.1371/journal.pcbi.1007587",
+		"link": "https://doi.org/10.1371/journal.pcbi.1007587"
+	},
+	{
+		"title": "netReg: network-regularized linear models for biological association studies",
+		"authors": "<u>Simon Dirmeier</u>, Christiane Fuchs, Nikola S Mueller and Fabian J Theis",
+		"journal": "Bioinformatics",
+		"year": "2018",
+		"doi": "10.1093/bioinformatics/btx677",
+		"link": "https://doi.org/10.1093/bioinformatics/btx677"
+	}
+]

@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>about</title>
+	<title>research</title>
 </svelte:head>
 
 <div>
@@ -14,7 +14,7 @@
 		<section class="section">
 			<div class="container">
 				<div class="columns">
-					<div class="column is-offset-3 is-6">
+					<div class="column is-offset-4 is-6">
 						<Page />
 						<Bottom />
 					</div>

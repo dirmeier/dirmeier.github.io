@@ -18,7 +18,7 @@
 					{#each code as entry, i}
 						<li style="list-style: none">
 							<p>
-								<img src={getLogo(entry.lang)} width="15" height="15" />
+								<img src={getLogo(entry.lang)} width="15" height="15" alt="None" />
 								<a href={entry.link}> <span style="font-family: monospace">{entry.name}</span></a>
 								{@html entry.description}.
 							</p>
@@ -42,7 +42,7 @@
 					{#each contr as entry, i}
 						<li style="list-style: none">
 							<p>
-								<img src={getLogo(entry.lang)} width="15" height="15" />
+								<img src={getLogo(entry.lang)} width="15" height="15" alt="None"/>
 								<a href={entry.link}> <span style="font-family: monospace">{entry.name}</span></a>
 								{@html entry.description}.
 							</p>

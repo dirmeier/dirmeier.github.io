@@ -1,0 +1,14 @@
+[
+	{
+		"lang": "c++",
+		"name": "Stan",
+		"description": "is a state-of-the-art probabilistic programming langauge for Bayesian modeling and high-performance statistical computation",
+		"link": "https://mc-stan.org/"
+	},
+	{
+		"lang": "Python",
+		"name": "NumPyro",
+		"description": "is a lightweight probabilistic programming library that provides a NumPy backend for Pyro. It relies on JAX for automatic differentiation and JIT compilation to CPU/GPU/TPU",
+		"link": "https://num.pyro.ai/en/stable/"
+	}
+]

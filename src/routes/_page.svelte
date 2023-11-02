@@ -1,13 +1,13 @@
 <script>
 	import logo from '$lib/profile.jpg';
 	import Fa from 'svelte-fa/src/fa.svelte';
-	import { faEdit, faFlag } from '@fortawesome/free-solid-svg-icons';
+	import { faFlag } from '@fortawesome/free-solid-svg-icons';
 </script>
 
 <div>
 	<div class="columns">
 		<div class="column is-35">
-			<img src={logo} width="150" />
+			<img src={logo} width="150" alt="None" />
 
 			<div style="font-size: 0.7em; margin-top: 1%">
 				<a

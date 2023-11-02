@@ -13,9 +13,8 @@
 body {
 	font-family: 'Lato', sans-serif;
 	line-height: 1.6;
-	font-size: 0.875rem;
+	font-size: 0.95rem;
 	color: #333333;
-	text-align: justify;
 }
 
 text {
@@ -96,7 +95,6 @@ ul,
 li {
 	list-style: disc;
 	padding-left: 5px;
-	margin-left: 5px;
 }
 
 p {
@@ -166,12 +164,12 @@ a.navbar-item.is-tab:hover {
 span.dlg_text {
 	margin-left: 2%;
 	font-size: 0.9em;
-	display:inline-block;
+	display: inline-block;
 	vertical-align: middle;
 }
 
 up-dlg {
-	display:inline-block;
+	display: inline-block;
 	font-size: 1.2em;
 	vertical-align: middle;
 }

@@ -1,11 +1,11 @@
 <script>
 	import Navv from './_navbar.svelte';
 	import Bottom from './_bottom.svelte';
-	import Page from './case-studies/_page.svelte';
+	import Page from './about/_page.svelte';
 </script>
 
 <svelte:head>
-	<title>case studies</title>
+	<title>about</title>
 </svelte:head>
 
 <div>

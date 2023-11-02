@@ -1,0 +1,68 @@
+[
+	{
+		"lang": "Python",
+		"name": "sbijax",
+		"description": "implements several methods for simulation-based inference",
+		"link": "https://github.com/dirmeier/sbijax"
+	},
+	{
+		"lang": "Python",
+		"name": "surjectors",
+		"description": "is a library for density estimation using surjective normalizing flows",
+		"link": "https://surjectors.readthedocs.io/en/latest/"
+	},
+	{
+		"lang": "Python",
+		"name": "reconcile",
+		"description": "is another Python package for probabilistic reconciliation of time series forecasts",
+		"link": "https://github.com/dirmeier/reconcile"
+	},
+	{
+		"lang": "Python",
+		"name": "Ramsey",
+		"description": "is a Python package for probabilistic modelling using JAX and Haiku. It implements recent developments in probabilistic machine and deep learning and among other things aims to bring these methods to a larger audience",
+		"link": "https://ramsey.readthedocs.io/en/latest/"
+	},
+	{
+		"lang": "Clojure",
+		"name": "clad",
+		"description": "is a proof-of-concept reverse-mode automatic differentiation package written in Clojure",
+		"link": "https://github.com/dirmeier/clad"
+	},
+	{
+		"lang": "Python",
+		"name": "shm",
+		"description": "is a Python package for probabilistic inference in <i>structured hierarchical models</i>",
+		"link": "https://github.com/cbg-ethz/shm"
+	},
+	{
+		"lang": "c++",
+		"name": "R--",
+		"description": "is an interpreter for the R language written in C++",
+		"link": "https://github.com/dirmeier/R--"
+	},
+	{
+		"lang": "R",
+		"name": "netReg",
+		"description": "implements network-regularized regression models in R/C++",
+		"link": "https://github.com/dirmeier/netReg"
+	},
+	{
+		"lang": "CUDA",
+		"name": "cuda-etudes",
+		"description": "is a selection of numerical CUDA recipes",
+		"link": "https://github.com/dirmeier/cuda-etudes"
+	},
+	{
+		"lang": "JavaScript",
+		"name": "cluedo",
+		"description": "implements the well known board game in JavaScript. This version plays in ancient Greece where Socrates, a true champion of the open society, has been murdered by one of his enemies",
+		"link": "https://github.com/dirmeier/cluedo"
+	},
+	{
+		"lang": "Python",
+		"name": "PyBDA",
+		"description": "is a Python library and command line tool for big data analytics and machine learning scaling to tera byte sized data sets",
+		"link": "https://github.com/dirmeier/pybda"
+	}
+]

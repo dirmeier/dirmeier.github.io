@@ -18,7 +18,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
 conda create -n web python=3.9
-echo "source ~/miniconda3/bin/activate  web" >> ~/.bashrc
+echo "source ~/miniconda3/bin/activate web" >> ~/.bashrc
 
 source ~/miniconda3/bin/activate web
 conda install -y nodejs

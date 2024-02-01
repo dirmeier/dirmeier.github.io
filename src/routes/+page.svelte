@@ -1,11 +1,13 @@
 <script>
 	import Navv from './_navbar.svelte';
 	import Bottom from './_bottom.svelte';
-	import Page from './about/_page.svelte';
+	import About from './about/_page.svelte';
+	import Research from './research/_page.svelte';
+	import Software from './code/_page.svelte';
 </script>
 
 <svelte:head>
-	<title>about</title>
+	<title>simon dirmeier</title>
 </svelte:head>
 
 <div>
@@ -15,7 +17,9 @@
 			<div class="container">
 				<div class="columns">
 					<div class="column is-offset-4 is-6">
-						<Page />
+						<About/>
+						<Research/>
+						<Software/>
 						<Bottom />
 					</div>
 				</div>

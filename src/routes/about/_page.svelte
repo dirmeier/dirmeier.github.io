@@ -39,7 +39,7 @@
         </div>
         <div>
             <b>You can reach me here: </b>
-            <a href="mailto:simon.dirmeier @ protonmail com" style="color: black; margin-left: 10px;">
+            <a href="mailto:simon dot dirmeier @ protonmail com" style="color: black; margin-left: 10px;">
                 <Fa icon={faEnvelope} size="1.3x"/>
             </a>
             <a

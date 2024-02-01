@@ -17,9 +17,9 @@
 			<div class="container">
 				<div class="columns">
 					<div class="column is-offset-4 is-6">
-						<About/>
-						<Research/>
-						<Software/>
+						<About />
+						<Research />
+						<Software />
 						<Bottom />
 					</div>
 				</div>

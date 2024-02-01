@@ -2,13 +2,12 @@
 	import papers from './papers.json';
 </script>
 
-<div>
+<div id="research" style="margin-top: 1%; margin-bottom: 5%">
 	<div>
-		<h3 style="font-size: 1.6em; margin-bottom: 5%">selected papers and preprints</h3>
+		<h4>selected papers and preprints</h4>
 	</div>
-
 	<div style="padding-left: 15px">
-		<div style="margin-bottom: 5%">
+		<div style="margin-bottom: 15px">
 			<p>
 				My papers and preprints can be found on
 				<a

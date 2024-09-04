@@ -8,9 +8,8 @@
 @import 'bulma/sass/layout/_all';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 body {
-	font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+	font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
 	line-height: 1.6;
 	color: #333333;
 	font-size: 1.25em;
@@ -24,7 +23,7 @@ h6 {
 a,
 a:hover,
 .fa:hover {
-	font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+	font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
 }
 
 .navbar-item,

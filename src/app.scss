@@ -1,47 +1,40 @@
 @use 'bulma/bulma.scss';
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
 
 body {
-	font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
-	line-height: 1.6;
-	color: #333333;
-	font-size: 1.25em;
+	font-family: "EB Garamond", Times, serif;
+
+	//color: #333333;
+	color: black;
+	font-size: 1.125em;
+}
+
+p {
+
+}
+a {
+	color: darkblue;
+}
+ul {
+	list-style-type: "- ";
+	list-style-position: outside;
+	padding-left: 20px;
+}
+
+li {
+ padding-left: 5px;
+}
+
+
+.title.is-4{
+	font-family: serif;
+	font-style: normal;
+	margin-top: 50px;
+	margin-bottom: 0;
+	font-size: 1em;
 }
 
 h6 {
 	text-decoration: underline;
 	font-size: 1em;
-}
-
-a,
-a:hover,
-.fa:hover {
-	font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
-}
-
-.navbar-item,
-.navbar-brand {
-	text-transform: lowercase;
-	font-size: 0.8em;
-	font-weight: 300;
-	letter-spacing: 0.2rem;
-	text-decoration: none;
-	color: #222;
-}
-
-.navbar-brand > .navbar-item,
-.navbar-brand .navbar-link {
-	display: inline-block;
-}
-
-.navbar-brand {
-	text-align: center;
-	display: block;
-	width: 100%;
-}
-
-.navbar-item.is-tab {
-	border-bottom: 1px solid transparent;
-	min-height: 1rem;
-	padding-bottom: calc(0.5rem - 1px);
 }

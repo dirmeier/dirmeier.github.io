@@ -7,5 +7,5 @@
 </svelte:head>
 
 <section class="section">
-		<About />
-	</section>
+	<About />
+</section>

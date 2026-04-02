@@ -47,7 +47,9 @@
 	</section>
 	<section>
 		<h4 class="title is-4">Code</h4>
-		You can find my software on<a href="https://github.com/dirmeier"> GitHub</a>.
+		You can find my software on<a href="https://github.com/dirmeier">
+			GitHub</a
+		>.
 	</section>
 	<section>
 		<h4 class="title is-4">Research interests (in no particular order)</h4>

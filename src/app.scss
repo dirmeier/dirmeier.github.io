@@ -1,7 +1,6 @@
 @use 'bulma/bulma.scss';
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
 
-
 body {
 	font-family: 'EB Garamond', Times, serif;
 	font-size: 1.125em;
@@ -11,19 +10,15 @@ a {
 	color: darkblue;
 }
 
-
 @media (prefers-color-scheme: dark) {
 	body {
 		background-color: #323232;
-		color: white
+		color: white;
 	}
 	a {
 		color: #b26679;
 	}
-
 }
-
-
 
 ul {
 	list-style-type: '- ';

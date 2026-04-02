@@ -1,54 +1,55 @@
 {
-	"name": "webpage",
-	"version": "0.1.0",
-	"scripts": {
-		"dev": "./node_modules/vite/bin/vite.js dev",
-		"build": "./node_modules/vite/bin/vite.js build",
-		"preview": "./node_modules/vite/bin/vite.js preview",
-		"lint": "prettier . --check . && eslint .",
-		"format": "prettier . --write ."
-	},
-	"devDependencies": {
-		"@eslint/compat": "^2.0.3",
-		"@eslint/js": "^10.0.1",
-		"@rollup/wasm-node": "^4.59.0",
-		"@sveltejs/adapter-auto": "^7.0.1",
-		"@sveltejs/kit": "^2.55.0",
-		"@types/node": "^24",
-		"esbuild-wasm": "^0.27.3",
-		"eslint": "^10.0.3",
-		"eslint-config-prettier": "^10.1.8",
-		"eslint-plugin-svelte": "^3.15.2",
-		"globals": "^17.4.0",
-		"prettier": "^3.8.1",
-		"prettier-plugin-svelte": "^3.5.1",
-		"sass-embedded": "^1.98.0",
-		"svelte": "^5.53.5",
-		"vite": "^8.0.3"
-	},
-	"type": "module",
-	"dependencies": {
-		"@fortawesome/fontawesome-svg-core": "^7.2.0",
-		"@fortawesome/free-brands-svg-icons": "^7.2.0",
-		"@fortawesome/free-solid-svg-icons": "^7.2.0",
-		"bulma": "^1.0.4",
-		"svelte-fa": "^4.0.4"
-	},
-	"prettier": {
-		"useTabs": true,
-		"singleQuote": true,
-		"trailingComma": "none",
-		"printWidth": 80,
-		"plugins": [
-			"prettier-plugin-svelte"
-		],
-		"overrides": [
-			{
-				"files": "*.svelte",
-				"options": {
-					"parser": "svelte"
-				}
-			}
-		]
-	}
+  "name": "webpage",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "./node_modules/vite/bin/vite.js dev",
+    "build": "./node_modules/vite/bin/vite.js build",
+    "preview": "./node_modules/vite/bin/vite.js preview",
+    "lint": "prettier . --check . && eslint .",
+    "format": "prettier . --write ."
+  },
+  "devDependencies": {
+    "@eslint/compat": "^2.0.3",
+    "@eslint/js": "^10.0.1",
+    "@rollup/wasm-node": "^4.59.0",
+    "@sveltejs/adapter-auto": "^7.0.1",
+    "@sveltejs/kit": "^2.55.0",
+    "@types/node": "^24",
+    "esbuild-wasm": "^0.27.3",
+    "eslint": "^10.0.3",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-svelte": "^3.15.2",
+    "globals": "^17.4.0",
+    "prettier": "^3.8.1",
+    "prettier-plugin-svelte": "^3.5.1",
+    "sass-embedded": "^1.98.0",
+    "svelte": "^5.53.5",
+    "vite": "^8.0.3"
+  },
+  "type": "module",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/free-brands-svg-icons": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
+    "bulma": "^1.0.4",
+    "svelte-fa": "^4.0.4"
+  },
+  "prettier": {
+    "useTabs": false,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "printWidth": 80,
+    "htmlWhitespaceSensitivity": "ignore",
+    "plugins": [
+      "prettier-plugin-svelte"
+    ],
+    "overrides": [
+      {
+        "files": "*.svelte",
+        "options": {
+          "parser": "svelte"
+        }
+      }
+    ]
+  }
 }

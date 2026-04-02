@@ -10,19 +10,19 @@ import svelteConfig from './svelte.config.js';
 const gitignorePath = path.resolve(import.meta.dirname, '.gitignore');
 
 export default defineConfig(
-	[
-		includeIgnoreFile(gitignorePath),
-		js.configs.recommended,
-		svelte.configs.recommended,
-		{
-			languageOptions: { globals: { ...globals.browser, ...globals.node } }
-		},
+  [
+    includeIgnoreFile(gitignorePath),
+    js.configs.recommended,
+    svelte.configs.recommended,
+    {
+      languageOptions: { globals: { ...globals.browser, ...globals.node } }
+    },
 
-		{
-			files: ['**/*.svelte', '**/*.svelte.js'],
-			languageOptions: { parserOptions: { svelteConfig } }
-		}
-	],
-	prettier,
-	svelte.configs.prettier
+    {
+      files: ['**/*.svelte', '**/*.svelte.js'],
+      languageOptions: { parserOptions: { svelteConfig } }
+    }
+  ],
+  prettier,
+  svelte.configs.prettier
 );

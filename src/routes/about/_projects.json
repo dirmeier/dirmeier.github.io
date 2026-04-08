@@ -1,0 +1,22 @@
+[
+  {
+    "name": "blaxbird",
+    "url": "https://github.com/dirmeier/blaxbird",
+    "description": "A PyTorch Lightning-like framework for training neural networks with Flax/NNX"
+  },
+  {
+    "name": "sbijax",
+    "url": "https://sbijax.readthedocs.io/en/latest/",
+    "description": "A library for neural simulation-based inference workflows in Python"
+  },
+  {
+    "name": "ebm",
+    "url": "https://github.com/dirmeier/ebm",
+    "description": "Training energy-based models with noise-contrastive estimation in Python/Flax"
+  },
+  {
+    "name": "ramsey",
+    "url": "https://ramsey.readthedocs.io/en/latest/",
+    "description": "Probabilistic deep learning for Python"
+  }
+]

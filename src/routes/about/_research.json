@@ -1,0 +1,30 @@
+[
+  {
+    "title": "High resolution seismic waveform generation using denoising diffusion",
+    "arxiv_id": "2410.19343",
+    "arxiv_url": "https://arxiv.org/abs/2410.19343",
+    "description": "A bespoke diffusion model trained from scratch on real earthquakes, i.e., audio signals, to synthesize realistic, high-frequency seismic waveforms.",
+    "keywords": ["denoising diffusion", "score matching", "signal processing"]
+  },
+  {
+    "title": "Causal posterior estimation",
+    "arxiv_id": "2505.21468",
+    "arxiv_url": "https://arxiv.org/abs/2505.21468",
+    "description": "A new method for simulation-based inference that exploits the conditional independence structure of the posterior programs and encodes it into a new NN architecture.",
+    "keywords": ["simulation-based inference", "flow matching", "causality"]
+  },
+  {
+    "title": "Simulated-Annealing ABC with multiple summary statistics",
+    "arxiv_id": "2505.23261",
+    "arxiv_url": "https://arxiv.org/abs/2505.23261",
+    "description": "We propose a novel ABC method that works well on high-dimensional parameter and data spaces using Simulated Annealing.",
+    "keywords": ["ABC", "MCMC"]
+  },
+  {
+    "title": "Simulation-based Inference with the Python Package sbijax",
+    "arxiv_id": "2409.19435",
+    "arxiv_url": "https://arxiv.org/abs/2409.19435",
+    "description": "A Python package implementing simulation-based inference and ABC methods in JAX.",
+    "keywords": ["simulation-based inference", "ABC", "Python", "JAX"]
+  }
+]

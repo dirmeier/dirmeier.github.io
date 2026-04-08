@@ -1,4 +1,6 @@
 <script>
+  import Research from './_research.svelte';
+  import Projects from './_projects.svelte';
   import Fa from 'svelte-fa';
   import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
   import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -50,81 +52,15 @@
     </div>
   </section>
   <section>
-    <h4 class="title is-4">Code</h4>
-    You can find my software on
-    <a href="https://github.com/dirmeier">GitHub</a>
-    .
+    <Projects />
   </section>
   <section>
-    <h4 class="title is-4">Research interests (in no particular order)</h4>
-    Before Logitech, where I work on deep learning and signal processing, I was mainly
-    interested in:
-    <ul>
-      <li>Causal inference</li>
-      <li>
-        Applied probability (probabilistic modelling, stochastic processes, ...)
-      </li>
-      <li>
-        Approximate and Bayesian inference (Markov Chain Monte Carlo, VI,
-        Simulation-Based Inference)
-      </li>
-      <li>Probabilistic programming</li>
-      <li>Generative modelling (score and flow matching, normalizing flows)</li>
-    </ul>
+    <h4 class="title is-4">Research interests</h4>
+    Generative modelling, (causal) representation learning, semi-supervised learning,
+    time series models, signal processing, numerical computing.
   </section>
   <section>
-    <h4 class="title is-4">Recent work</h4>
-    <div class="columns">
-      <div class="column is-9">
-        <ul>
-          <li>
-            <b>Causal posterior estimation</b>
-            (
-            <a href="https://arxiv.org/abs/2505.21468">arXiv:2505.21468</a>
-            ): a new method for simulation-based inference that exploits the
-            conditional independence structure of the posterior programs and
-            encodes it into a new NN architecture.
-            <br />
-            <i>
-              Keywords: simulation-based inference, flow matching, causality
-            </i>
-          </li>
-          <li>
-            <b>Simulated-Annealing ABC with multiple summary statistics</b>
-            (
-            <a href="https://arxiv.org/abs/2505.23261">arXiv:2505.23261</a>
-            ): we propose a novel ABC method that works well on high-dimensional
-            parameter and data spaces using Simulated Annealing.
-            <br />
-            <i>Keywords: ABC, MCMC</i>
-          </li>
-          <li>
-            <b>Simulation-based Inference with the Python Package sbijax</b>
-            (
-            <a href="https://arxiv.org/abs/2409.19435">arXiv:2409.19435</a>
-            ): a Python package implementing simulation-based inference and ABC
-            methods in JAX.
-            <br />
-            <i>Keywords: simulation-based inference, ABC, Python, JAX</i>
-          </li>
-          <li>
-            <b>
-              High resolution seismic waveform generation using denoising
-              diffusion
-            </b>
-            (
-            <a href="https://arxiv.org/abs/2410.19343">arXiv:2410.19343</a>
-            ): a bespoke diffusion model trained from scratch on real
-            earthquakes to synthesize realistic, high-frequency seismic
-            waveforms.
-            <br />
-            <i>
-              Keywords: denoising diffusion, score matching, signal processing
-            </i>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <Research />
   </section>
   <section>
     <h4 class="title is-4">Currently reading</h4>

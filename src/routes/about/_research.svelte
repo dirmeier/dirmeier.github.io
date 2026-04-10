@@ -5,7 +5,7 @@
 <div>
   <h4 class="title is-4">Recent work</h4>
   <div class="columns">
-    <div class="column is-8" style="text-align: justify;">
+    <div class="column is-9" style="text-align: justify;">
       <ul>
         {#each research as item (item.arxiv_id)}
           <li>

@@ -8,7 +8,7 @@
   <a href="https://github.com/dirmeier">GitHub</a>
   . Some recent projects are:
   <div class="columns">
-    <div class="column is-8">
+    <div class="column is-9">
       <ul>
         {#each projects as project (project.name)}
           <li>

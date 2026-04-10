@@ -15,8 +15,8 @@
       </div>
       <div style="margin-top: 20px; text-align: justify;">
         I am currently working as a senior AI/ML engineer at
-        <a href="https://www.logitech.com/en-ch">Logitech</a>. Previously, I
-        was working in the research team at the
+        <a href="https://www.logitech.com/en-ch">Logitech</a>. Previously, I was
+        working in the research team at the
         <a href="https://www.datascience.ch/">Swiss Data Science Center</a>,
         conducting my doctoral studies in computational statistics at
         <a href="https://ethz.ch/en.html">ETH Zurich</a>, and studying at

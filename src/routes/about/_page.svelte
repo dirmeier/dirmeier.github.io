@@ -8,24 +8,23 @@
   let imageUrl = 'ego.jpg';
 </script>
 
-<div id="about" style="margin-top: 1%">
-  <section>
+<div class="container" id="about" style="margin-top: 1%; ">
+  <div>
     <div class="columns">
       <div class="column is-2"><img src={imageUrl} alt="None" /></div>
       <div class="column is-7">
         <div style="margin-top: 20px">
           Hello, I am Simon <span>👋</span>
         </div>
-        <div style="margin-top: 20px">
+        <div style="margin-top: 20px; text-align: justify;">
           I am currently working as a senior AI/ML engineer at
-          <a href="https://www.logitech.com/en-ch">Logitech</a>
-          . Previously, I was working in the research team at the
-          <a href="https://www.datascience.ch/">Swiss Data Science Center</a>
-          , conducting my doctoral studies in computational statistics at
-          <a href="https://ethz.ch/en.html">ETH Zurich</a>
-          , and studying at
-          <a href="https://www.tum.de/en/">TU Munich</a>
-          .
+          <a href="https://www.logitech.com/en-ch">Logitech</a>.
+          Previously, I was working in the research team at the
+          <a href="https://www.datascience.ch/">Swiss Data Science Center</a>, 
+          conducting my doctoral studies in computational statistics at
+          <a href="https://ethz.ch/en.html">ETH Zurich</a>,
+           and studying at
+          <a href="https://www.tum.de/en/">TU Munich</a>.
         </div>
         <div style="margin-top: 20px">
           If you want to chat, you can reach me here:
@@ -50,19 +49,22 @@
         </div>
       </div>
     </div>
-  </section>
-  <section>
+  </div>
+  <div>
     <Projects />
-  </section>
-  <section>
-    <h4 class="title is-4">Research interests</h4>
-    Generative modelling, (causal) representation learning, semi-supervised learning,
-    time series models, signal processing, numerical computing.
-  </section>
-  <section>
+  </div>
+  <div>
+    <h4 class="title is-4">Research interests</h4><div class="columns">
+      <div class="column is-8" style=" justify-content: center">
+        Generative modelling, (causal) representation learning, semi-supervised
+        learning, time series models, signal processing, numerical computing.
+      </div>
+    </div>
+  </div>
+  <div>
     <Research />
-  </section>
-  <section>
+  </div>
+  <div>
     <h4 class="title is-4">Currently reading</h4>
     <ul>
       <li>Erich Fromm, Fear of Freedom</li>
@@ -72,5 +74,5 @@
         Francois Le Gall, Brownian Motion, Martingales, and Stochastic Calculus
       </li>
     </ul>
-  </section>
+  </div>
 </div>

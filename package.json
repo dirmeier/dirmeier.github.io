@@ -39,7 +39,7 @@
     "singleQuote": true,
     "trailingComma": "none",
     "printWidth": 80,
-    "htmlWhitespaceSensitivity": "ignore",
+    "htmlWhitespaceSensitivity": "strict",
     "plugins": [
       "prettier-plugin-svelte"
     ],

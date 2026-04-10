@@ -2,13 +2,13 @@
   import projects from './_projects.json';
 </script>
 
-<section>
+<div>
   <h4 class="title is-4">Code</h4>
   You can find my software on
   <a href="https://github.com/dirmeier">GitHub</a>
   . Some recent projects are:
   <div class="columns">
-    <div class="column is-9">
+    <div class="column is-8">
       <ul>
         {#each projects as project (project.name)}
           <li>
@@ -21,4 +21,4 @@
       </ul>
     </div>
   </div>
-</section>
+</div>

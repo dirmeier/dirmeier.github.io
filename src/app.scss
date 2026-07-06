@@ -1,49 +1,105 @@
 @use 'bulma/bulma.scss';
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 
 body {
-  font-family: 'EB Garamond', Times, serif;
-  font-size: 1.125em;
-  color: black;
+  font-family: 'Source Serif 4', Times, serif;
+  font-size: 1.05em;
+  color: #1a1a1a;
 }
-a {
-  color: darkblue;
+
+.landing {
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 0;
+  text-align: center;
+}
+
+.landing .avatar {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+.landing .name {
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.landing .role {
+  color: #6b7280;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.landing .chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+}
+
+.landing .chips span {
+  font-size: 0.8rem;
+  color: #4b5563;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: 0.15rem 0.55rem;
+}
+
+.landing .intro {
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.landing .intro a {
+  color: #2563a8;
+}
+
+.landing .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  justify-content: center;
+}
+
+.landing .links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition:
+    border-color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.landing .links a:hover {
+  border-bottom-color: currentColor;
+  opacity: 0.75;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #323232;
-    color: white;
+    color: #f3f3f3;
   }
-  a {
-    color: #b26679;
+  .landing .role {
+    color: #a1a1aa;
   }
-}
-
-.container {
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
-ul {
-  list-style-type: '- ';
-  list-style-position: outside;
-  padding-left: 20px;
-}
-
-li {
-  padding-left: 5px;
-}
-
-.title.is-4 {
-  font-family: serif;
-  font-style: normal;
-  margin-top: 50px;
-  margin-bottom: 5px;
-  font-size: 1em;
-}
-
-h6 {
-  text-decoration: underline;
-  font-size: 1em;
+  .landing .intro a {
+    color: #8ab4f8;
+  }
+  .landing .chips span {
+    color: #d1d5db;
+    background: #3d3d3d;
+    border-color: #4b4b4b;
+  }
 }

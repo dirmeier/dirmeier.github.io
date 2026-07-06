@@ -10,6 +10,3 @@
 <section class="section">
   <About />
 </section>
-<section class="section">
-  <Bottom />
-</section>

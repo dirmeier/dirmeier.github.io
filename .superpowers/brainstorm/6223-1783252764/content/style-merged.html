@@ -1,40 +1,148 @@
 <h2>C's terminal look + B's code grid & focus chips</h2>
-<p class="subtitle">Same merged design, two backgrounds. Which base do you want? (This decides whether the site is dark-by-default or light.)</p>
+<p class="subtitle"
+  >Same merged design, two backgrounds. Which base do you want? (This decides
+  whether the site is dark-by-default or light.)</p
+>
 
 <style>
-  .tm{ border:1px solid #ddd; border-radius:10px; overflow:hidden; margin-bottom:26px; font-family:ui-monospace,'SF Mono',monospace; }
-  .tm-tag{ font:600 11px/1 ui-sans-serif,system-ui; letter-spacing:.08em; text-transform:uppercase; padding:8px 14px; background:#f4f4f5; color:#555; border-bottom:1px solid #e5e5e5; }
-  .tm-body{ padding:32px 40px; }
-  .tm .name{ font-size:22px; font-weight:600; margin:0; }
-  .tm .name::before{ content:"~ "; }
-  .tm .role{ font-size:13px; margin:6px 0 22px; }
-  .tm .bio{ font-size:13.5px; line-height:1.7; max-width:66ch; margin-bottom:8px; }
-  .tm .bio a{ text-decoration:none; }
-  .tm h3{ font-size:12px; margin:26px 0 12px; }
-  .tm h3::before{ content:"## "; }
-  .tm .grid{ display:grid; grid-template-columns:150px 1fr; gap:7px 18px; font-size:13px; line-height:1.55; }
-  .tm .grid code{ font-weight:600; }
-  .tm .chips span{ display:inline-block; font:500 12px ui-monospace,monospace; border-radius:5px; padding:3px 9px; margin:0 6px 6px 0; }
+  .tm {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 26px;
+    font-family: ui-monospace, 'SF Mono', monospace;
+  }
+  .tm-tag {
+    font:
+      600 11px/1 ui-sans-serif,
+      system-ui;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    background: #f4f4f5;
+    color: #555;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .tm-body {
+    padding: 32px 40px;
+  }
+  .tm .name {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .tm .name::before {
+    content: '~ ';
+  }
+  .tm .role {
+    font-size: 13px;
+    margin: 6px 0 22px;
+  }
+  .tm .bio {
+    font-size: 13.5px;
+    line-height: 1.7;
+    max-width: 66ch;
+    margin-bottom: 8px;
+  }
+  .tm .bio a {
+    text-decoration: none;
+  }
+  .tm h3 {
+    font-size: 12px;
+    margin: 26px 0 12px;
+  }
+  .tm h3::before {
+    content: '## ';
+  }
+  .tm .grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 7px 18px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .tm .grid code {
+    font-weight: 600;
+  }
+  .tm .chips span {
+    display: inline-block;
+    font:
+      500 12px ui-monospace,
+      monospace;
+    border-radius: 5px;
+    padding: 3px 9px;
+    margin: 0 6px 6px 0;
+  }
 
   /* Dark */
-  .D .tm-body{ background:#0f1117; color:#adbac7; }
-  .D .name{ color:#e6edf3; }
-  .D .name::before{ color:#57c12e; }
-  .D .role{ color:#7d8590; }
-  .D .bio a{ color:#6cb6ff; }
-  .D h3{ color:#57c12e; } .D h3::before{ color:#7d8590; }
-  .D .grid code{ color:#d2a8ff; } .D .grid .d{ color:#8b949e; }
-  .D .chips span{ color:#adbac7; background:#1b2027; border:1px solid #2d333b; }
+  .D .tm-body {
+    background: #0f1117;
+    color: #adbac7;
+  }
+  .D .name {
+    color: #e6edf3;
+  }
+  .D .name::before {
+    color: #57c12e;
+  }
+  .D .role {
+    color: #7d8590;
+  }
+  .D .bio a {
+    color: #6cb6ff;
+  }
+  .D h3 {
+    color: #57c12e;
+  }
+  .D h3::before {
+    color: #7d8590;
+  }
+  .D .grid code {
+    color: #d2a8ff;
+  }
+  .D .grid .d {
+    color: #8b949e;
+  }
+  .D .chips span {
+    color: #adbac7;
+    background: #1b2027;
+    border: 1px solid #2d333b;
+  }
 
   /* Light */
-  .L .tm-body{ background:#fff; color:#3f3f46; }
-  .L .name{ color:#18181b; }
-  .L .name::before{ color:#2f9e44; }
-  .L .role{ color:#71717a; }
-  .L .bio a{ color:#2563a8; }
-  .L h3{ color:#2f9e44; } .L h3::before{ color:#a1a1aa; }
-  .L .grid code{ color:#6d28d9; } .L .grid .d{ color:#52525b; }
-  .L .chips span{ color:#3f3f46; background:#f1f1f3; border:1px solid #e4e4e7; }
+  .L .tm-body {
+    background: #fff;
+    color: #3f3f46;
+  }
+  .L .name {
+    color: #18181b;
+  }
+  .L .name::before {
+    color: #2f9e44;
+  }
+  .L .role {
+    color: #71717a;
+  }
+  .L .bio a {
+    color: #2563a8;
+  }
+  .L h3 {
+    color: #2f9e44;
+  }
+  .L h3::before {
+    color: #a1a1aa;
+  }
+  .L .grid code {
+    color: #6d28d9;
+  }
+  .L .grid .d {
+    color: #52525b;
+  }
+  .L .chips span {
+    color: #3f3f46;
+    background: #f1f1f3;
+    border: 1px solid #e4e4e7;
+  }
 </style>
 
 <div class="cards">
@@ -43,32 +151,57 @@
     <div class="tm-body">
       <p class="name">simon dirmeier</p>
       <p class="role">research engineer — GPU clusters, CUDA, JAX</p>
-      <p class="bio">I build high-performance ML systems. senior AI/ML engineer @ <a href="#">logitech</a>. prev: research @ <a href="#">swiss data science center</a>, phd in computational statistics @ <a href="#">eth zurich</a>.</p>
+      <p class="bio"
+        >I build high-performance ML systems. senior AI/ML engineer @
+        <a href="#">logitech</a>. prev: research @
+        <a href="#">swiss data science center</a>, phd in computational
+        statistics @ <a href="#">eth zurich</a>.</p
+      >
       <h3>selected code</h3>
       <div class="grid">
-        <code>blaxbird</code><span class="d">lightning-like training for flax/nnx</span>
-        <code>sbijax</code><span class="d">neural simulation-based inference</span>
-        <code>ebm</code><span class="d">energy-based models via nce in flax</span>
+        <code>blaxbird</code
+        ><span class="d">lightning-like training for flax/nnx</span>
+        <code>sbijax</code
+        ><span class="d">neural simulation-based inference</span>
+        <code>ebm</code
+        ><span class="d">energy-based models via nce in flax</span>
       </div>
       <h3>focus</h3>
-      <div class="chips"><span>cuda</span><span>jax</span><span>c++</span><span>generative models</span><span>hpc</span></div>
+      <div class="chips"
+        ><span>cuda</span><span>jax</span><span>c++</span
+        ><span>generative models</span><span>hpc</span></div
+      >
     </div>
   </div>
 
   <div class="tm L card" data-choice="light" onclick="toggleSelect(this)">
-    <div class="tm-tag">Base 2 · Light terminal (mono style on white — matches earlier dark-mode fix)</div>
+    <div class="tm-tag"
+      >Base 2 · Light terminal (mono style on white — matches earlier dark-mode
+      fix)</div
+    >
     <div class="tm-body">
       <p class="name">simon dirmeier</p>
       <p class="role">research engineer — GPU clusters, CUDA, JAX</p>
-      <p class="bio">I build high-performance ML systems. senior AI/ML engineer @ <a href="#">logitech</a>. prev: research @ <a href="#">swiss data science center</a>, phd in computational statistics @ <a href="#">eth zurich</a>.</p>
+      <p class="bio"
+        >I build high-performance ML systems. senior AI/ML engineer @
+        <a href="#">logitech</a>. prev: research @
+        <a href="#">swiss data science center</a>, phd in computational
+        statistics @ <a href="#">eth zurich</a>.</p
+      >
       <h3>selected code</h3>
       <div class="grid">
-        <code>blaxbird</code><span class="d">lightning-like training for flax/nnx</span>
-        <code>sbijax</code><span class="d">neural simulation-based inference</span>
-        <code>ebm</code><span class="d">energy-based models via nce in flax</span>
+        <code>blaxbird</code
+        ><span class="d">lightning-like training for flax/nnx</span>
+        <code>sbijax</code
+        ><span class="d">neural simulation-based inference</span>
+        <code>ebm</code
+        ><span class="d">energy-based models via nce in flax</span>
       </div>
       <h3>focus</h3>
-      <div class="chips"><span>cuda</span><span>jax</span><span>c++</span><span>generative models</span><span>hpc</span></div>
+      <div class="chips"
+        ><span>cuda</span><span>jax</span><span>c++</span
+        ><span>generative models</span><span>hpc</span></div
+      >
     </div>
   </div>
 </div>

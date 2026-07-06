@@ -8,10 +8,10 @@
   <img class="avatar" src="ego.jpg" alt="Simon Dirmeier" />
   <h1 class="name">Simon Dirmeier</h1>
   <p class="role">Research/ML engineer | PhD ETH</p>
-  
+
   <p class="intro">
-    Hello! I am a research/ML engineer currently working at Logitech.   
-    Please reach me via LinkedIn or Email. Check out my work on GitHub. 
+    Hello! I am a research/ML engineer currently working at Logitech. Please
+    reach me via LinkedIn or Email. Check out my work on GitHub.
   </p>
   <div class="links">
     <a href="https://github.com/dirmeier">

@@ -1,22 +1,96 @@
 <h2>Light terminal — normal capitalization</h2>
-<p class="subtitle">Same mono/dev aesthetic and light background, but proper case. Does this read right? I kept the ~ and ## as subtle terminal accents — say if you want them gone too.</p>
+<p class="subtitle"
+  >Same mono/dev aesthetic and light background, but proper case. Does this read
+  right? I kept the ~ and ## as subtle terminal accents — say if you want them
+  gone too.</p
+>
 
 <style>
-  .tm{ border:1px solid #ddd; border-radius:10px; overflow:hidden; margin-bottom:24px; font-family:ui-monospace,'SF Mono',monospace; }
-  .tm-tag{ font:600 11px/1 ui-sans-serif,system-ui; letter-spacing:.08em; text-transform:uppercase; padding:8px 14px; background:#f4f4f5; color:#555; border-bottom:1px solid #e5e5e5; }
-  .tm-body{ padding:34px 42px; background:#fff; color:#3f3f46; }
-  .tm .name{ font-size:23px; font-weight:600; margin:0; color:#18181b; }
-  .tm .role{ font-size:13px; margin:7px 0 22px; color:#71717a; }
-  .tm .bio{ font-size:14px; line-height:1.7; max-width:64ch; }
-  .tm .bio a{ color:#2563a8; text-decoration:none; border-bottom:1px solid #cdddef; }
-  .tm h3{ font-size:12.5px; margin:28px 0 13px; color:#2f9e44; }
-  .tm .grid{ display:grid; grid-template-columns:150px 1fr; gap:8px 18px; font-size:13px; line-height:1.55; }
-  .tm .grid code{ font-weight:600; color:#6d28d9; }
-  .tm .grid .d{ color:#52525b; }
-  .tm .chips span{ display:inline-block; font:500 12px ui-monospace,monospace; color:#3f3f46; background:#f1f1f3; border:1px solid #e4e4e7; border-radius:5px; padding:3px 9px; margin:0 6px 6px 0; }
-  .acc::before{ color:#a1a1aa; font-weight:400; }
-  .n1::before{ content:"~ "; }
-  .h1::before{ content:"## "; }
+  .tm {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    font-family: ui-monospace, 'SF Mono', monospace;
+  }
+  .tm-tag {
+    font:
+      600 11px/1 ui-sans-serif,
+      system-ui;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    background: #f4f4f5;
+    color: #555;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .tm-body {
+    padding: 34px 42px;
+    background: #fff;
+    color: #3f3f46;
+  }
+  .tm .name {
+    font-size: 23px;
+    font-weight: 600;
+    margin: 0;
+    color: #18181b;
+  }
+  .tm .role {
+    font-size: 13px;
+    margin: 7px 0 22px;
+    color: #71717a;
+  }
+  .tm .bio {
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 64ch;
+  }
+  .tm .bio a {
+    color: #2563a8;
+    text-decoration: none;
+    border-bottom: 1px solid #cdddef;
+  }
+  .tm h3 {
+    font-size: 12.5px;
+    margin: 28px 0 13px;
+    color: #2f9e44;
+  }
+  .tm .grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 8px 18px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .tm .grid code {
+    font-weight: 600;
+    color: #6d28d9;
+  }
+  .tm .grid .d {
+    color: #52525b;
+  }
+  .tm .chips span {
+    display: inline-block;
+    font:
+      500 12px ui-monospace,
+      monospace;
+    color: #3f3f46;
+    background: #f1f1f3;
+    border: 1px solid #e4e4e7;
+    border-radius: 5px;
+    padding: 3px 9px;
+    margin: 0 6px 6px 0;
+  }
+  .acc::before {
+    color: #a1a1aa;
+    font-weight: 400;
+  }
+  .n1::before {
+    content: '~ ';
+  }
+  .h1::before {
+    content: '## ';
+  }
 </style>
 
 <div class="cards">
@@ -25,15 +99,30 @@
     <div class="tm-body">
       <p class="name acc n1">Simon Dirmeier</p>
       <p class="role">Research engineer — GPU clusters, CUDA, JAX</p>
-      <p class="bio">I build high-performance ML systems. Currently a senior AI/ML engineer at <a href="#">Logitech</a>. Previously research at the <a href="#">Swiss Data Science Center</a> and a PhD in computational statistics at <a href="#">ETH Zurich</a>.</p>
+      <p class="bio"
+        >I build high-performance ML systems. Currently a senior AI/ML engineer
+        at <a href="#">Logitech</a>. Previously research at the
+        <a href="#">Swiss Data Science Center</a> and a PhD in computational
+        statistics at <a href="#">ETH Zurich</a>.</p
+      >
       <h3 class="acc h1">Selected code</h3>
       <div class="grid">
-        <code>blaxbird</code><span class="d">A Lightning-like framework for training nets with Flax/NNX</span>
-        <code>sbijax</code><span class="d">Neural simulation-based inference workflows</span>
-        <code>ebm</code><span class="d">Energy-based models via noise-contrastive estimation in Flax</span>
+        <code>blaxbird</code
+        ><span class="d"
+          >A Lightning-like framework for training nets with Flax/NNX</span
+        >
+        <code>sbijax</code
+        ><span class="d">Neural simulation-based inference workflows</span>
+        <code>ebm</code
+        ><span class="d"
+          >Energy-based models via noise-contrastive estimation in Flax</span
+        >
       </div>
       <h3 class="acc h1">Focus</h3>
-      <div class="chips"><span>CUDA</span><span>JAX</span><span>C++</span><span>Generative models</span><span>HPC</span></div>
+      <div class="chips"
+        ><span>CUDA</span><span>JAX</span><span>C++</span
+        ><span>Generative models</span><span>HPC</span></div
+      >
     </div>
   </div>
 
@@ -42,15 +131,30 @@
     <div class="tm-body">
       <p class="name">Simon Dirmeier</p>
       <p class="role">Research engineer — GPU clusters, CUDA, JAX</p>
-      <p class="bio">I build high-performance ML systems. Currently a senior AI/ML engineer at <a href="#">Logitech</a>. Previously research at the <a href="#">Swiss Data Science Center</a> and a PhD in computational statistics at <a href="#">ETH Zurich</a>.</p>
+      <p class="bio"
+        >I build high-performance ML systems. Currently a senior AI/ML engineer
+        at <a href="#">Logitech</a>. Previously research at the
+        <a href="#">Swiss Data Science Center</a> and a PhD in computational
+        statistics at <a href="#">ETH Zurich</a>.</p
+      >
       <h3>Selected code</h3>
       <div class="grid">
-        <code>blaxbird</code><span class="d">A Lightning-like framework for training nets with Flax/NNX</span>
-        <code>sbijax</code><span class="d">Neural simulation-based inference workflows</span>
-        <code>ebm</code><span class="d">Energy-based models via noise-contrastive estimation in Flax</span>
+        <code>blaxbird</code
+        ><span class="d"
+          >A Lightning-like framework for training nets with Flax/NNX</span
+        >
+        <code>sbijax</code
+        ><span class="d">Neural simulation-based inference workflows</span>
+        <code>ebm</code
+        ><span class="d"
+          >Energy-based models via noise-contrastive estimation in Flax</span
+        >
       </div>
       <h3>Focus</h3>
-      <div class="chips"><span>CUDA</span><span>JAX</span><span>C++</span><span>Generative models</span><span>HPC</span></div>
+      <div class="chips"
+        ><span>CUDA</span><span>JAX</span><span>C++</span
+        ><span>Generative models</span><span>HPC</span></div
+      >
     </div>
   </div>
 </div>

@@ -14,7 +14,7 @@ academic. Improve visual polish, reposition the copy, and reorder sections.
 ### Visual style — "light terminal"
 
 - **Font:** monospace throughout, via the system `ui-monospace, 'SF Mono',
-  monospace` stack. No web-font network load. (JetBrains Mono is a possible
+monospace` stack. No web-font network load. (JetBrains Mono is a possible
   swap-in later; not in scope.)
 - **Background:** light (white) **always**, including under
   `prefers-color-scheme: dark`. Preserves the existing dark-mode override so the

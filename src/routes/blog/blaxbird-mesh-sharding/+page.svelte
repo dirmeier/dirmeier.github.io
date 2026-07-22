@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Sharding blaxbird models over a mesh · Simon Dirmeier</title>
+  <title>Sharding NNX models over an arbitrary mesh · Simon Dirmeier</title>
 </svelte:head>
 
 <article class="post">

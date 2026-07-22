@@ -18,7 +18,7 @@
 {"title": "Probabilistic reconciliation", "url": "/blog/probabilistic-reconciliation/", "description": "implements and tests two recent methods on reconciliation of hierarchical time series forecasts.", "date": "2022-11"}
 {"title": "Diffusion models II", "url": "/blog/diffusion-models-ii/", "description": "introduces a new class of generative models using stochastic differential equations and denoising score matching.", "date": "2023-01"}
 {"title": "Reverse-mode autodiff in Clojure", "url": "/blog/clad-clojure-autodiff", "description": "a proof-of-concept autodiff engine built to learn Clojure.", "date": "2022-05"}
-{"title": "Blaxbird v0.2.0", "url": "/blog/blaxbird-mesh-sharding", "description": "sharding blaxbird models over an arbitrary mesh.", "date": "2026-07"}
+{"title": "Blaxbird v0.2.0", "url": "/blog/blaxbird-mesh-sharding", "description": "sharding NNX models over an arbitrary mesh.", "date": "2026-07"}
 {"title": "Learning MLX", "url": "/blog/learning-mlx-with-sabc", "description": "learning Apple's array framework MLX by implementing a compute-heavy ABC sampler.", "date": "2026-06"}
 {"title": "🌈👾🦉Relaunching my blog🦉👾🌈", "url": "/blog/relaunching-my-blog", "description": "", "date": "2026-07"}
 

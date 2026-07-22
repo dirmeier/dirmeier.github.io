@@ -21,6 +21,12 @@
     const [year, month] = date.split('-');
     return `${MONTHS[Number(month) - 1]} ${year}`;
   }
+
+  // Trailing-slash posts resolve to a static index.html via a Vercel rewrite
+  // that only exists at runtime, so the prerender crawler can't follow them.
+  function isExternal(url) {
+    return url.startsWith('http://') || url.startsWith('https://') || url.endsWith('/');
+  }
 </script>
 
 <svelte:head>
@@ -33,7 +39,9 @@
     {#each data.posts as post (post.url)}
       <li>
         <span class="post-date">{formatDate(post.date) ?? '—'}</span>
-        <a href={post.url} rel="external">{post.title}</a>
+        <a href={post.url} rel={isExternal(post.url) ? 'external' : undefined}
+          >{post.title}</a
+        >
         {#if post.description}
           <span class="post-description"> — {post.description}</span>
         {/if}

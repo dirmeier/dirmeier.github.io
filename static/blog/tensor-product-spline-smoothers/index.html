@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Simon Dirmeier <simon.dirmeier @ protonmail com>">
+
+<title>Causal inference using tensor-product smoothing splines with structured latent confounders</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="causal_inference_using_tensor_product_smoothing_splines_files/libs/clipboard/clipboard.min.js"></script>
+<script src="causal_inference_using_tensor_product_smoothing_splines_files/libs/quarto-html/quarto.js"></script>
+<script src="causal_inference_using_tensor_product_smoothing_splines_files/libs/quarto-html/popper.min.js"></script>
+<script src="causal_inference_using_tensor_product_smoothing_splines_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="causal_inference_using_tensor_product_smoothing_splines_files/libs/quarto-html/anchor.min.js"></script>
+<link href="causal_inference_using_tensor_product_smoothing_splines_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="causal_inference_using_tensor_product_smoothing_splines_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="causal_inference_using_tensor_product_smoothing_splines_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="causal_inference_using_tensor_product_smoothing_splines_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="causal_inference_using_tensor_product_smoothing_splines_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc">
+   
+  <ul>
+  <li><a href="#hierarchical-confounding" id="toc-hierarchical-confounding" class="nav-link active" data-scroll-target="#hierarchical-confounding">Hierarchical confounding</a></li>
+  <li><a href="#a-gp-model" id="toc-a-gp-model" class="nav-link" data-scroll-target="#a-gp-model">A GP model</a></li>
+  <li><a href="#a-second-gp-model" id="toc-a-second-gp-model" class="nav-link" data-scroll-target="#a-second-gp-model">A second GP model</a></li>
+  <li><a href="#a-tensor-product-spline-model" id="toc-a-tensor-product-spline-model" class="nav-link" data-scroll-target="#a-tensor-product-spline-model">A tensor-product spline model</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  <li><a href="#stan-files" id="toc-stan-files" class="nav-link" data-scroll-target="#stan-files">Stan files</a></li>
+  <li><a href="#session-info" id="toc-session-info" class="nav-link" data-scroll-target="#session-info">Session info</a></li>
+  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Causal inference using tensor-product smoothing splines with structured latent confounders</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Simon Dirmeier &lt;simon.dirmeier @ protonmail com&gt; </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September, 2021</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<p>While catching up on new literature on causal inference, I found a paper for inference of potential outcomes when observations are confounded in a hierarchical way, i.e., when a latent confounding variable is shared among several observations <span class="citation" data-cites="witty2020causal">(<a href="#ref-witty2020causal" role="doc-biblioref">Witty et al. 2020</a>)</span>. The paper uses Gaussian processes (GPs) to elegantly model the functional relationships between data and latent variables and, following <span class="citation" data-cites="d2019multi">D’Amour (<a href="#ref-d2019multi" role="doc-biblioref">2019</a>)</span>, shows that the estimator of the individual treatment effect (ITE) is consistent. Even though consistency of an estimator is a desirable property, for finite data variables of interest are often only weakly identifiable when working with complex nonparametric models and the utility of otherwise elegant models for principled statistical data analysis is limited. Unfortunately, the paper neither provides any code to redo the analysis nor shows sampler diagnostics nor visualizations of posterior distributions.</p>
+<p>Hence, in this case study, we will first re-implement the proposed model, examine its MCMC diagnostics, and propose a model that is both significantly faster to fit and produces easier posterior geometries to sample from. Since the model by <span class="citation" data-cites="witty2020causal">Witty et al. (<a href="#ref-witty2020causal" role="doc-biblioref">2020</a>)</span> uses a Metropolis-within-Gibbs sampler, specifically an elliptical slice sampler (ESS) to sample the latent GP and a random-walk Metropolis (RWM) to sample from the posterior, and Stan does not provide this kind of sampling scheme, we use NumPyro and BlackJax for this model. For the other models, we use <a href="https://github.com/stan-dev/stan">Stan’s</a> dynamic Hamiltonian Monte Carlo (dHMC) sampler.</p>
+<p>We load some libraries for inference and working with data first.</p>
+<div class="cell" data-tags="[&quot;hide&quot;]" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> logging</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> timer(func):</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> timeit <span class="im">import</span> default_timer</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> f(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        start <span class="op">=</span> default_timer()</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        res <span class="op">=</span> func(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        stop <span class="op">=</span> default_timer()</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Elapsed time: </span><span class="sc">{</span>stop <span class="op">-</span> start<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> res</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> f</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"ignore"</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>logging.basicConfig(level<span class="op">=</span>logging.ERROR, stream<span class="op">=</span>sys.stdout)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>logging.getLogger(<span class="st">"cmdstanpy"</span>).setLevel(logging.ERROR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> functools <span class="im">import</span> partial</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy <span class="im">as</span> sp</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax.numpy <span class="im">as</span> jnp</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax.scipy <span class="im">as</span> jsp</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax.random <span class="im">as</span> random</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> blackjax <span class="im">as</span> bj</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpyro</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpyro.distributions <span class="im">as</span> dist</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpyro.infer.reparam <span class="im">import</span> TransformReparam</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpyro.infer.util <span class="im">import</span> initialize_model</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> cmdstanpy <span class="im">import</span> CmdStanModel</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.ticker <span class="im">as</span> ticker</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotx</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arviz <span class="im">as</span> az</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> palettes</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(rc<span class="op">=</span>{<span class="st">"figure.figsize"</span>: (<span class="dv">6</span>, <span class="dv">3</span>)})</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>sns.set_style(<span class="st">"ticks"</span>, {<span class="st">"font.family"</span>: <span class="st">"serif"</span>, <span class="st">"font.serif"</span>: <span class="st">"Merriweather"</span>})</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>palettes.set_theme()</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>numpyro.set_host_device_count(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="hierarchical-confounding" class="level2">
+<h2 class="anchored" data-anchor-id="hierarchical-confounding">Hierarchical confounding</h2>
+<p><span class="citation" data-cites="witty2020causal">Witty et al. (<a href="#ref-witty2020causal" role="doc-biblioref">2020</a>)</span> assume a structural equations model of the following form</p>
+<p><span class="math display">\[\begin{align}
+u_o &amp; \leftarrow \epsilon_{u_o} \\
+x_i &amp; \leftarrow f_X\left(u_{o = \text{Pa}(i)},  \epsilon_{x_i} \right) \\
+t_i &amp; \leftarrow f_{T}\left(u_{o = \text{Pa}(i)}, x_i, \epsilon_{t_i} \right) \\
+y_i &amp; \leftarrow f_{Y}\left(u_{o = \text{Pa}(i)}, x_i, t_i, \epsilon_{y_i} \right) \\
+\end{align}\]</span></p>
+<p>where <span class="math inline">\(o =1, \dots, N_O\)</span> indexes the number of latent confounders <span class="math inline">\(U_o\)</span>, <span class="math inline">\(i = 1, \dots, N_I\)</span> indexes covariables <span class="math inline">\(X_i\)</span>, treatments <span class="math inline">\(T_i\)</span> and outcomes <span class="math inline">\(Y_i\)</span> all of which we assume to be univariate for simplicity, but w.l.o.g can also be multivariate.</p>
+<p>Before we define the model from <span class="citation" data-cites="witty2020causal">Witty et al. (<a href="#ref-witty2020causal" role="doc-biblioref">2020</a>)</span>, we generate some data to define the problem we are dealing with. We first define the sample sizes, number of latent confounders, dimensionality of <span class="math inline">\(X\)</span> and <span class="math inline">\(U\)</span> and noise variances:</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>N_O <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>N_I <span class="op">=</span> N_O <span class="op">*</span> <span class="dv">10</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>P_X <span class="op">=</span> P_U <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>sigma_u <span class="op">=</span> sigma_x <span class="op">=</span> sigma_tr <span class="op">=</span> sigma_y <span class="op">=</span> <span class="fl">0.1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>i_to_o <span class="op">=</span> jnp.repeat(np.arange(N_O), <span class="bu">int</span>(N_I <span class="op">/</span> N_O))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We then sample data following a synthetic evaluation from the paper.</p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rng_key <span class="op">=</span> random.PRNGKey(<span class="dv">23</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>rng_key, sample_key <span class="op">=</span> random.split(rng_key, <span class="dv">2</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>U <span class="op">=</span> random.multivariate_normal(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    sample_key, mean<span class="op">=</span>np.zeros(P_U), cov<span class="op">=</span>np.eye(P_U) <span class="op">*</span> sigma_u, shape<span class="op">=</span>(N_O,)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rng_key, sample_key <span class="op">=</span> random.split(rng_key, <span class="dv">2</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>X_eps <span class="op">=</span> random.multivariate_normal(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    sample_key, mean<span class="op">=</span>np.zeros(P_X), cov<span class="op">=</span>np.eye(P_X) <span class="op">*</span> sigma_x, shape<span class="op">=</span>(N_I,)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> U[i_to_o] <span class="op">+</span> X_eps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gt(x, u, i_to_o):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> np.<span class="bu">sum</span>(x <span class="op">*</span> np.sin(x), axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    us <span class="op">=</span> np.<span class="bu">sum</span>(u[i_to_o] <span class="op">*</span> np.sin(u[i_to_o]), axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> xs <span class="op">-</span> us</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>rng_key, sample_key <span class="op">=</span> random.split(rng_key, <span class="dv">2</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>tr_eps <span class="op">=</span> random.normal(sample_key, shape<span class="op">=</span>(N_I,)) <span class="op">*</span> sigma_tr</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>tr <span class="op">=</span> gt(X, U, i_to_o) <span class="op">+</span> tr_eps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gy(t, x, u, i_to_o):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    ts <span class="op">=</span> t <span class="op">*</span> np.sin(<span class="dv">2</span> <span class="op">*</span> t)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> np.<span class="bu">sum</span>(np.sin(x), axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    us <span class="op">=</span> np.<span class="bu">sum</span>(np.sin(u[i_to_o]), axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span> ts <span class="op">-</span> xs <span class="op">+</span> us</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>rng_key, sample_key <span class="op">=</span> random.split(rng_key, <span class="dv">2</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>y_eps <span class="op">=</span> random.normal(sample_key, shape<span class="op">=</span>(N_I,)) <span class="op">*</span> sigma_y</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> gy(tr, X, U, i_to_o) <span class="op">+</span> y_eps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s visualize this. Note that the functional relationship between <span class="math inline">\(U\)</span> and any other variable <span class="math inline">\(X, T, Y\)</span> is - similar to a factor model - basically discrete, since <span class="math inline">\(N_O &lt; N_I\)</span>.</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>pld <span class="op">=</span> pd.DataFrame({<span class="st">"$U$"</span>: U[i_to_o, <span class="dv">0</span>], <span class="st">"$X$"</span>: X[:, <span class="dv">0</span>], <span class="st">"$T$"</span>: tr, <span class="st">"$Y$"</span>: y})</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> sns.pairplot(</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    pld,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span><span class="st">"black"</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    plot_kws<span class="op">=</span><span class="bu">dict</span>(marker<span class="op">=</span><span class="st">"+"</span>, color<span class="op">=</span><span class="st">"black"</span>),</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    diag_kws<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"black"</span>),</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    corner<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="causal_inference_using_tensor_product_smoothing_splines_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="a-gp-model" class="level2">
+<h2 class="anchored" data-anchor-id="a-gp-model">A GP model</h2>
+<p><span class="citation" data-cites="witty2020causal">Witty et al. (<a href="#ref-witty2020causal" role="doc-biblioref">2020</a>)</span> propose a semi-parametric model that models every structural equation using a GP (if I translate this correctly from the paper)</p>
+<p><span class="math display">\[\begin{align}
+\rho &amp; \sim \text{InvGamma}(5, 5) \\
+\sigma &amp; \sim \text{HalfNormal}(1) \\
+u &amp; \sim  \text{MvNormal}(0, \sigma_U^2 I) \\
+x &amp; \sim \text{GP}\left(0, K_X\left(u_{o = \text{Pa}(i)}, u_{o = \text{Pa}(i)}\right) + \sigma_X^2 I \right) \\
+t &amp; \sim \text{GP}\left(0, K_T\left(\left[u_{o = \text{Pa}(i)}, x_i \right], \left[u_{o = \text{Pa}(i)}, x_i \right]\right) + \sigma_T^2 I \right) \\
+y &amp; \sim \text{GP}\left(0, K_Y\left(\left[u_{o = \text{Pa}(i)}, x_i, t_i \right], \left[u_{o = \text{Pa}(i)}, x_i, t_i \right]\right) + \sigma_Y^2 I \right) \\
+\end{align}\]</span></p>
+<p>where the notation <span class="math inline">\([a, b]\)</span> concatenates the row-vectors <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> along the same axis and every covariance function <span class="math inline">\(K_k\)</span> is an exponentiated-quadratic covariance function with automatic relevance determination, i.e., for every dimension of a feature vector a separate length-scale is introduced. For instance, <span class="math inline">\(K_X\left(u_{o = \text{Pa}(i)}, u_{o = \text{Pa}(i)}\right)\)</span> for univariate <span class="math inline">\(u\)</span> and <span class="math inline">\(i\)</span> uses three hyperparamters.</p>
+<p>On first view, this model seems difficult to fit with common probabilistic languages and Hamiltonian Monte Carlo. The regression of <span class="math inline">\(X\)</span> on <span class="math inline">\(U\)</span> is a Gaussian process latent variable model which is in itself is not trivial to work with, even though to help identify the kernel parameters of <span class="math inline">\(K_X\)</span> statistical strength can be borrowed from the regressions of <span class="math inline">\(T\)</span> and <span class="math inline">\(Y\)</span> onto <span class="math inline">\(U\)</span>. In addition, the posterior geometry looks to be challenging to explore due to the high number of positively-constrained parameters and the somewhat awkward covariance structure of <span class="math inline">\(K_X\left(u_{o = \text{Pa}(i)}, u_{o = \text{Pa}(i)}\right)\)</span>. Lastly, for low sample sizes both <span class="math inline">\(u\)</span> and the kernel hyperparameters might be only weakly identified (if at all) which for interpretation of the results is undesirable.</p>
+<section id="reproducing-the-original-approach" class="level3">
+<h3 class="anchored" data-anchor-id="reproducing-the-original-approach">Reproducing the original approach</h3>
+<p><span class="citation" data-cites="witty2020causal">Witty et al. (<a href="#ref-witty2020causal" role="doc-biblioref">2020</a>)</span> use a Metropolis-within-Gibbs approach to sample from the posterior that consists of two steps:</p>
+<ul>
+<li>an elliptical slice sampler for the latent variable <span class="math inline">\(U\)</span>,</li>
+<li>and a conventional random-walk Metropolis for the covariance function hyperparameters and the noise variances <span class="math inline">\(\theta = \left( \rho, \sigma, \sigma_X, \sigma_T, \sigma_Y \right)\)</span>.</li>
+</ul>
+<p>To derive the conditional updates of both variables, let’s start with the joint posterior first. The posterior of both variables is proportional to the joint distribution of all variables:</p>
+<p><span class="math display">\[\begin{align*}
+P(U, \theta \mid Y, T, X) \propto P(Y \mid T, X, U, \theta)  P(T \mid X, U, \theta)  P(X \mid U, \theta)  P(U \mid \theta) P(\theta)
+\end{align*}\]</span></p>
+<p>The conditional posterior of <span class="math inline">\(U\)</span> is then:</p>
+<p><span class="math display">\[\begin{align*}
+P(U \mid Y, T, X, \theta) &amp; = \frac{P(Y \mid T, X, U, \theta)  P(T \mid X, U, \theta)  P(X \mid U, \theta)  P(U \mid \theta) P(\theta)}{\int_U P(Y \mid T, X, U, \theta)  P(T \mid X, U, \theta)  P(X \mid U, \theta)  P(U \mid \theta) P(\theta) dU} \\
+&amp; = \frac{P(Y \mid T, X, U, \theta)  P(T \mid X, U, \theta)  P(X \mid U, \theta)  P(U \mid \theta)}{\int_U P(Y \mid T, X, U, \theta)  P(T \mid X, U, \theta)  P(X \mid U, \theta)  P(U \mid \theta) dU} \\
+&amp; \propto P(Y \mid T, X, U, \theta)  P(T \mid X, U, \theta)  P(X \mid U, \theta)  P(U \mid \theta)
+\end{align*}\]</span></p>
+<p>Hence we can sample <span class="math inline">\(U\)</span> proportional to the full joint but leave out the prior probablities of <span class="math inline">\(\theta\)</span>. The conditional posterior of <span class="math inline">\(\theta\)</span> is:</p>
+<p><span class="math display">\[\begin{align*}
+P(\theta \mid Y, T, X, U) \propto P(Y \mid T, X, U, \theta)  P(T \mid X, U, \theta)  P(X \mid U, \theta)  P(U \mid \theta) P(\theta)
+\end{align*}\]</span></p>
+<p>Since <span class="math inline">\(\theta\)</span> does not cancel out, its conditional posterior is proportional to the full joint and we need to evaluate the entire thing here. We can specify the two conditional posteriors, or rather the joint distributions they are proportional to, using NumPyro. This means that we</p>
+<p>Let’s try to fit this model. We first define some utility functions, such as the squared exponential covariance function, likelihood function, etc.</p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> means_and_squared_exponential_chol(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    x1, x2, rho<span class="op">=</span><span class="fl">1.0</span>, sigma<span class="op">=</span><span class="fl">1.0</span>, noise_sigma<span class="op">=</span><span class="fl">1.0</span>, jitter<span class="op">=</span><span class="fl">1e-6</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>):</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    x1e <span class="op">=</span> jnp.expand_dims(x1, <span class="dv">0</span>) <span class="op">/</span> rho</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    x2e <span class="op">=</span> jnp.expand_dims(x2, <span class="dv">1</span>) <span class="op">/</span> rho</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    d <span class="op">=</span> jnp.<span class="bu">sum</span>((x1e <span class="op">-</span> x2e) <span class="op">**</span> <span class="dv">2</span>, axis<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    K <span class="op">=</span> sigma <span class="op">*</span> jnp.exp(<span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> d)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    K <span class="op">+=</span> (noise_sigma<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> jitter) <span class="op">*</span> jnp.eye(d.shape[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    K <span class="op">=</span> jnp.linalg.cholesky(K)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jnp.zeros(x1.shape[<span class="dv">0</span>]), K</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> covariance_parameters(variable_name, alpha, beta, sample_shape<span class="op">=</span>()):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    cov_rho <span class="op">=</span> numpyro.sample(</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"cov_</span><span class="sc">{</span>variable_name<span class="sc">}</span><span class="ss">_rho"</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        dist.InverseGamma(alpha, beta),</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        sample_shape<span class="op">=</span>sample_shape,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    cov_scale <span class="op">=</span> numpyro.sample(<span class="ss">f"cov_</span><span class="sc">{</span>variable_name<span class="sc">}</span><span class="ss">_scale"</span>, dist.HalfNormal())</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    noise_scale <span class="op">=</span> numpyro.sample(<span class="ss">f"</span><span class="sc">{</span>variable_name<span class="sc">}</span><span class="ss">_scale"</span>, dist.HalfNormal())</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cov_rho, cov_scale, noise_scale</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> likelihood(y, variable_name, means, scale_tril):</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    numpyro.sample(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>        variable_name, dist.MultivariateNormal(loc<span class="op">=</span>means, scale_tril<span class="op">=</span>scale_tril), obs<span class="op">=</span>y</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The model for conditional posterior <span class="math inline">\(P(\theta \mid Y, T, X, U)\)</span> can be implemented like this:</p>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gp_model_given_u(u, N_O, N_I, i_to_o, x, tr, y, alpha, beta):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    u_scale <span class="op">=</span> numpyro.sample(<span class="st">"u_scale"</span>, dist.InverseGamma(alpha, beta))</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    cov_x_rho, cov_x_scale, x_scale <span class="op">=</span> covariance_parameters(<span class="st">"x"</span>, alpha, beta)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    cov_t_rho, cov_t_scale, t_scale <span class="op">=</span> covariance_parameters(<span class="st">"t"</span>, alpha, beta, (<span class="dv">2</span>,))</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    cov_y_rho, cov_y_scale, y_scale <span class="op">=</span> covariance_parameters(<span class="st">"y"</span>, alpha, beta, (<span class="dv">3</span>,))</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    numpyro.sample(<span class="st">"u"</span>, dist.Normal(<span class="fl">0.0</span>, u_scale), obs<span class="op">=</span>u)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    u <span class="op">=</span> u[i_to_o]</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    means, scale_tril_x <span class="op">=</span> means_and_squared_exponential_chol(</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>        u, u, cov_x_rho, cov_x_scale, x_scale</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    likelihood(x, <span class="st">"x"</span>, means, scale_tril_x)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    ux <span class="op">=</span> jnp.concatenate([u, x], axis<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    means, scale_tril_tr <span class="op">=</span> means_and_squared_exponential_chol(</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        ux, ux, cov_t_rho, cov_t_scale, t_scale</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    likelihood(tr, <span class="st">"tr"</span>, means, scale_tril_tr)</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    uxt <span class="op">=</span> jnp.concatenate([ux, tr], axis<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>    means, scale_tril_y <span class="op">=</span> means_and_squared_exponential_chol(</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>        uxt, uxt, cov_y_rho, cov_y_scale, y_scale</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>    likelihood(y, <span class="st">"y"</span>, means, scale_tril_y)</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>gp_model_given_u_fn <span class="op">=</span> partial(</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>    gp_model_given_u,</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>    N_O<span class="op">=</span>N_O,</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>    N_I<span class="op">=</span>N_I,</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>    i_to_o<span class="op">=</span>i_to_o,</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>X.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>    tr<span class="op">=</span>tr.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>y.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">5.0</span>,</span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>    beta<span class="op">=</span><span class="fl">5.0</span>,</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To sample from <span class="math inline">\(P(\theta \mid Y, T, X, U)\)</span>, we use the same random-walk Metropolis sampler as in <span class="citation" data-cites="witty2020causal">Witty et al. (<a href="#ref-witty2020causal" role="doc-biblioref">2020</a>)</span>. We can create the respective kernel and create an initial state like this:</p>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> init_theta_kernel_and_logprob(rng_key, num_chains<span class="op">=</span><span class="dv">4</span>):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    sample_key, rng_key <span class="op">=</span> random.split(rng_key, <span class="dv">2</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    U_sample <span class="op">=</span> dist.Normal(jnp.zeros_like(U)).sample(sample_key)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> _init(init_key):</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        init_params, potential_fn_gen, <span class="op">*</span>_ <span class="op">=</span> initialize_model(</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>            init_key,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>            gp_model_given_u_fn,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>            model_args<span class="op">=</span>(U_sample,),</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>            dynamic_args<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> init_params, potential_fn_gen</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    init_key, rng_key <span class="op">=</span> random.split(rng_key, <span class="dv">2</span>)</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    init_params, potential_fn_gen <span class="op">=</span> _init(init_key)</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    p_dim <span class="op">=</span> jnp.<span class="bu">sum</span>(</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>        jnp.array(jax.tree_flatten(jax.tree_map(jnp.size, init_params.z))[<span class="dv">0</span>])</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> _create_kernel(z):</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>        log_prob <span class="op">=</span> <span class="kw">lambda</span> position: <span class="op">-</span>potential_fn_gen(<span class="op">**</span>z)(position)</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>        kernel <span class="op">=</span> partial(</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>            bj.mcmc.rmh.kernel(), logprob_fn<span class="op">=</span>log_prob, sigma<span class="op">=</span><span class="fl">0.1</span> <span class="op">*</span> jnp.eye(p_dim)</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> kernel</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>    log_prob <span class="op">=</span> <span class="kw">lambda</span> position: <span class="op">-</span>potential_fn_gen(<span class="op">**</span>{<span class="st">"u"</span>: U_sample})(position)</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>    initial_state <span class="op">=</span> bj.mcmc.rmh.init(init_params.z, logprob_fn<span class="op">=</span>log_prob)</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> _create_kernel, initial_state</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>init_key, rng_key <span class="op">=</span> random.split(rng_key)</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>theta_create_kernel_fn, theta_states <span class="op">=</span> init_theta_kernel_and_logprob(init_key)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To the model that is proportional to <span class="math inline">\(P(U \mid Y, T, X, \theta)\)</span> can be implemented like this:</p>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gp_model_given_theta(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    u_scale,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    cov_x_rho,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    cov_x_scale,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    x_scale,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    cov_t_rho,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    cov_t_scale,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    t_scale,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    cov_y_rho,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    cov_y_scale,</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    y_scale,</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    N_O,</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    N_I,</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    i_to_o,</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    x,</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    tr,</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    y,</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>):</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    u <span class="op">=</span> numpyro.sample(<span class="st">"u"</span>, dist.Normal(<span class="fl">0.0</span>, u_scale), sample_shape<span class="op">=</span>(N_O, <span class="dv">1</span>))</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    u <span class="op">=</span> u[i_to_o]</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    means, scale_tril_x <span class="op">=</span> means_and_squared_exponential_chol(</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>        u, u, cov_x_rho, cov_x_scale, x_scale</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    likelihood(x, <span class="st">"x"</span>, means, scale_tril_x)</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    ux <span class="op">=</span> jnp.concatenate([u, x], axis<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>    means, scale_tril_tr <span class="op">=</span> means_and_squared_exponential_chol(</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>        ux, ux, cov_t_rho, cov_t_scale, t_scale</span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>    likelihood(tr, <span class="st">"tr"</span>, means, scale_tril_tr)</span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>    uxt <span class="op">=</span> jnp.concatenate([ux, tr], axis<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>    means, scale_tril_y <span class="op">=</span> means_and_squared_exponential_chol(</span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>        uxt, uxt, cov_y_rho, cov_y_scale, y_scale</span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>    likelihood(y, <span class="st">"y"</span>, means, scale_tril_y)</span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>gp_model_given_theta_fn <span class="op">=</span> partial(</span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>    gp_model_given_theta,</span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>    N_O<span class="op">=</span>N_O,</span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a>    N_I<span class="op">=</span>N_I,</span>
+<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a>    i_to_o<span class="op">=</span>i_to_o,</span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>X.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a>    tr<span class="op">=</span>tr.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>y.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can sample the latent variable from the model above using an ellipitical slice sampler. The code to initialize an ESS is a bit lengthy:</p>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> init_u_kernel_and_logprob(rng_key):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> sample_covariance_parameters(rng_key, alpha, beta, sample_shape<span class="op">=</span>()):</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>        rho_key, scale_key, sigma_key <span class="op">=</span> random.split(rng_key, <span class="dv">3</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        cov_rho <span class="op">=</span> dist.InverseGamma(alpha, beta).sample(</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>            rho_key, sample_shape<span class="op">=</span>sample_shape</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>        cov_scale <span class="op">=</span> dist.HalfNormal().sample(scale_key)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>        scale <span class="op">=</span> dist.HalfNormal().sample(sigma_key)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> cov_rho, cov_scale, scale</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> _init(init_key):</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>        init_params, potential_fn_gen, <span class="op">*</span>_ <span class="op">=</span> initialize_model(</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>            init_key,</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>            gp_model_given_theta_fn,</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>            model_args<span class="op">=</span>(</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>                u_scale,</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>                cov_x_rho,</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>                cov_x_scale,</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>                x_scale,</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>                cov_t_rho,</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>                cov_t_scale,</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>                t_scale,</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>                cov_y_rho,</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>                cov_y_scale,</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>                y_scale,</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>            ),</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>            dynamic_args<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> init_params, potential_fn_gen</span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> _create_kernel(z):</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>        log_prob <span class="op">=</span> <span class="kw">lambda</span> position: <span class="op">-</span>potential_fn_gen(<span class="op">**</span>z)(position)</span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>        kernel <span class="op">=</span> partial(</span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>            bj.mcmc.elliptical_slice.kernel(</span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>                mean<span class="op">=</span>jnp.zeros(N_O), cov_matrix<span class="op">=</span>jnp.eye(N_O)</span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>            ),</span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>            loglikelihood_fn<span class="op">=</span>log_prob,</span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> kernel</span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a>    sample_key, rng_key <span class="op">=</span> random.split(rng_key, <span class="dv">2</span>)</span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a>    u_scale <span class="op">=</span> dist.InverseGamma(<span class="fl">5.0</span>, <span class="fl">5.0</span>).sample(sample_key)</span>
+<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a>    sample_key, rng_key <span class="op">=</span> random.split(rng_key, <span class="dv">2</span>)</span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a>    cov_x_rho, cov_x_scale, x_scale <span class="op">=</span> sample_covariance_parameters(sample_key, <span class="fl">5.0</span>, <span class="fl">5.0</span>)</span>
+<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a>    sample_key, rng_key <span class="op">=</span> random.split(rng_key, <span class="dv">2</span>)</span>
+<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a>    cov_t_rho, cov_t_scale, t_scale <span class="op">=</span> sample_covariance_parameters(</span>
+<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a>        sample_key, <span class="fl">5.0</span>, <span class="fl">5.0</span>, (<span class="dv">2</span>,)</span>
+<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a>    sample_key, rng_key <span class="op">=</span> random.split(rng_key, <span class="dv">2</span>)</span>
+<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a>    cov_y_rho, cov_y_scale, y_scale <span class="op">=</span> sample_covariance_parameters(</span>
+<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a>        sample_key, <span class="fl">5.0</span>, <span class="fl">5.0</span>, (<span class="dv">3</span>,)</span>
+<span id="cb17-52"><a href="#cb17-52" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-53"><a href="#cb17-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-54"><a href="#cb17-54" aria-hidden="true" tabindex="-1"></a>    init_key, rng_key <span class="op">=</span> random.split(rng_key, <span class="dv">2</span>)</span>
+<span id="cb17-55"><a href="#cb17-55" aria-hidden="true" tabindex="-1"></a>    init_params, potential_fn_gen <span class="op">=</span> _init(init_key)</span>
+<span id="cb17-56"><a href="#cb17-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-57"><a href="#cb17-57" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> {</span>
+<span id="cb17-58"><a href="#cb17-58" aria-hidden="true" tabindex="-1"></a>        <span class="st">"u_scale"</span>: u_scale,</span>
+<span id="cb17-59"><a href="#cb17-59" aria-hidden="true" tabindex="-1"></a>        <span class="st">"cov_x_rho"</span>: cov_x_rho,</span>
+<span id="cb17-60"><a href="#cb17-60" aria-hidden="true" tabindex="-1"></a>        <span class="st">"cov_x_scale"</span>: cov_x_scale,</span>
+<span id="cb17-61"><a href="#cb17-61" aria-hidden="true" tabindex="-1"></a>        <span class="st">"x_scale"</span>: x_scale,</span>
+<span id="cb17-62"><a href="#cb17-62" aria-hidden="true" tabindex="-1"></a>        <span class="st">"cov_t_rho"</span>: cov_t_rho,</span>
+<span id="cb17-63"><a href="#cb17-63" aria-hidden="true" tabindex="-1"></a>        <span class="st">"cov_t_scale"</span>: cov_t_scale,</span>
+<span id="cb17-64"><a href="#cb17-64" aria-hidden="true" tabindex="-1"></a>        <span class="st">"t_scale"</span>: t_scale,</span>
+<span id="cb17-65"><a href="#cb17-65" aria-hidden="true" tabindex="-1"></a>        <span class="st">"cov_y_rho"</span>: cov_y_rho,</span>
+<span id="cb17-66"><a href="#cb17-66" aria-hidden="true" tabindex="-1"></a>        <span class="st">"cov_y_scale"</span>: cov_y_scale,</span>
+<span id="cb17-67"><a href="#cb17-67" aria-hidden="true" tabindex="-1"></a>        <span class="st">"y_scale"</span>: y_scale,</span>
+<span id="cb17-68"><a href="#cb17-68" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb17-69"><a href="#cb17-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-70"><a href="#cb17-70" aria-hidden="true" tabindex="-1"></a>    log_prob <span class="op">=</span> <span class="kw">lambda</span> position: <span class="op">-</span>potential_fn_gen(<span class="op">**</span>z)(position)</span>
+<span id="cb17-71"><a href="#cb17-71" aria-hidden="true" tabindex="-1"></a>    initial_state <span class="op">=</span> bj.mcmc.elliptical_slice.init(</span>
+<span id="cb17-72"><a href="#cb17-72" aria-hidden="true" tabindex="-1"></a>        init_params.z, loglikelihood_fn<span class="op">=</span>log_prob</span>
+<span id="cb17-73"><a href="#cb17-73" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-74"><a href="#cb17-74" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> _create_kernel, initial_state</span>
+<span id="cb17-75"><a href="#cb17-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-76"><a href="#cb17-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-77"><a href="#cb17-77" aria-hidden="true" tabindex="-1"></a>init_key, rng_key <span class="op">=</span> random.split(rng_key)</span>
+<span id="cb17-78"><a href="#cb17-78" aria-hidden="true" tabindex="-1"></a>u_create_kernel_fn, u_states <span class="op">=</span> init_u_kernel_and_logprob(init_key)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s check if this worked out. We draw some samples from the <span class="math inline">\(\theta\)</span>- and <span class="math inline">\(u\)</span>-kernels while conditioning on the samples drawn from the other kernel:</p>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>theta_kernel <span class="op">=</span> theta_create_kernel_fn({<span class="st">"u"</span>: U})</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>theta_states, _ <span class="op">=</span> theta_kernel(init_key, theta_states)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>u_kernel <span class="op">=</span> u_create_kernel_fn(theta_states.position)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>u_states, _ <span class="op">=</span> u_kernel(init_key, u_states)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>u_states</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>EllipSliceState(position={'u': DeviceArray([[ 0.14244081],
+             [-0.4872629 ],
+             [ 0.57586974],
+             [ 1.3627449 ],
+             [ 0.22614735],
+             [-0.22915024],
+             [ 0.737732  ],
+             [-0.63063395],
+             [-0.03319287],
+             [ 0.36659515],
+             [-0.5565795 ],
+             [ 0.97630453],
+             [-1.642361  ],
+             [ 0.50184184],
+             [ 0.02560506],
+             [ 0.30197924],
+             [-0.58700615],
+             [ 0.30288985],
+             [-0.1568119 ],
+             [ 0.88928884]], dtype=float32)}, loglikelihood=DeviceArray(nan, dtype=float32))</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>theta_kernel <span class="op">=</span> theta_create_kernel_fn(u_states.position)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>theta_states, _ <span class="op">=</span> theta_kernel(init_key, theta_states)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>theta_states</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>RMHState(position={'cov_t_rho': DeviceArray([0.8406737, 1.0236844], dtype=float32), 'cov_t_scale': DeviceArray(0.8507148, dtype=float32), 'cov_x_rho': DeviceArray(-1.0597515, dtype=float32), 'cov_x_scale': DeviceArray(1.4353114, dtype=float32), 'cov_y_rho': DeviceArray([-0.90294284, -0.94434786,  1.2376969 ], dtype=float32), 'cov_y_scale': DeviceArray(0.30932292, dtype=float32), 't_scale': DeviceArray(1.1418653, dtype=float32), 'u_scale': DeviceArray(-1.3001951, dtype=float32), 'x_scale': DeviceArray(1.8077312, dtype=float32), 'y_scale': DeviceArray(-0.6635825, dtype=float32)}, log_probability=DeviceArray(-208559.3, dtype=float32))</code></pre>
+</div>
+</div>
+<p>Great, this worked fine. Now, let’s draw from the posterior of the two variables. To do so, we implement a Metropolis-within-Gibbs kernel like this:</p>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> inference_loop(rng_key, initial_theta_states, initial_u_states, num_samples):</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">@jax.jit</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> step(states, rng_key):</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>        theta_states, u_states <span class="op">=</span> states</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>        theta_key, u_key <span class="op">=</span> jax.random.split(rng_key, <span class="dv">2</span>)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>        theta_kernel <span class="op">=</span> theta_create_kernel_fn(u_states.position)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>        theta_states, _ <span class="op">=</span> theta_kernel(theta_key, theta_states)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>        u_kernel <span class="op">=</span> u_create_kernel_fn(theta_states.position)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>        u_states, _ <span class="op">=</span> u_kernel(u_key, u_states)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (theta_states, u_states), (theta_states, u_states)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    keys <span class="op">=</span> jax.random.split(rng_key, num_samples)</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>    _, (theta_states, u_states) <span class="op">=</span> jax.lax.scan(</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>        step, (initial_theta_states, initial_u_states), keys</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> theta_states, u_states</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We use four chains and sample each chain 5000 times and then discard the first 1000 samples. We can probably do this more efficiently using Jax’s <code>vmap</code>, but since Blackjax is so fast anyway, it doesn’t make a difference anyway.</p>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>chains <span class="op">=</span> [<span class="va">None</span>] <span class="op">*</span> <span class="dv">4</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> np.arange(<span class="dv">4</span>):</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    init_key, rng_key <span class="op">=</span> random.split(rng_key)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    posterior_theta_states, posterior_u_states <span class="op">=</span> inference_loop(</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>        init_key, theta_states, u_states, <span class="dv">5000</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    _ <span class="op">=</span> posterior_theta_states.position[<span class="st">"u_scale"</span>].block_until_ready()</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    chains[i] <span class="op">=</span> {<span class="op">**</span>posterior_theta_states.position, <span class="op">**</span>posterior_u_states.position}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Put all the chains together:</p>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> merge(<span class="op">*</span>xs):</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> xs[<span class="dv">0</span>].ndim <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>        xs <span class="op">=</span> [x[:, <span class="va">None</span>] <span class="cf">for</span> x <span class="kw">in</span> xs]</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> [x[<span class="va">None</span>, ...] <span class="cf">for</span> x <span class="kw">in</span> xs]</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jnp.concatenate(xs, axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> jax.tree_map(merge, <span class="op">*</span>chains)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s have a look at model diagnostics. We check effective sample size and potential scale reduction statistic.</p>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k, v <span class="kw">in</span> samples.items():</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    esses <span class="op">=</span> jnp.atleast_1d(bj.diagnostics.effective_sample_size(v[:, <span class="dv">1000</span>:, :]))</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    rhats <span class="op">=</span> jnp.atleast_1d(bj.diagnostics.potential_scale_reduction(v[:, <span class="dv">1000</span>:, :]))</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, (ess, rhat) <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">zip</span>(esses, rhats)):</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> ESS := </span><span class="sc">{</span>ess<span class="sc">}</span><span class="ss">, R-hat := </span><span class="sc">{</span>rhat<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>cov_t_rho_0 ESS := 2.202563762664795, R-hat := 3.362495183944702
+cov_t_rho_1 ESS := 2.0379316806793213, R-hat := 7.525145530700684
+cov_t_scale_0 ESS := 2.0275516510009766, R-hat := 8.80030345916748
+cov_x_rho_0 ESS := 2.032320976257324, R-hat := 8.29069995880127
+cov_x_scale_0 ESS := 2.016557216644287, R-hat := 11.365096092224121
+cov_y_rho_0 ESS := 2.0739545822143555, R-hat := 5.480118751525879
+cov_y_rho_1 ESS := 2.994222640991211, R-hat := 1.7775665521621704
+cov_y_rho_2 ESS := 2.1926076412200928, R-hat := 3.4672467708587646
+cov_y_scale_0 ESS := 2.1060869693756104, R-hat := 4.612753868103027
+t_scale_0 ESS := 2.028766632080078, R-hat := 8.712288856506348
+u_0 ESS := 15847.146484375, R-hat := 1.0001482963562012
+u_1 ESS := 15804.7939453125, R-hat := 1.0000032186508179
+u_2 ESS := 15076.171875, R-hat := 0.9998949766159058
+u_3 ESS := 15514.26171875, R-hat := 0.9999516010284424
+u_4 ESS := 15609.65625, R-hat := 0.9999165534973145
+u_5 ESS := 16274.8515625, R-hat := 0.9998970031738281
+u_6 ESS := 15657.515625, R-hat := 0.9999484419822693
+u_7 ESS := 15322.263671875, R-hat := 0.9999907612800598
+u_8 ESS := 16270.4130859375, R-hat := 0.9999168515205383
+u_9 ESS := 15645.1123046875, R-hat := 0.9999098777770996
+u_10 ESS := 15554.1435546875, R-hat := 1.000144124031067
+u_11 ESS := 15901.517578125, R-hat := 0.9999632835388184
+u_12 ESS := 15647.9208984375, R-hat := 0.9999827146530151
+u_13 ESS := 15854.900390625, R-hat := 0.9999595880508423
+u_14 ESS := 15819.40625, R-hat := 1.0002115964889526
+u_15 ESS := 15466.146484375, R-hat := 0.9999833703041077
+u_16 ESS := 15765.470703125, R-hat := 1.0002683401107788
+u_17 ESS := 14511.49609375, R-hat := 1.0001013278961182
+u_18 ESS := 15955.2646484375, R-hat := 1.000172734260559
+u_19 ESS := 15510.50390625, R-hat := 0.9998869895935059
+u_scale_0 ESS := 2.0861570835113525, R-hat := 5.082359313964844
+x_scale_0 ESS := 2.2595245838165283, R-hat := 2.982508420944214
+y_scale_0 ESS := 2.1550612449645996, R-hat := 3.846733331680298</code></pre>
+</div>
+</div>
+<p>Convergence diagnostics look as expected: while the posterior samples of <span class="math inline">\(u\)</span> look somewhat fine, the kernel parameters have unacceptably low effective sample sizes, which also makes the samples of <span class="math inline">\(u\)</span> unreliable (because they depend on each other).</p>
+</section>
+<section id="an-approach-using-stan-and-a-tuned-nuts" class="level3">
+<h3 class="anchored" data-anchor-id="an-approach-using-stan-and-a-tuned-nuts">An approach using Stan and a tuned NUTS</h3>
+<p>The approach from the paper that proposed a Metropolis-within-Gibbs sampling scheme using a random-walk Metropolis and elliptical slice sampler did not work out for us on this data set. Let’s try to sample all variables jointly using NUTS. For this, we can either use Blackjax again and implement the joint density using NumPyro, or we switch to Stan, which generally makes life for us a bit easier to diagnose inferences.</p>
+<p>Hence, let’s try the same model from above, but sample the latent variables jointly, i.e., sample from <span class="math inline">\(P(U, \theta \mid Y, T, X)\)</span>.</p>
+<p>For Stan, we first wrap the data into a dictionary:</p>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"N_I"</span>: N_I,</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"N_O"</span>: N_O,</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"i_to_o"</span>: np.asarray(i_to_o <span class="op">+</span> <span class="dv">1</span>),</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"X"</span>: np.asarray(jnp.squeeze(X)),</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tr"</span>: np.asarray(tr),</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"y"</span>: np.asarray(y),</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"alpha"</span>: <span class="fl">5.0</span>,</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"beta"</span>: <span class="fl">5.0</span>,</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In addition, we define a sampling method such that we can time inference of posterior distributions of a model. We again sample a total of <span class="math inline">\(5000\)</span> times on four separate chains of which we discard the first <span class="math inline">\(1000\)</span> samples which is usually more than enough for NUTS.</p>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="at">@timer</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sample(model, data):</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> model.sample(data<span class="op">=</span>data, show_progress<span class="op">=</span><span class="va">False</span>, seed<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We also define a function to compile a model:</p>
+<div class="cell" data-execution_count="154">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="bu">compile</span>(model_file):</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> CmdStanModel(stan_file<span class="op">=</span>model_file)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> model</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>models_folder <span class="op">=</span> <span class="st">"_models/causal_inference_using_tensor_product_smoothing_splines"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The model implementation can be found at the end of this document.</p>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>gp_model_file <span class="op">=</span> os.path.join(models_folder, <span class="st">"gp_model.stan"</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> <span class="bu">compile</span>(gp_model_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>DEBUG:cmdstanpy:found newer exe file, not recompiling</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>fit <span class="op">=</span> sample(model, data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The fit was tremendously slow which is usually a sign of a very unfavourable posterior geometry. Let’s have a look at posterior diagnostics.</p>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fit.diagnose())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Processing csv files: /var/folders/w8/7mc8k9m916qgh982xqxfgsr00000gn/T/tmpojd0ieol/gp_modell0jpc8h6/gp_model-20220918194927_1.csv, /var/folders/w8/7mc8k9m916qgh982xqxfgsr00000gn/T/tmpojd0ieol/gp_modell0jpc8h6/gp_model-20220918194927_2.csv, /var/folders/w8/7mc8k9m916qgh982xqxfgsr00000gn/T/tmpojd0ieol/gp_modell0jpc8h6/gp_model-20220918194927_3.csv, /var/folders/w8/7mc8k9m916qgh982xqxfgsr00000gn/T/tmpojd0ieol/gp_modell0jpc8h6/gp_model-20220918194927_4.csv
+
+Checking sampler transitions treedepth.
+Treedepth satisfactory for all transitions.
+
+Checking sampler transitions for divergences.
+No divergent transitions found.
+
+Checking E-BFMI - sampler transitions HMC potential energy.
+The E-BFMI, 0.13, is below the nominal threshold of 0.30 which suggests that HMC may have trouble exploring the target distribution.
+If possible, try to reparameterize the model.
+
+The following parameters had fewer than 0.001 effective draws per transition:
+  U_tilde[1], U_tilde[2], U_tilde[3], U_tilde[4], U_tilde[5], U_tilde[6], U_tilde[7], U_tilde[8], U_tilde[9], U_tilde[10], U_tilde[11], U_tilde[12], U_tilde[13], U_tilde[14], U_tilde[15], U_tilde[16], U_tilde[17], U_tilde[18], U_tilde[19], U_tilde[20], cov_t_rhos[1], U[1], U[2], U[3], U[4], U[5], U[6], U[7], U[8], U[9], U[10], U[11], U[12], U[13], U[14], U[15], U[16], U[17], U[18], U[19], U[20]
+Such low values indicate that the effective sample size estimators may be biased high and actual performance may be substantially lower than quoted.
+
+The following parameters had split R-hat greater than 1.05:
+  u_scale, U_tilde[1], U_tilde[2], U_tilde[3], U_tilde[4], U_tilde[5], U_tilde[6], U_tilde[7], U_tilde[8], U_tilde[9], U_tilde[10], U_tilde[11], U_tilde[12], U_tilde[13], U_tilde[14], U_tilde[15], U_tilde[16], U_tilde[17], U_tilde[18], U_tilde[19], U_tilde[20], cov_x_rho, cov_x_scale, cov_t_rhos[1], cov_t_rhos[2], cov_y_rhos[1], U[1], U[2], U[3], U[4], U[5], U[6], U[7], U[8], U[9], U[10], U[11], U[12], U[13], U[14], U[15], U[16], U[17], U[18], U[19], U[20]
+Such high values indicate incomplete mixing and biased estimation.
+You should consider regularizating your model with additional prior information or a more effective parameterization.
+
+Processing complete.
+</code></pre>
+</div>
+</div>
+<p>Let’s also have a look at the energy plot and a trace plot of <span class="math inline">\(U\)</span> and <span class="math inline">\(\sigma_U\)</span>.</p>
+<div class="cell" data-execution_count="109">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>posterior_az <span class="op">=</span> az.from_cmdstanpy(fit)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>_, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> az.plot_energy(posterior_az, ax<span class="op">=</span>ax, fill_color<span class="op">=</span>[<span class="st">"#233B43"</span>, <span class="st">"darkgrey"</span>])</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.legend(title<span class="op">=</span><span class="st">""</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">1.2</span>, <span class="fl">0.5</span>), frameon<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="causal_inference_using_tensor_product_smoothing_splines_files/figure-html/cell-32-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="152">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>_, axes <span class="op">=</span> plt.subplots(ncols<span class="op">=</span><span class="dv">2</span>, nrows<span class="op">=</span><span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">4</span>))</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> az.plot_trace(</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    posterior_az,</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    axes<span class="op">=</span>axes,</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    var_names<span class="op">=</span>[<span class="st">"u_scale"</span>, <span class="st">"U"</span>],</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    chain_prop<span class="op">=</span>{</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"color"</span>: palettes.discrete_qualitative_colors(<span class="dv">2</span>),</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"linewidth"</span>: [<span class="fl">1.75</span>],</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"alpha"</span>: [<span class="fl">0.5</span>],</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axes.flatten():</span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>    ax.grid(axis<span class="op">=</span><span class="st">"both"</span>)</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>    ax.tick_params(labelsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].set_title(<span class="st">"$\sigma_u$"</span>, size<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].set_title(<span class="st">"$\sigma_u$"</span>, size<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_title(<span class="st">"$u$"</span>, size<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_title(<span class="st">"$u$"</span>, size<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="causal_inference_using_tensor_product_smoothing_splines_files/figure-html/cell-33-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>The MCMC diagnostics are worrisome. Not only did the chains not mix, the effective sample size of some parameters is approximately one. We could just sample longer chains, increase the <code>tree-depth</code> or decrease <code>adapt-delta</code>, but this model seems too pathological to fit successfully (at least for this data set).</p>
+<p>I assume the low effective sample size when using HMC was one of the reasons why the authors used an elliptical slice sampler for the confounders. They note however: “<em>[the model] tends to underestimate the uncertainty in [the counterfactual] estimates. In other words, the posterior density on the ground-truth counterfactual is sometimes low, despite the fact that the mean estimate is close to the ground-truth relative to the baselines. We suspect that this is partially attributable to inaccuracies resulting from our approximate inference procedure</em>”. Hence, it might very well be that their sampling scheme produces the same pathological result (which warrants the question why they didn’t include diagnostics given that the model seems either ill-defined or at least hard to work with in practice, and given that there are apparently <em>inaccuracies resulting from our approximate inference procedure</em>).</p>
+</section>
+</section>
+<section id="a-second-gp-model" class="level2">
+<h2 class="anchored" data-anchor-id="a-second-gp-model">A second GP model</h2>
+<p>The inference of <span class="math inline">\(U\)</span> seems to be problematic. Let’s try a simpler model, where we replace the GP regression of <span class="math inline">\(X\)</span> on <span class="math inline">\(U\)</span> with a single linear predictor:</p>
+<p><span class="math display">\[\begin{align}
+\rho &amp; \sim \text{InvGamma}(5, 5) \\
+\sigma &amp; \sim \text{HalfNormal}(1) \\
+u &amp; \sim \text{MvNormal}(0, \sigma_U^2 I) \\
+\beta &amp; \sim  \text{Normal}(0, 1) \\
+x_i &amp; \sim \text{Normal}\left(u_{o = \text{Pa}(i)}\beta, \sigma_X^2 \right) \\
+t &amp; \sim \text{GP}\left(0, K_T\left(\left[u_{o = \text{Pa}(i)}, x_i \right], \left[u_{o = \text{Pa}(i)}, x_i \right]\right) + \sigma_T^2 I \right) \\
+y &amp; \sim \text{GP}\left(0, K_Y\left(\left[u_{o = \text{Pa}(i)}, x_i, t_i \right], \left[u_{o = \text{Pa}(i)}, x_i, t_i \right]\right) + \sigma_Y^2 I \right) \\
+\end{align}\]</span></p>
+<p>Let’s try fitting this model.</p>
+<div class="cell" data-execution_count="155">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>gplinear_model_file <span class="op">=</span> os.path.join(models_folder, <span class="st">"gp+linear_model.stan"</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> <span class="bu">compile</span>(gplinear_model_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="156">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>fit <span class="op">=</span> sample(model, data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Elapsed time: 3439.8415772089993</code></pre>
+</div>
+</div>
+<p>The fit was a bit faster. What are the diagnostics saying?</p>
+<div class="cell" data-execution_count="157">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fit.diagnose())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Processing csv files: /var/folders/w8/7mc8k9m916qgh982xqxfgsr00000gn/T/tmpojd0ieol/gp+linear_modelo7ragbjn/gp+linear_model-20220918215445_1.csv, /var/folders/w8/7mc8k9m916qgh982xqxfgsr00000gn/T/tmpojd0ieol/gp+linear_modelo7ragbjn/gp+linear_model-20220918215445_2.csv, /var/folders/w8/7mc8k9m916qgh982xqxfgsr00000gn/T/tmpojd0ieol/gp+linear_modelo7ragbjn/gp+linear_model-20220918215445_3.csv, /var/folders/w8/7mc8k9m916qgh982xqxfgsr00000gn/T/tmpojd0ieol/gp+linear_modelo7ragbjn/gp+linear_model-20220918215445_4.csv
+
+Checking sampler transitions treedepth.
+Treedepth satisfactory for all transitions.
+
+Checking sampler transitions for divergences.
+No divergent transitions found.
+
+Checking E-BFMI - sampler transitions HMC potential energy.
+The E-BFMI, 0.02, is below the nominal threshold of 0.30 which suggests that HMC may have trouble exploring the target distribution.
+If possible, try to reparameterize the model.
+
+The following parameters had fewer than 0.001 effective draws per transition:
+  u_scale, U_tilde[1], U_tilde[2], U_tilde[3], U_tilde[4], U_tilde[5], U_tilde[6], U_tilde[7], U_tilde[8], U_tilde[9], U_tilde[10], U_tilde[11], U_tilde[12], U_tilde[13], U_tilde[14], U_tilde[15], U_tilde[16], U_tilde[17], U_tilde[18], U_tilde[19], U_tilde[20], x_beta, x_scale, cov_t_rhos[1], cov_y_rhos[1], U[1], U[2], U[3], U[4], U[5], U[6], U[7], U[8], U[9], U[10], U[11], U[12], U[13], U[14], U[15], U[16], U[17], U[18], U[19], U[20]
+Such low values indicate that the effective sample size estimators may be biased high and actual performance may be substantially lower than quoted.
+
+The following parameters had split R-hat greater than 1.05:
+  u_scale, U_tilde[1], U_tilde[2], U_tilde[3], U_tilde[4], U_tilde[5], U_tilde[6], U_tilde[7], U_tilde[8], U_tilde[9], U_tilde[10], U_tilde[11], U_tilde[12], U_tilde[13], U_tilde[14], U_tilde[15], U_tilde[16], U_tilde[17], U_tilde[18], U_tilde[19], U_tilde[20], x_beta, x_scale, cov_t_rhos[1], cov_t_rhos[2], cov_t_scale, t_scale, cov_y_rhos[1], U[1], U[2], U[3], U[4], U[5], U[6], U[7], U[8], U[9], U[10], U[11], U[12], U[13], U[14], U[15], U[16], U[17], U[18], U[19], U[20]
+Such high values indicate incomplete mixing and biased estimation.
+You should consider regularizating your model with additional prior information or a more effective parameterization.
+
+Processing complete.
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="159">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>posterior_az <span class="op">=</span> az.from_cmdstanpy(fit)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>_, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> az.plot_energy(posterior_az, ax<span class="op">=</span>ax, fill_color<span class="op">=</span>[<span class="st">"#233B43"</span>, <span class="st">"darkgrey"</span>])</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.legend(title<span class="op">=</span><span class="st">""</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">1.2</span>, <span class="fl">0.5</span>))</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="causal_inference_using_tensor_product_smoothing_splines_files/figure-html/cell-37-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>The chains still don’t seem to converge. The effective sample sizes are worrisome, too.</p>
+</section>
+<section id="a-tensor-product-spline-model" class="level2">
+<h2 class="anchored" data-anchor-id="a-tensor-product-spline-model">A tensor-product spline model</h2>
+<p>Both models seem to be too hard to sample from to make work in practice and draw statistically reliable conclusions for decision making. As a final approach we simplify the model one more time and replace all functional GP relationships with smoothing splines. Since the regressions <span class="math inline">\(f: U, X \rightarrow T\)</span> and <span class="math inline">\(f: U, X, T \rightarrow Y\)</span> use vectorial inputs, we will use a tensor-product smoothing spline <span>(Wood (2006))</span> based on B-spline bases.</p>
+<p>A spline with of order <span class="math inline">\(m + 1\)</span> with <span class="math inline">\(K\)</span> parameters can be represented as a linear combination of B-spline bases as</p>
+<p><span class="math display">\[\begin{equation}
+f(x) = \sum_i^K \alpha_i B_{i, m}(x)
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(B_i^m\)</span> are defined recursively via</p>
+<p><span class="math display">\[\begin{equation}
+B_{i, 1}(x) = \begin{cases}
+    1 &amp; \text{if } k_i \le x &lt; k_{i + 1}\\
+    0 &amp; \text{otherwise}
+\end{cases}
+\end{equation}\]</span></p>
+<p>and</p>
+<p><span class="math display">\[\begin{equation}
+B_{i, m}(x)_ = \frac{x - k_i}{k_{i + m + 1} - k_i} B_{i, m - 1}(x) + \frac{k_{i + m + 2} - x}{k_{i + m + 2} - k_{i + 1}} B_{i + 1, m - 1}(x)
+\end{equation}\]</span></p>
+<p>To define a B-spline basis with <span class="math inline">\(K\)</span> parameters and order <span class="math inline">\(m + 1\)</span> we will need to define a <span class="math inline">\(K + m + 2\)</span>-dimensional vector of knots <span class="math inline">\(k\)</span> (which in practice can be a bit annoying). As Milad Kharratzadeh notes in his <a href="https://mc-stan.org/users/documentation/case-studies/splines_in_stan.html">spline case study</a>, we should define an extended knot sequence to cover the whole span of the knots, but for this case-study we follow the description in <span class="citation" data-cites="wood2017generalized">Wood (<a href="#ref-wood2017generalized" role="doc-biblioref">2017</a>)</span> to avoid confusion.</p>
+<p>To build a B-spline basis in Stan we consequently need to implement this recursive definition. Since this definition only handles univariate inputs, we will use a tensor-product basis over multiple variables. Following <span class="citation" data-cites="wood2006low">Wood (<a href="#ref-wood2006low" role="doc-biblioref">2006</a>)</span>, the constructions of a tensor-product basis starts by constructing low-rank bases <span class="math inline">\(B^V\)</span> for every variable <span class="math inline">\(V\)</span>. We then define a tensor-product spline over a set of variables as</p>
+<p><span class="math display">\[\begin{equation}
+f(x, y; \alpha) = \sum_k^K \sum_l^L \alpha_{kl} B^X_{k,m} B^Y_{l,m}
+\end{equation}\]</span></p>
+<p>We can extend this construction further for a third variable</p>
+<p><span class="math display">\[\begin{equation}
+f(x, y, z; \alpha) = \sum_k^K \sum_l^L \sum_j^J \alpha_{klj} B^X_{k,m} B^Y_{l,m}  B^Z_{j,m}
+\end{equation}\]</span></p>
+<p>This construction is all we need to define a smooth functions over the three variables. For our model, we will use B-spline bases which are not necessarily low-rank. However, by regularize adjacent pairs of coefficients <span class="math inline">\(\alpha\)</span> to control the wiggliness of the basis function (see <span class="citation" data-cites="wood2017generalized">Wood (<a href="#ref-wood2017generalized" role="doc-biblioref">2017</a>)</span> who explains this way better).</p>
+<p>Let’s test these two models. First we simulate data and fit a conventional B-spline.</p>
+<div class="cell" data-tags="[&quot;hide&quot;]" data-execution_count="160">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>tn <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>tx <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">2</span>, tn)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>ty_mean <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.sin(tx)</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>ty <span class="op">=</span> ty_mean <span class="op">+</span> random.normal(random.PRNGKey(<span class="dv">0</span>), shape<span class="op">=</span>(tn,)) <span class="op">*</span> <span class="fl">0.25</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>tdata <span class="op">=</span> {</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"N"</span>: tn,</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"X"</span>: np.asarray(tx),</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"y"</span>: np.asarray(ty),</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"degree"</span>: <span class="dv">2</span>,</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"n_knots"</span>: <span class="dv">6</span>,</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"knots"</span>: np.linspace(<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">6</span>),</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>tps_file <span class="op">=</span> os.path.join(models_folder, <span class="st">"b_spline.stan"</span>)</span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> <span class="bu">compile</span>(tps_file)</span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>fit <span class="op">=</span> model.sample(data<span class="op">=</span>tdata, chains<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a>ty_star <span class="op">=</span> np.mean(fit.draws_pd(<span class="bu">vars</span><span class="op">=</span><span class="st">"y_hat"</span>).values, axis<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"df36a5ffc351430aa7aa6bc591dabe9f","version_major":2,"version_minor":0}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"a96534533ae14094b7ee3928102d04d0","version_major":2,"version_minor":0}
+</script>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="196">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>_, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.scatter(tx, ty, marker<span class="op">=</span><span class="st">"+"</span>, color<span class="op">=</span><span class="st">"black"</span>)</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.plot(tx, ty_star, color<span class="op">=</span>palettes.discrete_qualitative_colors(<span class="dv">4</span>)[<span class="dv">2</span>])</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>ax.yaxis.set_major_locator(ticker.MultipleLocator(base<span class="op">=</span><span class="dv">2</span>))</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">"bottom"</span>].set_bounds(<span class="op">-</span><span class="fl">3.25</span>, <span class="fl">2.25</span>)</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">"left"</span>].set_bounds(<span class="op">-</span><span class="fl">2.5</span>, <span class="fl">2.5</span>)</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="op">-</span><span class="fl">3.5</span>, <span class="fl">2.3</span>])</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>ax.set_ylim([<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>])</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="causal_inference_using_tensor_product_smoothing_splines_files/figure-html/cell-39-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Then we simulate a regression model with two covariables and fit a tensor-product smoother with B-spline bases.</p>
+<div class="cell" data-tags="[&quot;hide&quot;]" data-execution_count="198">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>tn <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>tx1 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">2</span>, tn)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>tx2 <span class="op">=</span> np.linspace(<span class="dv">3</span>, <span class="op">-</span><span class="dv">2</span>, tn)</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>ty_mean <span class="op">=</span> tx1 <span class="op">*</span> np.sin(tx1) <span class="op">-</span> np.cos(tx2)</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>ty <span class="op">=</span> ty_mean <span class="op">+</span> random.normal(random.PRNGKey(<span class="dv">0</span>), shape<span class="op">=</span>(tn,)) <span class="op">*</span> <span class="fl">0.25</span></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>tdata <span class="op">=</span> {</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"N"</span>: tn,</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"X"</span>: np.asarray(np.vstack([tx1, tx2])).T,</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"y"</span>: np.asarray(ty),</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"degree"</span>: <span class="dv">2</span>,</span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"n_knots"</span>: <span class="dv">6</span>,</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"x1_knots"</span>: np.linspace(<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">6</span>),</span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"x2_knots"</span>: np.linspace(<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">6</span>),</span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>tps_file <span class="op">=</span> os.path.join(models_folder, <span class="st">"tp_spline.stan"</span>)</span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> <span class="bu">compile</span>(tps_file)</span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>fit <span class="op">=</span> model.sample(data<span class="op">=</span>tdata, chains<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a>ty_star <span class="op">=</span> np.mean(fit.draws_pd(<span class="bu">vars</span><span class="op">=</span><span class="st">"y_hat"</span>).values, axis<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"f480c65fd5354ad2bc809abd70257afa","version_major":2,"version_minor":0}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"be33c3c19b4340e9af848d2741b956e8","version_major":2,"version_minor":0}
+</script>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="217">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>_, axes <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">4</span>), ncols<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, (ax, tx) <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">zip</span>(axes, [tx1, tx2])):</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    _ <span class="op">=</span> ax.scatter(tx, ty, marker<span class="op">=</span><span class="st">"+"</span>, color<span class="op">=</span><span class="st">"black"</span>)</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    _ <span class="op">=</span> ax.plot(tx, ty_star, color<span class="op">=</span>palettes.discrete_qualitative_colors(<span class="dv">4</span>)[<span class="dv">2</span>])</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>    ax.yaxis.set_major_locator(ticker.MultipleLocator(base<span class="op">=</span><span class="dv">2</span>))</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>    ax.spines[<span class="st">"bottom"</span>].set_bounds(<span class="op">-</span><span class="fl">3.25</span>, <span class="fl">2.75</span>)</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>    ax.spines[<span class="st">"left"</span>].set_bounds(<span class="op">-</span><span class="dv">2</span>, <span class="dv">4</span>)</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>    ax.set_xlim([<span class="op">-</span><span class="fl">3.5</span>, <span class="fl">2.3</span>])</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>    ax.set_ylim([<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>])</span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="causal_inference_using_tensor_product_smoothing_splines_files/figure-html/cell-41-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>This worked nicely! The fit is not as good as with a Gaussian process but easy to fit.</p>
+<p>Replacing the GPs in our causal structural model with smoothing splines yields the following generative model:</p>
+<p><span class="math display">\[\begin{align}
+\sigma &amp; \sim \text{HalfNormal}(1.0) \\
+u &amp; \sim  \text{MvNormal}(0, \sigma_U^2 I) \\
+\beta_X &amp; \sim  \text{Normal}(0, 1) \\
+x_i &amp; \sim \text{Normal}\left(u_{o = \text{Pa}(i)}\beta_X, \sigma_X^2 \right) \\
+\beta_{T0} &amp; \sim \text{Normal}(0, 1) \\
+\beta_{Ti} &amp; \sim \text{Normal}(\beta_{T,i-1}, \sigma_{\beta_T}) \\
+t_i &amp; \sim \text{Normal}\left(f\left(u_{o = \text{Pa}(i)}, x_i\right)^T \beta_T, \sigma_T^2 I \right) \\
+\beta_{Y0} &amp; \sim \text{Normal}(0, 1) \\
+\beta_{Yi} &amp; \sim \text{Normal}(\beta_{Y,i-1}, \sigma_{\beta_Y}) \\
+y_i &amp; \sim \text{Normal}\left(f\left(u_{o = \text{Pa}(i)}, x_i, t_i\right)^T \beta_Y, \sigma_Y^2 I \right) \\
+\end{align}\]</span></p>
+<p>where <span class="math inline">\(f(\dots; \dots)\)</span> are penalized tensor-product smoothers with B-spline bases as defined above.</p>
+<p>Before fitting this, we need to define the order of the spline, or equivalently its degree, and a sequence of knots for every variable. For <span class="math inline">\(X\)</span> we can just use quantiles. For <span class="math inline">\(U\)</span> which is latent we use quantiles of a normal with standard deviation <span class="math inline">\(1\)</span> which should cover the domain of the highest density region of the posterior. For <span class="math inline">\(T\)</span> which is the treatment, since we possibly want to make counterfactual predictions, we should define knots on that region. Hence we compute the quantiles on all values of <span class="math inline">\(T\)</span> and th <span class="math inline">\(T + 1\)</span> (this is kinda arbitrary for this example). This is arguably a bit awkward, but we need to make sure to cover the entire domain to have a well defined spline basis.</p>
+<p>We choose a degree of <span class="math inline">\(d=2\)</span>, since the pair plots of the data above suggest approximately quadratic relationships (at least since we pretend to not know the data generating process).</p>
+<div class="cell" data-execution_count="218">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"degree"</span>] <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"n_knots"</span>] <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>quantiles <span class="op">=</span> np.linspace(<span class="fl">0.01</span>, <span class="fl">0.99</span>, data[<span class="st">"n_knots"</span>])</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>u_knots <span class="op">=</span> sp.stats.norm.ppf(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>, q<span class="op">=</span>quantiles)</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>x_knots <span class="op">=</span> np.quantile(X, q<span class="op">=</span>quantiles)</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>tr_knots <span class="op">=</span> np.quantile(np.concatenate([tr, tr <span class="op">+</span> <span class="dv">1</span>]), q<span class="op">=</span>quantiles)</span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"u_knots"</span>] <span class="op">=</span> np.asarray(u_knots)</span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"x_knots"</span>] <span class="op">=</span> np.asarray(x_knots)</span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"tr_knots"</span>] <span class="op">=</span> np.asarray(tr_knots)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can now fit the model</p>
+<div class="cell" data-execution_count="219">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>tps_model_file <span class="op">=</span> os.path.join(models_folder, <span class="st">"tps_model.stan"</span>)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> <span class="bu">compile</span>(tps_model_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="220">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>fit <span class="op">=</span> sample(model, data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Elapsed time: 73.14618029200028</code></pre>
+</div>
+</div>
+<p>The fit is significantly faster. Let’s have a look at some diagnostics.</p>
+<div class="cell" data-execution_count="221">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fit.diagnose())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Processing csv files: /var/folders/w8/7mc8k9m916qgh982xqxfgsr00000gn/T/tmpojd0ieol/tps_model2lpygd29/tps_model-20220918230800_1.csv, /var/folders/w8/7mc8k9m916qgh982xqxfgsr00000gn/T/tmpojd0ieol/tps_model2lpygd29/tps_model-20220918230800_2.csv, /var/folders/w8/7mc8k9m916qgh982xqxfgsr00000gn/T/tmpojd0ieol/tps_model2lpygd29/tps_model-20220918230800_3.csv, /var/folders/w8/7mc8k9m916qgh982xqxfgsr00000gn/T/tmpojd0ieol/tps_model2lpygd29/tps_model-20220918230800_4.csv
+
+Checking sampler transitions treedepth.
+Treedepth satisfactory for all transitions.
+
+Checking sampler transitions for divergences.
+No divergent transitions found.
+
+Checking E-BFMI - sampler transitions HMC potential energy.
+E-BFMI satisfactory.
+
+Effective sample size satisfactory.
+
+Split R-hat values satisfactory all parameters.
+
+Processing complete, no problems detected.
+</code></pre>
+</div>
+</div>
+<p>Diagnostics look excellent.</p>
+<div class="cell" data-execution_count="222">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>fit.summary()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="222">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Mean</th>
+      <th>MCSE</th>
+      <th>StdDev</th>
+      <th>5%</th>
+      <th>50%</th>
+      <th>95%</th>
+      <th>N_Eff</th>
+      <th>N_Eff/s</th>
+      <th>R_hat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>lp__</th>
+      <td>353.810000</td>
+      <td>0.237701</td>
+      <td>6.619450</td>
+      <td>342.235000</td>
+      <td>354.099000</td>
+      <td>363.931000</td>
+      <td>775.501</td>
+      <td>6.59855</td>
+      <td>1.001000</td>
+    </tr>
+    <tr>
+      <th>u_scale</th>
+      <td>0.329815</td>
+      <td>0.002332</td>
+      <td>0.064081</td>
+      <td>0.242111</td>
+      <td>0.320855</td>
+      <td>0.443031</td>
+      <td>755.340</td>
+      <td>6.42700</td>
+      <td>1.002270</td>
+    </tr>
+    <tr>
+      <th>U_tilde[1]</th>
+      <td>-0.121671</td>
+      <td>0.003324</td>
+      <td>0.252171</td>
+      <td>-0.544522</td>
+      <td>-0.117629</td>
+      <td>0.273565</td>
+      <td>5755.600</td>
+      <td>48.97300</td>
+      <td>0.999657</td>
+    </tr>
+    <tr>
+      <th>U_tilde[2]</th>
+      <td>-0.350781</td>
+      <td>0.003841</td>
+      <td>0.255662</td>
+      <td>-0.763755</td>
+      <td>-0.345289</td>
+      <td>0.066565</td>
+      <td>4431.240</td>
+      <td>37.70430</td>
+      <td>0.999484</td>
+    </tr>
+    <tr>
+      <th>U_tilde[3]</th>
+      <td>-1.614770</td>
+      <td>0.010109</td>
+      <td>0.393066</td>
+      <td>-2.310160</td>
+      <td>-1.582590</td>
+      <td>-1.026420</td>
+      <td>1511.780</td>
+      <td>12.86340</td>
+      <td>1.000180</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>y_star[196]</th>
+      <td>0.388059</td>
+      <td>0.006571</td>
+      <td>0.423509</td>
+      <td>-0.313667</td>
+      <td>0.391414</td>
+      <td>1.090320</td>
+      <td>4153.390</td>
+      <td>35.34010</td>
+      <td>0.999501</td>
+    </tr>
+    <tr>
+      <th>y_star[197]</th>
+      <td>-0.021907</td>
+      <td>0.006917</td>
+      <td>0.402000</td>
+      <td>-0.697091</td>
+      <td>-0.021433</td>
+      <td>0.622098</td>
+      <td>3377.890</td>
+      <td>28.74160</td>
+      <td>0.999364</td>
+    </tr>
+    <tr>
+      <th>y_star[198]</th>
+      <td>-0.026464</td>
+      <td>0.006288</td>
+      <td>0.399008</td>
+      <td>-0.686863</td>
+      <td>-0.020469</td>
+      <td>0.630932</td>
+      <td>4026.060</td>
+      <td>34.25670</td>
+      <td>0.999617</td>
+    </tr>
+    <tr>
+      <th>y_star[199]</th>
+      <td>0.095974</td>
+      <td>0.006393</td>
+      <td>0.406519</td>
+      <td>-0.573748</td>
+      <td>0.097458</td>
+      <td>0.760239</td>
+      <td>4043.900</td>
+      <td>34.40850</td>
+      <td>1.000590</td>
+    </tr>
+    <tr>
+      <th>y_star[200]</th>
+      <td>0.141622</td>
+      <td>0.006278</td>
+      <td>0.399548</td>
+      <td>-0.499702</td>
+      <td>0.138879</td>
+      <td>0.801556</td>
+      <td>4050.450</td>
+      <td>34.46430</td>
+      <td>0.999776</td>
+    </tr>
+  </tbody>
+</table>
+<p>282 rows × 9 columns</p>
+</div>
+</div>
+</div>
+<p>Let’s also look at some plots.</p>
+<div class="cell" data-execution_count="223">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>posterior_az <span class="op">=</span> az.from_cmdstanpy(</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>    fit, posterior_predictive<span class="op">=</span><span class="st">"y_star"</span>, observed_data<span class="op">=</span>{<span class="st">"y"</span>: y}</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>_, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> az.plot_energy(posterior_az, ax<span class="op">=</span>ax, fill_color<span class="op">=</span>[<span class="st">"#233B43"</span>, <span class="st">"darkgrey"</span>])</span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.legend(title<span class="op">=</span><span class="st">""</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">1.2</span>, <span class="fl">0.5</span>))</span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="causal_inference_using_tensor_product_smoothing_splines_files/figure-html/cell-47-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="226">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>_, axes <span class="op">=</span> plt.subplots(ncols<span class="op">=</span><span class="dv">2</span>, nrows<span class="op">=</span><span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">4</span>))</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> az.plot_trace(</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>    posterior_az,</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>    axes<span class="op">=</span>axes,</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>    var_names<span class="op">=</span>[<span class="st">"u_scale"</span>, <span class="st">"U"</span>],</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>    chain_prop<span class="op">=</span>{</span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"color"</span>: palettes.discrete_qualitative_colors(<span class="dv">2</span>),</span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"linewidth"</span>: [<span class="fl">1.75</span>],</span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"alpha"</span>: [<span class="fl">0.5</span>],</span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axes.flatten():</span>
+<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a>    ax.grid(axis<span class="op">=</span><span class="st">"both"</span>)</span>
+<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a>    ax.tick_params(labelsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].set_title(<span class="st">"$\sigma_u$"</span>, size<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].set_title(<span class="st">"$\sigma_u$"</span>, size<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb58-19"><a href="#cb58-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_title(<span class="st">"$u$"</span>, size<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb58-20"><a href="#cb58-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_title(<span class="st">"$u$"</span>, size<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb58-21"><a href="#cb58-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-22"><a href="#cb58-22" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb58-23"><a href="#cb58-23" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="causal_inference_using_tensor_product_smoothing_splines_files/figure-html/cell-48-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>With Stan we can easily generate simulations from the posterior predictive <span class="math inline">\(Y^*\)</span> using the <code>generated quantities</code> block (see the Stan file below).</p>
+<div class="cell" data-execution_count="227">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>_, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>az.plot_ppc(</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>    posterior_az,</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>    data_pairs<span class="op">=</span>{<span class="st">"y"</span>: <span class="st">"y_star"</span>},</span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>    colors<span class="op">=</span>[</span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>        palettes.discrete_qualitative_colors(<span class="dv">6</span>)[<span class="dv">3</span>],</span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"black"</span>,</span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>        palettes.discrete_qualitative_colors(<span class="dv">6</span>)[<span class="dv">0</span>],</span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>    num_pp_samples<span class="op">=</span><span class="dv">30</span>,</span>
+<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>ax,</span>
+<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.legend(title<span class="op">=</span><span class="st">""</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">1.2</span>, <span class="fl">0.5</span>))</span>
+<span id="cb59-14"><a href="#cb59-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="causal_inference_using_tensor_product_smoothing_splines_files/figure-html/cell-49-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>In this case study we implemented a nonparametric probabilistic model for causal inference with structured latent confounders. We started out with the model by <span class="citation" data-cites="witty2020causal">Witty et al. (<a href="#ref-witty2020causal" role="doc-biblioref">2020</a>)</span>, identified via MCMC diagnostics that the induced posterior geometry seems to be too challenging to allow efficient sampling and consequently adapted the model using tensor-product spline. We showed that the new model produces accurate posterior predictive distributions. The Markov chains of our new model not only mix faster but also higher effective sample sizes per second.</p>
+<p>Our new model is not as “automatic” as the GP model, since we (semi-)subjectively needed to decide on knot positions, the spline degree, etc (while we for the GP model “only” needed to decide which covariance function to use (which in ML research seems always be the exponentiated-quadratic kernel)). In my opinion, however, principled statistical analysis rarely can be fully automized, especially so for causal reasoning in scientific settings, but that significant prior reasearch, domain knowledge, and model criticism are required to draw meaningful (inferential) conclusions from data.</p>
+</section>
+<section id="stan-files" class="level2">
+<h2 class="anchored" data-anchor-id="stan-files">Stan files</h2>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">open</span>(os.path.join(models_folder, <span class="st">"functions.stan"</span>), <span class="st">"r"</span>).read())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>functions {
+  vector[] concat_rr(int N, real[] arr1, real[] arr2) {
+    vector[2] v[N];
+    v[:, 1] = arr1;
+    v[:, 2] = arr2;
+
+    return v;
+  }
+
+  vector[] concat_vr(int N, vector[] arr1, real[] arr2) {
+    int P1 = size(arr1[1]);
+    vector[P1 + 1] v[N];
+
+    for (i in 1:P1) {
+      v[:, i] = arr1[:, i];
+    }
+    v[:, P1 + 1] = arr2;
+
+    return v;
+  }
+
+  real bspline_basis(real x, vector knots, int i, int d)
+  {
+    int n_knots = size(knots);
+    real b1 = 0;
+    real b2 = 0;
+
+    if (d == 0) {
+      return knots[i] &lt;= x &amp;&amp; x &lt; knots[i + 1] ? 1.0 : 0.0;
+    }
+
+    if (knots[i + d] != knots[i]) {
+      b1 = (x - knots[i]) / (knots[i + d] - knots[i]);
+      b1 = b1 * bspline_basis(x, knots, i, d - 1);
+    }
+
+    if (knots[i + d + 1] != knots[i + 1]) {
+      b2 = (knots[i + d + 1] - x) / (knots[i + d + 1] - knots[i + 1]);
+      b2 = b2 * bspline_basis(x, knots, i + 1, d - 1);
+    }
+
+    return b1 + b2;
+  }
+
+  matrix bspline(vector u, int n_coef, int d, vector knots)
+  {
+    int n = size(u);
+    matrix[n, n_coef] mu;
+
+    if (n_coef + d + 1 != size(knots)) {
+      reject("n_coef + d != size(knots)");
+    }
+
+    for (i in 1:n) {
+      for (j in 1:n_coef) {
+        mu[i, j] = bspline_basis(u[i], knots, j, d);
+      }
+    }
+
+    return mu;
+  }
+
+  row_vector kronecker(row_vector a, row_vector b) {
+    int n = size(a);
+    int m = size(b);
+    int idx;
+
+    row_vector[n * m] r;
+    for (i in 1:m) {
+      idx = (i - 1) * n + 1;
+      r[idx:(idx + n - 1)] = a * b[i];
+    }
+
+    return r;
+  }
+
+  row_vector kronecker_recursive(matrix[] B, int P, int idx) {
+    if (P == 2) {
+      return kronecker(B[1, idx], B[2, idx]);
+    }
+    else {
+      return kronecker(kronecker(B[1, idx], B[2, idx]), B[3, idx]);
+    }
+  }
+
+  matrix tensor_spline(vector[] u, int n_coefs, int d, vector[] knots)
+  {
+    int NP[2] = dims(u);
+    int N = NP[1];
+    int P = NP[2];
+    int new_dim = 1;
+
+    for (i in 1:P) {
+      new_dim *= n_coefs;
+    }
+
+    matrix[N, new_dim] mu;
+    matrix[N, n_coefs] B[P];
+
+    for (i in 1:P) {
+      B[i] = bspline(to_vector(u[:, i]), n_coefs, d, knots[i]);
+    }
+
+    for (i in 1:N) {
+      mu[i, :] = kronecker_recursive(B, P, i);
+    }
+
+    return mu;
+  }
+}
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">open</span>(tps_model_file, <span class="st">"r"</span>).read())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#include functions.stan
+
+data {
+  int&lt;lower=0&gt; N_I;
+  int&lt;lower=0&gt; N_O;
+  int&lt;lower=0, upper=N_O&gt; i_to_o[N_I];
+
+  vector[N_I] X;
+  vector[N_I] tr;
+  vector[N_I] y;
+
+  real&lt;lower=0&gt; alpha;
+  real&lt;lower=0&gt; beta;
+  int&lt;lower=0&gt; degree;
+  int&lt;lower=0&gt; n_knots;
+
+  vector[n_knots] u_knots;
+  vector[n_knots] x_knots;
+  vector[n_knots] tr_knots;
+}
+
+transformed data {
+  int n_coefs = n_knots - degree - 1;
+
+  real xr[N_I]  = to_array_1d(X);
+  real trr[N_I] = to_array_1d(tr);
+
+  vector[n_knots] knots[3];
+  knots[1] = u_knots;
+  knots[2] = x_knots;
+  knots[3] = tr_knots;
+}
+
+
+parameters {
+  real&lt;lower=0&gt; u_scale;
+  vector[N_O]   U_tilde;
+
+  real x_beta;
+  real&lt;lower=0&gt; x_scale;
+
+  vector[n_coefs * n_coefs] t_beta;
+  real&lt;lower=0&gt; t_scale;
+  
+  vector[n_coefs * n_coefs * n_coefs] y_beta;
+  real&lt;lower=0&gt; y_scale;
+}
+
+
+transformed parameters {
+  vector[N_O] U = U_tilde * u_scale;
+}
+
+model {
+  real ur[N_I] = to_array_1d(U[i_to_o]);
+  vector[2] uxr[N_I]  = concat_rr(N_I, ur, xr);
+  vector[3] uxtr[N_I] = concat_vr(N_I, uxr, trr);
+
+  matrix[N_I, n_coefs * n_coefs] t_design  = tensor_spline(
+    uxr,  n_coefs, degree, knots
+  );
+  matrix[N_I, n_coefs * n_coefs * n_coefs] y_design  = tensor_spline(
+    uxtr, n_coefs, degree, knots
+  );
+
+  u_scale ~ std_normal();
+  U_tilde ~ std_normal();
+
+  x_beta ~ std_normal();
+  x_scale ~ std_normal();
+
+  t_beta[1] ~ std_normal();
+  for (i in 2:size(t_beta)) {
+    t_beta[i] ~ normal(t_beta[i - 1], 1);
+  }
+  t_scale ~ std_normal();
+
+  y_beta[1] ~ std_normal();
+  for (i in 2:size(y_beta)) {
+    y_beta[i] ~ normal(y_beta[i - 1], 1);
+  }
+  y_scale ~ std_normal();
+
+  xr  ~ normal(U[i_to_o], x_scale);
+  tr  ~ normal(t_design * t_beta, t_scale);
+  y   ~ normal(y_design * y_beta, y_scale);
+}
+
+generated quantities {  
+  vector[N_I] y_star;
+  {
+      real      tr1[N_I]   = to_array_1d(tr);
+      real      ur[N_I]    = to_array_1d(U[i_to_o]);
+      vector[2] uxr[N_I]   = concat_rr(N_I, ur, xr);
+      vector[3] uxtr1[N_I] = concat_vr(N_I, uxr, tr1);
+
+      matrix[N_I, n_coefs * n_coefs * n_coefs] y_star_design = tensor_spline(
+        uxtr1, n_coefs, degree, knots
+      );
+
+      vector[N_I] y_star_mu  = y_star_design * y_beta;
+      for (i in 1:N_I) {
+          y_star[i] = normal_rng(y_star_mu[i], y_scale);
+     }
+  }
+}
+
+
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="111">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">open</span>(gp_model_file, <span class="st">"r"</span>).read())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#include functions.stan
+
+data {
+    int&lt;lower=0&gt; N_I;
+    int&lt;lower=0&gt; N_O;
+    int&lt;lower=0, upper=N_O&gt; i_to_o[N_I];
+    vector[N_I] X;
+    vector[N_I] tr;
+    vector[N_I] y;
+    real alpha;
+    real beta;
+}
+
+transformed data {
+    real xr[N_I] = to_array_1d(X);
+    real trr[N_I] = to_array_1d(tr);
+
+}
+
+parameters {
+    real&lt;lower=0&gt;        u_scale;
+    vector[N_O]          U_tilde;
+
+    real&lt;lower=0&gt;        cov_x_rho;
+    real&lt;lower=0&gt;        cov_x_scale;
+    real&lt;lower=0&gt;        x_scale;
+
+    real&lt;lower=0&gt;        cov_t_rhos[2];
+    real&lt;lower=0&gt;        cov_t_scale;
+    real&lt;lower=0&gt;        t_scale;
+
+    real&lt;lower=0&gt;        cov_y_rhos[3];
+    real&lt;lower=0&gt;        cov_y_scale;
+    real&lt;lower=0&gt;        y_scale;
+}
+
+
+transformed parameters {
+    vector[N_O] U = U_tilde * u_scale;
+}
+
+model {
+    real      ur[N_I]   = to_array_1d(U[i_to_o]);
+    vector[2] uxr[N_I]  = concat_rr(N_I, ur, xr);
+    vector[3] uxtr[N_I] = concat_vr(N_I, uxr, trr);
+
+    matrix[N_I, N_I] KX = gp_exp_quad_cov(ur, ur, cov_x_scale, cov_x_rho)
+        + diag_matrix(rep_vector(1e-10, N_I))
+        + diag_matrix(rep_vector(square(x_scale), N_I));
+    matrix[N_I, N_I] LX = cholesky_decompose(KX);
+
+    matrix[N_I, N_I] KT = gp_exp_quad_cov(uxr, uxr, cov_t_scale, cov_t_rhos)
+        + diag_matrix(rep_vector(1e-10, N_I))
+        + diag_matrix(rep_vector(square(t_scale), N_I));
+    matrix[N_I, N_I] LT = cholesky_decompose(KT);
+
+    matrix[N_I, N_I] KY = gp_exp_quad_cov(uxtr, uxtr, cov_y_scale, cov_y_rhos)
+        + diag_matrix(rep_vector(1e-10, N_I))
+        + diag_matrix(rep_vector(square(y_scale), N_I));
+    matrix[N_I, N_I] LY = cholesky_decompose(KY);
+
+
+    u_scale                        ~ inv_gamma(alpha, beta);
+    U_tilde                        ~ std_normal();
+
+    cov_x_rho                      ~ inv_gamma(alpha, beta);
+    cov_x_scale                    ~ std_normal();
+    x_scale                        ~ std_normal();
+
+    cov_t_rhos                     ~ inv_gamma(alpha, beta);
+    cov_t_scale                    ~ std_normal();
+    t_scale                        ~ std_normal();
+
+    cov_y_rhos                     ~ inv_gamma(alpha, beta);
+    cov_y_scale                    ~ std_normal();
+    y_scale                        ~ std_normal();
+
+    X   ~ multi_normal_cholesky(rep_vector(0, N_I), LX);
+    tr  ~ multi_normal_cholesky(rep_vector(0, N_I), LT);
+    y   ~ multi_normal_cholesky(rep_vector(0, N_I), LY);
+}
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="112">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">open</span>(gplinear_model_file, <span class="st">"r"</span>).read())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#include functions.stan
+
+data {
+    int&lt;lower=0&gt; N_I;
+    int&lt;lower=0&gt; N_O;
+    int&lt;lower=0, upper=N_O&gt; i_to_o[N_I];
+    vector[N_I] X;
+    vector[N_I] tr;
+    vector[N_I] y;
+    real alpha;
+    real beta;
+}
+
+transformed data {
+    real xr[N_I] = to_array_1d(X);
+    real trr[N_I] = to_array_1d(tr);
+
+}
+
+parameters {
+    real&lt;lower=0&gt;        u_scale;
+    vector[N_O]          U_tilde;
+
+    real                 x_beta;
+    real&lt;lower=0&gt;        x_scale;
+
+    real&lt;lower=0&gt;        cov_t_rhos[2];
+    real&lt;lower=0&gt;        cov_t_scale;
+    real&lt;lower=0&gt;        t_scale;
+
+    real&lt;lower=0&gt;        cov_y_rhos[3];
+    real&lt;lower=0&gt;        cov_y_scale;
+    real&lt;lower=0&gt;        y_scale;
+}
+
+
+transformed parameters {
+    vector[N_O] U = U_tilde * u_scale;
+}
+
+model {
+    real      ur[N_I]   = to_array_1d(U[i_to_o]);
+    vector[2] uxr[N_I]  = concat_rr(N_I, ur, xr);
+    vector[3] uxtr[N_I] = concat_vr(N_I, uxr, trr);
+
+    matrix[N_I, N_I] KT = gp_exp_quad_cov(uxr, uxr, cov_t_scale, cov_t_rhos)
+        + diag_matrix(rep_vector(1e-10, N_I))
+        + diag_matrix(rep_vector(square(t_scale), N_I));
+    matrix[N_I, N_I] LT = cholesky_decompose(KT);
+
+    matrix[N_I, N_I] KY = gp_exp_quad_cov(uxtr, uxtr, cov_y_scale, cov_y_rhos)
+        + diag_matrix(rep_vector(1e-10, N_I))
+        + diag_matrix(rep_vector(square(y_scale), N_I));
+    matrix[N_I, N_I] LY = cholesky_decompose(KY);
+
+
+    u_scale                        ~ inv_gamma(alpha, beta);
+    U_tilde                        ~ std_normal();
+
+    x_beta                         ~ std_normal();
+    x_scale                        ~ std_normal();
+
+    cov_t_rhos                     ~ inv_gamma(alpha, beta);
+    cov_t_scale                    ~ std_normal();
+    t_scale                        ~ std_normal();
+
+    cov_y_rhos                     ~ inv_gamma(alpha, beta);
+    cov_y_scale                    ~ std_normal();
+    y_scale                        ~ std_normal();
+
+    xr  ~ normal(U[i_to_o] * x_beta, x_scale);
+    tr  ~ multi_normal_cholesky(rep_vector(0, N_I), LT);
+    y   ~ multi_normal_cholesky(rep_vector(0, N_I), LY);
+}
+</code></pre>
+</div>
+</div>
+</section>
+<section id="session-info" class="level2">
+<h2 class="anchored" data-anchor-id="session-info">Session info</h2>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> session_info</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>session_info.show(html<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>-----
+arviz               0.11.4
+cmdstanpy           0.9.77
+jax                 0.2.25
+jaxlib              0.1.74
+matplotlib          3.5.0
+numpy               1.20.3
+palettes            NA
+pandas              1.3.4
+seaborn             0.11.2
+session_info        1.0.0
+-----
+IPython             7.29.0
+jupyter_client      7.0.6
+jupyter_core        4.9.1
+jupyterlab          3.2.4
+notebook            6.4.6
+-----
+Python 3.8.12 | packaged by conda-forge | (default, Oct 12 2021, 21:57:06) [GCC 9.4.0]
+Linux-5.11.0-41-generic-x86_64-with-glibc2.10
+-----
+Session information updated at 2021-12-04 17:59</code></pre>
+</div>
+</div>
+</section>
+<section id="license" class="level2">
+<h2 class="anchored" data-anchor-id="license">License</h2>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img align="left" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a> <br><br></p>
+<p>The case study is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+</section>
+<section id="references" class="level2 unnumbered">
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-d2019multi" class="csl-entry" role="doc-biblioentry">
+D’Amour, Alexander. 2019. <span>“On Multi-Cause Causal Inference with Unobserved Confounding: Counterexamples, Impossibility, and Alternatives.”</span> <em>arXiv Preprint arXiv:1902.10286</em>.
+</div>
+<div id="ref-witty2020causal" class="csl-entry" role="doc-biblioentry">
+Witty, Sam, Kenta Takatsu, David Jensen, and Vikash Mansinghka. 2020. <span>“Causal Inference Using Gaussian Processes with Structured Latent Confounders.”</span> In <em>International Conference on Machine Learning</em>, 10313–23. PMLR.
+</div>
+<div id="ref-wood2006low" class="csl-entry" role="doc-biblioentry">
+Wood, Simon N. 2006. <span>“Low-Rank Scale-Invariant Tensor Product Smooths for Generalized Additive Mixed Models.”</span> <em>Biometrics</em> 62 (4): 1025–36.
+</div>
+<div id="ref-wood2017generalized" class="csl-entry" role="doc-biblioentry">
+Wood, Simon N. 2017. <em><span class="nocase">Generalized Additive Models: An Introduction with R </span></em>. CRC press. <a href="https://doi.org/10.1201/9781315370279">https://doi.org/10.1201/9781315370279</a>.
+</div>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

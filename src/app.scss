@@ -86,6 +86,149 @@ body {
   opacity: 0.75;
 }
 
+.post {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+  line-height: 1.7;
+}
+
+.post-date {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.post h1 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+.post .lede {
+  color: #4b5563;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.post h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 2.25rem 0 0.9rem;
+}
+
+.post p,
+.post ul {
+  margin-bottom: 1.1rem;
+}
+
+.post ul {
+  padding-left: 1.3rem;
+}
+
+.post li {
+  margin-bottom: 0.4rem;
+}
+
+.post a {
+  color: #2563a8;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: border-color 0.15s ease;
+}
+
+.post a:hover {
+  border-bottom-color: currentColor;
+}
+
+.post code {
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: #f3f4f6;
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+}
+
+.post pre {
+  background: #f3f4f6;
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  margin-bottom: 1.1rem;
+}
+
+.post pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.85em;
+}
+
+// Shiki emits its own background; keep the site's instead and use only the
+// per-token colours. The light theme's colours show as-is; dark mode swaps to
+// the values Shiki stored in the --shiki-dark custom properties.
+.post pre.shiki {
+  background: #f3f4f6 !important;
+}
+
+.post blockquote {
+  margin: 0 0 1.1rem;
+  padding: 0.6rem 1.1rem;
+  border-left: 3px solid #2563a8;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.post .table-wrap {
+  overflow-x: auto;
+  margin-bottom: 1.1rem;
+}
+
+.post table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.post th,
+.post td {
+  text-align: left;
+  padding: 0.45rem 0.9rem 0.45rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.post th {
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.post table.prose {
+  table-layout: fixed;
+}
+
+.post table.prose th,
+.post table.prose td {
+  white-space: normal;
+  vertical-align: top;
+  padding-right: 1.4rem;
+}
+
+.post table.prose th:first-child,
+.post table.prose td:first-child {
+  width: 18%;
+}
+
+.post h2 a {
+  color: inherit;
+  border-bottom: 1px solid #2563a8;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #323232;
@@ -101,5 +244,52 @@ body {
     color: #d1d5db;
     background: #3d3d3d;
     border-color: #4b4b4b;
+  }
+
+  .post .lede {
+    color: #a1a1aa;
+  }
+
+  .post-date {
+    color: #6b7280;
+  }
+
+  .post a {
+    color: #8ab4f8;
+  }
+
+  .post code {
+    background: #3d3d3d;
+  }
+
+  .post pre {
+    background: #3d3d3d;
+  }
+
+  .post pre.shiki {
+    background: #3d3d3d !important;
+  }
+
+  .post pre.shiki,
+  .post pre.shiki span {
+    color: var(--shiki-dark) !important;
+  }
+
+  .post blockquote {
+    border-left-color: #8ab4f8;
+    color: #a1a1aa;
+  }
+
+  .post th,
+  .post td {
+    border-bottom-color: #4b4b4b;
+  }
+
+  .post th {
+    color: #9ca3af;
+  }
+
+  .post h2 a {
+    border-bottom-color: #8ab4f8;
   }
 }

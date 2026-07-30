@@ -4,7 +4,7 @@
 
 <article class="post">
   <p class="post-date">July 2026</p>
-  <h1>Sharding blaxbird models over a mesh</h1>
+  <h1>Sharding blaxbird models over an arbitraty mesh</h1>
   <p class="lede">
     <a href="https://github.com/dirmeier/blaxbird">blaxbird</a> is a
     high-level API for building and training Flax NNX models without the usual
@@ -14,11 +14,11 @@
 
   <h2><code>jax.sharding.Mesh</code> + <code>jax.sharding.PartitionSpec</code></h2>
   <p>
-    To train a model in parallel in NNX, we need to define three things: sharding annotation, 
-    a mesh, and a data partitionspec.
-    Parameter-sharding is read directly from its
+    To train a model in parallel in NNX, we need to define three things: a sharding annotation, 
+    a mesh, and a data partition spec.
+    A parameter's sharding is read directly from its
     <code>nnx.with_partitioning</code> annotation. The parallelism strategy
-    therefore lives with in model definition, and <code>train_fn</code> needs
+    is defined in the model itself, while <code>train_fn</code> needs
     only a <code>jax.sharding.Mesh</code> and a <code>PartitionSpec</code> for
     the data axis:
   </p>

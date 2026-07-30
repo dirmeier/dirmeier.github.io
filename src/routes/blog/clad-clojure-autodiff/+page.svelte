@@ -16,9 +16,9 @@
     </p>
     <p>
     <code>clad</code> represents the computation graph
-    explicitly as an adjacency matrix (via <code>core.matrix</code>) plus a
-    map of nodes, and the forward/backward passes are two topological
-    traversals over it — <code>-bottom-up</code> to compute values,
+    as an adjacency matrix (via <code>core.matrix</code>) and a
+    map of nodes. The forward/backward passes of a function are two topological
+    traversals over it: we compute <code>-bottom-up</code> to compute values and
     <code>-top-down</code> to accumulate adjoints:
   </p>
   <pre><code class="language-clojure">(defn grad [f idx]
@@ -33,9 +33,9 @@
           idx))))))</code></pre>
   <p>
     Each call to the returned function rebuilds the graph's value/adjoint
-    state from scratch (<code>-set-values</code> then two traversals) rather
+    state from scratch rather
     than mutating a shared structure in place. This is not really efficient, but good enough for 
-    the sake of learning.
+    the sake of learning functional programming.
   </p>
 
   <p>The published API is a single <code>grad</code> function:</p>

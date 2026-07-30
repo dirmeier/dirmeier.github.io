@@ -7,7 +7,7 @@
   <h1>Learning MLX</h1>
   <p class="lede">
     I've only recenly came across MLX, Apple's array framework.
-    In comparison to JAX, which is my typical framework of choice, MLX features a proper C++ API which
+    In comparison to JAX, my typical framework of choice, MLX features a proper C++ API which
     makes it particularly interesting. To explore the library a bit, I've implemented one of our recent publications,
     <a
       href="https://github.com/dirmeier/sabc"
@@ -17,13 +17,16 @@
 
   <h2>Why MLX</h2>
   <p>
-    MLX is Apple's array framework for Apple Silicon. Like JAX, it is a
-    NumPy-style library with lazy evaluation, function transformations, and a
-    PRNG that threads keys explicitly. Unlike JAX, it ships as a C++ library
-    that you can link against directly. In JAX the array
-    API lives only in Python, and anything below the built-in ops goes
-    through Pallas or a custom XLA call. In MLX we can write the whole sampler
+    MLX is a C++ library
+    that you can link against directly, and which exposes Python bindings.     
+    JAX is Python first, and anything C++ has to be done via
+    Pallas or a custom XLA call. 
+    That is, in MLX we can write
+    compute-itensive code, like an MCMC sampler,
     in C++ and expose it to Python through <code>nanobind</code>.
+    The Python bindings of MLX are held in the style of NumPy,
+    and function transformations and a
+    random number generator that requires explicitely setting keys.     
   </p>
   <p>
     Most of the Python API maps one to one onto JAX:
@@ -72,10 +75,9 @@
     </table>
   </div>
   <p>
-    JAX's control-flow primitives — <code>lax.fori_loop</code>,
-    <code>lax.scan</code>, <code>lax.cond</code>,
-    <code>lax.while_loop</code> — exist because a function under
-    <code>jax.jit</code> compiles to one static graph. A Python <code>for</code>
+    JAX's control-flow primitives (<code>lax.fori_loop</code>,
+    <code>lax.scan</code>, ...) are necessary because a 
+    <code>jit</code>ted function compiles to one static graph. A Python <code>for</code>
     or <code>if</code> on a traced value cannot go inside that graph, so the
     loop or the branch has to be written as a primitive the tracer can
     capture. 
@@ -104,8 +106,7 @@ def newton(f, df, x, n_iter=20):
   return x</code></pre>
   <p>
     And because <code>MLX</code> is a C++ library, the same loop compiles
-    straight into C++. Each operator becomes a named call, but the
-    control flow is the same:
+    straight into C++:
   </p>
   <pre><code class="language-cpp">mx::array newton(const std::function&lt;mx::array(mx::array)&gt;&amp; f,
                  const std::function&lt;mx::array(mx::array)&gt;&amp; df,
@@ -119,9 +120,9 @@ def newton(f, df, x, n_iter=20):
   return x;
 &rbrace;</code></pre>
   <p>
-    The other primitives translate the same way. A <code>lax.scan</code>,
-    which threads a carry across a sequence, is a loop that accumulates.
-    An exponential moving average in JAX:
+    The other primitives translate the same way. A <code>lax.scan</code>
+    is a loop that accumulates.
+    For instance, let's consider exponential moving average in JAX:
   </p>
   <pre><code class="language-python">def ema(xs, alpha):
   def step(carry, x):
@@ -141,9 +142,10 @@ def newton(f, df, x, n_iter=20):
   return mx.stack(ys)</code></pre>
   <p>
     Each MLX op is lazy, so a plain loop builds a
-    graph that keeps growing until <code>mx.eval</code> forces it. To get similar speed as JAX,
-    <code>mx.compile</code> can still fuse a function into one graph when you
-    want the throughput.
+    graph that keeps growing until <code>mx.eval</code> evaluates it (i.e., actually computes a value).
+    However, similarly to JAX,
+    <code>mx.compile</code> can still compile a function into a single graph when
+    throughput is needed.
   </p>
 
   <h2>The benchmark</h2>
@@ -205,7 +207,7 @@ def newton(f, df, x, n_iter=20):
   </p>
   <h2>Conclusion</h2>
   <p>
-    In summary, even when factoring oinut the compile time I think I am still sticking to JAX.
+    In summary, even when factoring in the compile time I think I am still sticking to JAX.
     But I will definitely use MLX more often in the future 👾🍏.
   </p>
 </article>

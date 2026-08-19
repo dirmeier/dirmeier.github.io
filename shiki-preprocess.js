@@ -2,7 +2,10 @@ import { createHighlighter } from 'shiki';
 
 const LANGS = ['python', 'cpp', 'clojure'];
 const THEMES = { light: 'github-light', dark: 'github-dark' };
-const CODE_RE = /<pre><code class="language-(\w+)">([\s\S]*?)<\/code><\/pre>/g;
+// Tolerant of Prettier's split-tag output, which breaks after `<pre` and after
+// the class attribute rather than keeping the tags on one line.
+const CODE_RE =
+  /<pre\s*><code\s+class="language-(\w+)"\s*>([\s\S]*?)<\/code\s*><\/pre\s*>/g;
 
 // Entities are decoded to raw source before highlighting; &amp; must be last so
 // an escaped entity like &amp;lt; does not get decoded twice.

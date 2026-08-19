@@ -7,8 +7,7 @@
   <h1>Learning MLX</h1>
   <p class="lede">
     I've only recenly came across MLX, Apple's array framework.
-    In comparison to JAX, my typical framework of choice, MLX features a proper C++ API which
-    makes it particularly interesting. To explore the library a bit, I've implemented one of our recent publications,
+    In comparison to JAX, my typical framework of choice, MLX features a proper C++ API making it particularly interesting. To explore the library a bit, I've implemented one of our recent publications,
     <a
       href="https://github.com/dirmeier/sabc"
       >SABC</a

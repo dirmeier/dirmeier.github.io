@@ -21,6 +21,4 @@
 {"title": "Blaxbird v0.2.0", "url": "/blog/blaxbird-mesh-sharding", "description": "sharding NNX models over an arbitrary mesh.", "date": "2026-07"}
 {"title": "Learning MLX", "url": "/blog/learning-mlx-with-sabc", "description": "learning Apple's array framework MLX by implementing a compute-heavy ABC sampler.", "date": "2026-06"}
 {"title": "🌈👾🦉Relaunching my blog🦉👾🌈", "url": "/blog/relaunching-my-blog", "description": "", "date": "2026-07"}
-{"title": "What is DiffusionGemma?", "url": "/blog/block-diffusion-diffusiongemma", "description": "on architecture, noise schedule, training and inference.", "date": "2026-08"}
-
-
+{"title": "JAX kernel fusion", "url": "/blog/jax-kernel-fusion", "description": "Evaluating JAX kernel fusion using XLA, Pallas and CUDA FFI.", "date": "2026-08"}

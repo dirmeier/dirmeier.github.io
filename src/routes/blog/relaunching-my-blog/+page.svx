@@ -1,0 +1,34 @@
+---
+title: 🌈👾🦉Relaunching my blog🦉👾🌈
+date: '2026-07'
+---
+
+After having been approached by several people (well, three, actually) in the last
+couple of months for old blog posts of mine, I've decided to both make the blog public
+again and to relaunch it altogether.
+
+My older blog posts were mainly concerned with probabilistic and causal models (like
+tensor smoothers or copula processes). The new series will be mainly about deep learning
+(particularly generative models), reinforcement learning and HCP, such as:
+
+- **Large-scale DL with JAX and Flax**: Some blog posts will feature how to use JAX/Flax
+  to do large-scale GPU training of deep learning models, including FSDP, TP, and PP
+  strategies, how to analyse and optimize training using tools such as Xprof and Nvidia
+  Nsight, and what the terms XLA, HLO, LLVM IR, etc. mean.
+- **Recent RL algorithms like SPO and GSPO**: Gonna look into how recent algorithms like
+  Simple Policy Optimization (SPO) and Group Sequence Policy Optimization (GSPO) changed
+  the landscape of reinforcement learning.
+- **Generative models**: Some blog posts will OF COURSE be on LLMs and various
+  architectures, diffusion models, diffusion LMs, and multi-modality.
+- **Refreshing vector and matrix intrinsics skills**: Since recently I was mainly (but
+  very rarely) doing GPGPU programming (e.g., CUDA), some blog posts will aim at
+  refreshing some SIMD intrinsics skills using SME2 (as supported by Mac M4/M5 and newer
+  Armv9.x-A (like Arm Neoverse) chips). I've done vectors intrinsics programming using
+  AVX on x64 processors in the past but haven't had an Intel CPU in years, and modern
+  data centers and clouds (I think) are often built on Arm Neoverse.
+- **Apple's MLX**: Array frameworks like JAX, and how they implement reverse-mode and
+  forward-mode autodiff efficiently, have been one of my favourite things for a while,
+  so some of the posts will feature Apple's new framework MLX to elucidate how useful it
+  can be for small-scale DL like typically found in, e.g., inverse problems or
+  probabilistic programming. The fact that it has a proper C++ API (unlike JAX) makes it
+  even more interesting.

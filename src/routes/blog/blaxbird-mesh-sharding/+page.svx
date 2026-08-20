@@ -1,0 +1,42 @@
+---
+title: Sharding blaxbird models over an arbitraty mesh
+date: '2026-07'
+lede: blaxbird is a high-level API for building and training Flax NNX models without the usual JAX/Flax verbosity. Version 0.2.0 adds mesh-based sharding: FSDP, tensor parallelism, expert parallelism, or any combination thereof.
+---
+
+## `jax.sharding.Mesh` + `jax.sharding.PartitionSpec`
+
+To train a model in parallel in NNX, we need to define three things: a sharding
+annotation, a mesh, and a data partition spec. A parameter's sharding is read directly
+from its `nnx.with_partitioning` annotation. The parallelism strategy is defined in the
+model itself, while `train_fn` needs only a `jax.sharding.Mesh` and a `PartitionSpec`
+for the data axis:
+
+```python
+from jax.sharding import Mesh, PartitionSpec as P
+from jax.experimental import mesh_utils
+from blaxbird import train_fn
+
+mesh = Mesh(mesh_utils.create_device_mesh((4, 2)), ("fsdp", "tp"))
+with mesh:
+  train = train_fn(
+    fns=(train_step, val_step), mesh=mesh,
+    data_partition_spec=P("fsdp"), ...
+  )
+  train(rng_key, optimizer, train_itr, val_itr)
+```
+
+Moving from a single device to a 2D FSDP+TP mesh is a one-line change. Neither
+`train_step`/`val_step` nor the model definition change: the sharding strategy is a
+property of the mesh shape and the model's `nnx.with_partitioning` annotations.
+
+## Two reference models
+
+The repo features to distributed training examples in
+[`examples/llm`](https://github.com/dirmeier/blaxbird/tree/main/examples/llm) using two
+LMs with different parallelism definitions:
+
+- **Gemma4**: sharded over a 2D mesh (FSDP + TP).
+- **Qwen3Next**: top-2-of-8 sparse MoE over a 3D mesh (FSDP + TP + expert).
+
+[blaxbird](https://github.com/dirmeier/blaxbird) is on GitHub.

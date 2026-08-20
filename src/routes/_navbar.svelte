@@ -2,11 +2,16 @@
   import { page } from '$app/state';
   import { resolve } from '$app/paths';
 
-  let onBlog = $derived(page.url.pathname.startsWith('/blog'));
+  // Inside a post the button goes back to the blog index; from the index
+  // itself it goes home.
+  let onPost = $derived(/^\/blog\/.+/.test(page.url.pathname));
+  let onBlogIndex = $derived(page.url.pathname.replace(/\/$/, '') === '/blog');
 </script>
 
 <nav class="navbar">
-  {#if onBlog}
+  {#if onPost}
+    <a href={resolve('/blog')} class="blog-button">Blog</a>
+  {:else if onBlogIndex}
     <a href={resolve('/')} class="blog-button">Home</a>
   {:else}
     <a href={resolve('/blog')} class="blog-button">Blog</a>

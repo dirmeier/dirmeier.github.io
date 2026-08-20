@@ -1,0 +1,124 @@
+---
+title: Learning MLX
+date: '2026-06'
+lede: I've only recenly came across MLX, Apple's array framework. In comparison to JAX, my typical framework of choice, MLX features a proper C++ API making it particularly interesting. To explore the library a bit, I've implemented one of our recent publications, SABC, in MLX using its Python and C++ API.
+---
+
+## Why MLX
+
+MLX is a C++ library that you can link against directly, and which exposes Python
+bindings. JAX is Python first, and anything C++ has to be done via Pallas or a custom
+XLA call. That is, in MLX we can write compute-itensive code, like an MCMC sampler, in
+C++ and expose it to Python through `nanobind`. The Python bindings of MLX are held in
+the style of NumPy, and function transformations and a random number generator that
+requires explicitely setting keys.
+
+Most of the Python API maps one to one onto JAX:
+
+| purpose                 | JAX                                        | MLX                                |
+| ----------------------- | ------------------------------------------ | ---------------------------------- |
+| array namespace         | `jax.numpy` (`jnp`)                        | `mlx.core` (`mx`)                  |
+| vectorizing map         | `jax.vmap`                                 | `mx.vmap`                          |
+| autodiff                | `jax.grad`                                 | `mx.grad`                          |
+| PRNG key                | `jax.random.key(seed)`                     | `mx.random.key(seed)`              |
+| ahead-of-time compile   | `jax.jit`                                  | `mx.compile`                       |
+| structured control flow | `lax.scan`, `lax.cond`, `lax.fori_loop`    | none — plain Python/C++ control flow |
+
+JAX's control-flow primitives (`lax.fori_loop`, `lax.scan`, ...) are necessary because a
+`jit`ted function compiles to one static graph. A Python `for` or `if` on a traced value
+cannot go inside that graph, so the loop or the branch has to be written as a primitive
+the tracer can capture.
+
+For instance, let's look at Newton's method in JAX:
+
+```python
+from jax import lax
+import jax.numpy as jnp
+
+def newton(f, df, x, n_iter=20):
+  def body(_, x):
+    step = jnp.where(jnp.abs(df(x)) > 1e-12, f(x) / df(x), 0.0)
+    return x - step
+  return lax.fori_loop(0, n_iter, body, x)
+```
+
+MLX has no trace, so the same function is an ordinary Python loop:
+
+```python
+import mlx.core as mx
+
+def newton(f, df, x, n_iter=20):
+  for _ in range(n_iter):
+    step = mx.where(mx.abs(df(x)) > 1e-12, f(x) / df(x), 0.0)
+    x = x - step
+  return x
+```
+
+And because `MLX` is a C++ library, the same loop compiles straight into C++:
+
+```cpp
+mx::array newton(const std::function<mx::array(mx::array)>& f,
+                 const std::function<mx::array(mx::array)>& df,
+                 mx::array x, int n_iter = 20) {
+  for (int i = 0; i < n_iter; ++i) {
+    mx::array step = mx::where(
+        mx::greater(mx::abs(df(x)), mx::array(1e-12f)),
+        mx::divide(f(x), df(x)), mx::array(0.0f));
+    x = mx::subtract(x, step);
+  }
+  return x;
+}
+```
+
+The other primitives translate the same way. A `lax.scan` is a loop that accumulates.
+For instance, let's consider exponential moving average in JAX:
+
+```python
+def ema(xs, alpha):
+  def step(carry, x):
+    y = alpha * x + (1 - alpha) * carry
+    return y, y
+  _, ys = lax.scan(step, xs[0], xs)
+  return ys
+```
+
+In MLX the carry is a plain variable and the scan is a plain loop:
+
+```python
+def ema(xs, alpha):
+  carry = xs[0]
+  ys = []
+  for x in xs:
+    carry = alpha * x + (1 - alpha) * carry
+    ys.append(carry)
+  return mx.stack(ys)
+```
+
+Each MLX op is lazy, so a plain loop builds a graph that keeps growing until `mx.eval`
+evaluates it (i.e., actually computes a value). However, similarly to JAX, `mx.compile`
+can still compile a function into a single graph when throughput is needed.
+
+## The benchmark
+
+I've compared SABC in MLX against a JAX version, and a NumPy version and a Numba version
+from a collaborator: `sbijax`, `sabc-mlx`, `sabc-numpy`, `sabc-numba`. The table below
+shows wall time, compile time, peak RSS, and W₁ distance to an MCMC reference posterior
+on the `two_moons` task (the best value in each column is in bold).
+
+| algorithm    | wall s   | compile s | peak RSS MB | W₁ to ref |
+| ------------ | -------- | --------- | ----------- | --------- |
+| sbijax (JAX) | **0.32** | 1.54      | 546         | **0.019** |
+| sabc-mlx     | 1.40     | **0.00**  | **52**      | 0.021     |
+| sabc-numpy   | 0.50     | **0.00**  | 137         | 0.024     |
+| sabc-numba   | 0.39     | 0.45      | 186         | 0.021     |
+
+All four implementations recover the reference posterior faithuflly. Post-compile, JAX
+runs about 4x faster than MLX. MLX wins on memory: 10x less, because there is no XLA
+buffer pool and no JIT cache.
+
+## Conclusion
+
+In summary, even when factoring in the compile time I think I am still sticking to JAX.
+But I will definitely use MLX more often in the future 👾🍏.
+
+[SABC](https://github.com/dirmeier/sabc) is on GitHub.

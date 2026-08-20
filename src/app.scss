@@ -189,22 +189,29 @@ body {
     justify-content: center;
   }
 
+  // Quarto's trick: padding sets where it rests (level with the title), `top`
+  // sets where it sticks. Spanning every row lets it travel the whole article.
   .post-toc {
     display: block;
     grid-column: 1;
+    grid-row: 1 / -1;
     align-self: start;
     position: sticky;
-    top: 2rem;
+    top: 0;
     margin: 0;
-    padding: 2rem 0 0;
+    padding-top: 0.55rem;
   }
 
   // min-width: 0 stops the long <pre> lines from forcing the grid item wider
   // than its column, which pushes the whole article off-screen.
+  // No top padding, so the title starts on the same line as the first contents
+  // entry rather than the contents being padded down to meet it.
   .post {
     grid-column: 3;
     min-width: 0;
     margin: 0;
+    padding-top: 0;
+    top: 2rem;
   }
 
   // Every block inside the article has to be allowed to shrink, or a single

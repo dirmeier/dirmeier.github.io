@@ -1,7 +1,7 @@
 ---
 title: Sharding blaxbird models over an arbitraty mesh
 date: '2026-07'
-lede: blaxbird is a high-level API for building and training Flax NNX models without the usual JAX/Flax verbosity. Version 0.2.0 adds mesh-based sharding: FSDP, tensor parallelism, expert parallelism, or any combination thereof.
+lede: 'blaxbird is a high-level API for building and training Flax NNX models without the usual JAX/Flax verbosity. Version 0.2.0 adds mesh-based sharding: FSDP, tensor parallelism, expert parallelism, or any combination thereof.'
 ---
 
 ## `jax.sharding.Mesh` + `jax.sharding.PartitionSpec`

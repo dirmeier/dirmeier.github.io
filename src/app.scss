@@ -183,10 +183,13 @@ body {
 // the document body: contents on the left, article on the right. Below the
 // breakpoint the grid collapses and the contents sit above the article.
 @media (min-width: 62rem) {
+  // Padding on the wrapper drops both columns together, so the contents stay
+  // level with the title.
   .post-layout {
     display: grid;
     grid-template-columns: minmax(0, 175px) 2.5rem minmax(450px, 52rem);
     justify-content: center;
+    padding-top: 2.5rem;
   }
 
   // Quarto's trick: padding sets where it rests (level with the title), `top`
@@ -226,12 +229,6 @@ body {
   list-style: decimal outside;
   margin: 0;
   padding-left: 1.4rem;
-}
-
-.post-toc ol ol {
-  list-style: lower-alpha outside;
-  padding-left: 1.2rem;
-  margin-top: 0.35rem;
 }
 
 .post-toc li {
@@ -512,3 +509,19 @@ body {
   }
 }
 
+
+// Sub-sections in the contents, one level in from their parent section.
+.post-toc .toc-sub {
+  margin-left: 1.2rem;
+  list-style: lower-alpha outside;
+}
+
+// Bibliography: every paragraph after the References heading is an entry, set
+// with a hanging indent so the author line starts flush.
+.post h2[id='references'] ~ p {
+  font-size: 0.92em;
+  text-align: left;
+  padding-left: 1.6rem;
+  text-indent: -1.6rem;
+  margin-bottom: 0.7rem;
+}

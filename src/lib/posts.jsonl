@@ -16,9 +16,9 @@
 {"title": "Normalizing flows for variational inference", "url": "/blog/normalizing-flows-for-variational-inference/", "description": "implements an *inverse autoregressive flow* for variational inference of parameters in a simple bivariate Gaussian example in Jax, Distrax, Optax and Haiku.", "date": "2022-01"}
 {"title": "Diffusion models I", "url": "/blog/diffusion-models-i/", "description": "introduces a novel class of generative models that are inspired by non-equilibrium thermodynamics.", "date": "2022-06"}
 {"title": "Probabilistic reconciliation", "url": "/blog/probabilistic-reconciliation/", "description": "implements and tests two recent methods on reconciliation of hierarchical time series forecasts.", "date": "2022-11"}
-{"title": "Diffusion models II", "url": "/blog/diffusion-models-ii/", "description": "introduces a new class of generative models using stochastic differential equations and denoising score matching.", "date": "2023-01"}
+{"title": "Diffusion models II", "url": "/blog/diffusion-models-ii", "description": "introduces a new class of generative models using stochastic differential equations and denoising score matching.", "date": "2023-01"}
 {"title": "Reverse-mode autodiff in Clojure", "url": "/blog/clad-clojure-autodiff", "description": "a proof-of-concept autodiff engine built to learn Clojure.", "date": "2022-05"}
 {"title": "Blaxbird v0.2.0", "url": "/blog/blaxbird-mesh-sharding", "description": "sharding NNX models over an arbitrary mesh.", "date": "2026-07"}
 {"title": "Learning MLX", "url": "/blog/learning-mlx-with-sabc", "description": "learning Apple's array framework MLX by implementing a compute-heavy ABC sampler.", "date": "2026-06"}
-{"title": "🌈👾🦉Relaunching my blog🦉👾🌈", "url": "/blog/relaunching-my-blog", "description": "", "date": "2026-07"}
+{"title": "\ud83c\udf08\ud83d\udc7e\ud83e\udd89Relaunching my blog\ud83e\udd89\ud83d\udc7e\ud83c\udf08", "url": "/blog/relaunching-my-blog", "description": "", "date": "2026-07"}
 {"title": "JAX kernel fusion", "url": "/blog/jax-kernel-fusion", "description": "Evaluating JAX kernel fusion using XLA, Pallas and CUDA FFI.", "date": "2026-08"}

@@ -3,8 +3,8 @@ import adapter from '@sveltejs/adapter-auto';
 import { mdsvex } from 'mdsvex';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
-import { katexMath } from './katex-preprocess.js';
-import { highlightFence, shikiHighlight } from './shiki-preprocess.js';
+import { escapeTextBraces, katexMath } from './katex-preprocess.js';
+import { highlightFence } from './shiki-preprocess.js';
 
 // katexMath runs first: mdsvex uses its own markdown parser, so micromark-based
 // remark plugins (remark-math, remark-gfm) never fire. Rehype plugins do, and
@@ -26,7 +26,7 @@ const config = {
       ],
       highlight: { highlighter: highlightFence }
     }),
-    shikiHighlight()
+    escapeTextBraces()
   ],
   kit: {
     adapter: adapter()

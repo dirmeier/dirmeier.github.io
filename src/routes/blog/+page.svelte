@@ -109,14 +109,4 @@
   .post-description {
     color: #6b7280;
   }
-
-  @media (prefers-color-scheme: dark) {
-    .post-date {
-      color: #6b7280;
-    }
-
-    .post-description {
-      color: #a1a1aa;
-    }
-  }
 </style>

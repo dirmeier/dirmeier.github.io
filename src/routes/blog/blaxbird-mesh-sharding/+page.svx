@@ -1,10 +1,14 @@
 ---
-title: Sharding blaxbird models over an arbitraty mesh
+title: Sharding NNX models over an arbitraty mesh
 date: '2026-07'
-lede: 'blaxbird is a high-level API for building and training Flax NNX models without the usual JAX/Flax verbosity. Version 0.2.0 adds mesh-based sharding: FSDP, tensor parallelism, expert parallelism, or any combination thereof.'
 ---
 
-## `jax.sharding.Mesh` + `jax.sharding.PartitionSpec`
+`blaxbird` is a Python library that I am developing and which features a high-level API for building and training Flax NNX models without the usual JAX/Flax verbosity. 
+The newest version, `v0.2.0`, adds mesh-based sharding: FSDP, tensor parallelism, expert parallelism, or any combination thereof. Below, I am briefly introducing this feature 
+using a simple example. You can find the `blaxbird` on [GitHub](https://github.com/dirmeier/blaxbird).
+
+
+## Meshs and partitions
 
 To train a model in parallel in NNX, we need to define three things: a sharding
 annotation, a mesh, and a data partition spec. A parameter's sharding is read directly
@@ -30,13 +34,12 @@ Moving from a single device to a 2D FSDP+TP mesh is a one-line change. Neither
 `train_step`/`val_step` nor the model definition change: the sharding strategy is a
 property of the mesh shape and the model's `nnx.with_partitioning` annotations.
 
-## Two reference models
+## Reference LLMs
 
-The repo features to distributed training examples in
-[`examples/llm`](https://github.com/dirmeier/blaxbird/tree/main/examples/llm) using two
-LMs with different parallelism definitions:
+With `v0.2.0`, I added reference implementations of two open-weight LLMs to showcase distributed training with different kinds of
+model/data parallelisms:
 
 - **Gemma4**: sharded over a 2D mesh (FSDP + TP).
 - **Qwen3Next**: top-2-of-8 sparse MoE over a 3D mesh (FSDP + TP + expert).
 
-[blaxbird](https://github.com/dirmeier/blaxbird) is on GitHub.
+You can find them in the [`examples/llm`](https://github.com/dirmeier/blaxbird/tree/main/examples/llm) folder. 

@@ -35,6 +35,13 @@ def parse(text):
     return out
 
 
+def initials_of(token):
+    """`Brian` -> `B.`, but `DO` -> `D. O.` — Scholar drops the dots."""
+    if len(token) > 1 and token.isupper():
+        return " ".join(f"{c}." for c in token)
+    return f"{token[0]}."
+
+
 def split_name(name):
     """(surname, initials) from `Surname, Given` or `Given Middle Surname`."""
     name = name.strip()
@@ -45,7 +52,7 @@ def split_name(name):
     else:
         parts = name.split()
         last, given = parts[-1], " ".join(parts[:-1])
-    initials = " ".join(f"{p[0]}." for p in given.split() if p)
+    initials = " ".join(initials_of(p) for p in given.split() if p)
     return last.strip(), initials
 
 
@@ -63,25 +70,46 @@ def format_authors(authors):
     return " and ".join(formatted)
 
 
-def label(entry):
+def cited_authors(entry):
+    """`Vincent`, `Song and Ermon`, `Ho et al.`"""
     names = re.split(r"\s+and\s+", entry.get("author", ""))
     who = surname(entry.get("author", ""))
     if len(names) == 2:
         who = f"{who} and {surname(names[1])}"
     elif len(names) > 2:
         who = f"{who} et al."
-    return f"{who} {entry.get('year', '')}".strip()
+    return who
+
+
+def label(entry):
+    """Parenthetical form, `Ho et al., 2020`."""
+    who, year = cited_authors(entry), entry.get("year", "")
+    return f"{who}, {year}" if year else who
 
 
 def render_entry(entry):
     parts = [format_authors(entry.get("author", ""))]
     if entry.get("year"):
         parts.append(f"({entry['year']}).")
-    if entry.get("title"):
-        parts.append(f"*{entry['title']}*.")
+    # Titles that end in a period would otherwise render as `*Title.*.`
+    title = entry.get("title", "").rstrip(".")
+    if title:
+        parts.append(f"*{title}*.")
     venue = entry.get("journal") or entry.get("booktitle") or ""
     if venue:
+        if entry.get("volume"):
+            venue += f", {entry['volume']}"
+            if entry.get("number"):
+                venue += f"({entry['number']})"
+        if entry.get("pages"):
+            venue += f", {entry['pages'].replace('--', '–')}"
         parts.append(f"{venue}.")
+        # A journal's publisher is noise; a proceedings' is how it is found.
+        imprint = entry.get("organization") or (
+            entry.get("publisher") if entry.get("booktitle") else ""
+        )
+        if imprint:
+            parts.append(f"{imprint}.")
     text = " ".join(p for p in parts if p)
     url = entry.get("url")
     return f"{text} [{url}]({url})" if url else text
@@ -109,8 +137,12 @@ def apply(body, bib):
         if not note(key):
             return match.group(0)
         entry = bib[key]
-        who = label(entry).rsplit(" ", 1)[0]
-        return f"[{who}](#ref-{key}) ([{entry.get('year', '')}](#ref-{key}))"
+        year = entry.get("year", "")
+        who = cited_authors(entry)
+        # Narrative form: the year is already set off by its parentheses, so
+        # it takes no comma the way the parenthetical `label` does.
+        cited = f"{who} ({year})" if year else who
+        return f"[{cited}](#ref-{key})"
 
     body = re.sub(r"\[(@[^\]]+)\]", bracketed, body)
     body = re.sub(r"(?<![\w`])@([A-Za-z][\w:-]*)", inline, body)

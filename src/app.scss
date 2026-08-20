@@ -2,7 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 
+// The site has one palette. Pinning the colour scheme stops the browser
+// applying its own dark treatment to the canvas, scrollbars and form controls
+// when the reader's OS is set to dark.
 body {
+  color-scheme: light;
+  background-color: #ffffff;
   font-family: 'Source Serif 4', Times, serif;
   font-size: 16px;
   color: #333333;
@@ -147,6 +152,7 @@ body {
 .post .lede {
   color: #4b5563;
   font-size: 1.1rem;
+  font-style: italic;
   margin-bottom: 1rem;
 }
 
@@ -226,17 +232,13 @@ body {
 }
 
 .post-toc ol {
-  list-style: decimal outside;
+  list-style: none;
   margin: 0;
-  padding-left: 1.4rem;
+  padding-left: 0;
 }
 
 .post-toc li {
   margin: 0 0 0.35rem;
-}
-
-.post-toc li::marker {
-  color: #9ca3af;
 }
 
 .post-toc li.active > a {
@@ -267,12 +269,27 @@ body {
   margin-bottom: 0.4rem;
 }
 
+// Links are set in the monospace face, the way \texttt marks them out from
+// running serif text. 0.95em because Inconsolata runs wide next to Source
+// Serif at the same nominal size and would otherwise disturb the line.
 .post a {
   color: #1F407A;
+  font-family: 'Inconsolata', Menlo, Consolas, monospace;
+  font-size: 0.95em;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   padding-bottom: 1px;
   transition: border-color 0.15s ease;
+}
+
+// rehype-autolink-headings wraps every heading's text in an <a>, so the rule
+// above would otherwise reset the headings to monospace as well.
+.post h1 a,
+.post h2 a,
+.post h3 a {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
 }
 
 .post a:hover {
@@ -302,8 +319,7 @@ body {
 }
 
 // Shiki emits its own background; keep the site's instead and use only the
-// per-token colours. The light theme's colours show as-is; dark mode swaps to
-// the values Shiki stored in the --shiki-dark custom properties.
+// per-token colours it sets inline.
 .post pre.shiki {
   background: #f3f4f6 !important;
 }
@@ -373,36 +389,12 @@ body {
   border-bottom: 1px solid currentColor;
 }
 
-// Numbered sections, the one structural cue that makes a post read as a
-// document rather than a page.
-.post {
-  counter-reset: section;
-}
-
-.post h2 {
-  counter-increment: section;
-  counter-reset: subsection;
-}
-
-.post h2::before {
-  content: counter(section) '. ';
-  color: #9ca3af;
-  font-weight: 400;
-}
-
 .post h3 {
   font-size: 1.05rem;
   font-style: italic;
   font-weight: 400;
   margin: 2rem 0 1rem;
   text-align: left;
-  counter-increment: subsection;
-}
-
-.post h3::before {
-  content: counter(section) '.' counter(subsection) ' ';
-  color: #9ca3af;
-  font-weight: 400;
 }
 
 .post .katex-display {
@@ -433,87 +425,6 @@ body {
 .post table {
   display: block;
   overflow-x: auto;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #323232;
-    color: #f3f3f3;
-  }
-  .landing .role {
-    color: #a1a1aa;
-  }
-  .landing .intro a {
-    color: #8ab4f8;
-  }
-  .landing .chips span {
-    color: #d1d5db;
-    background: #3d3d3d;
-    border-color: #4b4b4b;
-  }
-
-  .post .lede {
-    color: #a1a1aa;
-  }
-
-  .post-date {
-    color: #6b7280;
-  }
-
-  .post a {
-    color: #8ab4f8;
-  }
-
-  .post code {
-    background: #3d3d3d;
-  }
-
-  .post pre {
-    background: #3d3d3d;
-  }
-
-  .post pre.shiki {
-    background: #3d3d3d !important;
-  }
-
-  .post pre.shiki,
-  .post pre.shiki span {
-    color: var(--shiki-dark) !important;
-  }
-
-  .post blockquote {
-    border-left-color: #8ab4f8;
-    color: #a1a1aa;
-  }
-
-  .post th,
-  .post td {
-    border-bottom-color: #4b4b4b;
-  }
-
-  .post th {
-    color: #9ca3af;
-  }
-
-  .post h2::before,
-  .post h3::before {
-    color: #6b7280;
-  }
-
-  .post-toc .toc-h2::before {
-    color: #6b7280;
-  }
-
-  .post figcaption {
-    color: #a1a1aa;
-  }
-}
-
-
-// Sub-sections in the contents, one level in from their parent section.
-.post-toc .toc-sub {
-  margin-left: 1.2rem;
-  list-style: lower-alpha outside;
 }
 
 // Bibliography: every paragraph after the References heading is an entry, set

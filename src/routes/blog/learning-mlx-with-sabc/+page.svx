@@ -1,19 +1,23 @@
 ---
 title: Learning MLX
 date: '2026-06'
-lede: I've only recenly came across MLX, Apple's array framework. In comparison to JAX, my typical framework of choice, MLX features a proper C++ API making it particularly interesting. To explore the library a bit, I've implemented one of our recent publications, SABC, in MLX using its Python and C++ API.
 ---
+
+I've only recenly came across MLX, Apple's array framework. 
+In comparison to JAX, my usual framework of choice, MLX features a proper C++ API 
+making it particularly interesting. To explore the library a bit, I've implemented one of our recent publications, 
+SABC ([Albert et al., 2025](#ref-albert2025simulated)), in MLX using its Python and C++ API.
+
+You can find the SABC code on [GitHub](https://github.com/dirmeier/sabc).
 
 ## Why MLX
 
-MLX is a C++ library that you can link against directly, and which exposes Python
+MLX is a C++ library that features a fairly high-level API and which exposes Python
 bindings. JAX is Python first, and anything C++ has to be done via Pallas or a custom
-XLA call. That is, in MLX we can write compute-itensive code, like an MCMC sampler, in
-C++ and expose it to Python through `nanobind`. The Python bindings of MLX are held in
-the style of NumPy, and function transformations and a random number generator that
-requires explicitely setting keys.
+FFI call. That is, in MLX we can write compute-itensive code, like an MCMC sampler, in
+C++ and expose it to Python through `nanobind`. 
 
-Most of the Python API maps one to one onto JAX:
+Conveniently when one has a JAX background, most of the Python API maps one to one onto JAX:
 
 | purpose                 | JAX                                        | MLX                                |
 | ----------------------- | ------------------------------------------ | ---------------------------------- |
@@ -42,7 +46,7 @@ def newton(f, df, x, n_iter=20):
   return lax.fori_loop(0, n_iter, body, x)
 ```
 
-MLX has no trace, so the same function is an ordinary Python loop:
+MLX has no trace, so the same function can be done with an ordinary `for` loop using MLX's Python bindings:
 
 ```python
 import mlx.core as mx
@@ -54,7 +58,7 @@ def newton(f, df, x, n_iter=20):
   return x
 ```
 
-And because `MLX` is a C++ library, the same loop compiles straight into C++:
+The same loop can be transcribed straight into C++:
 
 ```cpp
 mx::array newton(const std::function<mx::array(mx::array)>& f,
@@ -94,9 +98,9 @@ def ema(xs, alpha):
   return mx.stack(ys)
 ```
 
-Each MLX op is lazy, so a plain loop builds a graph that keeps growing until `mx.eval`
+Each MLX op is **lazy**, so a loop builds a graph that keeps growing until `mx.eval`
 evaluates it (i.e., actually computes a value). However, similarly to JAX, `mx.compile`
-can still compile a function into a single graph when throughput is needed.
+can still compile a function into a single graph when high throughput is needed.
 
 ## The benchmark
 
@@ -121,4 +125,9 @@ buffer pool and no JIT cache.
 In summary, even when factoring in the compile time I think I am still sticking to JAX.
 But I will definitely use MLX more often in the future 👾🍏.
 
-[SABC](https://github.com/dirmeier/sabc) is on GitHub.
+## References
+
+<span id="ref-albert2025simulated"></span>
+
+Albert, C., Ulzega, S., Dirmeier, S., Scheidegger, A., Bassi, A., and Mira, A. (2025). *Simulated Annealing ABC with multiple summary statistics*. arXiv preprint arXiv:2505.23261.
+

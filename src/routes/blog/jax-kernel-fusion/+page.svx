@@ -1,43 +1,51 @@
 ---
 title: JAX kernel fusion
 date: '2026-08'
-lede: Evaluating JAX kernel fusion using XLA, Pallas and CUDA FFI.
 ---
 
-When writing a JAX function and running it on a GPU, the XLA compiler usually
-tries to fuse operations into a single kernel launch. This sometimes works well,
-but often we need to write custom Pallas or low-level CUDA kernels to do in manually.
-Here, we evaluate using Pallas and JAX' foreign function interface to bridge to a
-custom CUDA kernel. We'll test all this using a simple QK-Norm+ROPE operation which
-one typically finds in the attention mechanisms of modern LLMs.
+When jit-ting a JAX function, the XLA compiler tries to fuse its
+operations into fewer kernel launches.
+When the fused result is still too slow, we can either use Pallas, 
+JAX's API for writing custom GPU/TPU kernels, or write custom CUDA code. 
 
-## QK-Norm+ROPE
+Here we test Pallas and JAX's foreign function interface to bridge to a
+custom CUDA kernel using a simple QK-Norm+RoPE operation (which
+one typically finds in the attention mechanisms of modern LLMs). 
+
+We'll evaluate the implementations by examining the HLO, the intermediate representation (IR) of the XLA compiler,
+which shows the fusions, primitives and
+operations the GPU has to execute. For the Pallas and CUDA implementations the
+kernel appears as a single custom call, so the HLO shows where our code takes
+over rather than what it does.
+
+The code to reproduce all results is on GitHub at [dirmeier/jax-kernel-fusion](https://github.com/dirmeier/jax-kernel-fusion).
+
+## QK-Norm+RoPE
 
 Let $q \in \mathbb{R}^{B \times S \times H \times D}$ be the query vector of a
 self-attention mechanism. If $x = q[b, s, h, :]$ is a single attention head vector,
-QK-Norm+ROPE first normalises over the head dimension
+QK-Norm+RoPE first normalises over the head dimension
 
-$$\mu = \frac{1}{D}\sum_d x_d^2, \qquad \hat{x}_d = \frac{x_d}{\sqrt{\mu+\varepsilon}}\,g_d,$$
+$$\mu = \frac{1}{D}\sum_d x_d^2, \qquad \hat{x}_d = \frac{x_d}{\sqrt{\mu+\varepsilon}}\,\gamma_d,$$
 
-and then rotates each channel $i$ against its partner $i+m$, where $m = D / 2$, by an
+where $\gamma$ are trainable parameters. It then rotates each channel $i$ against its partner $i+m$, where $m = D / 2$, by an
 angle that depends on the sequence position $s$,
 
 $$\begin{pmatrix} y_i \\ y_{i+m}\end{pmatrix} = \begin{pmatrix} \cos s\theta_i & -\sin s\theta_i \\ \sin s\theta_i & \cos s\theta_i\end{pmatrix}\begin{pmatrix} \hat{x}_i \\ \hat{x}_{i+m}\end{pmatrix},$$
 
 where $\theta_i = \Theta^{-2i/D}$ and $\Theta$ is some constant.
 
-## From `jaxpr` to HLO to PTX/SASS
+## From `jaxpr` to HLO
 
 To understand what XLA is doing, let's examine the entire path from Python to machine
-code, i.e.:
-
-```
-Python -> jaxpr -> StableHLO -> HLO -> PTX/SASS
-```
-
-In plain JAX, the QK-Norm+ROPE operation looks like this:
+code through a Python implementation of QK-Norm+RoPE. In plain JAX, the operation looks like this:
 
 ```python
+def rope_tables(seq_len, head_dim, dtype=jnp.float32):
+  inv_freq = 10_000 ** (-jnp.arange(0, head_dim, 2, dtype=dtype) / head_dim)
+  angles = jnp.arange(seq_len, dtype=dtype)[:, None] * inv_freq[None, :]
+  return jnp.cos(angles), jnp.sin(angles)
+
 def qk_norm_rope(query, gamma, cos, sin, EPS=1e-6):
   mean_square = jnp.mean(jnp.square(query), axis=-1, keepdims=True)
   qn = query * jax.lax.rsqrt(mean_square + EPS) * gamma
@@ -49,9 +57,19 @@ def qk_norm_rope(query, gamma, cos, sin, EPS=1e-6):
   return jnp.concatenate([lo * c - hi * s, hi * c + lo * s], axis=-1)
 ```
 
-Tracing this (`jaxpr`) give us this:
+Jitting this function traces it into a `jaxpr`, JAX internal IR of a program:
 
-```
+```python
+def make_inputs(shape, seed=0):
+  _, seq_len, _, head_dim = shape
+  queries = jax.random.normal(jax.random.key(seed), shape, jnp.float32)
+  gamma = jnp.linspace(0.5, 1.5, head_dim, dtype=jnp.float32)
+  cos, sin = rope_tables(seq_len, head_dim)
+  return queries, gamma, cos, sin
+
+args = make_inputs((2, 32, 4, 128))
+print(jax.make_jaxpr(qk_norm_rope)(*args))
+
 { lambda ; a:f32[2,32,4,128] b:f32[128] c:f32[32,64] d:f32[32,64]. let
     e:f32[2,32,4,128] = square a
     f:f32[2,32,4] = reduce_sum[axes=(3,) out_sharding=None] e
@@ -84,48 +102,45 @@ Tracing this (`jaxpr`) give us this:
   in (x,) }
 ```
 
-The `jaxpr` shows that JAX records 20 primitive operations. It doesn't matter if we use
-vanilla JAX, Pallas calls or FFI calls: all are JAX primitives that are being traced
-yielding a `jaxpr` as a first step. However, the 3 implementations take 3 different
+The `jaxpr` shows that JAX records 20 primitive operations. Conveniently, it doesn't matter if we use
+vanilla JAX, [Pallas](https://github.com/dirmeier/jax-kernel-fusion/blob/main/src/03_pallas_tiled.py) or 
+[CUDA FFI](https://github.com/dirmeier/jax-kernel-fusion/blob/main/src/04_ffi_cuda.py) calls: 
+all three are traced to a `jaxpr` before they are lowered to HLO. 
+However, while vanilla JAX records 20 primitives, Pallas and the FFI record a single one that stands for the whole kernel.
+Additionally, the 3 implementations take 3 different
 "routes" in order to produce machine code (shown below with the help of Gemini):
 
-```
-  route 1                route 2                  route 3
-  XLA, compiler-fused               Pallas                CUDA via FFI
+```python
+  route 1                 route 2                 route 3
+  XLA, compiler-fused     Pallas                  CUDA via FFI
 
-  jnp ops in Python      kernel fn in Python      qk_norm_rope.cu in C/CUDA
-        |                        |                       |
-      jaxpr                pallas_call             nvcc, at BUILD time
-        |                        |                       |
-    StableHLO           StableHLO custom_call   StableHLO custom_call
-        |                 @mosaic_gpu_v2         @qk_norm_rope_cuda
-        |                        :                       :
-        |                        :                       :
-        |                        :                       :
-        |                        :                       :
-    HLO passes                  HLO                     HLO
-    (fusion decided)      custom-call, target=   custom-call, target=
-        |                 mosaic_gpu_v2          qk_norm_rope_cuda
-        |                        |                       |
-        |                        |                       |
-        |                        |                       |
-    Triton IR              Mosaic GPU                    |
-    (on GH200)             MLIR -> NVVM                  |
-        |                        |                       |
-        |                        |                       |
-     LLVM IR                     |                       |
-        +----------------------- + ----------------------+
-                                 |
-                                PTX          virtual ISA
-                                 |
-                               ptxas         compiles/optimizes PTX for a specific architecture
-                                 |
-                                SASS         real machine code for sm_90
+  jnp ops in Python       kernel fn in Python     qk_norm_rope.cu in C/CUDA
+     |                       |                       |
+  jaxpr                   pallas_call             nvcc, at BUILD time
+     |                       |                       |
+  StableHLO               StableHLO custom_call   StableHLO custom_call
+                          @mosaic_gpu_v2          @qk_norm_rope_cuda
+     |                       :                       :
+     |                       :                       :
+  HLO passes              HLO                     HLO
+  (fusion decided)        custom-call, target=    custom-call, target=
+                          mosaic_gpu_v2           qk_norm_rope_cuda
+     |                       |                       |
+  Triton IR               Mosaic GPU                 |
+  (on GH200)              MLIR -> NVVM               |
+     |                       |                       |
+  LLVM IR                    |                       |
+     +-----------------------+-----------------------+
+                             |
+                            PTX             virtual ISA
+                             |
+                           ptxas            optimises PTX for one architecture
+                             |
+                            SASS            machine code for sm_90
 ```
 
-For vanilla JAX Python code, after tracing, the `jaxpr` is lowered to StableHLO, JAX'
-HLO dialect, from where it is to lowered HLO, the specific intermediate representations
-(IRs) of the XLA compiler. The HLO (at least with some caveats) shows how many kernels
+For vanilla JAX Python code, after tracing, the `jaxpr` is lowered to StableHLO, a
+HLO dialect, from where it is to lowered HLO. The HLO (at least with some caveats) shows how many kernels
 each implementation launches per call which can be used as a diagnostic tool.
 Importantly, a `fusion` represents exactly one kernel launch, while a `custom-call`
 represents an unknown number of them.
@@ -133,53 +148,61 @@ represents an unknown number of them.
 When we `jit` the `qk_norm_rope` function on an GH200, XLA produces the following HLO
 fusing everything into a **single** kernel operation:
 
+```python
+args = make_inputs((128, 1024, 16, 128))
+print(jax.jit(qk_norm_rope).lower(*args).compile().as_text())
+```
+
 ```diff
-  ENTRY %main.2 (q, g, cos, sin) -> f32[4,1024,16,128] {
-+   ROOT %fusion.9 = f32[4,1024,16,128] fusion(%sin.1, %cos.1, %g.1, %q.1),
-+       kind=kCustom, calls=%fused_computation.7,
+  ENTRY %main.2 (queries.1: f32[128,1024,16,128], gamma.1: f32[128], cos.1: f32[1024,64], sin.1: f32[1024,64]) -> f32[128,1024,16,128] {
+    %sin.1 = f32[1024,64]{1,0} parameter(3)
+    %cos.1 = f32[1024,64]{1,0} parameter(2)
+    %gamma.1 = f32[128]{0} parameter(1)
+    %queries.1 = f32[128,1024,16,128]{3,2,1,0} parameter(0)
++   ROOT %fusion.8 = f32[128,1024,16,128]{3,2,1,0} fusion(%cos.1, %sin.1, %gamma.1, %queries.1),
++       kind=kCustom, calls=%fused_computation.6,
         backend_config={"fusion_backend_config":{
           "kind":"__triton",
           "block_level_fusion_config":{
-            "num_warps":"8","output_tiles":[{"sizes":["4","2","16","64"]}]}}}
+            "num_warps":"8","output_tiles":[{"sizes":["8","1","16","64"]}]}}}
   }
 ```
 
-The HLO shows that XLA uses OpenAI's Triton utilizing 8 warps (8 x 32 threads) and an
-output tile shape of `[4, 2, 16, 64]`.
+The HLO shows that XLA, interestingly, uses OpenAI's Triton utilizing 8 warps (8 x 32 threads) and an 
+output tile shape of `[8, 1, 16, 64]`.
 
-Let's also a look at the CUDA HLO:
+As a comparison, let's also have a look at the [CUDA FFI](https://github.com/dirmeier/jax-kernel-fusion/blob/main/src/04_ffi_cuda.py) HLO:
 
 ```diff
-  ENTRY %main.1 (q.1: f32[4,1024,16,128], g.1: f32[128], cos.1: f32[1024,64], sin.1: f32[1024,64]) -> f32[4,1024,16,128] {
+  ENTRY %main.1 (queries.1: f32[128,1024,16,128], gamma.1: f32[128], cos.1: f32[1024,64], sin.1: f32[1024,64]) -> f32[128,1024,16,128] {
     %sin.1 = f32[1024,64]{1,0} parameter(3)
     %cos.1 = f32[1024,64]{1,0} parameter(2)
-    %g.1 = f32[128]{0} parameter(1)
-    %q.1 = f32[4,1024,16,128]{3,2,1,0} parameter(0)
-+   ROOT %ffi_call.1 = f32[4,1024,16,128]{3,2,1,0} custom-call(%q.1, %g.1, %cos.1, %sin.1), custom_call_target="qk_norm_rope_cuda", operand_layout_constraints={f32[4,1024,16,128]{3,2,1,0}, f32[128]{0}, f32[1024,64]{1,0}, f32[1024,64]{1,0}}, api_version=API_VERSION_TYPED_FFI, metadata={op_name="jit(cuda_qk_norm_rope)/ffi_call" scheduling_name="ffi_call.1" stack_frame_id=4}, backend_config={}
+    %gamma.1 = f32[128]{0} parameter(1)
+    %queries.1 = f32[128,1024,16,128]{3,2,1,0} parameter(0)
++   ROOT %ffi_call.1 = f32[128,1024,16,128]{3,2,1,0} custom-call(%queries.1, %gamma.1, %cos.1, %sin.1), custom_call_target="qk_norm_rope_cuda", operand_layout_constraints={f32[128,1024,16,128]{3,2,1,0}, f32[128]{0}, f32[1024,64]{1,0}, f32[1024,64]{1,0}}, api_version=API_VERSION_TYPED_FFI
 }
 ```
 
-As expected (since it was defined this way
-[here](https://github.com/dirmeier/jax-kernel-fusion/blob/main/cuda/qk_norm_rope.cu)),
+As expected (since we wrote only a single
+[CUDA kernel](https://github.com/dirmeier/jax-kernel-fusion/blob/main/cuda/qk_norm_rope.cu)),
 there is only a single primitive.
 
 Now, more interestingly, the HLO of the tiled Pallas kernel:
 
 ```diff
-  ENTRY %main.1 (q.1: f32[4,1024,16,128], g.1: f32[128], cos.1: f32[1024,64], sin.1: f32[1024,64]) -> f32[4,1024,16,128] {
+  ENTRY %main.1 (queries.1: f32[128,1024,16,128], gamma.1: f32[128], cos.1: f32[1024,64], sin.1: f32[1024,64]) -> f32[128,1024,16,128] {
     %sin.1 = f32[1024,64]{1,0} parameter(3)
     %cos.1 = f32[1024,64]{1,0} parameter(2)
-    %g.1 = f32[128]{0} parameter(1)
-    %q.1 = f32[4,1024,16,128]{3,2,1,0} parameter(0)
-    %bitcast.2 = f32[4096,2048]{1,0} bitcast(%q.1), metadata={op_name="q" scheduling_name="bitcast.2"}
-+ %wrapped_broadcast = f32[64,128]{1,0} fusion(%g.1), kind=kLoop, calls=%wrapped_broadcast_computation, metadata={op_name="jit(tiled_qk_norm_rope)/broadcast_in_dim" scheduling_name="wrapped_broadcast" stack_frame_id=4}, backend_config={"device_type":"DEVICE_TYPE_INVALID","force_earliest_schedule":false,"native_emitter_backend_config":{"type":"NATIVE_EMITTER_TYPE_INVALID","unroll_factor":0},"operation_queue_id":"0","reification_cost":[]}
-+ %pallas_call.1 = f32[4096,2048]{1,0} custom-call(%bitcast.2, %wrapped_broadcast, %cos.1, %sin.1), custom_call_target="mosaic_gpu_v2", operand_layout_constraints={f32[4096,2048]{1,0}, f32[64,128]{1,0}, f32[1024,64]{1,0}, f32[1024,64]{1,0}}, api_version=API_VERSION_TYPED_FFI, metadata={op_name="jit(tiled_qk_norm_rope)/pallas_call" scheduling_name="pallas_call.1" stack_frame_id=5}, backend_config={kernel_hash = "...", module = "<truncated 149369 bytes>", use_custom_barrier = false, uses_xla_collective_metadata = false}
-  ROOT %bitcast.1.0 = f32[4,1024,16,128]{3,2,1,0} bitcast(%pallas_call.1), metadata={op_name="jit(tiled_qk_norm_rope)/pallas_call" scheduling_name="bitcast.1.0" stack_frame_id=5}
+    %gamma.1 = f32[128]{0} parameter(1)
+    %queries.1 = f32[128,1024,16,128]{3,2,1,0} parameter(0)
+    %bitcast.2 = f32[131072,2048]{1,0} bitcast(%queries.1)
++   %wrapped_broadcast = f32[64,128]{1,0} fusion(%gamma.1), kind=kLoop, calls=%wrapped_broadcast_computation
++   %pallas_call.1 = f32[131072,2048]{1,0} custom-call(%bitcast.2, %wrapped_broadcast, %cos.1, %sin.1), custom_call_target="mosaic_gpu_v2", operand_layout_constraints={f32[131072,2048]{1,0}, f32[64,128]{1,0}, f32[1024,64]{1,0}, f32[1024,64]{1,0}}, api_version=API_VERSION_TYPED_FFI
+  ROOT %bitcast.1.0 = f32[128,1024,16,128]{3,2,1,0} bitcast(%pallas_call.1)
 }
 ```
 
-Even though there is a `custom-call` within the `pallas_call` primitive, we are only
-looking at a single kernel launch, since Pallas compiles every kernel through Mosaic's
+Even though there is a `custom-call` within the `pallas_call` primitive, it (`pallas_call`) only uses a single kernel launch, since Pallas compiles every kernel through Mosaic's
 `_lower_as_gpu_kernel` which corresponds to exactly one CUDA kernel.
 
 ## Runtimes
@@ -193,17 +216,18 @@ query dimensionality `(128, 1024, 16, 128)`. Results are shown below:
 | Pallas | 0.833 | 2577.3 | 1.01x  |
 | CUDA   | 0.600 | 3576.6 | 1.40x  |
 
-The example operations (QK-Norm+ROPE) is fairly trivial and the cache hierarchy of the
+<br>
+The example operation (QK-Norm+RoPE) is fairly trivial and the cache hierarchy of the
 H100 already solves many problems we would typically see, so the numbers are a bit
 misleading. Interestingly though, our Pallas implementation runs as fast as the XLA
-compiled one. Our custom CUDA kernel which we access via `jax.ffi` almost runs 1.4 times
-as fast as the XLA baseline. CUDA wins by assigning one warp (32 threads) to each head
+compiled one. Our custom CUDA kernel which we access via `jax.ffi` runs 1.4 times
+faster than the XLA baseline. CUDA wins by assigning one warp (32 threads) to each head
 vector, rather than forcing it across 128 lanes. This ensures all 128 channels live
 safely in the registers of a single warp, requiring no workarounds.
 
 ## Conclusion
 
-Here, we developed QK-Norm+ROPE implementations using vanilla JAX, Pallas and CUDA FFI,
+Here, we developed QK-Norm+RoPE implementations using vanilla JAX, Pallas and CUDA FFI,
 and evaluated how XLA lowers them to HLO. Surprisingly (and counter-intuitively), I
 found the FFI path significantly easier thatn the Pallas approach. The results of the
 runtime measurements were expectedly unconclusive, given the simplicity of the operation
@@ -221,5 +245,4 @@ better understanding of HLO and Pallas, there's also some insights I've gained:
 - Consider the actual hardware architecture that you work with. If the data fits into
   the cache, using SMEM does not increase throughput.
 
-The code is on [GitHub](https://github.com/dirmeier/jax-kernel-fusion). Hope reading
-this was informative to some 🙂🦉.
+Hope reading this was informative to some 🙂🦉.

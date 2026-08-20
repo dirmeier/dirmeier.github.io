@@ -5,12 +5,22 @@ import katex from 'katex';
 // file, and handed on as plain HTML.
 const PROTECTED = /```[\s\S]*?```|`[^`\n]*`/g;
 // Pandoc treats a bare LaTeX environment as display math, with no $$ around it.
-const ENVIRONMENT =
-  /\\begin\{(align\*?|aligned|alignat\*?|gather\*?|equation\*?|split|cases|array|matrix|[bpvBV]matrix)\}[\s\S]*?\\end\{\1\}/g;
-const DISPLAY = /\$\$([\s\S]+?)\$\$/g;
+const ENVIRONMENTS =
+  'align\\*?|aligned|alignat\\*?|gather\\*?|equation\\*?|split|cases|array|matrix|[bpvBV]matrix';
+// Display, bare environment and inline are matched in a single pass, so
+// whichever opens first claims the span. Run separately, the environment
+// sweep would carve up a `$$\begin{pmatrix}…$$` block from the inside and
+// leave the delimiters wrapped around markup for the display sweep to typeset.
 // Newlines are allowed inside inline math because authored prose wraps mid
 // expression; the length cap stops a stray `$` from swallowing a paragraph.
-const INLINE = /(?<![\\$])\$(?!\s)([^$]{1,600}?)(?<!\s)\$(?!\$)/g;
+const MATH = new RegExp(
+  [
+    '\\$\\$([\\s\\S]+?)\\$\\$',
+    `\\\\begin\\{(${ENVIRONMENTS})\\}[\\s\\S]*?\\\\end\\{\\2\\}`,
+    '(?<![\\\\$])\\$(?!\\s)([^$]{1,600}?)(?<!\\s)\\$(?!\\$)'
+  ].join('|'),
+  'g'
+);
 
 // output: 'html' drops the MathML branch, whose <annotation> would otherwise
 // carry the raw TeX — braces included — into the component.
@@ -26,10 +36,11 @@ function render(tex, displayMode) {
 }
 
 function renderSegment(text) {
-  return text
-    .replace(ENVIRONMENT, (env) => `\n\n${render(env, true)}\n\n`)
-    .replace(DISPLAY, (_, tex) => `\n\n${render(tex, true)}\n\n`)
-    .replace(INLINE, (_, tex) => render(tex, false));
+  return text.replace(MATH, (match, display, environment, inline) => {
+    if (display !== undefined) return `\n\n${render(display, true)}\n\n`;
+    if (environment !== undefined) return `\n\n${render(match, true)}\n\n`;
+    return render(inline, false);
+  });
 }
 
 // mdsvex parses the rendered math into hast and serialises it again, which

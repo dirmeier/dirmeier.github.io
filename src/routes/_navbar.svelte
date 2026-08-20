@@ -44,11 +44,4 @@
     opacity: 0.7;
     transform: translateY(-1px);
   }
-
-  @media (prefers-color-scheme: dark) {
-    .blog-button {
-      color: #8ab4f8;
-      border-color: #8ab4f8;
-    }
-  }
 </style>

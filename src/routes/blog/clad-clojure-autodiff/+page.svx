@@ -1,14 +1,14 @@
 ---
 title: Reverse-mode autodiff in Clojure
 date: '2022-05'
-lede: A proper computer scientist needs to know a Lisp - some opinionated computer scientist.
 ---
 
-## Learning Clojure the ML way
-
 In order to learn Clojure, or at least get a feel for it, I recently implemented a
-proof-of-concept reverse-mode AD framework in it:
-[clad](https://github.com/dirmeier/clad).
+proof-of-concept reverse-mode AD framework in it. Below, I'll introduce the API briefly.
+
+Code can be found on [GitHub](https://github.com/dirmeier/clad).
+
+## The API
 
 `clad` represents the computation graph as an adjacency matrix (via `core.matrix`) and a
 map of nodes. The forward/backward passes of a function are two topological traversals

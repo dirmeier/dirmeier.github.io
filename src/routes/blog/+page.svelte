@@ -39,12 +39,14 @@
     {#each data.posts as post (post.url)}
       <li>
         <span class="post-date">{formatDate(post.date) ?? '—'}</span>
-        <a href={post.url} rel={isExternal(post.url) ? 'external' : undefined}
-          >{post.title}</a
-        >
-        {#if post.description}
-          <span class="post-description"> — {post.description}</span>
-        {/if}
+        <span class="post-entry">
+          <a href={post.url} rel={isExternal(post.url) ? 'external' : undefined}
+            >{post.title}</a
+          >
+          {#if post.description}
+            <span class="post-description"> — {post.description}</span>
+          {/if}
+        </span>
       </li>
     {/each}
   </ul>
@@ -69,14 +71,22 @@
     margin: 0;
   }
 
+  /* Two columns rather than an inline-block spacer, so a wrapped title stays
+     in its own column instead of running back under the date. */
   .blog li {
+    display: flex;
+    gap: 0.5rem;
     margin-bottom: 1.1rem;
     line-height: 1.6;
   }
 
+  .post-entry {
+    flex: 1;
+    min-width: 0;
+  }
+
   .post-date {
-    display: inline-block;
-    min-width: 7rem;
+    flex: 0 0 7rem;
     color: #9ca3af;
     font-size: 0.85rem;
   }

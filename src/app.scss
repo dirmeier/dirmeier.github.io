@@ -1,10 +1,12 @@
 @use 'bulma/bulma.scss';
+@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 
 body {
   font-family: 'Source Serif 4', Times, serif;
-  font-size: 1.05em;
-  color: #1a1a1a;
+  font-size: 16px;
+  color: #333333;
+  line-height: 1.6;
 }
 
 .landing {
@@ -58,7 +60,7 @@ body {
 }
 
 .landing .intro a {
-  color: #2563a8;
+  color: #1F407A;
 }
 
 .landing .links {
@@ -87,35 +89,164 @@ body {
 }
 
 .post {
-  max-width: 42rem;
+  max-width: 52rem;
   margin: 0 auto;
   padding: 2rem 1.5rem 5rem;
-  line-height: 1.7;
+  line-height: 1.6;
+  text-align: justify;
 }
 
+// Sits under the title as a meta line, the way Quarto's title block does.
 .post-date {
   color: #9ca3af;
   font-size: 0.85rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+  text-align: left;
+}
+
+.post-date a {
+  color: inherit;
+  border-bottom: none;
+}
+
+.post-date a:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+// Title block metadata, following Quarto's .quarto-title-meta: two columns,
+// small uppercase headings above their values.
+.post-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.post-meta-heading {
+  text-transform: uppercase;
+  margin-top: 0;
+  font-size: 0.8em;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.post-meta-contents {
+  font-size: 0.9em;
 }
 
 .post h1 {
-  font-size: 1.9rem;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 400;
   line-height: 1.25;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.3rem;
+  text-align: left;
 }
 
 .post .lede {
   color: #4b5563;
   font-size: 1.1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
+// The first section follows the title block directly, so it needs none of the
+// breathing room that separates one section from the next.
+.post .lede + h2,
+.post .lede + p + h2,
+.post-meta + h2 {
+  margin-top: 1rem;
+}
+
+// Document, not web page: headings sit close to body size and are separated by
+// a rule, so structure comes from the numbering and the break rather than from
+// size contrast.
 .post h2 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin: 2.25rem 0 0.9rem;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 400;
+  margin: 1.6rem 0 0.7rem;
+  text-align: left;
+}
+
+// Only shown once there is a column to put it in; stacking it above the title
+// on a narrow screen just pushes the article down.
+.post-toc {
+  display: none;
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+// Two columns, the way Quarto's page-columns lays out a margin sidebar beside
+// the document body: contents on the left, article on the right. Below the
+// breakpoint the grid collapses and the contents sit above the article.
+@media (min-width: 62rem) {
+  .post-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 175px) 2.5rem minmax(450px, 52rem);
+    justify-content: center;
+  }
+
+  .post-toc {
+    display: block;
+    grid-column: 1;
+    align-self: start;
+    position: sticky;
+    top: 2rem;
+    margin: 0;
+    padding: 2rem 0 0;
+  }
+
+  // min-width: 0 stops the long <pre> lines from forcing the grid item wider
+  // than its column, which pushes the whole article off-screen.
+  .post {
+    grid-column: 3;
+    min-width: 0;
+    margin: 0;
+  }
+
+  // Every block inside the article has to be allowed to shrink, or a single
+  // long <pre> line sets the width for the whole column.
+  .post > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+.post-toc ol {
+  list-style: decimal outside;
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.post-toc ol ol {
+  list-style: lower-alpha outside;
+  padding-left: 1.2rem;
+  margin-top: 0.35rem;
+}
+
+.post-toc li {
+  margin: 0 0 0.35rem;
+}
+
+.post-toc li::marker {
+  color: #9ca3af;
+}
+
+.post-toc li.active > a {
+  color: #1F407A;
+}
+
+
+.post-toc a {
+  color: inherit;
+  border-bottom: none;
+}
+
+.post-toc a:hover {
+  border-bottom: 1px solid currentColor;
 }
 
 .post p,
@@ -133,7 +264,7 @@ body {
 }
 
 .post a {
-  color: #2563a8;
+  color: #1F407A;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   padding-bottom: 1px;
@@ -145,8 +276,8 @@ body {
 }
 
 .post code {
-  font-family: 'SF Mono', Menlo, Consolas, monospace;
-  font-size: 0.88em;
+  font-family: 'Inconsolata', Menlo, Consolas, monospace;
+  font-size: 1em;
   background: #f3f4f6;
   border-radius: 3px;
   padding: 0.1em 0.35em;
@@ -163,7 +294,7 @@ body {
 .post pre code {
   background: none;
   padding: 0;
-  font-size: 0.85em;
+  font-size: 1em;
 }
 
 // Shiki emits its own background; keep the site's instead and use only the
@@ -176,7 +307,7 @@ body {
 .post blockquote {
   margin: 0 0 1.1rem;
   padding: 0.6rem 1.1rem;
-  border-left: 3px solid #2563a8;
+  border-left: 3px solid #1F407A;
   color: #4b5563;
   font-size: 0.95rem;
 }
@@ -225,9 +356,79 @@ body {
   width: 18%;
 }
 
-.post h2 a {
+// rehype-autolink-headings wraps every heading in an anchor. It should read as
+// a heading, not a link, until you hover it.
+.post h2 a,
+.post h3 a {
   color: inherit;
-  border-bottom: 1px solid #2563a8;
+  border-bottom: none;
+}
+
+.post h2 a:hover,
+.post h3 a:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+// Numbered sections, the one structural cue that makes a post read as a
+// document rather than a page.
+.post {
+  counter-reset: section;
+}
+
+.post h2 {
+  counter-increment: section;
+  counter-reset: subsection;
+}
+
+.post h2::before {
+  content: counter(section) '. ';
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.post h3 {
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 400;
+  margin: 2rem 0 1rem;
+  text-align: left;
+  counter-increment: subsection;
+}
+
+.post h3::before {
+  content: counter(section) '.' counter(subsection) ' ';
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.post .katex-display {
+  margin: 1.6rem 0;
+  overflow-x: auto;
+  padding: 0.2rem 0;
+  text-align: center;
+}
+
+.post figure {
+  margin: 1.6rem 0;
+}
+
+.post figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+.post figcaption {
+  margin-top: 0.5rem;
+  color: #6b7280;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+// Markdown tables have no wrapper element to scroll, so the table scrolls
+// itself rather than the page.
+.post table {
+  display: block;
+  overflow-x: auto;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -290,7 +491,17 @@ body {
     color: #9ca3af;
   }
 
-  .post h2 a {
-    border-bottom-color: #8ab4f8;
+  .post h2::before,
+  .post h3::before {
+    color: #6b7280;
+  }
+
+  .post-toc .toc-h2::before {
+    color: #6b7280;
+  }
+
+  .post figcaption {
+    color: #a1a1aa;
   }
 }
+

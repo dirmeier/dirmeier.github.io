@@ -34,6 +34,41 @@ function decode(source) {
   return DECODE.reduce((acc, [re, ch]) => acc.replace(re, ch), source);
 }
 
+// Shiki's output is spliced straight into a Svelte component, so braces have to
+// go back to entities or Svelte reads them as expressions.
+function forSvelte(html) {
+  return html
+    .replace(/ tabindex="0"/g, '')
+    .replace(/{/g, '&lbrace;')
+    .replace(/}/g, '&rbrace;');
+}
+
+function escapeHtml(source) {
+  return source
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/{/g, '&lbrace;')
+    .replace(/}/g, '&rbrace;');
+}
+
+// mdsvex highlighter for fenced code blocks. Unlike the preprocessor below it
+// gets raw source and a language straight from the fence, so there is no HTML
+// to parse and nothing to decode.
+export async function highlightFence(code, lang) {
+  if (!lang) return `<pre><code>${escapeHtml(code)}</code></pre>`;
+
+  const highlighter = await getHighlighter();
+  if (!highlighter.getLoadedLanguages().includes(lang)) {
+    try {
+      await highlighter.loadLanguage(lang);
+    } catch {
+      return `<pre><code>${escapeHtml(code)}</code></pre>`;
+    }
+  }
+  return forSvelte(highlighter.codeToHtml(code, { lang, themes: THEMES }));
+}
+
 // Highlights hand-written <pre><code class="language-*"> blocks at build time.
 // Only tagged blocks are touched; untagged code is left as plain markup. Braces
 // in Shiki's output are re-escaped so Svelte does not read them as expressions.
@@ -53,11 +88,9 @@ export function shikiHighlight() {
         if (!highlighter.getLoadedLanguages().includes(lang)) {
           await highlighter.loadLanguage(lang);
         }
-        const html = highlighter
-          .codeToHtml(decode(raw), { lang, themes: THEMES })
-          .replace(/ tabindex="0"/g, '')
-          .replace(/{/g, '&lbrace;')
-          .replace(/}/g, '&rbrace;');
+        const html = forSvelte(
+          highlighter.codeToHtml(decode(raw), { lang, themes: THEMES })
+        );
         out += content.slice(last, match.index) + html;
         last = match.index + full.length;
       }

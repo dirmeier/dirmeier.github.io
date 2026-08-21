@@ -92,12 +92,16 @@
     <div class="post-meta">
       <div>
         <div class="post-meta-heading">Author</div>
-        <div class="post-meta-contents">Simon Dirmeier &lt;simd23 at pm dot me&gt;</div>
+        <div class="post-meta-contents"
+          >Simon Dirmeier &lt;simd23 at pm dot me&gt;</div
+        >
       </div>
       {#if date}
         <div>
           <div class="post-meta-heading">Published</div>
-          <div class="post-meta-contents">{formatDate(date)?.replace(' ', ', ')}</div>
+          <div class="post-meta-contents"
+            >{formatDate(date)?.replace(' ', ', ')}</div
+          >
         </div>
       {/if}
     </div>

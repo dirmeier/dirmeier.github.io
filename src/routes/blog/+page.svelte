@@ -25,7 +25,11 @@
   // Trailing-slash posts resolve to a static index.html via a Vercel rewrite
   // that only exists at runtime, so the prerender crawler can't follow them.
   function isExternal(url) {
-    return url.startsWith('http://') || url.startsWith('https://') || url.endsWith('/');
+    return (
+      url.startsWith('http://') ||
+      url.startsWith('https://') ||
+      url.endsWith('/')
+    );
   }
 </script>
 

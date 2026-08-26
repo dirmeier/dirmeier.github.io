@@ -1,7 +1,7 @@
 {"title": "JAX kernel fusion", "url": "/blog/jax-kernel-fusion", "description": "Evaluating JAX kernel fusion using XLA, Pallas and CUDA FFI.", "date": "2026-08"}
 {"title": "Blaxbird v0.2.0", "url": "/blog/blaxbird-mesh-sharding", "description": "Sharding NNX models over an arbitrary mesh.", "date": "2026-07"}
 {"title": "Learning MLX", "url": "/blog/learning-mlx-with-sabc", "description": "Learning Apple's array framework MLX by implementing a compute-heavy ABC sampler.", "date": "2026-06"}
-{"title": "\ud83c\udf08\ud83d\udc7e\ud83e\udd89Relaunching my blog\ud83e\udd89\ud83d\udc7e\ud83c\udf08", "url": "/blog/relaunching-my-blog", "description": "", "date": "2026-06"}
+{"title": "🦉🎉🦉Relaunching my blog🦉🎉🦉", "url": "/blog/relaunching-my-blog", "description": "", "date": "2026-06"}
 {"title": "Diffusion models II", "url": "/blog/diffusion-models-ii", "description": "Introducing a new class of generative models using stochastic differential equations and denoising score matching.", "date": "2023-01"}
 {"title": "Probabilistic reconciliation", "url": "/blog/probabilistic-reconciliation", "description": "On two recent methods on reconciliation of hierarchical time series forecasts.", "date": "2022-11"}
 {"title": "Diffusion models I", "url": "/blog/diffusion-models-i", "description": "Introducing a novel class of generative models that are inspired by non-equilibrium thermodynamics.", "date": "2022-06"}

@@ -1,12 +1,16 @@
 ---
 title: Sharding NNX models over an arbitraty mesh
-date: '2026-07'
+date: '2026-06'
 ---
 
-`blaxbird` is a Python library that I am developing and which features a high-level API for building and training Flax NNX models without the usual JAX/Flax verbosity. 
-The newest version, `v0.2.0`, adds mesh-based sharding: FSDP, tensor parallelism, expert parallelism, or any combination thereof. Below, I am briefly introducing this feature 
-using a simple example. You can find the `blaxbird` on [GitHub](https://github.com/dirmeier/blaxbird).
+`blaxbird` is a Python library that I am developing and which 
+features a high-level API for building and training Flax NNX 
+models without the usual JAX/Flax verbosity. 
+The newest version, `v0.2.0`, adds mesh-based sharding: FSDP,
+tensor parallelism, expert parallelism, or any combination thereof. 
+Below, I am briefly introducing this feature using a simple example. 
 
+You can find the library on GitHub at [`dirmeier/blaxbird` ](https://github.com/dirmeier/blaxbird).
 
 ## Meshs and partitions
 

@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/blog/learning-mlx-with-sabc",
+      "destination": "/blog/learning-mlx",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/blog/:slug/", "destination": "/blog/:slug/index.html" }
   ]

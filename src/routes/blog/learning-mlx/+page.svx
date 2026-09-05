@@ -1,14 +1,20 @@
 ---
 title: Learning MLX
-date: '2026-06'
+date: '2026-08'
 ---
+
+> <span class="note-label">🦉 Note 🦉</span>
+>
+> See also the follow-up on 
+> [Learning Metal with FlashAttention](/blog/learning-metal-with-flashattention)
+> and calling the shaders via MLX.
 
 I've only recenly came across MLX, Apple's array framework. 
 In comparison to JAX, my usual framework of choice, MLX features a proper C++ API 
 making it particularly interesting. To explore the library a bit, I've implemented one of our recent publications, 
 SABC ([Albert et al., 2025](#ref-albert2025simulated)), in MLX using its Python and C++ API.
 
-You can find the SABC code on [GitHub](https://github.com/dirmeier/sabc).
+Code can be found on GitHub at [dirmeier/sabc](https://github.com/dirmeier/sabc).
 
 ## Why MLX
 
@@ -102,7 +108,7 @@ Each MLX op is **lazy**, so a loop builds a graph that keeps growing until `mx.e
 evaluates it (i.e., actually computes a value). However, similarly to JAX, `mx.compile`
 can still compile a function into a single graph when high throughput is needed.
 
-## The benchmark
+## Benchmark
 
 I've compared SABC in MLX against a JAX version, and a NumPy version and a Numba version
 from a collaborator: `sbijax`, `sabc-mlx`, `sabc-numpy`, `sabc-numba`. The table below

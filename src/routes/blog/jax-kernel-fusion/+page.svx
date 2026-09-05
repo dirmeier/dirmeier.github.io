@@ -1,6 +1,6 @@
 ---
 title: JAX kernel fusion
-date: '2026-08'
+date: '2026-07'
 ---
 
 When jit-ting a JAX function, the XLA compiler tries to fuse its
@@ -18,7 +18,7 @@ operations the GPU has to execute. For the Pallas and CUDA implementations the
 kernel appears as a single custom call, so the HLO shows where our code takes
 over rather than what it does.
 
-The code to reproduce all results is on GitHub at [dirmeier/jax-kernel-fusion](https://github.com/dirmeier/jax-kernel-fusion).
+Code can be found on GitHub at [dirmeier/jax-kernel-fusion](https://github.com/dirmeier/jax-kernel-fusion).
 
 ## QK-Norm+RoPE
 

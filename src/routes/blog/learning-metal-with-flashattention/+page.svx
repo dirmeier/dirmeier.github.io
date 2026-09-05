@@ -1,0 +1,391 @@
+---
+title: Learning Metal with FlashAttention
+date: '2026-09'
+---
+
+> <span class="note-label">🦉 Note 🦉</span>
+>
+> This is a follow-up to [Learning MLX](/blog/learning-mlx).
+
+In this case study, we aim to develop performant FlashAttention Metal implementations 
+for the sake of learning the language, and expose them to Python via MLX bindings.
+
+Having primarily worked with Apple hardware for the last decade or more (at least locally),
+I've thought it might (finally) make sense learn more about Apple's shader language. 
+Since I am familiar with CUDA but have never written Metal before, 
+FlashAttention ([Dao et al., 2022](#ref-dao2022flashattention)) is an appropriate
+algorithm for learning the details of it, because, similarly to Nvidia GPUs, it
+requires understanding of the memory hierarchy on Apple GPUs and how to efficiently make use of it.
+Also, since MLX has its own FlashAttention implementation, we
+can easily compare our implementation against theirs.
+
+Specifically, we will first have a look at the differences between Metal and CUDA.
+We then derive FlashAttention, evaluate its MLX implementation, and finally
+try to come up with a implementation of FlashAttention in Metal that matches the performance of MLX.
+
+Code can be found on GitHub at
+[dirmeier/flashattention-metal](https://github.com/dirmeier/flashattention-metal).
+
+## Metal vs CUDA
+
+When having a first look at MSL (and Apple's naming conventions in general), it might be
+confusing to understand what they mean (well, technically, the same is true for CUDA).
+On the bright side, most Metal concepts have a CUDA counterpart, and the language itself
+seems like a dialect of CUDA rather than a complete different take on GPGPU programming.
+
+| Concept                  | CUDA                          | Metal                             | Has better name |
+| ------------------------ | ----------------------------- | --------------------------------- | --------------- |
+| lockstep thread group    | warp (32 threads)             | simdgroup (32 threads)            | Metal           |
+| cooperating block        | thread block                  | threadgroup                       | Metal           |
+| hardware unit            | streaming multiprocessor (SM)     | GPU core                          | neither         |
+| on-chip scratch          | shared memory                 | threadgroup memory                | Metal           |
+| off-chip memory          | global memory (HBM)           | device memory (unified)           | CUDA           |
+| entry point              | `__global__ void`             | `kernel void`                     | CUDA           |
+| read-only uniforms       | `__constant__`                | `constant` address space          | tie             |
+| pointer aliasing hint    | `__restrict__`                | `__restrict__`                    | tie             |
+| block index              | `blockIdx`                    | `threadgroup_position_in_grid`    | CUDA            |
+| thread index in block    | `threadIdx`                   | `thread_position_in_threadgroup`  | CUDA            |
+| global thread index      | computed from the two above   | `thread_position_in_grid`         | Metal           |
+| lane index               | `threadIdx.x % warpSize`      | `thread_index_in_simdgroup`       | Metal           |
+| warp index in block      | `threadIdx.x / warpSize`      | `simdgroup_index_in_threadgroup`  | Metal           |
+| lockstep width           | `warpSize`                    | `threads_per_simdgroup`           | Metal           |
+| block-wide barrier       | `__syncthreads()`             | `threadgroup_barrier()`           | CUDA           |
+| simdgroup-wide barrier   | `__syncwarp()`                | `simdgroup_barrier()`             | CUDA            |
+| lane exchange            | `__shfl_xor_sync()`           | `simd_shuffle_xor()`              | Metal           |
+| matrix fragment          | `wmma::fragment`              | `simdgroup_float8x8`              | Metal           |
+| matrix multiply-add      | `wmma::mma_sync()`            | `simdgroup_multiply_accumulate()` | Metal           |
+
+Many of the concepts are doing similar things. For instance, 
+entry points to the GPU functions, block/thread/global thread indexes, 
+tensor matrix multiplication, etc. only use different names.
+
+Also both CUDA and Metal work in groups of 32 threads that execute in lockstep.
+However, it's worth noting CUDA does SIMT while Metal does SIMD. I am not sure
+if this brings the same issues as SIMD on, e.g., AVX, but it does mean that
+divergent branches have to wait for each other, since no lane can run ahead of
+another lane in the same simdgroup. In summary:
+
+- On an execution level both CUDA SIMT and Metal SIMD have identical issues 
+for diverging branches. Both use 32 ALUs that share a single instruction dispatcher.
+If the branches diverge, e.g., on 16 threads, then the other 16 threads have to wait.
+- However, the advantage of SIMT is that a warp can interleave during a diverging branch which
+can resolve "cross-lane spin-waits" (i.e., one set of threads waiting for the other set), while
+a simdgroup cannot interleave.  
+- SIMD is, I guess, more efficient since there is only
+one prgram counter and no call stack.
+-  Ironically, every warp (SIMT) thread, can
+also do SIMD in addition, since data is stored in 32bit registers. This allows for using, e.g., using 2 16bit floats in parallel
+using `__h***` functions.
+- So: SIMT ⊃ SIMD.
+
+The biggest difference is probably what an SM on a CUDA device and GPU core on an Apple GPU represent.
+Both have their own schedulers, registers and threadgroup memory, but 
+but NVIDIA publishes SM diagrams down to ALU counts and warp-scheduler partitions, 
+while Apple publishes none of that 🙂.
+
+There's also some differences in the respective toolchain which are not really significantly better or worse 
+(even though I prefer writing CUDA kernels).
+
+| Concept           | CUDA                     | Metal                     | Has better name |
+| ----------------- | ------------------------ | ------------------------- | --------------- |
+| launch            | `kernel<<<g, b, s, t>>>` | `dispatchThreadgroups()`  | CUDA           |
+| work queue        | stream                   | command queue and buffer  | CUDA           |
+| device buffer     | `cudaMalloc`             | `MTLBuffer`               | CUDA             |
+| compiler          | `nvcc`                   | `xcrun metal`             | tie             |
+| compiled artefact | cubin / fatbin           | `.metallib`               | Metal           |
+| compiler IR       | PTX                      | AIR                       | tie         |
+| disassembler      | `cuobjdump`              | `xcrun metal-objdump`     | tie             |
+| vendor BLAS       | cuBLAS                   | MPS and MPSGraph          | CUDA            |
+
+
+## FlashAttention
+
+Given queries, keys and values $Q, K, V \in \mathbb{R}^{N \times D}$, standard
+attention computes, for each query row $i$,
+
+$$o_i = \sum_j \mathrm{softmax}_j(s_{ij})\, v_j, \qquad s_{ij} = \frac{q_i \cdot k_j}{\sqrt{D}},$$
+
+where the softmax normalises over all $j$. Computing $o_i$
+requires the full row $s_{i:}$ before the softmax over it can even be
+computed. For all outputs $O$, we consequently need to materialize the entire $N\times N$-dimensional
+ score matrix $S$.
+
+To compute the softmax in a numerically stable manner, array frameworks substract the row maximum
+before computing the expoential:
+
+$$\mathrm{softmax}_j(s_{ij}) = \frac{\exp(s_{ij} - \max_j s_{ij})}{\sum_j \exp(s_{ij} - \max_j s_{ij})},$$
+
+FlashAttention keeps a running maximum
+instead and rescales accumulated values whenever the maximum
+increases. Instead of materializing the entire score matrix $S$, FlashAttention splits the $N$ queries, keys and values
+into row-tiles of a fixed size (e.g., 32 rows)
+that fit into SMEM, and processes one tile at a time.
+
+Let $m^{(t)}$ be the running maximum after tile $t$, $Z^{(t)}$ the running
+softmax normalising constant, and $\tilde{O}^{(t)}$ the running, unnormalised
+output matrix. For a new tile of scores $s_j$:
+
+$$m^{(t)} = \max\left(m^{(t-1)},\ \max_j s_j\right), \qquad \alpha = \exp\left(m^{(t-1)} - m^{(t)}\right)$$
+
+$$Z^{(t)} = \alpha Z^{(t-1)} + \sum_j \exp\left(s_j - m^{(t)}\right), \qquad \tilde{O}^{(t)} = \alpha \tilde{O}^{(t-1)} + \sum_j \exp\left(s_j - m^{(t)}\right) v_j$$
+
+After the last tile the the output is $O = \tilde{O}^{(T)} / Z^{(T)}$. 
+
+As pseudocode:
+
+```text
+for each Q-tile (rows of Q):
+    m, Z, O~ = -inf, 0, 0
+    for each K/V-tile t (also rows of K/V):
+        s  = Q_tile @ K_tile^T / sqrt(D)
+        m_new = max(m, max_j(s))
+        alpha  = exp(m - m_new)
+        Z  = alpha * Z  + sum_j(exp(s - m_new))
+        O~ = alpha * O~ + exp(s - m_new) @ V_tile
+        m  = m_new
+    O_tile = O~ / Z
+```
+
+For our Metal Flashattention implementations, a threadgroup owns one tile of `tile_size ` query rows and loops over the key tiles. 
+The grid is dispatched as (seq_len / tile_size, heads, batch), so tgid.z is the batch, tgid.y the head and tgid.x the query tile.
+Hence, each of the `seq_len / tile_size` dispatched threadgroups independently 
+runs the inner for-loop over all K/V-tiles to produce its own O_tile.
+All three implementations below (v1–v3) share this same outer structure and only differ in what happens inside that inner loop.
+
+## v1: everything through threadgroup memory
+
+In a first attempt, we compute both matrix products using the simdgroup
+matrix engine. In Metal `simdgroup_float8x8` fragments and
+`simdgroup_multiply_accumulate` fill the same role as CUDA's tensor
+core primitives (i.e., `wmma::*`): an 8×8 fragment of a matrix is computed using a single group of 32 threads.
+The data (the 8x8 fragment of a matrix) that is used for this computation is stored directly in registers.
+
+$Q$, $K, the running output $\tilde{O}$ and the score $S$ all are stored in threadgroup memory (SMEM):
+
+```cpp
+threadgroup float* scores = shared;                  // tile_size * tile_size
+threadgroup float* O_tilde_smem  = scores + tile_size * tile_size; // tile_size * dim
+threadgroup float* Q_smem  = O_tilde_smem + tile_elems;    // tile_size * dim
+threadgroup float* K_smem  = Q_smem + tile_elems;    // tile_size * dim
+```
+
+The values $V$ are still read from device memory (DRAM), since the
+32 KB of SMEM on Apple silicon would likely overflow if we stored them there, too.
+
+When doing a matrix multiply-accumulate using `simdgroup_float8x8`, the frament (i.e., a submatrix of size 8x8), 
+is loaded directly into the registers of the 32 threads that the simdgroup owns. 
+For instance, the code for the matmul of the scores is shown below (find the rest of the code on [GitHub](https://github.com/dirmeier/flashattention-metal), please):
+
+```cpp
+constant constexpr uint kFrag = 8;
+
+// load K into SMEM, tile_size rows at a time
+for (uint r = 0; r < tile_size; ++r) {
+    for (uint c = tid; c < dims.dim; c += threads) {
+        K_smem[r * dims.dim + c] = kb[(k0 + r) * dims.dim + c];
+    }
+}
+// make K_smem visible for all threads in threadgroup
+threadgroup_barrier(mem_flags::mem_threadgroup);
+
+// S = Q * K^T, computed entirely in registers via the matrix engine
+for (uint i = 0; i < tile_size / kFrag; ++i) {
+    for (uint j = 0; j < tile_size / kFrag; ++j) {
+        simdgroup_float8x8 s_frag = simdgroup_float8x8(0.0f);
+        for (uint d = 0; d < dims.dim; d += kFrag) {
+            simdgroup_float8x8 fq;
+            simdgroup_float8x8 fk;
+            simdgroup_load(fq, Q_smem + i * kFrag * dims.dim + d, dims.dim);
+            simdgroup_load(fk, K_smem + j * kFrag * dims.dim + d, dims.dim, ulong2(0), true);
+            // S = Q * K^T matmul 
+            simdgroup_multiply_accumulate(s_frag, fq, fk, s_frag);
+        }
+        ...
+    }
+}
+```
+
+Since a thread owns only 2 values (and not all 8), the 8 values of a row are split across 4 threads. 
+We consequently would need to write the values of the 4 threads to SMEM 
+such that we can compute the running max $m^{(t)}$ and sum over a row. We can do this by calling `simdgroup_store`
+which, directly writes all 64 values (which are currently in the registers of 32 threads) to SMEM. We iterate over all
+fragments of a tile (which in this/our case is a 32x32 score matrix $S$), until one tile is computed.
+
+```cpp
+for (uint i = 0; i < tile_size / kFrag; ++i) {
+    for (uint j = 0; j < tile_size / kFrag; ++j) {
+        ...
+        // write from registers to SMEM `scores`
+        simdgroup_store(s_frag, scores + i * kFrag * tile_size + j * kFrag, tile_size);
+    }
+}
+// wait till all threads in threadgroup have finished doing `simdgroup_store`
+// -> all S in SMEM visible to all threads in the threadgroup (and therefore every simdgroup within it)
+threadgroup_barrier(mem_flags::mem_threadgroup);
+
+const bool owns_row = tid < tile_size;
+// only one thread should read back from SMEM to register per row
+if (owns_row) {  
+  for (uint j = 0; j < tile_size; ++j) {
+    float s = scores[tid * tile_size + j] * dims.scale;
+    // do max and sum computations
+    ...
+  }
+}
+```
+
+## v2: keeping the scores in registers
+
+We can gain a simple speed-up over v1 by leaving all data in the registers, i.e., not doing a `simdgroup_store`, `threadgroup_barrier`,
+and writing back `float s` once per row and thread.
+
+Recall that we used `simdgroup_multiply_accumulate` to do matrix multiplications on 8x8 fragments (of previously tiled Q, K and V tensors) 
+and that a simdgroup uses 32 threads to store the 8x8=64 values.
+
+Metal exposes the two values of each thread through `thread_elements()` meaning we have a way to access the values while they
+are stored in registers. We can then use `simd_shuffle_xor` to exchance values between threads (lanes).
+Given v1 of our algorithm, one should immediatly see why this is cool 🤯 🥳. 
+
+Specifically, for each thread in a simdgroup, we first compute the max of its 2 values per fragment.
+Since a simdgroup has 32 threads, this can be represented with 5 bits in binary from 00000 to 11111.
+We then use `simd_shuffle_xor` to get the max when shuffling with lane 00001 (1u) and lane 01000 (8u). 
+Why? Apple doesn't report which lane holds which elements of the 8x8 fragment, so one has to test empirically and hope it is correct 🙂.
+A sketch of the code that v2 uses is shown below:
+
+```cpp
+// each thread reduces its own 2 values (per fragment) to one local max
+// we know from before that the 2 values of a thread belong to one row of the 8x8 fragment
+float block_max = -INFINITY;
+for (uint j = 0; j < tile_size / kFrag; ++j) {
+    thread auto& e = s_frag[j].thread_elements();
+    for (uint i = 0; i < 2; ++i) {
+        e[i] *= dims.scale;
+        block_max = max(block_max, e[i]);
+    }
+}
+
+// combine across the 4 lanes holding this row
+block_max = max(block_max, simd_shuffle_xor(block_max, 1u));  // swap with lane ^1
+block_max = max(block_max, simd_shuffle_xor(block_max, 8u));  // swap with lane ^8
+// -> every one of the 4 lanes now holds the true max of the row
+```
+
+Consequently, the scores and the output accumulator never have to be written to SMEM,
+ but all computations can stay in registers.
+
+## v3: more optimisations
+
+Version v3 does some more optimisations that I found in MLX's [original implementation](https://github.com/ml-explore/mlx/blob/117188cd735299f396a08f7697a81759b1e0550b/mlx/backend/metal/kernels/steel/attn/kernels/steel_attention.h#L70):
+
+- read K directly transposed into SMEM,
+- use a shared KV buffer, i.e., once QK^T is computed, write V into the same SMEM address that K was written to,
+- work in log-space.
+
+## Calling it from MLX
+
+To use our FlashAttention Metal implementations in Python
+Python, MLX offers a function called `mx.fast.metal_kernel`, which compiles a kernel body at *runtime* (yes).
+
+Hence, Python API has to provide the template parameters that we used to define the FlashAttention implementation:
+
+```python
+KERNEL_ = mx.fast.metal_kernel(
+  name="flash_attention_mlx_v3",
+  input_names=["q", "k", "v"],
+  output_names=["out"],
+  source=(SHADERS_PATH_ / "flashattention_mlx.metal").read_text(),
+  header=(SHADERS_PATH_ / "flashattention.metal").read_text(),
+)
+
+def _mlx_attention(q, k, v, causal=True):
+  B, H, T, D = q.shape
+  keys = 32 if D <= 64 else 16
+  shared = 32 * (D + 4) + max(D * (keys + 4), keys * (D + 4))
+  return KERNEL_(
+    inputs=[q, k, v],
+    template=[("kVersion", 3), ("kDim", D), ("kSeq", T), ("kBatch", B),
+              ("kHeads", H), ("kCausal", causal), ("kTile", 32),
+              ("kShared", shared), ("kKTile", keys)],
+    grid=(128 * (T // 32), H, B),
+    threadgroup=(128, 1, 1),
+    output_shapes=[q.shape],
+    output_dtypes=[q.dtype],
+  )[0]
+```
+
+With this, we can, for instance, define an MLX neural network module and use our Metal shader. Here, we naturally use a
+transformer block:
+
+```python
+class TransformerBlock(nn.Module):
+  def __init__(self, dims: int, heads: int) -> None:
+    super().__init__()
+    self.heads = heads
+    self.head_dim = dims // heads
+    self.qkv = nn.Linear(dims, 3 * dims, bias=False)
+    self.out_proj = nn.Linear(dims, dims, bias=False)
+    self.mlp = nn.Sequential(
+      nn.Linear(dims, 4 * dims), nn.GELU(), nn.Linear(4 * dims, dims)
+    )
+    self.pre_attention_rmsnorm = nn.RMSNorm(dims)
+    self.pre_mlp_rmsnorm = nn.RMSNorm(dims)
+
+  def _attention(self, x: mx.array) -> mx.array:
+    B, T, D = x.shape
+    q, k, v = (
+      t.reshape(B, T, self.heads, self.head_dim).transpose(0, 2, 1, 3)
+      for t in mx.split(self.qkv(x), 3, axis=-1)
+    )
+    o = _mlx_attention(q, k, v)
+    return self.out_proj(o.transpose(0, 2, 1, 3).reshape(B, T, D))
+
+  def __call__(self, x: mx.array) -> mx.array:
+    x = x + self._attention(self.pre_attention_rmsnorm(x))
+    x = x + self.mlp(self.pre_mlp_rmsnorm(x))
+    return x
+```
+
+That's it!
+
+## Benchmark
+
+All numbers are computed by running on an Apple M1 and averaged over 10 iterations (with 3 warmup runs).
+The (B, H, S, D)-dimensional input tensor uses [2, 4, 2048, 128] elements. The results are given below:
+
+| kernel | ms | GFLOP/s |
+| ------ | -- | ------- |
+| v1 — scores through SMEM, $V$ from DRAM | 264.2 | 65.0 |
+| v2 — scores and $O$ in registers | 39.7 | 432.5 |
+| v3 — transposed $K$, shared $KV$ buffer | 10.6 | 1615.2 |
+| MLX's own attention | **10.0** | **1712.3** |
+
+MLX's implementation is cleary better than the ones we produced, even though with v3 we came pretty close.
+Curiously, moving from v2 to v3 almost gave us a 4 times speed up.
+
+When using different sequence lengths and head dimensions:
+
+| S | D | v3 ms | MLX ms |
+| --- | --- | ----- | ------ |
+| 512  | 64  | **0.68** | 1.02 |
+| 512  | 128 | **1.12** | 1.90 |
+| 1024 | 64  | 1.66 | **1.39** |
+| 1024 | 128 | **3.28** | 4.41 |
+| 2048 | 64  | 5.45 | **4.81** |
+| 2048 | 128 | 10.64 | **10.03** |
+
+Here, v3 is faster than MLX at some of the smaller shapes. Assumingly, MLX is optimized for larger sequence lengths and head
+dimensions, since they are more frequently found in larger transformer models.
+
+## Conclusion
+
+Learning the basics of Metal was easier than I expected. The language is very close to CUDA and, aside from naming conventions, 
+even feels a bit easier to write. However, NVIDIA's documentation is significantly better than anything I've found from Apple, which
+makes working with Metal somewhat painful.
+
+Hope reading this was informative to some 🙂🦉.
+
+## References
+
+<span id="ref-dao2022flashattention"></span>
+
+Dao, T., Fu, D. Y., Ermon, S., Rudra, A., and Ré, C. (2022). *FlashAttention: Fast and memory-efficient exact attention with IO-awareness*. Advances in Neural Information Processing Systems.

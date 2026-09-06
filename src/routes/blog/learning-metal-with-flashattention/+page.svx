@@ -7,21 +7,20 @@ date: '2026-09'
 >
 > This is a follow-up to [Learning MLX](/blog/learning-mlx).
 
-In this case study, we aim to develop performant FlashAttention Metal implementations 
-for the sake of learning the language, and expose them to Python via MLX bindings.
-
-Having primarily worked with Apple hardware for the last decade or more (at least locally),
-I've thought it might (finally) make sense learn more about Apple's shader language. 
-Since I am familiar with CUDA but have never written Metal before, 
-FlashAttention ([Dao et al., 2022](#ref-dao2022flashattention)) is an appropriate
-algorithm for learning the details of it, because, similarly to Nvidia GPUs, it
-requires understanding of the memory hierarchy on Apple GPUs and how to efficiently make use of it.
+Having primarily worked with Apple hardware for the last decade (at least locally),
+I've thought it might (finally) make sense learn more about Apple's Metal Shading Language (MLS). 
+**Hence, in this case study, we will develop performant FlashAttention Metal implementations** and make them accessible to Python via Apple's array framework MLX.
+For learning Metal, FlashAttention ([Dao et al., 2022](#ref-dao2022flashattention)) seems like an excellent choice, 
+since, as in CUDA programming, it
+requires a deep understanding of the memory hierarchy on Apple GPUs and how to efficiently make use of it.
 Also, since MLX has its own FlashAttention implementation, we
 can easily compare our implementation against theirs.
 
 Specifically, we will first have a look at the differences between Metal and CUDA.
-We then derive FlashAttention, evaluate its MLX implementation, and finally
-try to come up with a implementation of FlashAttention in Metal that matches the performance of MLX.
+We then derive FlashAttention, and
+try to come up with a implementation in Metal that is compute- and memory-efficient. Finally, we compare our implementation(s)
+against the native implemention of FlashAttention from MLX. Since MLX exposes Python bindings, **we also show how to use a FlashAttention Metal kernel
+directly within a transformer architecture in Python**.
 
 Code can be found on GitHub at
 [dirmeier/flashattention-metal](https://github.com/dirmeier/flashattention-metal).
@@ -60,19 +59,15 @@ entry points to the GPU functions, block/thread/global thread indexes,
 tensor matrix multiplication, etc. only use different names.
 
 Also both CUDA and Metal work in groups of 32 threads that execute in lockstep.
-However, it's worth noting CUDA does SIMT while Metal does SIMD. I am not sure
-if this brings the same issues as SIMD on, e.g., AVX, but it does mean that
-divergent branches have to wait for each other, since no lane can run ahead of
-another lane in the same simdgroup. In summary:
+However, it's worth noting CUDA does SIMT while Metal does SIMD. To summarize the differences:
 
 - On an execution level both CUDA SIMT and Metal SIMD have identical issues 
 for diverging branches. Both use 32 ALUs that share a single instruction dispatcher.
 If the branches diverge, e.g., on 16 threads, then the other 16 threads have to wait.
-- However, the advantage of SIMT is that a warp can interleave during a diverging branch which
+- However, the advantage of SIMT is that a warp can interleave during a diverging branch, since each thread has its own program counter, which
 can resolve "cross-lane spin-waits" (i.e., one set of threads waiting for the other set), while
 a simdgroup cannot interleave.  
-- SIMD is, I guess, more efficient since there is only
-one prgram counter and no call stack.
+- SIMD is, I guess, more efficient since there is only one prgram counter and no call stack.
 -  Ironically, every warp (SIMT) thread, can
 also do SIMD in addition, since data is stored in 32bit registers. This allows for using, e.g., using 2 16bit floats in parallel
 using `__h***` functions.
@@ -349,6 +344,7 @@ That's it!
 
 ## Benchmark
 
+Let's compare the 3 implementations against MLX's FlashAttention implementation.
 All numbers are computed by running on an Apple M1 and averaged over 10 iterations (with 3 warmup runs).
 The (B, H, S, D)-dimensional input tensor uses [2, 4, 2048, 128] elements. The results are given below:
 
